@@ -1,0 +1,53 @@
+<p>
+	Before the installation can continue, you need to supply a number of
+	configuration options.</p>
+
+<form method="post" action="func_pagelink(installer, {link_current}, step: config_edit)">
+<table class="Vertical">
+	<tr>
+		<th><label for="form_db_type">Database type</label></th>
+		<td><select name="db_type" id="form_db_type" size="1">
+			<option value="mysql">MySQL</option>
+			<option value="pgsql">PostgreSQL</option>
+		</select></td>
+	</tr>
+	<tr>
+		<th><label for="form_db_host">Database hostname</label></th>
+		<td><input class="Text" type="text" name="db_host" id="form_db_host" value="{db_hostname}" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_db_name">Database name (Forbidden characters "@, /, :, |")</label></th>
+		<td><input class="Text" type="text" name="db_name" id="form_db_name" value="{db_name}" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_db_user">Database username (Forbidden characters "@, /, :, |")</label></th>
+		<td><input class="Text" type="text" name="db_user" id="form_db_user" value="{db_user}" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_db_password">Database password (Forbidden characters "@, /, :, |")</label></th>
+		<td><input class="Text" type="password" name="db_password" id="form_db_password" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_db_prefix">Prefix for all tables (Forbidden characters "@, /, :, |")</label></th>
+		<td><input class="Text" type="text" name="db_prefix" id="form_db_prefix" value="tm_" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_default_language">Default language</label></th>
+		<td><select name="default_language" id="form_default_language">{lang}</select></td>
+	</tr>
+	<tr>
+		<th><label for="form_system_mail">System e-mail address</label></th>
+		<td><input class="Text" type="text" name="system_mail" id="form_system_mail" value="{system_mail}" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_project_name">Project Name (optional)</label></th>
+		<td><input class="Text" type="text" name="project_name" id="form_project_name" value="{project_name}" /></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input class="Button" type="submit" name="button" value="Save" />
+		</td>
+	</tr>
+</table>
+</form>
+

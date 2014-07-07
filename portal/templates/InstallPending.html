@@ -1,0 +1,16 @@
+<p>
+	A testMaker update you just installed requires the database to be updated.</p>
+
+<p>
+	<a class="arrow" href="func_pagelink(installer, auto)">Perform update</a>.</p>
+
+<p>
+	<em>Hint:</em> if you tell your browser to open the above link in a new window or tab, you can just reload this page afterwards to get
+	back to what you were doing.</p>
+
+<h3>Switch language</h3>
+<ul>
+<!-- BEGIN lang_select -->
+	<li func_iif({lang_active}, 'class="active"', '')><a href="func_pagelink(installer, welcome, language: {lang_code}, pending: {pending})">{lang}</a></li>
+<!-- END lang_select -->
+</ul>

@@ -1,0 +1,5 @@
+Hello {name},
+
+you can find your certificate attached in this mail.
+
+The testMaker-Team

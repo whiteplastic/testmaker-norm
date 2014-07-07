@@ -1,0 +1,41 @@
+The tab „Publication” gives you the opportunity to release a test for online participation.
+
+Note: Please do not publish a test before the development and editing is completely finished. After the first user has participated in the test, you can no longer delete items, item blocks, text pages. or sub-tests. They will only be deactivated.
+
+
+### Access configuration
+
+Via the check boxes in the table, the test author or administrator determines if and in which way users can start a test or access their older test results.  
+
+
+A test can be published in three ways:<br>
+1) access via Direct link<br>
+2) access via Test overview<br>
+3) access via TAN<br>
+
+1) If a test is published via <b>Direct link<b/>, everybody who receives the link (i.e. via email) can start the test. This access authorization can be given to all user groups separately.
+
+
+2) If a test is published via <b>Test overview</b>, it will appear in the “test overview” and can be started via mouse click. This is convenient, if, for example, a test is only supposed to be released for registered users or if users (as guests) access testMaker on their own and wish to participate in a test displayed in the test overview. This access authorization can be given to all user groups separately.
+
+
+Additionally, a password can be defined for the access via 1) Direct link and via 2) Test overview that will be requested prior to the start of the test. For this purpose enter the desired password in the corresponding field in the table and check the box.
+
+Moreover, there is the possibility to restrict user’s access options to their feedback-results. You can choose this option, if participation in a test is no longer allowed, but the participants should still be able to access their results.
+
+3) A publication via <b>TAN</b> implies that every participant receives a TAN (Transaction authentication number), which is valid just once. With the TAN the test can be accessed via the testMaker start page. The TAN gives the participant the opportunity to suspend working on the test and to continue at a later point of time. Publication via TAN is convenient, if a proctor testing (i.e. a high school class) is conducted and there is no time to register all users and create user accounts.
+
+Exception : <br>
+Not all publication ways are possible with certain combinations of groups and test presentations. If, for example, a test is published on sub-test level, so that several sub-tests are displayed in the test overview, a publication for unregistered users (guests) is no longer possible. Accordingly, the fields will appear in grey shading.
+
+### Opening interval
+Here you can decide, whether participation is possible not till or only until a certain date.
+
+###TANs
+
+Here you can create the TANs (Transaction authentication number) that you can pass on to the participants of your tests. At most 50 TANs can be created at once.
+
+The option “Ask for email address” should be chosen, if you like to ask participants, to enter an email address after the entry of the TAN. The entry is not obligatory to participate in the test.
+
+
+As soon as you have created the first TANs for you test, a table with the TANs will be displayed. This table shows which TAN was (not yet) used. Additionally, you can display the new TANs you have created in a window to, for example, copy them into an excel-table. Remember not only to create the TANs and to distribute them, but also to publish the test for access via TAN under access configuration…

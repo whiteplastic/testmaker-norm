@@ -1,0 +1,61 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.view_edit_logs.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+<h3>Protokolleinsicht</h3>
+
+<p>
+	Hier können Sie Protokolleinträge zu diversen administrativen und testbezogenen Änderungen einsehen.</p>
+
+
+<form method="post" action="func_pagelink(view_edit_logs)">
+<table class="Vertical">
+	<tr>
+		<th>Benutzername</th>
+		<td>
+			<input type="text" name="username" value="{username}" />
+			<div class="annotation">Um Protokolleinträge für alle Benutzer anzuzeigen, lassen Sie dieses Feld leer.</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Aktionstyp</th>
+		<td>
+			<select name="optype">
+				<option value=""{optype_any_checked}>Alle</option>
+<!-- BEGIN optypes -->
+				<option value="{optype_id}"{optype_checked}>{optype_desc}</option>
+<!-- END optypes -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input class="Button" type="submit" value="Filter anwenden" /></td>
+	</tr>
+</table>
+</form>
+
+<!-- INCLUDE PageSelector.html -->
+
+<table class="BorderedLayout">
+	<tr><th>Zeit</th><th>Aktion</th><th>Zielobjekt</th><th>Benutzer</th><th>Details</th></tr>
+	<!-- BEGIN log_row -->
+	<tr>
+		<td>{log_time}</td>
+		<td>{log_op}</td>
+		<td>{log_target}</td>
+		<td>{log_user}</td>
+		<td style="text-align:left;"><!-- BEGIN log_details_delete -->
+			Alter Titel: {log_delete_title}<br />
+			Alter Block: {log_delete_link}
+		<!-- END log_details_delete -->
+		{log_details}
+		</td>
+	</tr>
+	<!-- END log_row -->
+	<!-- BEGIN no_log_rows -->
+	<tr><td colspan="5">Es wurden keine Protokolleinträge gefunden.</td></tr>
+	<!-- END no_log_rows -->
+</table>
+
+</div>

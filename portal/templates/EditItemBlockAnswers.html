@@ -1,0 +1,12 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+	<!-- INCLUDE EditPublishedHeader.html -->
+	<ul id="paragraphs">{paragraphs}</ul>
+	<div id="para_add_button"><button type="button" onclick="addParagraph('{add_link:h}');this.blur();">Add answer</button></div>
+	<div id="para_add_notice" class="HideAsyncNotice">Operation in progress, please wait...</div>
+	<form method="post" action="func_pagelink(item_block, confirm_overwrite_answers, working_path: {working_path}, revert: true)">
+		<input type="submit" class="Button" name="do_overwrite" value="Overwrite all item answers" />
+	</form>
+</div>
+<script src="portal/js/feedback_page.js" type="text/javascript"></script>

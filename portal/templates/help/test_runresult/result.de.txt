@@ -1,0 +1,58 @@
+###Datenbericht
+Hier können graphische Statistiken über ausgewählte Testläufe eines Tests angezeigt werden.
+Dabei werden die Testläufe gemäß den Filtereinstellungen berücksichtigt.
+
+
+### Filter
+
+Mit den Filtern legen Sie fest, welche Testläufe betrachtet werden sollen.
+
+Die Filter arbeiten unabhängig voneinander.
+Angenommen, es existieren zwei Tests im System, Alpha und Beta.
+Alpha wurde bisher nur über die Vorschau gestartet, Beta nur über das Portal.
+Dann werden unter <i>Zugriffsart</i> immer "preview" __und__ "portal" angeboten, selbst wenn unter <i>Test</i> bereits einer der beiden Tests ausgewählt wurde.
+
+#### Test
+
+Wählen Sie hier den Test aus der Liste aus, zu dem Sie Statistiken abrufen möchten.
+Gezeigt werden alle Tests, zu denen Testläufe vorliegen. Die Zahl in Klammern bezeichnet die Anzahl zugeordneter Testläufe.
+Es kann jeweils nur ein Test betrachtet werden. 
+
+
+#### <a name="access_type">Zugriffsart</a>
+
+Tests können auf vier verschiedene Weisen gestartet werden:
+
+* Per Direkt-Link
+* Über die Testübersicht
+* Als Vorschau über den gleichnamigen Reiter des Tests
+* Mittels einer Transaktionsnummer TAN
+
+Gezeigt werden alle Zugriffsarten, zu denen es Testläufe gibt.
+
+#### Vollständigkeit
+
+Da in der Praxis meist nur die Testläufe interessant sind, in denen alle Fragen beantwortet wurden, ist es bereits hier möglich, nur diese Testläufe auszuwählen.
+Es ist auch möglich, alle unvollständigen Testläufe anzeigen zu lassen.
+
+Hier die Bedeutung der Wahlmöglichkeiten:
+
+* __Egal__: Es erfolgt keine Einschränkung anhand der Antworten.
+* __Alle Items beantwortet__: Nur komplett bearbeitete Testläufe werden angezeigt.
+* __Alle nötigen Items beantwortet__: Alle Items, bei denen das Häkchen "Antwort nötig" aktiviert ist, wurden beantwortet.
+* __Nicht alle nötigen Items beantwortet__: Items, bei denen das Häkchen "Antwort nötig" aktiviert ist, wurden ausgelassen.
+
+
+
+
+ 
+
+###Statistiken der Testläufe
+
+
+####Die folgenden Verteilungen werden in der Statistik dargestellt:
+* Anzahl der beantworteten Items (in Prozent)
+* Anteil der Testläufe nach Anzahl der beantworteten nötigen Items (in Prozent)
+* Anteil der Testläufe nach Anzahl der gezeigten Items (in Prozent)
+* Anzahl der Testläufe nach Datum des Testbeginns
+* Anzahl der Testläufe nach Gesamtbearbeitungszeit pro Test

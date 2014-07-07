@@ -1,0 +1,13 @@
+Welcome to testMaker!
+
+You or somebody else used your mail address ({email_address}) to start a test at testMaker.
+
+If you are not the one who started the test you can ignore this mail.
+
+If you started the test, you can resume this test. You have two options to do this:
+
+1. You login at the follwing website by using your TAN: {tan} Website for starting by TAN: {tan_portal_link}
+
+2. Just as well you can use the following link to run the test directly: {tan_direct_link}
+
+The testMaker team

@@ -1,0 +1,43 @@
+
+###Orientierung
+Sie befinden sich auf dem Karteireiter "Allgemein" in einer bereits angelegten Feedbackseite des testMakers. Die Feedbackseiten sind das wichtigste Element der Ergebnisrückmeldung. Sie enthalten die Texte, die die Teilnehmer im Feedback lesen können. Das Feedback kann aus einer oder auch mehreren Feedbackseiten bestehen, die dem Teilnehmer nacheinander angezeigt werden.
+
+###Karteireiter einer Feedbackseite
+Im rechten Bereich des Bildschirms werden die Einstellmöglichkeiten der Feedbackseite angezeigt. Auf dieser Ebene finden Sie:
+
+* Allgemein
+* Feedbackseite löschen
+
+####Allgemein
+Unter "Titel" können Sie die Feedbackseite umbenennen. Geben Sie dazu den gewünschten Titel in das Textfeld ein und klicken Sie auf "Speichern".
+
+Darunter erhalten Sie Informationen zum Datum der letzten Änderung, zum Erstelldatum und zum Autor der Seite.
+
+Um konkrete Textabschnitte zum Feedback hinzuzufügen, betätigen Sie den Aktionsbutton "Absatz hinzufügen". Jetzt öffnet sich ein Texteditor, in den Sie das anzuzeigende Feedback einfügen können. Es bietet sich an, die Texte in mehrere Absätze zu untergliedern.
+
+Um die Feedbacktexte an die individuellen Antworten der Teilnehmer anzupassen, können <br>
+1) Anzeigebedingungen angelegt werden und <br> 
+2) Sonderbefehle genutzt werden.
+
+1) Anzeigebedingungen <br>
+Wenn der Absatz nur für bestimmte Probanden in Abhängigkeit von ihrem Testergebnis sichtbar sein soll, können Sie mit Hilfe der Funktion "Anzeigebedingungen: Neue Hinzufügen", die sich über dem Textfeld befindet, eine Dimension und die dazugehörigen Punktwerte auswählen. Erreicht eine Person also ein Ergebnis in der ausgewählten Dimension, das innerhalb des geschlossenen Intervalls (d.h. die eingegebenen Punktwerte sind Teil des Intervalls) liegt, bekommt Sie diesen Abschnitt als Teil des Feedbacks angezeigt. Das heißt, wenn Sie z.B. 5 und 15 als Grenzen eingeben, werden alle Testpersonen, die auf dieser Dimension 5 bis 15 Punkte erreicht haben (inklusive 5 und 15 Punkte) diesen Abschnitt sehen.
+Unter dem Editor finden Sie die Funktionen "Speichern" und "Verwerfen". Wenn Sie auf "Speichern" klicken, werden alle zuletzt vorgenommenen Änderungen gespeichert und der Editor schließt sich. Wenn Sie auf "Verwerfen" klicken, werden Ihre zuletzt vorgenommenen Änderungen rückgängig gemacht. Nach Schließen des Editors sehen Sie nur noch die Anzeigebedingungen, den von Ihnen eingegebenen Text und vier Aktionssymbole. Der Stift öffnet erneut den Editor, so dass weitere Änderungen vorgenommen werden können. Wenn Sie auf das Kreuz klicken, wird der Abschnitt unwiderruflich gelöscht. Die Pfeile ersetzen hier den Reiter "Struktur". Durch einfaches Anklicken können Sie somit die Abfolge der Abschnitte verändern.
+
+2) Sonderbefehle <br>
+Eine weitere Möglichkeit, um die Rückmeldung zu individualisiern, ist die Verwendung von Sonderbefehlen. Auf dem unteren Teil der Seite finden Sie einige Sonderbefehle, die Sie im Text der Feedbackseiten benutzen können. 'ID' bezeichnet dabei die interne ID der gewünschten Dimension, die Sie erfahren, indem Sie mit der Maus über den Namen der Dimension links im Menü fahren
+
+* {finish_time:} fügt Datum und Uhrzeit ein, zu der die Testung abgeschlossen wurde.
+* {value:mode="sum" ids="ID"} fügt die Punktzahl ein, die der Proband auf dieser Dimension erreicht hat.
+* {value&#58;mode="sum" ids="ID&#58;max"} fügt die höchste Punktzahl ein, die durch die Auswahl von jeweils einer Antwortmöglichkeit erreichbar war.
+* {value:mode="ratio" num="ID" denom="ID:max" percent="1"} fügt einen Prozentwert ein, der aus diesen beiden Angaben errechnet wird.
+* {value:mode="ratio" num="ID" denom="Maxim:literal" percent="1"} fügt einen Prozentwert ein, dessen zugrunde gelegten Maximalwert Sie selbst angeben können. Dies ist insbesondere nützlich, wenn einige Ihrer Items die Angabe mehrerer Antworten zulassen.
+* {value_prn:mode="Operator" id="ID"} fügt die Prozentrangnorm für den erreichten Punktwert ein. Der Operator gibt an, welche Klassengruppen berücksichtigt werden sollen; mögliche Angaben sind "lt" < (niedrigere Klassen), "lte" <= (Klasse des Probanden und niedrigere), "eq" = (Klasse des Probanden), "gte" >= (Klasse des Probanden und höhere), "gt" >  (höhere Klassen).
+* {graph:dimgroup="dimGruppenID"} fügt eine Graphik der angegebenen Dimensions-Gruppe ein. Wenn keine Dimensionsgruppe angegeben ist, fließen alle Feedbackdimensionen in den Graphen ein. Wenn für eine Dimension ein Vergleichswert spezifiziert wurde (unter den 'Einstellungen' einer Dimension), wird dieser in den Graphen aufgenommen.
+* {feedback_mail:} fügt einen Button zum versenden von Feedbackemails ein.
+
+Wenn Sie also Ihrer Testperson ihre absolute Punktzahl mitteilen möchten, schreiben Sie z.B.: "Auf der Dimension Extraversion haben Sie {value:mode="sum" ids="15"} Punkte erreicht."
+Möchten Sie auch noch die maximal erreichbare Punktzahl nennen, fügen Sie {value&#58;mode="sum" ids="ID&#58;max"} ein: "Auf der Dimension Extraversion haben Sie {value:mode="sum" ids="15"} von {value&#58;mode="sum" ids="15&#58;max"} Punkten erreicht."
+Um einen relativen Punktwert anzugeben, geben Sie z.B. folgendes ein: "Auf der Dimension Extraversion haben Sie {value:mode="ratio" num="15" denom="15:max" percent="1"} der maximalen Punktzahl erreicht."
+
+####Feedbackseite löschen
+Auf diesem Reiter können Sie die gesamte Feedbackseite löschen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Feedbackseite löschen"](func_helplink(any, confirm_delete)).

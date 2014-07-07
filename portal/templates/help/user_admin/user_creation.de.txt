@@ -1,0 +1,13 @@
+###Orientierung
+Sie befinden sich auf dem Karteireiter "Benutzer hinzufügen" der Funktion "Benutzer und Gruppen verwalten".
+
+####Benutzer hinzufügen
+Auf dieser Seite können Sie einen neuen Benutzer anlegen. 
+
+Geben Sie dazu den gewünschten Benutzernamen und ein Passwort (mindestens 6 Zeichen) an. Anschließend  bestätigen Sie das Passwort, indem Sie es wiederholen. 
+
+Nach Eingabe des vollständigen Namens (optional) und der gültigen E-Mail Adresse können Sie die Sprache bestimmen, in der der testMaker nach dem Einloggen dargestellt wird.  
+
+Legen Sie anschließend fest, zu welcher Benutzer-Gruppe der Benutzer zuzuordnen ist. Beachten Sie dabei, dass mit unterschiedlichen Gruppen verschiedene Rechte verbunden sind. Wenn Sie keine Gruppe auswählen, wird der neue Benutzer automatisch den Gruppen hinzugefügt, die als Standardgruppen definiert sind. (Siehe auch die Hilfe zu <a href="func_helplink(group_admin, list_group)">[Gruppen-Liste]</a>)
+
+Klicken Sie anschließend auf "Erstellen".

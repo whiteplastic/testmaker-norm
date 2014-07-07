@@ -1,0 +1,29 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.maintenance_mode.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+
+<script type="text/javascript">
+	function toggleVisibility(element)
+	{
+		$table = document.getElementById(element);
+		if($table.style.display == "none") $table.style.display="block";
+		else $table.style.display="none";
+	}
+</script>
+
+
+<div class="Card">
+	<p>When maintenance mode is activated, test participation is disabled. Requests are forwarded to a maintenance page that displays the message you enter here. Please note that during maintenance mode only administrators can log in.</p>
+	<form method="post" action="func_pagelink(maintenance_mode, save_maintenance_mode)">
+	
+	<input type="checkbox" name="enabled" value="enabled" onclick="toggleVisibility('intro_editor')" {checked} /><label>func_T(buttons.maintenance.activate)</label>
+
+	<div id="intro_editor" style="display:{display:h}">
+	
+		{maintenance_message}
+		<p>
+		<input type="checkbox" name="extended" value="extended" {extended} /><label>func_T(buttons.maintenance.extended)</label>
+	
+	</div>
+	<p><input type="submit" class="Button" value="func_T(buttons.save)" />
+	</form>
+</div>

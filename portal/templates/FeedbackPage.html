@@ -1,0 +1,46 @@
+<script type="text/javascript" language="javascript">
+<!--
+	submitted = false;
+
+	function resetSubmitted()
+	{
+		submitted = false;
+	}
+
+	storeStartTime();
+//-->
+</script>
+<form method="post" action="func_pagelink(test_make, process_answer, id: {id})" onsubmit="if (! submitted) { this.elements['duration'].value = getTimeNow()-getTimeStart(); submitted = true; window.setTimeout('resetSubmitted()', 5000); return true; } else { return false; }">
+
+	<input type="hidden" name="session_id" value="{session_id}" />
+	<input type="hidden" name="item_id" value="{item_id}" />
+	<input type="hidden" name="block_id" value="{block_id}" />
+	<input type="hidden" name="duration" value="0" />
+
+	<div class="Answers">
+		<!-- BEGIN paragraphs -->
+		<p>{para}</p>
+		<!-- END paragraphs -->
+	</div>
+
+	<!-- BEGIN send_feedback_email -->
+	<input name="send_feedback_email" type="submit" class="Button" value="func_T(pages.testmake.send_feedback_email)" />
+	<!-- END send_feedback_email -->
+
+	<!-- BEGIN certificate -->
+	<div style="padding:5px;border-width:1px;border-style:solid;border-color:#333378;background-color:#8888FF">
+		func_T(generic.download_certificate)
+		<p style="text-align:center"><a href="func_pagelink(pdf_generator, formular_certificate, test_run_id: {test_run_id}, block_id: {feedback_block_id}, tr_id: {id})">func_T(generic.certificate)</a></p>
+	</div>
+	<!-- END certificate -->
+	<!-- BEGIN no_certificate -->
+	<div style="padding:5px;border-width:1px;border-style:solid;border-color:#333378;background-color:#8888FF">
+		func_T(generic.missing_personal_data)
+	</div>
+	<!-- END no_certificate -->
+
+	<div style="clear:both;height:1%"></div>
+	<div class="SendBar">
+		<input type="submit" class="Button" name="do_continue" value="func_T(generic.continue)" />
+	</div>
+</form>

@@ -1,0 +1,60 @@
+Auf dieser Seite haben Sie die Möglichkeit die Item-Templates für den TestMaker zu verwalten. Sie können ein neues Template hochladen, ein Bild zur
+Vorschau auf das Template hinzufügen, und für das Template eine Beschreibung in Deutsch und Englisch angeben. Darüber hinaus können Sie hier auch
+Templates ändern oder löschen.
+
+#### Erstellen einer Template-Datei
+
+Die eigentliche Template-Datei muss in der Form einer HTML-Datei mit der Endung .html vorliegen. Diese Datei muss folgende Vorgaben erfüllen,
+um als Item-Template zu gelten:
+
+1. Eine Template-Variable **&#123;question&#125;** muss existieren, um die Frage des Items anzuzeigen. Zum Beispiel:
+	<pre><code>...
+	&lt;div class="Question"&gt;&lt;div class="Inner"&gt;
+		&#123;question&#125;
+	&lt;/div&gt;&lt;/div&gt;
+	...</code></pre>
+
+2. Eine Template-Variable **&#123;answer&#125;** muss existieren, um die Antwort des Items anzuzeigen. Zum Beispiel:
+	<pre><code>...
+	&lt;select id="answer&#123;item_id&#125;" name="answer[&#123;item_id&#125;]" style="width:50%;"&gt;
+		&lt;option value="&#123;aid&#125;"&gt;&lt;/option&gt;
+		&lt;!-- BEGIN answer --&gt;
+		&lt;option value="&#123;aid&#125;" style="text-align:left;"&#123;aold&#125;&gt;&#123;answer&#125;&lt;/option&gt;
+		&lt;!-- END answer --&gt;
+	&lt;/select&gt;
+	...</code></pre>
+
+3. Um einem Item später mehrere Antwortmöglichkeiten geben zu können (insofern das Template dies unterstützen soll, z.B.
+mit mehreren Checkboxen oder Radio-Buttons), muss der Teil, der als Vorgabe für eine Antwortalternative im Template steht, in HTML-Kommentare
+eingefasst werden, der den Beginn und das Ende der Antwortalternativen angibt (siehe Beispiel zum letzten Punkt: &lt;!- - BEGIN answer - -&gt; und &lt;!- - END answer - -&gt;).
+Mit Hilfe der Template-Variable **&#123;aid&#125;** kann die ID der Antwortalternative angegeben werden; die Template-Variable **&#123;aold&#125;**
+kann angegeben werden um das **selected**-Attribut eines HTML-Elements zu setzen (sinnvoll z.B. falls Fehler auftreten und der Benutzer
+beim Zurückleiten auf die letzte Seite seine getätigte Auswahl sehen soll).
+
+4. Die Funktionalität zur Bearbeitung der Antworten des Items erwartet ein Array **answer** in den POST-Daten. Aus diesem Grund
+müssen sämtliche Input-Elemente, oder ähnliche Elemente, folgendermaßen benannt werden:
+
+	- name=answer[&#123;item\_id&#125;], wenn es sich um ein Element mit einer Möglichkeit zur Antwort handelt,<br />
+	- name=answer[&#123;item\_id&#125;][], wenn es sich um ein Element mit mehreren Möglichkeiten zur Antwort handelt.
+
+5. Es muss ein Block für die **sendbar** existieren, der durch HTML-Kommentare eingefasst ist, die den Beginn und das Ende des Blocks definieren.
+In diesem Block muss ein div der Klasse SendBar enthalten sein (das div kann allerdings auch leer sein). Es sollte in etwa so aussehen:
+	<pre><code>...
+	&lt;!-- BEGIN send_bar --&gt;
+	&lt;div class="SendBar"&gt;
+		&lt;input type="submit" class="AnswerButton" value="func_T(generic.submit)" /&gt;    // Optionally
+	&lt;/div&gt;
+	&lt;!-- END send_bar --&gt;
+	...</code></pre>
+
+#### Vorschau-Bild
+
+Das Vorschau-Bild muss in einer Größe von 150x150 Pixeln und wahlweise im Format JPG, PNG oder GIF vorliegen.
+
+#### Beschreibung Deutsch
+
+Geben Sie einen kurzen Text zur Erklärung des Item-Templates in der Sprache Deutsch ein.
+
+#### Beschreibung Englisch
+
+Geben Sie einen kurzen Text zur Erklärung des Item-Templates in der Sprache Englisch ein.

@@ -1,0 +1,54 @@
+On this page you have the ability to manage the item templates for the TestMaker. You can upload templates, include a preview image for
+the template, and write a short description for the template in german and english. Furthermore you can edit or delete templates here.
+
+#### Creating a template file
+
+The template file must be on hand as a html file with the ending .html . Moreover the file must fulfill the following guidelines.
+
+1. The template variable **&#123;question&#125;** must exist, to show the question of the item. For example:
+	<pre><code>...
+	&lt;div class="Question"&gt;&lt;div class="Inner"&gt;
+		&#123;question&#125;
+	&lt;/div&gt;&lt;/div&gt;
+	...</code></pre>
+
+2. The template variable **&#123;answer&#125;** must exist, to show the item answer. Zum For example:
+	<pre><code>...
+	&lt;select id="answer&#123;item_id&#125;" name="answer[&#123;item_id&#125;]" style="width:50%;"&gt;
+		&lt;option value="&#123;aid&#125;"&gt;&lt;/option&gt;
+		&lt;!-- BEGIN answer --&gt;
+		&lt;option value="&#123;aid&#125;" style="text-align:left;"&#123;aold&#125;&gt;&#123;answer&#125;&lt;/option&gt;
+		&lt;!-- END answer --&gt;
+	&lt;/select&gt;
+	...</code></pre>
+
+3. To give an item more than one answer possibility (in the case the template should do so, e.g. with checkboxes or radio buttons),
+you must enclose the part of the template, which should be repeated with different choices, in HTML comments, indicating the begin and end
+of the part (see example for the last point: &lt;!- - BEGIN answer - -&gt; und &lt;!- - END answer - -&gt;). With the help of the template variable **&#123;aid&#125;** you can specify the id of the answer possibility. **&#123;aold&#125;** can be used to state the **selected**-attribute of a HTML element (e.g. effective when the
+user is redirected to the last page and should see his choice he made before). 
+
+4. The functionality for processing the answers expects an array **answers** in the POST data. So all input elements, or similar, must have the following name:
+
+	- name=answer[&#123;item\_id&#125;], when it is an element with one possibility for the choice,<br />
+	- name=answer[&#123;item\_id&#125;][], when the element has more than one possibility for the choice.
+
+5. A block **sendbar** must exist, enclosed with HTML comments to define the begin and the end of the block. In this block a div of class SendBar must exist (this div can be empty). This should look like this:
+	<pre><code>...
+	&lt;!-- BEGIN send_bar --&gt;
+	&lt;div class="SendBar"&gt;
+		&lt;input type="submit" class="AnswerButton" value="func_T(generic.submit)" /&gt;    // Optionally
+	&lt;/div&gt;
+	&lt;!-- END send_bar --&gt;
+	...</code></pre>
+
+#### Preview image
+
+The preview image must have the size of 150x150 pixels and must be in the format JPG, PNG or GIF.
+
+#### Beschreibung Deutsch
+
+Enter a short text for explaining the item template in german.
+
+#### Beschreibung Englisch
+
+Enter a short text for explaining the item template in english.

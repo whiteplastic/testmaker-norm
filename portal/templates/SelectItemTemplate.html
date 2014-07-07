@@ -1,0 +1,79 @@
+<script type="text/javascript" src="portal/js/template_chooser.js">
+</script>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE EditNodeHeader.html -->
+	<form method="post" action="func_pagelink(item, save_template, working_path: {working_path}, item_id: {item_id})" name="itemtemplate">
+		<fieldset><legend>Template</legend>
+		<table class="TemplateChoose">
+			<!-- BEGIN template_row -->
+			<tr>
+				<!-- BEGIN template_cell -->
+
+				<!-- BEGIN inactive_template_cell -->
+				<td style="text-align:center">
+					<img src="{thumbnail}" alt="{title:h}" title="{title:h}" style="border:1px solid #999;opacity:0.6" onclick="selectCheck(this.parentNode)" />
+					<p class="template"><input type="radio" name="template" value="{title:h}" onclick="selectCheck(this.parentNode.parentNode)" /><br />{desc:h}</p>
+				</td>
+				<!-- END inactive_template_cell -->
+
+				<!-- BEGIN active_template_cell -->
+				<td style="text-align:center">
+					<img src="{thumbnail}" alt="{title:h}" title="{title:h}" style="border:1px solid #000;" onclick="selectCheck(this.parentNode)" />
+					<p class="template" style="font-weight:bold"><input type="radio" name="template" value="{title:h}" checked="checked" onclick="selectCheck(this.parentNode.parentNode)" /><br />{desc:h}</p>
+				</td>
+				<!-- END active_template_cell -->
+
+				<!-- BEGIN empty_template_cell -->
+				<td></td>
+				<!-- END empty_template_cell -->
+
+				<!-- END template_cell -->
+			</tr>
+			<!-- END template_row -->
+		</table>
+		</fieldset>
+		<fieldset><legend>Align</legend>
+		<table class="templateChoose">
+			<tr>
+				<!-- BEGIN vertical_active -->
+				<td style="text-align:center">
+					<img src="portal/images/template_layout_horizontal_en.png" alt="horizontal" title="horizontal" style="border:1px solid #999" onclick="selectCheck(this.parentNode)" />
+					<p style="margin-top:0.3em"><input type="radio" name="align" value="h" onclick="selectCheck(this.parentNode.parentNode)" />horizontal</p>
+				</td>
+				<td style="text-align:center">
+					<img src="portal/images/template_layout_vertical_en.png" alt="vertical" title="vertical" style="border:1px solid #000" onclick="selectCheck(this.parentNode)" />
+					<p style="margin:0.3em"><input type="radio" name="align" value="v" checked="checked" onclick="selectCheck(this.parentNode.parentNode)" />vertical</p>
+				</td>
+				<!-- END vertical_active -->
+				<!-- BEGIN horizontal_active -->
+				<td style="text-align:center">
+					<img src="portal/images/template_layout_horizontal_en.png" alt="horizontal" title="horizontal" style="border:1px solid #000" onclick="selectCheck(this.parentNode)" />
+					<p style="margin-top:0.3em"><input type="radio" name="align" value="h" checked="checked" onclick="selectCheck(this.parentNode.parentNode)" />horizontal</p>
+				</td>
+				<td style="text-align:center">
+					<img src="portal/images/template_layout_vertical_en.png" alt="vertical" title="vertical" style="border:1px solid #999" onclick="selectCheck(this.parentNode)" />
+					<p style="margin:0.3em"><input type="radio" name="align" value="v" onclick="selectCheck(this.parentNode.parentNode)" />vertical</p>
+				</td>
+				<!-- END horizontal_active -->
+				<!-- BEGIN nothing_active -->
+				<td style="text-align:center">
+					<img src="portal/images/template_layout_horizontal_en.png" alt="horizontal" title="horizontal" style="border:1px solid #999" onclick="selectCheck(this.parentNode)" />
+					<p style="margin-top:0.3em"><input type="radio" name="align" value="h" onclick="selectCheck(this.parentNode.parentNode)" />horizontal</p>
+				</td>
+				<td style="text-align:center">
+					<img src="portal/images/template_layout_vertical_en.png" alt="vertical" title="vertical" style="border:1px solid #999" onclick="selectCheck(this.parentNode)" />
+					<p style="margin:0.3em"><input type="radio" name="align" value="v" onclick="selectCheck(this.parentNode.parentNode)" />vertical</p>
+				</td>
+				<!-- END nothing_active -->
+			</tr>
+		</table>
+		</fieldset>
+		<fieldset><legend>Number of columns for answers</legend>
+		<input type="text" class="Text" name="column" value="{column}" />
+		</fieldset>
+		<input type="submit" class="Button" name="save" value="func_T(buttons.save)" />
+		<input type="submit" class="Button" name="baseTemp" value="Use default template" />
+	</form>
+</div>

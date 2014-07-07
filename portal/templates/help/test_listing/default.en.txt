@@ -1,0 +1,32 @@
+On this page you can:
+
+* register a new user account,
+* log in using your previously registered account,
+* request that your password be changed in case you have forgotten it, or
+* participate in tests.
+
+### Account registration and login
+#### Register a new account
+If you are not registered as a user yet and therefore have no account login data, click on "Register".
+
+#### Log in using username and password
+In case you already have a username and password, you can enter those in the corresponding text fields and click on "Login" to use your account.
+
+#### Entering a TAN
+If you have been assigned a TAN (transaction number), enter it into the corresponding text field and click on the adjacent "Submit" button.
+You can then start a test run or view an old feedback.
+
+#### Forgot your password?
+If you have forgotten your password you can use the link "Forgot login-data?" in order to get an email which contains your user name and allows you to change the password.
+
+### Start tests
+#### Test overview
+On the test overview page you are shown a list of tests that you may participate in. Some tests may not show up unless you are logged in. If you are not logged in, only those tests that you may participate in anonymously will be shown. If you participate anonymously, you can not review the evaluation of your results at a later point.
+
+Tests that require a TAN are not shown in this list; to participate in them, just enter the TAN as explained above.
+
+#### Start tests
+By clicking on a test, it will be started. Some tests have been divided into several sub-tests, in which case you will be directed to an overview page listing those sub-tests which you can click on separately to start them, and offering the possibility to view the evaluation of your results if this is applicable and you have completed all required sub-tests.
+
+#### Continue test and review evaluation
+If you want to stop participating in a test and continue at a later time, you must either log in using your username and password or enter the TAN you have been given. After you have aborted a test, you can resume where you left off by entering your credentials again (and, in the case of using your username and password, selecting the test again and choosing "Continue test run"). To review your evaluation, follow the same step (choosing "View feedback" as the last step if you used your account data to log in).

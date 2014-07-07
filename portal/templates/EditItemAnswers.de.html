@@ -1,0 +1,42 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<!-- INCLUDE EditPublishedHeader.html -->
+	<!-- INCLUDE EditNodeHeader.html -->
+	
+	<!-- BEGIN explain_mcsa_header_item -->
+	Die Antworten für dieses Item werden gewöhnlich auf Block Level gesetzt. Wenn Sie die Antworten hier auf Item Level ändern, dann werden die Antworten individuell und das Item wird nicht mehr zusammen mit den anderen Items in einer Matrix dargestellt.
+	<p></p>
+	<!-- END explain_mcsa_header_item -->
+	
+	<ul id="paragraphs">{paragraphs}</ul>
+	<!-- BEGIN para_add_button -->
+	<div id="para_add_button"><button type="button" onclick="addParagraph('{add_link:h}');this.blur();">Antwort hinzufügen</button></div>
+	<!-- END para_add_button -->
+	
+	<!-- BEGIN take_over_button -->
+	<p></p>
+	<a class="Button" href="func_pagelink(item, confirm_take_over_standard_answers, working_path: {working_path}, item_id: {item_id})">
+	Standardantworten übernehmen</a>
+	<!-- END take_over_button -->
+
+	<!-- BEGIN edit_button -->
+	<a class="Button" href="func_pagelink(item, edit_answers, working_path: {working_path}, item_id: {item_id}, answer_editable: {editable})">
+	Antworten bearbeiten</a>
+	<!-- END edit_button -->
+	
+	<div id="para_add_notice" class="HideAsyncNotice">Operation wird ausgeführt, bitte warten...</div>
+	<!-- BEGIN answer_validation -->
+	<form name="answer_validation_form" method="post" action="func_pagelink(item, save_answer_validation, working_path: {working_path}, item_id: {item_id})">
+		<p>
+			Überprüfung der Eingabe bei Textfeldern:
+			<select name="answer_validation_pattern">
+				<!-- BEGIN answer_validation_options -->
+				<option value="{resVal}"{select}>{resDesc}</option>
+				<!-- END answer_validation_options -->
+			</select>
+		</p>
+		<input class="Button" type="submit" value="Speichern" />
+	</form>
+	<!-- END answer_validation -->
+</div>
+<script src="portal/js/feedback_page.js" type="text/javascript"></script>

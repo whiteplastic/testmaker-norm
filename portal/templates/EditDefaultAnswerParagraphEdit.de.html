@@ -1,0 +1,18 @@
+<li id="para_{id}" class="para">
+	<form id="para_{id}_form" name="para_{id}_form">
+	<div class="contents">
+	<table>
+		<tr>
+			<td>{para_contents}</td>
+		</tr>
+	</table>
+	</div>
+
+	<div>
+		<button type="button" onclick="sendParagraph('para_{id}', true, '{link}');">Speichern</button>
+		<button type="button" onclick="sendParagraph('para_{id}', false, '{link}');">Abbrechen</button>
+	</div>
+	<div id="para_{id}_notice" class="HideAsyncNotice">Operation wird ausgeführt, bitte warten...</div>
+	</form>
+</li>
+

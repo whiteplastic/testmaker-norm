@@ -1,0 +1,20 @@
+<li id="para_{para_id}" class="para">
+	<!-- BEGIN correctness -->
+	<span style="float:right" class="Disabled">  Correct: <input type="checkbox" id="check_correctness" name="is_true" value="1" disabled="disabled" {para_checked}/></span>
+	<!-- END correctness -->
+
+	<div class="contents<!-- BEGIN para_disabled --> disabled<!-- END para_disabled -->">{para_contents}</div>				
+
+	<!-- BEGIN para_may_edit -->
+	<div class="_para_action_buttons">
+		<button type="button" onclick="editParagraph('para_{para_id}', '{edit_link}');" title="Edit: func_T(pages.testrun.export.field.answer_id.title): {para_id}; func_T(pages.testrun.export.field.answer_number.title): {para_pos}"><img src="portal/images/icon_edit.png" alt="Bearbeiten" /></button>
+		<button type="button" onclick="delParagraph('para_{para_id}');" title="Löschen"><img src="portal/images/icon_delete.png" alt="Löschen" /></button>
+		<div id="para_{para_id}_delete" style="display:none;">
+			Really delete?
+			<input class="Button" type="button" onclick="doDelParagraph('para_{para_id}', '{del_link}' );" value="Yes" />
+			<input class="Button" type="button" onclick="cancelDelParagraph('para_{para_id}');" value="No" />
+		</div>
+	</div>
+	<div id="para_{para_id}_notice" class="HideAsyncNotice">Operation in progress, please wait...</div>
+	<!-- END para_may_edit -->
+</li>

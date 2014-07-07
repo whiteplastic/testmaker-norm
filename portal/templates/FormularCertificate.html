@@ -1,0 +1,89 @@
+<!-- BEGIN Formular -->
+<script type="text/javascript">
+	function showreg()
+	{
+			document.getElementById('becomeUserCheck').value = '1';
+			document.getElementById('prereg').style.display = 'none';
+			document.getElementById('noregheader').style.display = 'none';
+			document.getElementById('reg').style.display = "block";
+			document.getElementById('wantreg1').style.display = "block";
+			document.getElementById('wantreg2').style.display = "block";
+			document.getElementById('wantreg3').style.display = "block";
+			document.getElementById('wantreg4').style.display = "inline ";
+	}
+</script>
+<div style="text-align: left;">
+	<!-- BEGIN becomeUser -->
+	<div id="prereg" {display2}>
+		<p><strong>Create certificate</strong></p>
+		You now have the chance to register an account, this has various advantages:
+		<ul>
+			<li>You can download your certificate at any time again</li>
+			<li>You can view your feedback at any time again</li>
+			<li>If your participate in multiple tests, you can access them all with one account</li>
+		</ul>
+	<!-- BEGIN pp_check -->
+	More in our <a href="index.php" onclick="window.open('index.php?page=show_privacy_policy&amp;action=show_privacy_popup&amp;info=none&amp;version={ppversion:h}', 'page_help_'+((new Date()).getTime()), 'width=600,height=540,left='+Math.round((screen.width-600)/2)+',top='+Math.round((screen.height-540)/2)+',scrollbars=yes,status=yes,toolbar=yes,resizable=yes'); return false">privacy policy</a>.
+	<!-- END pp_check -->
+	<p>
+		<input size="19" class="Button" onclick="showreg()" value="Continue registration"> &nbsp;&nbsp;&nbsp;
+		<input size="27" class="Button" onclick="javascript: document.getElementById('reg').style.display = 'block'; document.getElementById('prereg').style.display = 'none';" value="Continue without registration">		
+	</p>
+	</div>
+	<div id="reg" {display3} style="display: {display}">
+		<div id="wantreg1" style="display: {display}">
+			<p><strong>Registration</strong></p>
+		    <p>Please enter all needed data. Please check this data carefully a change of name or birthday at a later point in time is not possible.</p>
+		</div>
+		<div id="noregheader" {display4}>
+			<p><strong>One time certificate download</strong></p>
+			<p>Please enter you name and birthday. The certificate will only be issued once, so please check your data carefully.
+			</p>
+			<p>No personal data will be saved and it will not be possible to download or print the certificate again.
+			</p>
+		</div>
+		<form name="form" method="post" action="func_pagelink(pdf_generator, create_mw_certificate, working_path: {working_path}, block_id: {blockId}, test_run_id: {test_run_id}, from_form: 1)">
+		<input name="tr_return_id" type="hidden" value="{tr_return_id:h}">
+		<input name="emailCheck" type="hidden" value="0">
+		<input id="becomeUserCheck" name="becomeUserCheck" type="hidden" value="{become_checked}">
+		<ul>
+			<div class="certForm1<!-- BEGIN correction_fullname --> correction<!-- END correction_fullname -->">full name<br/>(first- and last):</div>
+			<div class="certForm2"><input name="name" type="text" size="32" maxlength="48" value="{name:h}"></div><br/>
+
+			<div class="certForm1<!-- BEGIN correction_birthday --> correction<!-- END correction_birthday -->">birthday:</div>
+			<div class="certForm2"><input name="birthday" type="text" size="32" maxlength="48" value="{birthday:h}"> (dd.mm.yyyy)</div><br/>
+			
+			<div id="wantreg2" style="display: {display}">
+				<div class="certForm1<!-- BEGIN correction_username --> correction<!-- END correction_username -->">user name:</div>
+				<div class="certForm2"><input name="username" type="text" size="32" maxlength="48" value="{username:h}"></div><br/>
+
+				<div class="certForm1<!-- BEGIN correction_password --> correction<!-- END correction_password -->">password:</div>
+				<div class="certForm2"><input name="password" type="password" size="32" maxlength="48" value="{password:h}"></div><br/>
+
+				<div class="certForm1<!-- BEGIN correction_password_control --> correction<!-- END correction_password_control -->">password validation:</div>
+				<div class="certForm2"><input name="confPassword" type="password" size="32" maxlength="48" value="{confPassword:h}"></div><br/>
+			</div>
+			
+			<div class="certForm1<!-- BEGIN correction_email --> correction<!-- END correction_email -->">email:</div>
+			<div class="certForm2"><input name="email" type="text" size="32" maxlength="48" value="{email:h}"> * if you enter your email you will receive an email with your certificate.</div><br/>
+		</ul>
+		<div id="wantreg3" style="display: {display}">
+			<p>To continue the registration you will be logged our and your tan will no longer be valid. A confirmation email will be send to your email account.
+			Please confirm your registration within 7 days. After that you can log in and download your certificate.
+			</p>
+			<!-- BEGIN pp_check2 -->
+			<div><input type="checkbox" name="ppcheck" value="1"> I acceppt the <a href="index.php" onclick="window.open('index.php?page=show_privacy_policy&amp;action=show_privacy_popup&amp;info=none&amp;version={ppversion:h}', 'page_help_'+((new Date()).getTime()), 'width=600,height=540,left='+Math.round((screen.width-600)/2)+',top='+Math.round((screen.height-540)/2)+',scrollbars=yes,status=yes,toolbar=yes,resizable=yes'); return false">privacy policy</a>.</div>
+			<!-- END pp_check2 -->
+		</div>
+		<p><strong>Please check this data carefully a change of name or birthday at a later point in time is not possible.</strong></p>
+		<input class="Button" type="submit">
+		<input class="Button" type="reset">
+		</form>
+	</div>
+	<!-- END becomeUser -->
+
+	<!-- BEGIN isUser -->
+
+	<!-- END isUser -->
+</div>
+<!-- END Formular -->

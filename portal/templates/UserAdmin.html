@@ -1,0 +1,44 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.user_admin.list_users.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- BEGIN search_user -->
+<form method="post" action="func_pagelink(user_admin)">
+<div>
+	<select size="1" name="searchfield">
+	    <option value="username" {username_selected}>Username</option>
+		<option value="uid" {uid_selected}>UserID</option>
+        <option value="fullname" {fullname_selected}>Full Name</option>
+        <option value="email" {email_selected}>E-Mail</option>
+	</select>
+<input type="text" class="Text" name="usersearch" id="form_list_username" value="{usersearch:h}" />
+
+<label for="form_list_groupname">Group:</label>
+<select size="1" name="groupsearch" id="form_list_groupname">
+<!-- BEGIN group_list -->
+	<option value="{groupid:h}">{groupname:h}</option>
+<!-- END group_list -->
+</select>
+<input type="submit" class="Button" value="Search" />
+</div>
+</form>
+
+<table class="Both">
+	<tr>
+		<th>UserID</th><th>Username:</th><th>Groups:</th><th>Fullname:</th><th>Creation Date:</th><th colspan="2">Options:</th><th>(De-)activate:</th>
+	</tr>
+<!-- BEGIN user_list -->
+	<tr class="{key:h}">
+		<td>{userid:h}</td>
+		<td>{username:h}</td>
+		<td>{group:h}</td>
+		<td>{fullname:h}</td>
+		<td>{createdate:h}</td>
+		<td><form method="post" action="func_pagelink(user_admin, edit_user, id: {userid})"><div><input type="submit" class="Button" name="do_edit" value="Edit" /></div></form></td>
+		<td><form method="post" action="func_pagelink(user_admin, delete_user, id: {userid})"><div><input type="submit" class="Button" name="do_delete" value="Delete" onclick="return confirm('Do you really want to delete the user &quot;{username:h}&quot;? This cannot be undone!');" /></div></form></td>
+		<td><form method="post" action="func_pagelink(user_admin, {option}, id: {userid})"><div><button type="submit" name="handle" value="{option}">{activate:h}</button></div></form></td>
+	</tr>
+<!-- END user_list -->
+</table>
+<!-- END search_user -->
+<!-- INCLUDE PageSelector.html -->
+</div>

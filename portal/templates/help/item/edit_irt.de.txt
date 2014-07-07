@@ -1,0 +1,18 @@
+Auf dieser Seite können Sie Itemkennwerte - genauer Trennschärfe, Schwierigkeit und Ratewahrscheinlichkeit - festlegen. Eine automatische Kalibirierung der Items nimmt der testMaker nicht vor.
+
+### Item-Response-Theorie
+Zu jedem Item können Sie IRT-Itemkennwerte (Trennschärfe, Schwierigkeit und Ratewahrscheinlichkeit) eingeben. Dies ist auch dann möglich, wenn die Items 
+sequentiell vorgegeben werden sollen. testMaker unterstützt 1-PL (Rasch, Verwendung von Itemschwierigkeit), 2-PL (Birnbaum, Verwendung von Itemschwierigkeit und Trennschärfe) 
+und 3-PL-Modelle (Verwendung von Itemschwierigkeit, Trennschärfe und Ratewahrscheinlichkeit). Möchten Sie das 2-PL-Modell verwenden, können Sie die Itemratewahrscheinlichkeit auf 0 stellen. 
+Möchten Sie das 1-PL-Modell verwenden, können Sie zudem die Trennschärfe auf 1 fixieren.
+
+Eine weitere Einführung in die Item-Response-Theorie bietet das Buch:
+
+<i>Rost, J. (2004). Lehrbuch - Testtheorie und Testkonstruktion (2. Aufl.). Bern: Hans Huber.</i>
+
+### Adaptiver Algorithmus
+Leistungstests können sowohl nicht-adaptiv (also sequentiell) als auch adaptiv vorgegeben werden, so dass kurzweilige, effiziente Verfahren entwickelt 
+werden können, die sich an die Leistungsfähigkeit der Probanden orientieren. Voraussetzung dabei ist die Verwendung der IRT.
+Die Personenparameterschätzung erfolgt dabei mit EAP (Bock & Mislevy, 1982). 
+
+<i>Bock, R. D. & Mislevy, R. J. (1982). Adaptive EAP estimation of ability in a microcomputer environment. Applied Psychological Measurement, 6 (4), 431-444.</i>

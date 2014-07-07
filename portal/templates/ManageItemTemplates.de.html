@@ -1,0 +1,49 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.item_template_management.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<p></p>
+
+	<fieldset>
+		<legend>Item-Template&nbsp;hochladen</legend>
+		<form name="uploadTemplate" method="post" action="func_pagelink(item_template_management, upload_template)" enctype="multipart/form-data">
+			<table style="width:300px;height:70px">
+				<tr>
+					<td style="width:50;white-space:nowrap"><nobr>PHP-Datei:</nobr></td>
+					<td><input name="uploadPhpFile" type="file" size="50" maxlength="100000" accept="text/php" /></td>
+				</tr>
+				<tr>
+					<td>HTML-Datei:</td>
+					<td><input name="uploadHtmlFile" type="file" size="50" maxlength="100000" accept="text/html" /></td>
+				</tr>
+				<tr>
+					<td>Vorschau&nbsp;Bild:</td>
+					<td><input name="uploadImageFile" type="file" size="50" maxlength="100000" accept="image/*" /></td>
+				</tr>
+
+				<tr>
+					<td>
+						<input name="submit" class="Button" type="submit" value="func_T(buttons.save)" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+	<br />
+	<fieldset>
+		<legend>Item-Templates</legend>
+		<!-- BEGIN template_list -->
+		<div class="ItemTemplate">
+			<img class="ItemTemplateImage" src="{previewimage:h}"/>
+			<div class="ItemTemplateDescription"><font style="font-weight:bold">{templatename:h}</font><br /><font style="font-style: italic">{description_de:h}<br />{description_en:h}</font>
+			</div>
+			<!-- BEGIN delete_template -->
+			<div class="ItemTemplateDelete">
+				<form name="templateList" method="post" action="func_pagelink(item_template_management, delete_template, name: {templatename})">
+					<input type="submit" class="Button" name="do_delete" value="L&ouml;schen" onclick="confirm('Wollen Sie das Template &quot;{templatename:h}&quot; wirklich löschen? Dieser Vorgang kann später nicht rückgängig gemacht werden!');" />
+				</form>
+			</div>
+			<!-- END delete_template -->
+		</div>
+		<!-- END template_list -->
+	</fieldset>
+</div>

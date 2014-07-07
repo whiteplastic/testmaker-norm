@@ -1,0 +1,5 @@
+Items können in Abhängigkeit von vorigen Antworten dargeboten werden. Sind keine <b>vollständigen</b> Bedingungen eingetragen, so wird das Item auf jeden Fall angezeigt. Vollständige Bedingungen sind erkennbar an dem grünen Häkchen. Der Plus-Button hinter jeder Bedingung fügt eine Kopie der zugehörigen Bedingung hinter ihr ein, der Minus-Button löscht die Bedingung.
+
+Bedingungen können sich nur auf Items beziehen, die vor dem aktuellen Item liegen. Dadurch nicht in Frage kommende Items werden daher nicht angezeigt, weshalb die Liste der Items manchmal leer ist, obwohl ein Itemblock eigentlich Items enthält. Die Liste der Antworten ist leer, wenn das zugehörige Item keine Antworten enthält.
+
+Die Liste der Items in einem Itemblock und der Antworten eines Items wird bei Bedarf im Hintergrund nachgeladen. Hierdurch kann es zu kleinen Verzögerungen kommen.

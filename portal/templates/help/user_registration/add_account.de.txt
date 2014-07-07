@@ -1,0 +1,4 @@
+###Registrieren
+Bei manchen Tests ist es erforderlich, sich zu registrieren, um den Test durchführen zu können. Geben Sie hier einen Benutzernamen und ein mindestens 6-stelliges Passwort ein, das Sie sich gut merken können. Außerdem geben Sie bitte noch Ihren vollständigen Namen (Vorname, Nachname) und Ihre E-Mail-Adresse an. Zum Schluss wählen Sie noch die gewünschte Menüsprache (Deutsch, Englisch). Alle Daten können Sie, sobald sie sich eingeloggt haben, unter "Benutzer-Details" noch verändern.
+
+Wenn Sie den Aktionsbutton "Registrieren" anklicken, erhalten Sie eine E-Mail mit einem Bestätigungs-Link an die von Ihnen angegebene E-Mail-Adresse. Bitte betätigen Sie den Link innerhalb der folgenden 7 Tage, da sonst Ihre Registrierung gelöscht wird.

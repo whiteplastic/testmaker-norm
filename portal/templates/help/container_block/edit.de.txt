@@ -1,0 +1,72 @@
+###Orientierung
+Sie befinden sich in einem bereits angelegten Test/Subtest des testMakers. Sie haben also bereits einen Test/Subtest angelegt und können diesen nun mit Inhalten füllen. Dazu gehört das Anlegen von Items, Textseiten (z.B. Instruktionen) und Feedbackblöcken, die es Ihnen ermöglichen, Ihren Testpersonen im direkten Anschluss an die Testung eine individuelle Rückmeldung zu geben.
+
+Auf der linken Seite befindet sich das Navigationsmenü. Dieses besteht aus 3 Bereichen:
+ 
+* Auswahlliste der Administrationsbereiche
+* Navigation zur Testerstellung
+* Aktionsbuttons
+
+Allgemeine Informationen zu den Administrationsbereichen und zur Navigation der Testerstellung erhalten Sie in der [Hilfefunktion der Startseite](func_helplink(admin_start, start)).
+
+Im rechten Bereich des Bildschirms werden die Einstellmöglichkeiten (Karteireiter) des aktiven Tests/Subtests angezeigt. Hier finden Sie:
+
+* Allgemein
+* Struktur
+* Stil
+* Vorschau
+* Kopieren / Verschieben
+* Veröffentlichung
+* Rechte
+* Test löschen
+* Verlauf
+
+
+###Aktionsbuttons
+Untern links auf dem Bildschirm werden alle zu diesem Zeitpunkt möglichen Aktionen zur Erweiterung des Tests/Subtests über blaue Buttons angeboten.
+####Neuen Subtest anlegen
+Durch Klicken auf diesen Aktionsbutton, der nur auf der Testebene vorhanden ist, erstellen Sie einen neuen Subtest. Dies ist nur dann notwendig, wenn ein Test erstellt weden soll, der aus mehreren komplett getrennten Elementen besteht.
+####Item einfügen
+Dieser Aktionsbutton ermöglicht es Ihnen, ein neues Item anzulegen. Wenn Sie den Button auf Test-/Subtestebene anklicken, wird automatisch ein Itemblock erstellt, in dem Sie dann das Item weiter bearbeiten können. Items können nicht als Einzelelemente bestehen, sondern sind immer zu einem Itemblock zusammengefasst.
+####Textseite einfügen
+Klicken Sie diesen Button, um eine Textseite anzulegen. So können Instruktionen oder Übergänge zwischen verschiedenen Elementen eingefügt werden. Auch hier wird automatisch ein Textblock angelegt. Textseiten können nicht als Einzelelemente bestehen, sondern nur im Rahmen eines Textblocks. 
+####Feedbackblock einfügen
+Die Feedbackblöcke dienen der Auswertung des Tests und ermöglichen ein direktes Feedback im Anschluss an die Testdurchführung. Hier können unterschiedliche Dimensionen und Bedingungen festgelegt werden, so dass jeder Testteilnehmer sein individuelles Feedback erhält.
+
+###Karteireiter eines Tests/Subtests
+####Allgemein
+Hier haben Sie die Möglichkeit, einen Namen und eine Beschreibung des Tests einzufügen. Unter "Titel" können Sie den Test/Subtest umbenennen. Geben Sie dazu den gewünschten Titel in das Textfeld ein und klicken Sie auf "Speichern". Bei der Beschreibung gehen Sie ebenso vor.
+
+Darunter erhalten Sie Informationen zu Status, Autor und Erstelldatum des Tests. Der Status, also der Test-Zugriff, lässt sich unter dem Reiter "Rechte" verändern. Der Test wird als "veröffentlicht" markiert, sobald eine Gruppe, abgesehen von den Spezialgruppen, auf den Test zugreifen kann. Weitere Erläuterungen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(any, edit_perms)) im Abschnitt "Spezialgruppen". 
+
+Auf Testebene können Sie die Sprache wählen. Die Elemente, die vom System vorgegeben sind und dem Testteilnehmer dargeboten werden (z.B. "Weiter"-Button), erscheinen dann in der hier ausgewählten Sprache. 
+
+Bitte vergessen Sie nicht, in Anschluss an Ihre Änderungen den Button "Speichern" anzuklicken, da sonst die Änderungen nicht wirksam werden.
+
+
+####Struktur
+Hier können Sie die Reihenfolge der Darbietung der einzelnen Elemente festlegen. Diese Funktion ist nur auf Testebene möglich.
+
+####Stil
+Der Reiter "Stil" gibt Ihnen die Möglichkeit, dem Test ein besonderes Layout zu geben. Sie können diesen Reiter nur auf der Testebene auswählen. Es ist also nicht möglich, für jeden einzelnen Subtest ein Layout zu wählen.
+
+####Vorschau
+Wenn Sie die Vorschau starten, wird der Test aufgerufen und kann bearbeitet werden. Die dazugehörigen Daten, d.h. die Antworten werden gespeichert.
+
+Für Subtests ist keine Vorschau möglich.
+
+
+####Kopieren / Verschieben
+Hier haben Sie die Möglichkeit, den kompletten Test/Subtest zu kopieren, verschieben oder zu verlinken.
+
+####Veröffentlichung
+Über den Karteireiter Veröffentlichung geben Sie Ihren Test für andere Benutzer frei.
+
+####Rechte
+Diese Funktion bietet Ihnen die Möglichkeit, den zuvor angelegten Benutzergruppen Rechte zuzuteilen.
+
+####Test löschen
+Auf diesem Reiter können Sie den gesamten Test/Subtest löschen.
+
+####Verlauf
+Im Verlauf wird dokumentiert, welche (größeren) Änderungen an einem Test vorgenommen wurden.

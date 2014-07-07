@@ -1,0 +1,4 @@
+###Login
+If you are already a registered user, you can login here by entering your username and password. You will then see your user interface.
+
+If you have forgotten your password you can use the link "Forgot login-data?" in order to get an email which contains your user name and allows you to change the password.

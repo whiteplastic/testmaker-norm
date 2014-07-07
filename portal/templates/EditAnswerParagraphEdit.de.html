@@ -1,0 +1,22 @@
+<li id="para_{id}" class="para">
+	<form id="para_{id}_form" name="para_{id}_form">
+	<div class="contents">
+	<table>
+		<tr>
+			<td>{para_contents}</td>
+			<td>Richtig: <input type="checkbox" name="is_true" value="1" {para_checked}/></td>
+			<!-- BEGIN correctness -->
+				<span style="float:right" class="Disabled">  Richtig: <input type="checkbox" name="is_true" value="1" disabled="disabled" {para_checked}/></span>
+			<!-- END correctness -->
+		</tr>
+	</table>
+	</div>
+
+	<div>
+		<input class="Button"  type="Button" onclick="sendParagraph('para_{id}', true, '{link}');" value="Speichern" />
+		<input class="Button"  type="Button" onclick="sendParagraph('para_{id}', false, '{link}');" value="Abbrechen" />
+	</div>
+	<div id="para_{id}_notice" class="HideAsyncNotice">Operation wird ausgeführt, bitte warten...</div>
+	</form>
+</li>
+

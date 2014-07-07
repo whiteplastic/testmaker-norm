@@ -1,0 +1,60 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.view_edit_logs.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+<h3>View editing logfile</h3>
+
+<p>
+	Here you can view log entries for various changes to administration matters and tests.</p>
+
+<form method="post" action="func_pagelink(view_edit_logs)">
+<table class="Vertical">
+	<tr>
+		<th>Username</th>
+		<td>
+			<input type="text" name="username" value="{username}" />
+			<div class="annotation">Leave this field blank to include actions by all users.</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Type of operation</th>
+		<td>
+			<select name="optype">
+				<option value=""{optype_any_checked}>All</option>
+<!-- BEGIN optypes -->
+				<option value="{optype_id}"{optype_checked}>{optype_desc}</option>
+<!-- END optypes -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input class="Button" type="submit" value="Apply filters" /></td>
+	</tr>
+</table>
+</form>
+
+<!-- INCLUDE PageSelector.html -->
+
+<table class="BorderedLayout">
+	<tr><th>Time</th><th>Operation</th><th>Target</th><th>User</th><th>Details</th></tr>
+	<!-- BEGIN log_row -->
+	<tr>
+		<td>{log_time}</td>
+		<td>{log_op}</td>
+		<td>{log_target}</td>
+		<td>{log_user}</td>
+		<td style="text-align:left;"><!-- BEGIN log_details_delete -->
+			Old Titel: {log_delete_title}<br />
+			Old Block: {log_delete_link}
+		<!-- END log_details_delete -->
+		{log_details}
+		</td>
+	</tr>
+	<!-- END log_row -->
+	<!-- BEGIN no_log_rows -->
+	<tr><td colspan="5">No entries were found.</td></tr>
+	<!-- END no_log_rows -->
+</table>
+
+</div>

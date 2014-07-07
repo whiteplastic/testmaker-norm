@@ -1,0 +1,97 @@
+<div style="padding-left:15px"><li><h4>Delete accounts 
+</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- BEGIN search_user -->
+<p>
+You can delete old accounts here. Before the selected accounts can be
+deleted, the concerned users are informed via email. They can reconfirm
+their account within two weeks following a link. In this time they are in
+the queue for being deleted. If the users do not answer within this time
+the account can be finally deleted by an administrator.
+</p>
+
+<form method="post" action="func_pagelink(user_delete)">
+<div>
+
+<label for="form_list_date">Last login before:</label>
+<input type="text" class="Text" name="date" id="form_list_date" value="{date:h}" />
+
+<label for="form_list_groupname">Group:</label>
+<select size="1" name="groupsearch" id="form_list_groupname">
+<!-- BEGIN group_list -->
+	<option value="{groupid:h}">{groupname:h}</option>
+<!-- END group_list -->
+</select>
+<input type="submit" class="Button" value="Filter" />
+</div>
+</form>
+
+
+
+<table class="Both">
+	<tr>
+		<th>UserID</th><th>Username:</th><th>Groups:</th><th>Fullname:</th><th>Creation Date:</th></th><th>Last login:</th>
+	</tr>
+<!-- BEGIN user_list -->
+	<tr class="{key:h}">
+		<td>{userid:h}</td>
+		<td>{username:h}</td>
+		<td>{group:h}</td>
+		<td>{fullname:h}</td>
+		<td>{createdate:h}</td>
+		<td>{lastlogin:h}</td>
+	</tr>
+<!-- END user_list -->
+
+</table>
+<!-- END search_user -->
+
+<!-- INCLUDE PageSelector.html -->
+
+<!-- BEGIN users_in_queue -->
+<table class="Both">
+<tr><br></tr>
+<tr>
+	<td colspan = 4>
+		<a class="Button" href="func_pagelink(user_delete, confirm_user_email)">Send mail</a>
+		(Send email for deleting account to selected users)
+	</td>
+</tr>
+<tr>
+	<td colspan = 3>
+		There are <b>{usersInQueue} users</b> in queue at the moment.
+	</td>
+</tr>
+</table>
+<!-- END users_in_queue -->
+
+<!-- BEGIN user_trash -->
+<table class="Both">
+<tr></tr>
+<tr>
+	<td colspan = 3>
+		From the queue are <b>{usersToDelete} ready</b> for final delete
+	</td>
+	<td colspan=2>
+		<a class="Button" href="func_pagelink(user_delete, users_delete_final)">Delete Users</a>
+	</td>
+</tr>
+</table>
+<!-- END user_trash -->
+
+<!-- BEGIN confirm_mail -->
+<table>
+<tr></tr>
+<tr>
+	<th colspan = 3>
+		You have {usersToMail} user selected for mail
+  	</th>
+	<th colspan=2>
+		<a class="Button" href="func_pagelink(user_delete, user_email)">Send mail</a>
+	</th>
+</tr>
+</table>
+<!-- END confirm_mail -->
+
+</div>

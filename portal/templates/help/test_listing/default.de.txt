@@ -1,0 +1,27 @@
+Auf dieser Seite können Sie sich als neuer Benutzer registrieren, als bereits registrierter Benutzer können Sie sich einloggen bzw. Ihr Passwort anfordern, falls Sie dieses vergessen haben, oder Tests starten.
+
+###Benutzerregistrierung
+#### Als neuer Benutzer registrieren
+Wenn Sie noch nicht als Benutzer registriert sind (d.h. keine Zugangsdaten haben) und Ihnen auch keine TAN zur Verfügung gestellt wurde,
+dann klicken Sie auf "Registrieren".
+
+#### Einloggen mit Benutzernamen und Passwort
+Falls Sie bereits über einen Benutzernamen und ein Passwort verfügen, tragen Sie diese in die entsprechenden Textfelder ein und klicken Sie auf "Einloggen", um sich im System anzumelden.
+
+#### TAN eingeben
+Falls Ihnen eine TAN bereitgestellt wurde, tragen Sie diese in das entsprechende Textfeld ein, und klicken Sie auf "Abschicken".
+Sie können dann einen Test durchführen oder sich eines Ihrer alten Feedbacks ansehen.
+
+#### Logindaten vergessen?
+Wenn Sie Ihr Passwort vergessen oder nicht zur Hand haben, können Sie sich unter "Logindaten Vergessen?" eine E-Mail zuschicken lassen, die ihren Nutzernamen enthält sowie es Ihnen ermöglicht, das Passwort abzuändern.
+
+###Tests starten
+####Testübersicht
+In der Testübersicht werden Ihnen alle Tests angezeigt, zu deren Durchführung Sie berechtigt wurden. Es kann also erforderlich sein, dass Sie sich erst mit Benutzernamen und Passwort oder mit einer TAN einloggen, um bestimmte Tests in der Testübersicht überhaupt sehen zu können.
+Wenn Sie dies noch nicht getan haben, werden Ihnen nur die Tests angezeigt, die anonym durchgeführt werden können.
+
+####Tests starten
+Durch Anklicken eines Tests wird dieser gestartet. Besteht der Test aus mehreren Subtests, gelangen Sie zunächst zur Übersicht der Subtests, die Sie durch Anklicken einzeln starten können. Auch Ihr Gesamtfeedback wird Ihnen in diesem Fall in der Übersicht über die Subtests angezeigt. Sie können dieses aber erst anklicken, wenn Sie den Test vollständig bearbeitet haben.
+
+####Test fortsetzen und Feedback noch einmal ansehen
+Wenn Sie einen Test unterbrechen und später fortsetzen möchten, ist es unbedingt erforderlich, dass Sie sich, bevor Sie den Test beginnen, mit Benutzernamen und Passwort oder mit einer TAN einloggen. Nach einer Unterbrechung können Sie durch erneute Eingabe Ihrer Zugangsdaten Ihren Test dort fortsetzen, wo Sie ihn abgebrochen haben, oder, falls Sie den Test bereits vollständig bearbeitet haben, Ihr Feedback noch einmal anschauen.

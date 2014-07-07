@@ -1,0 +1,28 @@
+### Einführung
+
+
+Wenn eine große Anzahl von E-Mails versendet werden soll, ist dies meistens mit Einschränkungen seitens des Hosting-Anbieters verbunden (beispielsweise limitierte Anzahl von E-Mails pro Minute/Stunde)
+Um dies zu umgehen, werden Aufträge (Jobs) erstellt, die durch ein Skript unter Einhaltung dieser Limits sequentiell abgearbeitet werden können.
+
+<b>Aufträge werden erst abgearbeitet (und damit E-Mails tatsächlich versandt), wenn das Cronjob-Script gestartet wurde.</b>
+
+Dieses kann entweder automatisch durch Cronjobs, oder manuell unter dem Reiter "Job Einstellungen" ausgeführt werden.
+ 
+
+### Übersicht
+Es wird der Status zu vorhandenen Aufträgen angezeigt. Ein Auftrag ist entweder in der Warteschlange, in Bearbeitung oder abgeschlossen.
+Der Fortschritt bezeichnet, wieviele der E-Mails bereits verschickt worden sind. 
+
+Durch Klick auf "Job Löschen" wird der gesamte Auftrag gelöscht. Ist der Auftrag bereits in Bearbeitung, können eventuell jedoch schon anteilig einige E-Mails verschickt worden sein.
+
+Derzeit ist der Versand von Einladungen zur Nachbefragung der einzige Job-Typ.
+
+Abgeschlossene Aufträge werden nach 3 Monaten automatisch gelöscht.
+
+
+### Einstellungen
+
+Die Löschzeit sowie die Limitierungen beim Versand können vom Administrator im Skript unter
+<i>/portal/cron/cronjob.php</i> eingestellt werden. Dort ist auch das Ausführungsprinzip näher dokumentiert.
+
+Standardmäßig liegen die Beschränkungen bei 300 Mails pro 10 Minuten.

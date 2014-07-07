@@ -1,0 +1,116 @@
+<!-- INCLUDE TabBar.html -->
+<script type="text/javascript">
+<!--
+	var counter = 0;
+	var maxCounter = -1;
+	var maxCounter2 = -1;
+	var inputValue = new Array(0);
+	var inputValue2 = new Array(0);
+
+	function saveValue(i, formValue) {
+		if(i > maxCounter) {
+			for(; maxCounter <= i; maxCounter++) {
+				inputValue.push('');
+			}
+		}
+		inputValue[i] = formValue;
+	}
+
+	function saveValue2(i, formValue) {
+		if(i > maxCounter2) {
+			for(; maxCounter2 <= i; maxCounter2++) {
+				inputValue2.push('');
+			}
+		}
+		inputValue2[i] = formValue;
+	}
+
+	function changeCount() {
+		var countValue = document.item.answerCount.value;
+		if(!countValue.match(/^\d+$/)) {
+			alert('Sie müsse eine gültige Zahl eingeben!');
+			document.item.answerCount.value = document.item.counter;
+		}
+		document.item.counter.value = document.item.answerCount.value;
+	}
+
+	function generateFormFields() {
+		var inputCounter = parseInt(document.item.answerCount.value);
+
+		var formFields = "";
+		if(inputCounter > 0) {
+			formFields += '<thead><tr><th>No.<\/th><th>richtig<\/th><th colspan="2">Antwort<\/th><\/tr><\/thead>';
+		}
+		for(var i = 0; i < inputCounter; i++) {
+			formFields +=
+				'<tr>' +
+				'<td style="white-space: nowrap;">neue Antwort ' + (i + 1) + ':<\/td>';
+			if((i <= maxCounter) && (i < counter) && inputValue2[i]) {
+				formFields += '<td><input type="checkbox" name="new_answers_correct[' + i + ']" onchange="saveValue2(' + i + ', this.value);" checked="checked" /><\/td>';
+			} else {
+				formFields += '<td><input type="checkbox" name="new_answers_correct[' + i + ']" onchange="saveValue2(' + i + ', this.value);" /><\/td>';
+			}
+			if((i <= maxCounter) && (i < counter)) {
+				formFields += '<td colspan="2"><textarea name="new_answers[' + i + ']" rows="3" cols="50" onchange="saveValue(' + i + ', this.value);">' + inputValue[i] + '<\/textarea><\/td>';
+			} else {
+				formFields += '<td colspan="2"><textarea name="new_answers[' + i + ']" rows="3" cols="50" onchange="saveValue(' + i + ', this.value);"><\/textarea><\/td>';
+			}
+			formFields += '<\/tr>';
+		}
+		counter = inputCounter;
+		document.getElementById('additionalAnswers').innerHTML = formFields;
+	}
+//-->
+</script>
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+<!-- INCLUDE EditPublishedHeader.html -->
+	<form method="post" action="func_pagelink(item, save, working_path: {working_path}, item_id: {item_id}, revert: true)" name="item">
+		<input type="hidden" name="counter" value="0" />
+		<table>
+			<tr<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>
+				<td>func_T(forms.title)</td>
+				<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+			</tr>
+			<tr<!-- BEGIN correction_question --> class="correction"<!-- END correction_question -->>
+				<td>func_T(forms.item.question)</td>
+				<td>
+					{question}
+				</td>
+			</tr>
+			<tr>
+				<td>Antwort nötig</td>
+				<td><input type="checkbox" name="answer_force" value="true"<!-- BEGIN answer_force_checked --> checked="checked"<!-- END answer_force_checked --><!-- BEGIN answer_force_disabled --> disabled="disabled"<!-- END answer_force_disabled --> /></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.last_modified)</td>
+				<td>{t_modified:datetime}</td>
+			</tr>
+			<tr>
+				<td>func_T(forms.created)</td>
+				<td>{t_created:datetime}</td>
+			</tr>
+		</table>
+		<!-- BEGIN form_submit_button -->
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+		<!-- END form_submit_button -->
+		
+	</form>
+	<!-- BEGIN reactivate -->
+	<p>
+		<form method="post" action="func_pagelink(item, enable, working_path: {working_path}, item_id: {item_id}, revert: true)" name="item">
+			<input class="Button" type="submit" name="enable" value="Item reaktivieren" />
+		</form>
+	</p>
+	<!-- END reactivate -->
+	<p>
+		Sie können folgende Sonderbefehle im Fragenteil verwenden.
+		<ul>
+			<li>
+				<code>{field&#58;input}</code> wird durch ein Texteingabefeld ersetzt.
+				Wird der Sonderbefehl nicht genutzt, wird das Texteingabefeld automatisch am Ende der Zeile eingefügt.<br />
+				Dieser Sonderbefehl funktioniert nur beim Template &#34;{template_desc:h}&#34;.
+			</li>
+		</ul>
+	</p>
+</div>

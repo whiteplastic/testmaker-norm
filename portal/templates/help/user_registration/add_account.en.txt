@@ -1,0 +1,4 @@
+###Register user
+For some test, it is neccessary to register to be able to take them. Please enter a username and a 6 or more digit password, which you can keep im mind easily. Furthermore you are asked to enter your full name (Prename, Surname) and your email address. Finally, you can choose a language for the test menue (English, German). As soon as you are logged in you can still change all details by choosing the option "user details". 
+
+When you press the button register, you will be sent an email with a confirmation link to the address you entered. You are asked to use the link during the following 7 days, otherwise the registration will be deleted.

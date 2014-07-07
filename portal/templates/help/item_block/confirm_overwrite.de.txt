@@ -1,0 +1,2 @@
+###Bestätigung für das Überschreiben von Eistellungen
+Sie haben unter dem Reiter Standard-Einstellungen mindestens einen Haken bei “Überschreiben” gesetzt und die Einstellungen mit "Speichern" bestätigt. Wenn Sie jetzt erneut auf "Überschreiben" klicken, werden die jeweiligen Einstellungen auch auf Items übernommen, bei denen diese Einstellung schon gesetzt ist.

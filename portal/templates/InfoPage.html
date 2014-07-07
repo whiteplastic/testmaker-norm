@@ -1,0 +1,25 @@
+<script type="text/javascript" language="javascript">
+<!--
+	submitted = false;
+
+	function resetSubmitted()
+	{
+		submitted = false;
+	}
+
+	storeStartTime();
+//-->
+</script>
+<form method="post" action="func_pagelink(test_make, process_answer, id: {id})" onsubmit="if (! submitted) { this.elements['duration'].value = getTimeNow()-getTimeStart(); submitted = true; window.setTimeout('resetSubmitted()', 5000); return true; } else { return false; }">
+	<div class="Question">
+		<input type="hidden" name="session_id" value="{session_id}" />
+		<input type="hidden" name="item_id" value="{item_id}" />
+		<input type="hidden" name="block_id" value="{block_id}" />
+		<input type="hidden" name="duration" value="-1" />
+		{info}
+	</div>
+
+	<div class="SendBar" style="margin-top:1em;">
+		<input type="submit" class="Button" name="do_continue" value="func_T(generic.continue)" />
+	</div>
+</form>

@@ -1,0 +1,10 @@
+###Identität wechseln
+Hier können Sie in den Account von einem anderen Benutzerkonto wechseln und seine Ansicht von testMaker simulieren.
+
+So können Sie genau nachvollziehen, wie bestimmte Dinge für andere Benutzer aussehen und dementsprechend mögliche Fehler erkennen und beheben.
+
+Um in eine anderes  Konto zu wechseln, geben Sie den Benutzernamen an. Lassen Sie den Benutzernamen leer, um zu einem Gastbenutzer zu wechseln.
+
+Klicken Sie anschließend auf "Benutzerkonto wechseln".
+
+

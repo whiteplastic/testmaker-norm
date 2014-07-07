@@ -1,0 +1,75 @@
+On this page you can define permissions for the various groups of test
+creators. This allows you to decide who can...
+
+* publish your tests (by setting the above permissions),
+* see your tests in the editor,
+* create new sub-blocks (such as sub-tests, item blocks, ...) within your
+  tests,
+* edit your tests in the editor,
+* delete your tests,
+* copy or move your blocks to another place or link them into other tests.
+
+Additionally, you can give other authors the opportunity to try out your test
+via the test overview, a direct link or TAN access without having to publish
+the test.
+
+Of course, all these operations are automatically available to you for your
+own tests, but other users (except administrators) will not even know that
+your test exists at all. If you want to share your test with co-workers or do
+collaborative work on it, you can assign the corresponding permissions on this
+page.
+
+The administrators may have restricted the authors' abilities to decide who
+may publish tests; in that case, please talk to the administrators if you want
+to publish your test.
+
+
+### User groups
+
+All users are part of a number of groups. The members and global permissions
+of each group are defined by the administators of this instance of testMaker.
+The administrators are responsible for maintaining this instance of testMaker
+and for this purpose, they also have implicit full permissions on everything.
+
+Generally, new groups are useful for giving only certain people access to your
+tests, or to restrict participation to certain people.
+
+Let's say that a team of test developers wants to work together on an
+assessment test. An administrator creates a new group (probably called
+"Assessment Developers") and assigns all members of the team to that group.
+Now, you can create a new test and give the group "Assessment Developers"
+permissions of your choice, which allows all members of the assessment team to
+make use of them.
+
+Since groups can only be managed by administrators, please talk to one of them
+if you need permissions for a group of people that isn't defined in testMaker.
+
+#### Why are groups of prospective test participants not listed here?
+
+For obvious reasons, test participants should not be able to modify your test
+or view information like which answers are correct for a given item. To this
+end, all you can do regarding these groups is publish tests for them in "Publication".
+
+#### Creators group
+
+This group usually contains all users who are allowed to create new tests, so
+you can assign permissions to this group to, for example, allow your fellow
+creators to use parts of your tests in their own.
+
+Your local testMaker administrators may be using a different set of groups to
+assign creation permissions; in that case, contact one of them to learn how
+you can share your tests with your co-workers.
+
+
+### Option "Apply these permissions to all subordinate blocks"
+
+This option is enabled by default and causes all permissions you set for tests
+to be applied to all subordinate blocks (sub-tests, item blocks etc.), including
+subordinate blocks you add after assigning these permissions.
+
+While it is possible to disable this option for selected tests, we do not
+recommend to do so; it is generally not necessary anyway.
+
+If you want to assign broader or stricter permissions to a specific subordinate block
+of your test, just go to that block's "permissions" tab where you can assign
+separate permissions after assigning the permissions for the rest of the test.

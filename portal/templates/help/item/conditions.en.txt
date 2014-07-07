@@ -1,0 +1,5 @@
+Items can be displayed depending on answers that were previously given. If there is no <b>complete</b> condition, the item will be displayed in any case. Complete conditions are marked with a green check. The plus button on the right of every condition inserts a copy of the related condition behind it, the minus button deletes the condition.
+
+Conditions can only relate to items that lie before the current item. Items that do not fullfill this requirement are not displayed, in which case the list of items will be empty, although the item block indeed contains items. The list of answers is empty if the related item does not contain any answers.
+
+The list of items in an item block and the list of answers for an item are loaded in the background if needed. This can result in small delays.

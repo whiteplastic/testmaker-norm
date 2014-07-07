@@ -1,0 +1,11 @@
+###Wartungsmodus
+Während der Wartungsmodus aktiviert ist, ist die Testteilnahme gesperrt. Anfragen werden auf eine Wartungsseite weitergeleitet, deren Inhalt Sie hier festlegen können. 
+
+Bitte beachten Sie, dass sich im Wartungsmodus nur Administratoren einloggen können.
+
+Je nach Bedarf können Sie den Wartungsmodus aktivieren oder deaktivieren. Klicken Sie dafür auf die bezeichneten Felder „aktivieren“/“deaktivieren“.
+
+Vergessen Sie nicht nach dem Bearbeiten des Textes oder nach der Umstellung zu speichern.
+
+
+

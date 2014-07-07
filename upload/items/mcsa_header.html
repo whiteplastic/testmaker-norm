@@ -1,0 +1,27 @@
+<!-- BEGIN header_block -->
+<table class="Border" cellspacing="3" style="width: 100%">
+	<tr class="Answers">
+		<td>&nbsp;</td>
+		<!-- BEGIN answers -->
+		<td class="HeaderAnswer" style="width: {answer_header_width}%; text-align: center;">{answer_header}</td>
+		<!-- END answers -->
+	</tr>
+	<!-- END header_block -->
+	<!-- BEGIN item_block -->
+	
+	<tr class="{odd_or_even} Question">
+		<td style="width: 40%" class="Border"><div class="{is_forced}">{question}</div></td>
+		<!-- BEGIN answer -->
+		<td onClick="getElementById('item_{aid}').checked=true" style="text-align: center; vertical-align: middle;" class="Border"><input type="radio" name="answer[{item_id}]" value="{aid}" id="item_{aid}" {aold}></td>
+		<!-- END answer -->
+	</tr>
+	<!-- END item_block -->
+<!-- BEGIN footer_block -->
+</table>
+<p></p>
+<!-- END footer_block -->
+<!-- BEGIN send_bar -->
+<div class="SendBar">
+	<input type="submit" class="AnswerButton" value="func_T(generic.submit)" />
+</div>
+<!-- END send_bar -->

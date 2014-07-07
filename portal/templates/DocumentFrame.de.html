@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Seite: {page_name}, Aktion: {action_name} -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+
+<head>
+	<title>{project_name}testMaker</title>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<link rel="stylesheet" type="text/css" href="portal/css/main.css" />
+<!-- BEGIN css_file --><link rel="stylesheet" type="text/css" href="{css_file}" /><!-- END css_file -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="portal/css/main_print.css" media="print"/>
+{head}
+	<script type="text/javascript" src="portal/js/external/prototype.js"></script>
+	<script type="text/javascript" src="portal/js/external/scriptaculous.js?load=builder,effects,dragdrop,controls,slider"></script>
+	<script type="text/javascript" src="portal/js/async.js"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="portal/js/main.js"></script>
+
+<div id="Header">
+
+
+	<a href="index.php"><img src="{logo}" alt="testMaker" title="testMaker" style="border: none;"/></a>
+
+
+	<ul id="MetaLinks">
+		<li><a class="arrow" href="func_pagelink(about)">func_T(menu.testmaker.about)</a></li>
+		<li><a class="arrow" href="func_pagelink(disclaimer)">func_T(menu.testmaker.disclaimer)</a></li>
+	</ul>
+
+	<div id="Navigation" style="height:20px;clear:both">
+	
+		<div id="LanguageMenu">
+		<!-- BEGIN menu_language_item -->
+			<form method="post" action="{request_uri:h}" style="float:left">
+			<input type="hidden" name="PORTAL[command]" value="set_language" />
+				<!-- BEGIN menu_language_item_other -->
+				<input type="image" name="PORTAL[language][{code}]" src="portal/images/language_{code}_transparent.gif"
+					alt="func_T(language.{code})" title="func_T(language.{code})" style="border: 1px solid #666666" />
+				<!-- END menu_language_item_other -->
+				<!-- BEGIN menu_language_item_current -->
+				<input type="image" name="PORTAL[language][{code}]" value="{code}" src="portal/images/language_{code}.gif"
+					alt="func_T(language.{code})" title="func_T(language.{code})" style="border: 1px solid #000000" />
+				<!-- END menu_language_item_current -->
+			</form>
+		<!-- END menu_language_item -->
+		</div>
+		
+		<!-- BEGIN menu_maintenance_info -->
+		<div id="Maintenance" style="float:left;">
+			<a style="color:white;font-weight:bold;background-color:#ff6666;padding:0px 4px 4px 4px;border:1px solid black" href="func_pagelink(maintenance_mode)">func_T(menu.maintenance.status)</a>
+		</div>		
+		<!-- END menu_maintenance_info -->
+		
+		<!-- BEGIN menu_unswitch -->
+		<div id="Unswitch" style="text-align:right">
+			<a href="func_pagelink(switch_user, unswitch)">func_T(pages.switch_user.unswitch) {unswitch_username}</a>
+		</div>
+		<!-- END menu_unswitch -->
+
+		<!-- BEGIN menu_user_area -->
+		<div id="Usermenu" style="text-align:right">
+			func_T(menu.labels.menu_for) <strong>{loginName:h}</strong>:
+			<!-- BEGIN show_testoverview -->
+			{top_to_overview}
+			<!-- END show_testoverview -->
+			<a class="Button" href="func_pagelink(user_details)">func_T(pages.user_details.print_details.title)</a>
+			<a class="Button" href="func_pagelink(user_login, logout)">func_T(pages.user_login.logout.title)</a>
+		</div>
+		<!-- END menu_user_area -->
+	</div>
+</div>
+
+<table id="Container"><tr>
+<!-- BEGIN container_left -->
+<td id="ContainerLeft">
+	<!-- BEGIN sitebar_menu -->
+	<div id="Sitebar">
+		<!-- BEGIN additional_menu -->
+		<div id="AdminMenu">
+			<!-- BEGIN menu_login_form -->
+			<fieldset style=""><legend>Login</legend>
+			<form method="post" action="func_pagelink(user_login, login)">
+			<table class="Mini">
+				<tr><th><label for="form_login_username" style="font-weight:normal">Benutzername:</label></th></tr>
+				<tr><td><input type="text" name="username" id="form_login_username" class="Text" value="{form_login_username:h}" size="25" /></td></tr>
+				<tr><th><label for="form_login_password" style="font-weight:normal">Passwort:</label></th></tr>
+				<tr><td><input type="password" name="password" id="form_login_password" class="Text" size="25" /></td></tr>
+				<tr><td class="Submit"><input type="submit" value="Einloggen" class="Button" /></td></tr>
+			</table>
+			</form>
+			<br />
+			<ul>
+				<li><a href="func_pagelink(user_register)">Registrieren</a></li>
+				<li><a href="func_pagelink(user_login, forgot_password)">Logindaten vergessen?</a></li>
+			</ul>
+			</fieldset>
+			<br />
+			<fieldset style=""><legend>TAN eingeben</legend>
+			<form method="post" action="func_pagelink(tan_login, use_tan)">
+			<table class="Mini">
+				<tr><th><label for="form_login_tan" style="font-weight:normal">TAN:</label></th></tr>
+				<tr><td><input type="text" name="tan" id="form_login_tan" class="Text" value="{form_login_tan:h}" size="25" /></td></tr>
+				<tr><td class="Submit"><input type="submit" value="Abschicken" class="Button" /></td></tr>
+			</table>
+			</form>
+			</fieldset>
+			<!-- END menu_login_form -->
+			<!-- BEGIN admin_menu -->
+				<ul>
+					<li>{link}</li>
+				</ul>
+			<!-- END admin_menu -->
+		</div>
+		<!-- END additional_menu -->
+
+		<!-- BEGIN menu_block_tree -->
+		<div id="MenuBlockTreeBlock">
+			<!-- BEGIN menu_block_tree_area -->
+			<div class="MenuBlockTree" id="MenuBlockTreeArea">
+			<!-- LIST -->
+			<ul style="line-height:100%;">
+				<li class="MenuBlockTree"><!-- indent --><a style="padding:0px" href="<!-- link -->"><!-- MENUICON --><img style="background-image:url(portal/images/menu_dots_<!-- dots -->.gif);vertical-align:middle;border:0;" src="<!-- menuicon -->"  alt="" /><!-- MENUICON --><img style="vertical-align:middle;border:0" src="<!-- icon -->" alt="" /><!-- MULTIPLE_USE --><img style="vertical-align:middle;border:0;margin-left:3px" src="portal/images/menu_multiple<!-- FOREIGN -->_foreign<!-- FOREIGN -->.gif" alt="" /><!-- MULTIPLE_USE --></a><!-- ACTIVE --><b><!-- ACTIVE --><a href="<!-- link -->"<!-- FDISABLED -->class="foreignDisabled"<!-- FDISABLED --><!-- FOREIGN --> class="foreign"<!-- FOREIGN --><!-- DISABLED --> class="disabled"<!-- DISABLED -->><!-- title --></a><!-- ACTIVE --></b><!-- ACTIVE -->
+				</li>
+				<!-- SUBITEMS -->
+				<li style="display:inline"><!-- ACTIVE --><b><!-- ACTIVE --><!-- subitems --><!-- ACTIVE --></b><!-- ACTIVE --></li>
+				<!-- SUBITEMS -->
+			</ul>
+			<!-- LIST -->
+			<!-- BEGIN menu_block_tree_current -->
+			<hr />
+			</div>
+			<div class="MenuBlockTree" id="MenuBlockTreeCurrent">
+			<!-- LIST -->
+			<ul>
+				<li class="MenuBlockTree">
+					<a style="padding:0px" href="<!-- link -->"><img style="vertical-align:middle;border:0" src="<!-- icon -->" alt="" /><!-- MULTIPLE_USE --><img style="vertical-align:middle;border:0;margin-left:3px" src="portal/images/menu_multiple<!-- FOREIGN -->_foreign<!-- FOREIGN -->.gif" alt="" /><!-- MULTIPLE_USE --></a><!-- ACTIVE --><b><!-- ACTIVE --><a href="<!-- link -->" title="ID: <!-- id -->; Autor: <!-- username -->"<!-- FDISABLED -->class="foreignDisabled"<!-- FDISABLED --><!-- FOREIGN --> class="foreign"<!-- FOREIGN --><!-- DISABLED --> class="disabled"<!-- DISABLED -->><!-- title --></a><!-- ACTIVE --></b><!-- ACTIVE -->
+				</li>
+			</ul>
+			<!-- LIST -->
+			<!-- END menu_block_tree_current -->
+			</div>
+			<!-- END menu_block_tree_area -->
+		</div>
+
+		<div id="Menu">
+			<!-- BEGIN menu_admin_area -->
+			<!-- BEGIN menu_admin_item -->
+			<form action="func_pagelink({page})" method="post">
+				<div>
+				<!-- BEGIN menu_admin_item_additional_info -->
+					<input type="hidden" name="{name}" value="{value}" />
+				<!-- END menu_admin_item_additional_info -->
+				<input class="Button" type="submit" name="do_admin" value="{title}" />
+				</div>
+			</form>
+			<!-- END menu_admin_item -->
+			<!-- END menu_admin_area -->
+		</div>
+		<!-- END menu_block_tree -->
+	</div>
+	<!-- END sitebar_menu -->
+	<div id="ContainerLeftSize"></div>
+
+</td>
+<!-- END container_left -->
+<td id="ContainerRight" width="100%">
+	<div id="Content">
+<!-- INCLUDE JavaScriptNotice.html -->
+		<!-- BEGIN help_button -->
+		<div style="float:right">
+		<!-- BEGIN help_available -->
+			<a class="helpButton" href="{help_link:h}" target="_blank" onclick="window.open('{help_link:h}', 'page_help_'+((new Date()).getTime()), 'width=600,height=540,left='+Math.round((screen.width-600)/2)+',top='+Math.round((screen.height-540)/2)+',scrollbars=yes,status=yes,toolbar=yes,resizable=yes'); return false"><img id="helpButton" src="portal/images/help_on.png" alt="Hilfe" title="Hilfe" border="0" width="22" height="22" /></a>
+		<!-- END help_available -->
+		<!-- BEGIN no_help_available -->
+			<img class="helpButton" src="portal/images/help_off.png" onclick="if (event.shiftKey) { window.prompt('Seitenhilfe:', '{page_name:j}/{action_name:j}') }" alt="Keine Hilfe verfügbar" title="Keine Hilfe verfügbar" width="22" height="22" />
+		<!-- END no_help_available -->
+		</div>
+		<!-- END help_button -->
+		<h2>{page_title:h}</h2>
+		<!-- BEGIN msg_area -->
+		<ul class="messages">
+		<!-- BEGIN msg --><li class="msg_{flag}">{msg}</li><!-- END msg -->
+		</ul>
+		<!-- END msg_area -->
+
+		{body}
+	</div>
+
+</td></tr></table>
+
+<div id="Footer">
+	<div id="Logo">
+		<a href="index.php?page=about"><img src="portal/images/tm-logo-xs.png" alt="testMaker" title="testMaker" style="border: none;"/></a>
+	</div>
+	{debug_output}
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,2 @@
+###Bestätigung zum Überschreiben der Itemantworten
+Sie haben unter dem Reiter "Standard-Antworten" den Aktionsbutton "Überschreibe alle Itemantworten" angeklickt. Wenn Sie jetzt erneut auf "Überschreiben" gehen, werden alle von Ihnen bereits eingegebenen Antwortalternativen innerhalb dieses Itemblocks mit den hier angegebenen Alternativen überschrieben.

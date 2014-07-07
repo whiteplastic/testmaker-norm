@@ -1,0 +1,310 @@
+<!-- BEGIN test_list -->
+	<!-- BEGIN no_tests -->
+	<p>There are currently no tests available.</p>
+	<!-- END no_tests -->
+	<!-- BEGIN has_tests -->
+	<p>Available tests:</p>
+	<form method="post" action="func_pagelink(import_export, export_test)">
+	<!-- BEGIN export_options -->
+	<input type="hidden" name="{exp_option_name}" value="{exp_option_value}" />
+	<!-- END export_options -->
+	<p><select name="test_id">
+		<!-- BEGIN test -->
+		<option value="{test_id}">{test_title:h}</option>
+		<!-- END test -->
+	</select></p>
+	<p><input class="Button" type="submit" name="overview" value="Overview" />
+	<input class="Button" type="submit" name="export" value="Export" /></p>
+	</form>
+	<!-- END has_tests -->
+
+	<!-- BEGIN test_import -->
+	<div style="padding-top: 10px;">
+	<h2>Import</h2>
+	<p>Choose the file you want to import.</p>
+	<form method="post" action="func_pagelink(import_export, import_test)" enctype="multipart/form-data">
+	<table class="Vertical">
+		<tr><td><input type="file" name="test_data" /></td></tr>
+		<tr><td class="Submit"><input class="Button" type="submit" name="do_import" value="Import" /></td>
+		</tr>
+	</table>
+	</form>
+	</div>
+	<!-- END test_import -->
+
+<!-- END test_list -->
+<!-- BEGIN test_dump -->
+	<!-- BEGIN print_link2 -->
+	<script type="text/JavaScript" src="portal\js\toggle.js"></script>
+	<script>
+	var BrowserDetect = {
+		init: function () {
+			this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+			this.version = this.searchVersion(navigator.userAgent)
+				|| this.searchVersion(navigator.appVersion)
+				|| "an unknown version";
+			this.OS = this.searchString(this.dataOS) || "an unknown OS";
+		},
+		searchString: function (data) {
+			for (var i=0;i<data.length;i++)	{
+				var dataString = data[i].string;
+				var dataProp = data[i].prop;
+				this.versionSearchString = data[i].versionSearch || data[i].identity;
+				if (dataString) {
+					if (dataString.indexOf(data[i].subString) != -1)
+						return data[i].identity;
+				}
+				else if (dataProp)
+					return data[i].identity;
+			}
+		},
+		searchVersion: function (dataString) {
+			var index = dataString.indexOf(this.versionSearchString);
+			if (index == -1) return;
+			return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+		},
+		dataBrowser: [
+			{
+				string: navigator.userAgent,
+				subString: "Chrome",
+				identity: "Chrome"
+			},
+			{ 	string: navigator.userAgent,
+				subString: "OmniWeb",
+				versionSearch: "OmniWeb/",
+				identity: "OmniWeb"
+			},
+			{
+				string: navigator.vendor,
+				subString: "Apple",
+				identity: "Safari",
+				versionSearch: "Version"
+			},
+			{
+				prop: window.opera,
+				identity: "Opera"
+			},
+			{
+				string: navigator.vendor,
+				subString: "iCab",
+				identity: "iCab"
+			},
+			{
+				string: navigator.vendor,
+				subString: "KDE",
+				identity: "Konqueror"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "Firefox",
+				identity: "Firefox"
+			},
+			{
+				string: navigator.vendor,
+				subString: "Camino",
+				identity: "Camino"
+			},
+			{		// for newer Netscapes (6+)
+				string: navigator.userAgent,
+				subString: "Netscape",
+				identity: "Netscape"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "MSIE",
+				identity: "Explorer",
+				versionSearch: "MSIE"
+			},
+			{
+				string: navigator.userAgent,
+				subString: "Gecko",
+				identity: "Mozilla",
+				versionSearch: "rv"
+			},
+			{ 		// for older Netscapes (4-)
+				string: navigator.userAgent,
+				subString: "Mozilla",
+				identity: "Netscape",
+				versionSearch: "Mozilla"
+			}
+		],
+		dataOS : [
+			{
+				string: navigator.platform,
+				subString: "Win",
+				identity: "Windows"
+			},
+			{
+				string: navigator.platform,
+				subString: "Mac",
+				identity: "Mac"
+			},
+			{
+				   string: navigator.userAgent,
+				   subString: "iPhone",
+				   identity: "iPhone/iPod"
+			},
+			{
+				string: navigator.platform,
+				subString: "Linux",
+				identity: "Linux"
+			}
+		]
+
+	};
+	BrowserDetect.init();
+	</script>
+	<script>
+	function hideRows() {
+	  var myTR = document.getElementsByName('part');
+	  var hB = document.getElementById('hidebutton');
+	  for (var i=0;i<myTR.length;i++) {
+			if (!myTR[i].isHidden) {
+			myTR[i].style.display = 'none';
+			myTR[i].isHidden = true;
+			hB.innerHTML = 'Show dividers';
+			}
+			else {
+			myTR[i].style.display = '';
+			myTR[i].isHidden = false;
+			hB.innerHTML = 'Hide dividers';
+			}
+	  }
+	}
+	
+	function IEswitch () {
+	var hB = document.getElementById('hidebutton');
+		if (!hB.isHidden) {
+			hB.isHidden = true;
+			hB.innerHTML = 'Show dividers';
+			toggle('fold','span','part');
+			}
+		else {
+			hB.isHidden = false;
+			hB.innerHTML = 'Hide dividers';
+			toggle('unfold','span','part');
+			}
+	}
+	</script>
+	<p>
+		<a class="Button" href="func_pagelink(import_export, test_overview, test_id: {print_test_id}, layout: print)" target=	"_blank">Print view</a>
+		<a class="Button" id="hidebutton" onclick="javascript: (BrowserDetect.browser == 'Explorer' ?  IEswitch() : hideRows());"href="#">Hide dividers</a>
+	</p>
+	<!-- END print_link2 -->
+	<!-- BEGIN test_logo -->
+	<p><b>Logo:</b></p>
+	<p>func_medium({logo_file})</p>
+	<!-- END test_logo -->
+	<!-- BEGIN block -->
+		<!-- BEGIN block_header -->
+			<span gid="part" name="part">===</span>
+			<!-- BEGIN container_block_header -->
+			<h3>{title:h} (Subtest)</h3>
+			<h4>{description:h}</h4>
+			<hr />
+			<!-- END container_block_header -->
+			<!-- BEGIN item_block_header -->
+			<h3>{title:h} (Item Block)</h3>
+			<h4>{description:h}</h4>
+			<!-- END item_block_header -->
+			<!-- BEGIN info_block_header -->
+			<h3>{title:h} (Info Block)</h3>
+			<h4>{description:h}</h4>
+			<!-- END info_block_header -->
+			<!-- BEGIN feedback_block_header -->
+			<h3>{title:h} (Feedback Block)</h3>
+			<h4>{description:h}</h4>
+			<!-- END feedback_block_header -->
+		<!-- END block_header -->
+		<!-- BEGIN child -->
+		<span gid="part" name="part">---</span>
+		<div style="margin: 1em 0; border: 1px solid #999;padding:0.5em; width=100%;">
+		{introduction}
+			<!-- BEGIN item_child -->
+			<p><b>{itemTitle} (Item Title) {itemDisabled}</b></p>
+			<form method="post" action="#" onsubmit="return false;">
+			<div style="margin-bottom:0.5em">{question}</div>
+				<!-- BEGIN item_class_text_line -->
+				<input class="Text" type="text" />
+				<!-- END item_class_text_line -->
+				<!-- BEGIN item_class_text_memo -->
+				<textarea cols="80" rows="12"></textarea>
+				<!-- END item_class_text_memo -->
+				<!-- BEGIN item_class_mcma -->
+				<table class="Border" cellspacing="3" width="100%">
+					<!-- BEGIN item_class_mcma_answer -->
+					<tr>
+						<td class="Border">
+							<table>
+								<tr>
+									<td style="text-align:left;width:2em;"><input type="checkbox" /></td>
+									<td style="text-align:left;">{answer}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- END item_class_mcma_answer -->
+				</table>
+				<!-- END item_class_mcma -->
+				<!-- BEGIN item_class_mcsa -->
+				<table class="Border" cellspacing="3" width="100%">
+					<!-- BEGIN item_class_mcsa_answer -->
+					<tr>
+						<td class="Border">
+							<table>
+								<tr>
+									<td style="text-align:left;width:2em;"><input type="radio" /></td>
+									<td style="text-align:left;">{answer}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- END item_class_mcsa_answer -->
+				</table>
+				<!-- END item_class_mcsa -->
+				<!-- BEGIN item_class_mcsa_quick -->
+				<table class="Border" cellspacing="3" width="100%">
+					<!-- BEGIN item_class_mcsa_quick_answer -->
+					<tr>
+						<td class="Border">
+							<table>
+								<tr>
+									<td style="text-align:left;width:2em;"><button class="Button" type="submit" onclick="return false" value="" style="font-size:22px;padding:0 5px;color:#ADD8E6">X</button></td>
+									<td style="text-align:left;vertical-align:middle">{answer}</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- END item_class_mcsa_quick_answer -->
+				</table>
+				<!-- END item_class_mcsa_quick -->
+			</form>
+			<!-- END item_child -->
+			<!-- BEGIN info_child -->
+			{content}
+			<!-- END info_child -->
+			<!-- BEGIN feedback_child -->
+				<!-- BEGIN paragraph -->
+					<!-- BEGIN paragraph_separator -->
+					<hr />
+					<!-- END paragraph_separator -->
+					<!-- BEGIN conditions -->
+					<p><b>Conditions:</b>
+						<!-- BEGIN condition -->
+						<!-- BEGIN condition_separator -->, <!-- END condition_separator -->{condition_info}
+						<!-- END condition -->
+					</p>
+					<!-- END conditions -->
+					{paragraph}
+				<!-- END paragraph -->
+
+			<!-- END feedback_child -->
+		</div>
+		<!-- END child -->
+	<!-- END block -->
+<!-- END test_dump -->
+<!-- BEGIN indent -->
+<div style="margin-left:2.5em">
+{body}
+</div>
+<!-- END indent -->

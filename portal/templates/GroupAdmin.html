@@ -1,0 +1,77 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.group_admin.list_groups.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- BEGIN groups_block -->
+<!-- BEGIN status_block -->
+<ul>
+<!-- BEGIN status_list -->
+	<li>{status:h}</li>
+<!-- END status_list -->
+</ul>
+<!-- END status_block -->
+
+<table class="Both">
+	<tr>
+		<th>Group name:</th><th>Description:</th><th colspan="2">Options:</th>
+	</tr>
+<!-- BEGIN group_list -->
+	<tr class="{key:h}">
+		<td>{groupname:h}</td>
+		<td>{description:h} {isdefault}</td>
+		<td><form method="post" action="func_pagelink(group_admin, edit_group, id: {groupid})"><div><input type="submit" class="Button" name="do_edit" value="Edit" /></div></form></td>
+		<td><form method="post" onclick="return confirm('Do you really want to irreversibly delete this group?');" action="func_pagelink(group_admin, list_group, id: {groupid})"><div><input type="hidden" name="delete" value="yes" /><input type="submit" class="Button" name="do_delete" value="Delete" /></div></form></td>
+	</tr>
+<!-- END group_list -->
+</table>
+<!-- END groups_block -->
+
+<!-- BEGIN create_group -->
+<form method="post" action="func_pagelink(group_admin, list_group, id: {groupid})">
+<div>
+<input type="hidden" name="handle" value="{handle}" />
+<table class="Both">
+	<tr>
+		<th><label for="form_create_groupname">Group name:</label></th>
+		<td><input type="text" name="groupname" class="Text" id="form_create_groupname" value="{groupname:h}" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_create_description">Description:</label></th>
+		<td><textarea name="description" id="form_create_description" style="vertical-align:text-top" rows="4" cols="30">{description:h}</textarea></td>
+	</tr>
+	<tr>
+		<th>Inheritance:</th>
+		<td><ul class="Blind">
+			<li><input type="checkbox" name="autoadd" id="form_create_autoadd" value="1"{autoadd_checked} /> <label for="form_create_autoadd">Automatically add new users to this group</label></li>
+			<li><input type="checkbox" name="guests" id="form_create_guests" value="1"{guests_checked} /> <label for="form_create_guests">Give this group's permissions to all unregistered users:</label></li>
+		</ul></td>
+	</tr>
+	<tr>
+		<th>Global permissions:</th>
+		<td><ul class="Blind">
+			<li><input type="checkbox" id="form_create_perms_special" name="perms[special]" value="1"{perms_special_checked} /> <label for="form_create_perms_special">Can be assigned edit permissions for specific tests (special group)</label></li>
+			<li><input type="checkbox" id="form_create_perms_run"     name="perms[run]"     value="1"{perms_run_checked}     /> <label for="form_create_perms_run"    >Run tests without TAN or use preview</label></li>
+			<li><input type="checkbox" id="form_create_perms_tanrun"  name="perms[tanrun]"  value="1"{perms_tanrun_checked}  /> <label for="form_create_perms_tanrun" >Run tests via TAN</label></li>
+			<li><input type="checkbox" id="form_create_perms_portal"  name="perms[portal]"  value="1"{perms_portal_checked}  /> <label for="form_create_perms_portal" >Run tests via test overview (and have it listed there)</label></li>
+			<li><input type="checkbox" id="form_create_perms_review"  name="perms[review]"  value="1"{perms_review_checked}  /> <label for="form_create_perms_review" >Review previous results via test overview page</label></li>
+			<li><input type="checkbox" id="form_create_perms_publish" name="perms[publish]" value="1"{perms_publish_checked} /> <label for="form_create_perms_publish">Publish editable tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_view"    name="perms[view]"    value="1"{perms_view_checked}    /> <label for="form_create_perms_view"   >View tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_export"  name="perms[export]"  value="1"{perms_export_checked}  /> <label for="form_create_perms_export" >Export test data (of tests that may be edited)</label></li>
+			<li><input type="checkbox" id="form_create_perms_create"  name="perms[create]"  value="1"{perms_create_checked}  /> <label for="form_create_perms_create" >Create tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_edit"    name="perms[edit]"    value="1"{perms_edit_checked}    /> <label for="form_create_perms_edit"   >Edit tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_delete"  name="perms[delete]"  value="1"{perms_delete_checked}  /> <label for="form_create_perms_delete" >Delete tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_copy"    name="perms[copy]"    value="1"{perms_copy_checked}    /> <label for="form_create_perms_copy"   >Copy tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_link"    name="perms[link]"    value="1"{perms_link_checked}    /> <label for="form_create_perms_link"   >Link tests</label></li>
+			<li><input type="checkbox" id="form_create_perms_admin"   name="perms[admin]"   value="1"{perms_admin_checked}   /> <label for="form_create_perms_admin"  >Administrate users/groups</label></li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="Submit">
+			<input type="submit" class="Button" value="{button}" />
+		</td>
+	</tr>
+</table>
+</div>
+</form>
+<!-- END create_group -->
+</div>

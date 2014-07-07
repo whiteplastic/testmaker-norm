@@ -1,0 +1,9 @@
+Deny from all
+Satisfy All
+
+<files ManualCronjob*.php>
+allow from all
+</files>
+<files cronjob*.php>
+allow from all
+</files>

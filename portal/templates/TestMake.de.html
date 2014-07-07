@@ -1,0 +1,71 @@
+<!-- BEGIN plugin_test -->
+<script type="text/javascript" language="JavaScript">
+function getMimeTypes()
+{
+	var mimeTypes = new Array(navigator.mimeTypes.length);
+	for (var i = 0; i < navigator.mimeTypes.length; i++) {
+		mimeTypes[i] = navigator.mimeTypes[i].type;
+	}
+	document.forms["start_test_form"].elements["mime_types"].value = mimeTypes;
+	document.forms["start_test_form"].submit();
+}
+</script>
+<!-- END plugin_test -->
+<p>{description}</p>
+
+<!-- BEGIN is_subbed -->
+<p>Dieser Test ist in mehrere Komponenten unterteilt. Wenn Sie hier "Test starten" wählen oder einen nicht abgeschlossenen Testlauf fortsetzen, können Sie im nächsten Schritt auswählen, an welcher Komponente Sie als nächstes teilnehmen wollen.</p>
+
+<p><a class="Button" href="func_pagelink(test_listing, subtest_view, test_id: {test_id}, test_run: -1)">Test starten</a></p>
+<!-- END is_subbed -->
+<!-- BEGIN regular_test -->
+<form name="start_test_form" method="post" action="func_pagelink(test_make, start_test, id: {test_id}, source: portal, test_path: {test_path})">
+	<input type="hidden" name="mime_types" value="" />
+	<a class="Button" href="javascript:getMimeTypes()">Test starten</a>
+</form>
+<!-- END regular_test -->
+<p>
+
+<!-- BEGIN certificate -->
+<p id="Certificate" style="margin: 1em 0; padding: 5px; border: 1px solid #333378;background-color:#8888FF; width:70%;">
+	Für diesen Test können Sie sich eine <a href="func_pagelink(pdf_generator, formular_certificate, test_run_id: {cert_test_run_id}, block_id: {cert_block_id})"><b>Bescheinigung</b></a> ausdrucken.
+</p>
+<!-- END certificate -->
+
+<br />
+<h3>Vergangene Testläufe</h3>
+<!-- BEGIN participate_allowed -->
+<p>Hier können Sie die Ergebnisse vergangener Testläufe einsehen oder nicht abgeschlossene Testläufe fortsetzen.</p>
+<!-- END participate_allowed -->
+<!-- BEGIN participate_forbidden -->
+<p>Hier können Sie die Ergebnisse vergangener Testläufe einsehen. Das Fortsetzen nicht abgeschlossener Testläufe ist nicht mehr möglich.</p>
+<!-- END participate_forbidden -->
+<!-- BEGIN no_runs -->
+<p>&nbsp;</p><p>Sie haben bisher noch nicht an diesem Test teilgenommen.</p>
+<!-- END no_runs -->
+<!-- BEGIN has_runs -->
+<table class="Vertical">
+	<tr>
+<!-- BEGIN admin_info_header -->
+		<th>Testlauf-ID</th>
+<!-- END admin_info_header -->
+		<th>Zeitpunkt</th>
+		<th>Fortschritt</th>
+		<th>Aktionen</th>
+	</tr>
+<!-- BEGIN run -->
+	<tr>
+<!-- BEGIN admin_info -->
+		<td>{test_run_id}</td>
+<!-- END admin_info -->
+		<td>{date} Uhr</td>
+		<td>func_progressbar({progress})</td>
+		<td><!-- BEGIN continue_subbed_link --><a class="Button list" href="func_pagelink(test_listing, subtest_view, test_run: {test_run_id}, test_id: {test_id})">Testlauf fortsetzen</a><!-- END continue_subbed_link --><!-- BEGIN continue_link --><a class="Button list" href="func_pagelink(test_make, continue_test, test_run: {test_run_id})">Testlauf fortsetzen</a><!-- END continue_link -->
+			<!-- BEGIN details_link --><a class="Button list" href="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, final: 1)">Ergebnisse ansehen</a>
+			<!-- END details_link --></td>
+	</tr>
+<!-- END run -->
+</table>
+<!-- END has_runs -->
+
+<p><a href="func_pagelink(test_listing)" class="arrow">zurück zur Übersicht</a></p>

@@ -1,0 +1,88 @@
+<script type="text/javascript" language="javascript">
+<!--
+function addRecipient()
+{
+	var testList = document.getElementById('tests');
+	var selectedTest = testList.options[testList.selectedIndex];
+	var recipients = document.getElementById('recipients').insertRow(0);
+	var testTitle = recipients.insertCell(0);
+	var testId = recipients.insertCell(1);
+	var emailConditionsButton = recipients.insertCell(2);
+	var testRemoveButton = recipients.insertCell(3);
+	
+	testList.remove(testList.selectedIndex);
+	
+	testTitle.innerHTML = selectedTest.text;
+	testId.innerHTML = '<input type="hidden" name="tests[]" value="'+selectedTest.value+'" />';
+	emailConditionsButton.innerHTML = '&nbsp;'
+	testRemoveButton.innerHTML = '<input type="button" class="Button" value="-" onClick="removeRecipient(this,'+selectedTest.value+')" />';
+
+	submitForm();
+}
+
+function removeRecipient(recipient,id)
+{
+	var i = recipient.parentNode.parentNode.rowIndex;
+	var testList = document.getElementById('tests');
+	
+	var recipients = document.getElementById('recipients');
+	var test = document.createElement('option');
+	test.text = recipients.rows[i].cells[0].innerHTML;
+	test.value = id;
+	testList.add(test,null);
+
+	document.getElementById('recipients').deleteRow(i);
+
+	submitForm();
+}
+
+function submitForm()
+{
+	var cell_save = document.getElementById('cell_save');
+	cell_save.innerHTML = '<input type="hidden" name="save" value="Save" />';
+	document.emailForm.method = "post";
+	document.emailForm.submit();
+}
+-->
+</script>
+
+<div style="padding-left:15px"><li><h4>func_T(pages.emails.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<form name="emailForm" method="post" action="func_pagelink(email_management, edit_email, email_id: {email_id})">
+		<table>
+			<tr>
+				<td>Test:</td>
+				<td>
+					<table id="recipients" cellpadding="3px">
+						<!-- BEGIN recipients -->
+						<tr>
+							<td>{test_title:h}<input type="hidden" name="tests[]" value="{test_id:h}" /></td>
+							<td><a class="Button" href="func_pagelink(email_management, edit_email_conditions, email_id:{email_id}, test_id:{test_id})">Conditions</a></td>
+							<td><a class="Button" href="#" onClick="javascript:removeRecipient(this,{test_id:h})">&nbsp;-&nbsp;</a></td>
+						</tr>
+						<!-- END recipients -->
+						<tr>
+							<td>
+								<select id="tests" {disabled}>
+								<!-- BEGIN tests -->
+									<option value="{test_id:h}">{test_title:h}</option>
+								<!-- END tests -->
+								</select>
+							</td>
+							<td colspan="3">
+								<a class="Button" href="#" onClick="javascript:addRecipient()">&nbsp;+&nbsp;</a>
+							</td>
+						</tr>
+							<td><a class="Button" href="func_pagelink(email_management, get_email_addresses, email_id:{email_id})" title="Liste aller Email-Adressen herunterladen" target="_blank">Email Adressen</a></td>
+						<tr>
+					</table>
+				</td>
+			</tr>
+			<tr><td>Subject:</td><td><input type="text" style="width:320px" name="subject" value="{subject:h}" /></td></tr>
+			<tr><td>Body:</td><td><textarea name="body" cols="60" rows="8">{body:h}</textarea></td></tr>
+			<tr><td></td><td colspan="3" ><input type="submit" name="send" value="Send" /> <input type="text" name="send_amount" /> of {remaining} remaining emails.</td></tr>
+			<tr><td><input type="submit" id="save" name="save" value="Save" /></td><td id="cell_save"></td></tr>
+		</table>
+	</form>
+</div>

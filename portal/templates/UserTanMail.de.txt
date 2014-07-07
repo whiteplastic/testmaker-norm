@@ -1,0 +1,13 @@
+Willkommen beim testMaker!
+
+Sie oder jemand anderes hat Ihre E-Mail-Adresse ({email_address}) genutzt um einen Test im testMaker zu starten.
+
+Falls Sie den Test nicht gestartet haben, können Sie diese E-Mail ignorieren.
+
+ Falls Sie den Test gestartet haben, können Sie ihn fortsetzen bzw. sich Ihre Ergebnisrückmeldung anschauen. Dazu haben Sie zwei Möglichkeiten: 
+
+1. Sie loggen sich mit Ihrer TAN auf der folgenden Internetseite ein. TAN: {tan} Internetseite für den Start per TAN: {tan_portal_link} 
+
+2. Alternativ können Sie über folgenden Link direkt zu Ihrem Test bzw. Ihrer Rückmeldung gelangen: {tan_direct_link}
+
+Das testMaker-Team

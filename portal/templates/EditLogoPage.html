@@ -1,0 +1,24 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.logo_page.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<p>func_T(pages.logo_page.desc)</p>
+
+<div>
+<form enctype="multipart/form-data" method="POST" action="func_pagelink(logo_management, save_logo_page)" >
+	<table>
+		<tr>
+			<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
+
+			<input name="logo" type="file" size="50"  accept="image/*" />
+		</tr>
+		<tr>
+		 <BR>
+		</tr>
+		<tr>
+			<td><input name="b1" type="submit" class="Button" value="func_T(buttons.save)" /></td>
+			<td><input name="b2" type="submit" class="Button" value="func_T(buttons.standard)" /></td>
+		</tr>
+	</table>
+</form>
+</div>
+</div>

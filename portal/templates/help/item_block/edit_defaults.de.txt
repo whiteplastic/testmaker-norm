@@ -1,0 +1,13 @@
+Auf dieser Seite können Sie die Standardeinstellungen für ihren Itemblock vornehmen.
+
+### Minimale Bearbeitungszeit pro Item
+Wenn Sie an dieser Stelle eine Zahl <b>x</b> größer 0 eingeben, können alle Items des Block (für die noch keine eigene minimale Bearbeitungszeit gesetzt ist) erst nach Ablauf von <b>x</b> Sekunden abgegeben werden.
+
+### Maximale Bearbeitungszeit pro Item
+Wenn Sie an dieser Stelle eine Zahl <b>x</b> größer 0 eingeben, werden alle Items des Blocks (für die noch keine eigene maximale Bearbeitungszeit gesetzt ist) nach Ablauf von <b>x</b> Sekunden automatisch abgegeben und auf das nächste Item weitergeleitet. Im Testdurchlauf erscheint dann bei der Bearbeitungszeit, dass eine Zeitüberschreitung erfolgt ist.
+
+### Antworten sind nötig
+Wenn Sie diese Option aktivieren, muss zu jedem Item (für das hier noch keine Einstellung erfolgt ist) in diesem Block eine Eingabe durch die Testperson erfolgen, sonst wird das Item solange wiederholt dargestellt, bis eine Eingabe erfolgt ist.
+
+### Überschreiben
+Wenn Sie den Haken bei "Überschreiben" setzen, werden die jeweiligen Einstellungen auch auf Items übernommen, bei denen diese Einstellung schon gesetzt ist.

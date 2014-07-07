@@ -1,0 +1,113 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+
+<h3>Dimension bearbeiten: <em>{title:h}</em> (Schritt 2 von 2)</h3>
+
+<form method="post" action="func_pagelink(dimension, scores, working_path: {working_path}, item_id: {id}, revert: true)">
+	<input type="hidden" name="submit_dim_scores" value="1" />
+	<!-- BEGIN item_list -->
+	<input type="hidden" name="items[{ql_id}]" value="1" />
+	<!-- END item_list -->
+	<input type="hidden" name="edit_type" value="{edit_type}" />
+
+	<!-- BEGIN dim_mc -->
+	<h4>Korrekte Antworten ausw&auml;hlen</h4>
+
+	<p>
+		Hier ausgew&auml;hlte Antworten werden in Feedbacks mit einem Punkt bewertet.</p>
+
+	<ul>
+		<!-- BEGIN dim_mc_block -->
+		<li class="item_block_list">{block_title}
+		<ul>
+			<!-- BEGIN dim_mc_item -->
+			<li>Item: {q_title}<br />
+			<span class="listtitle">{q_body}</span>
+			<ul class="checklist">
+				<!-- BEGIN dim_mc_answer -->
+				<li><input type="hidden" name="dim_answer[{a_id}]" value="0"/>
+				<input id="answer_{a_id}" type="checkbox" {disabled} name="dim_answer[{a_id}]" value="1"{a_checked} />
+				<label for="answer_{a_id}">{a_title}</label></li>
+				<!-- END dim_mc_answer -->
+			</ul></li>
+			<!-- END dim_mc_item -->
+		</ul></li>
+		<!-- END dim_mc_block -->
+	</ul>
+	<!-- END dim_mc -->
+
+	<!-- BEGIN dim_scale -->
+	<h4>Skalen definieren</h4>
+
+	<p>
+		Hier k&ouml;nnen Sie den Antwortm&ouml;glichkeiten auf- oder absteigende Punkteskalen
+		zuordnen. Um die Punkteverteilung umzukehren, w&auml;hlen Sie die Ankreuzfelder an oder ab.</p>
+
+	<ul id="item_scales" class="item_scales">
+		<!-- BEGIN dim_scale_block -->
+		<li class="item_block_list">{block_title}
+		<ul>
+			<!-- BEGIN dim_scale_item -->
+			<li class="item_title"><div>"Item: {q_title}</div>
+			<div style="float:right">
+				<label for="item_reverse_{q_id}">Absteigend</label>
+				<input type="checkbox" id="item_reverse_{q_id}" onclick="return toggleReverse('{q_id}')" />
+			</div>
+
+			{q_body}
+			<ul class="checklist" id="item_{q_id}">
+				<!-- BEGIN dim_scale_answer -->
+				<li><input type="hidden" id="{a_id}" name="dim_answer[{a_id}]" value="{a_value}" />
+				{a_title}: <span class="score" id="score_{a_id}">0</span> Punkte</li>
+				<!-- END dim_scale_answer -->
+			</ul></li>
+			<!-- END dim_scale_item -->
+		</ul></li>
+		<!-- END dim_scale_block -->
+	</ul>
+
+	<script src="portal/js/dim_scores.js" type="text/javascript"></script>
+	<!-- END dim_scale -->
+
+	<!-- BEGIN dim_custom -->
+	<h4>Punktwertungen festlegen</h4>
+
+	<p>Hier k&ouml;nnen Sie jeder Antwortm&ouml;glichkeit eine beliebige Punktzahl zuweisen.</p>
+
+	<ul>
+		<!-- BEGIN dim_custom_block -->
+		<li class="item_block_list">{block_title}
+		<ul>
+			<!-- BEGIN dim_custom_item -->
+			<li>Item: {q_title}<br />
+			<span class="listtitle">{q_body}</span>
+
+			<ul class="checklist">
+				<!-- BEGIN dim_custom_answer -->
+				<li<!-- BEGIN correction_answer --> class="correction"<!-- END correction_answer -->><input type="text" size="2" id="answer_{a_id}" name="dim_answer[{a_id}]" value="{a_value}" />
+				Punkte f&uuml;r: <label for="answer_{a_id}">{a_title}</label></li>
+				<!-- END dim_custom_answer -->
+			</ul></li>
+			<!-- END dim_custom_item -->
+		</ul></li>
+		<!-- END dim_custom_block -->
+	</ul>
+	<!-- END dim_custom -->
+
+	<!-- BEGIN no_items -->
+	<h4>Keine Items ausgew&auml;hlt</h4>
+
+	<p>
+		Um Punkte zuweisen zu k&ouml;nnen, m&uuml;ssen Sie Items mit vorgegebenen
+		Antwortm&ouml;glichkeiten ausw&auml;hlen.</p>
+	<!-- END no_items -->
+
+	<!-- BEGIN submit_button -->
+	<input type="submit" class="Button" value="Speichern" />
+	<!-- END submit_button -->
+	<!-- BEGIN no_submit_button -->
+	<input type="button" disabled="disabled" value="func_T(buttons.edit_disallowed)" class="Button" />
+	<!-- END no_submit_button -->
+</form>
+</div>

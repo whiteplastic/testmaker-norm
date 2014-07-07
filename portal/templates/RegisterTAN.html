@@ -1,0 +1,21 @@
+<form method="post" action="func_pagelink(tan_login, register_tan, tan: {tan})">
+<!-- BEGIN has_pages -->
+	<p>
+		After the test you will get a feedback. If you want to receive a mail
+		with a link to visit your feedbackpage later on you have to enter an
+		email-address.
+	</p>
+<!-- END has_pages -->	
+<!-- BEGIN no_pages -->
+	<p>
+		If you want to receive an email with the link to the survey, you have to enter an email-adress
+	</p>
+<!-- END no_pages -->	
+	<p>Your mail address: <input class="Text" type="text" name="mail" /></p>
+
+<!-- BEGIN pp_check -->			
+	<p><input type="checkbox" name="accepted" value="accepted"/><label> with entering my email-address I accept the current <a href="index.php?page=tan_login" onclick="window.open('index.php?page=show_privacy_policy&amp;action=show_privacy_popup&amp;info=none&amp;version={ppversion:h}', 'page_help_'+((new Date()).getTime()), 'width=600,height=540,left='+Math.round((screen.width-600)/2)+',top='+Math.round((screen.height-540)/2)+',scrollbars=yes,status=yes,toolbar=yes,resizable=yes'); return false">testMaker Privacy Policy</a>.</label></p>
+<!-- END pp_check -->	
+	
+	<p><input class="Button" type="submit" name="do_proceed" value="Proceed" /></p>
+</form>

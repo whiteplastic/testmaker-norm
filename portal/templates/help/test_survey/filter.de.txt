@@ -1,0 +1,114 @@
+### Einführung
+
+"Nachbefragung" ermöglicht Ihnen die Kontaktierung von vergangenen Test-Teilnehmern zum Zwecke einer Nachbefragung.
+Im ersten Schritt wählen Sie aus, welche Teilnehmer betrachtet werden sollen, im zweiten Schritt können Sie ein E-Mail-Anschreiben verfassen, das einen Link auf die eigentliche Nachbefragung enthält.
+Die eigentliche Nachbefragung ist ein im testMaker angelegter Test.
+
+<b>Es ist zu beachten, dass der Nachbefragungs-Test auch für die entsprechende Gruppe als Direktlink veröffentlicht ist.<br>
+Eine gleichzeitige Veröffentlichung als TAN-Zugriff ist nicht möglich.</b>
+
+
+
+
+### Filter
+
+Mit den Filtern legen Sie fest, welche Testläufe betrachtet werden sollen.
+
+Die Filter arbeiten unabhängig voneinander.
+Angenommen, es existieren zwei Tests im System, Alpha und Beta.
+Alpha wurde bisher nur über die Vorschau gestartet, Beta nur über das Portal.
+Dann werden unter <i>Zugriffsart</i> immer "preview" __und__ "portal" angeboten, selbst wenn unter <i>Test</i> bereits einer der beiden Tests ausgewählt wurde.
+
+#### Test
+
+Wählen Sie aus der Liste den Test aus, dessen Teilnehmer Sie kontaktieren wollen.
+Gezeigt werden alle Tests, zu denen Testläufe vorliegen. Die Zahl in Klammern bezeichnet die Anzahl zugeordneter Testläufe.
+
+
+#### <a name="access_type">Zugriffsart</a>
+
+Tests können auf vier verschiedene Weisen gestartet werden:
+
+* Per Direkt-Link
+* Über die Testübersicht
+* Als Vorschau über den gleichnamigen Reiter des Tests
+* Mittels einer Transaktionsnummer TAN
+
+Gezeigt werden alle Zugriffsarten, zu denen es Testläufe gibt.
+
+#### Vollständigkeit
+
+Da in der Praxis meist nur die Testläufe interessant sind, in denen alle Fragen beantwortet wurden, ist es bereits hier möglich, nur diese Testläufe auszuwählen.
+Es ist auch möglich, alle unvollständigen Testläufe anzeigen zu lassen, um diese z.B. gezielt löschen zu können.
+
+Hier die Bedeutung der Wahlmöglichkeiten:
+
+* __Egal__: Es erfolgt keine Einschränkung anhand der Antworten.
+* __Alle Items beantwortet__: Nur komplett bearbeitete Testläufe werden angezeigt.
+* __Alle nötigen Items beantwortet__: Alle Items, bei denen das Häkchen "Antwort nötig" aktiviert ist, wurden beantwortet.
+* __Nicht alle nötigen Items beantwortet__: Items, bei denen das Häkchen "Antwort nötig" aktiviert ist, wurden ausgelassen.
+
+
+### Ergebnisse
+
+Anzahl der gefundenen Testläufe.
+
+
+Hier die Bedeutung der Felder:
+
+* Testlauf #__123__: Die interne ID des Testlaufs
+* __Test:__ Der Titel des ausgeführten Tests
+* __UserID:__ Interne ID des Benutzers, der den Test gestartet hat (bei dem Zugriff über eine TAN, ist diese immer 0)
+* __Startzeit:__ Datum und Uhrzeit des Test-Starts
+* __Zugriffsart:__ Siehe <a href="#access_type">Zugriffsart</a>
+* __Item-Fortschritt:__ Anteil der Items, die betrachtet wurden
+* __Beantwortung aller Items:__ Anteil der Items, die betrachtet und beantwortet wurden
+* __Beantwortung aller nötigen Items:__ Anteil der Items, die betrachtet und beantwortet wurden und bei denen "Antwort nötig" angeklickt wurde
+
+Per Klick auf "Details anzeigen" können Sie die gegebenen Antworten und die Bearbeitungszeiten pro Item einsehen. "Testlauf Löschen" löscht den
+jeweiligen Testlauf unwiederruflich.
+
+
+### E-Mail Text
+
+Geben Sie hier den Text des Anschreibens an die ausgewählten Teilnehmer an.
+Das Anschreiben enthält beispielsweise eine kurze Erläuterung und einen Link auf den zur Durchführung gewünschten Test.
+
+
+#### Nachbefragungs-Test
+
+Haben Sie mit testMaker eine Nachbefragung erstellt, so können Sie hier aus einem DropDown-Feld den entsprechenden Test auswählen.
+Der Link zu diesem Test wird durch den Platzhalter [TEST] in das Anschreiben eingefügt.
+
+
+
+#### Platzhalter
+
+Beim Einsatz eines Platzhalters im E-Mail-Text wird für jede versendete E-Mail der entsprechende Inhalt eingefügt.
+So können beispielsweise eine persönliche Anrede und der Link auf den Nachbefragungs-Test realisiert werden.
+
+Folgende Platzhalter stehen zur Verfügung:
+
+* [NAME]: Fügt den hinterlegten vollständigen Namen des Teilnehmers ein
+* [TEST]: Kreiert einen direkten Link zum ausgewählten Nachbefragungs-Test (s.o.)
+* [Username]: Fügt den Benutzernamen des Teilnehmers ein. (Der könnte ihn vergessen haben, wenn die Teilnahme weiter zurückliegt)
+* [PWLINK]: Fügt einen Link zum "Passwort vergessen"-Formular des testMaker ein
+
+
+
+### Anschreiben verschicken
+
+Nach Klick auf den Senden-Button erhalten Sie noch eine kurze Übersicht über das fertig generierte Anschreiben und die ausgewählten E-Mail-Adressen.
+Dann können Sie die Anscheiben zur Nachbefragung freigeben. 
+
+Der Text des Anscheibens kann für die weitere Verwendung als Template gespeichert werden.
+
+__Bitte beachten:__
+
+Die Emails werden noch nicht tatsächlich verschickt, sondern lediglich zum Absenden freigegeben. 
+Der eigentliche Versand geschieht entweder über einen CronJob oder über die manuelle Ausführung über den Reiter "Job Einstellungen".
+Dies Ermöglicht das Einhalten bestimmter Limitierungen durch den Hosting-Provider (z.B. begrenzte Anzahl von E-Mails pro Minute).
+
+Der Status über die versendeten Mails ist unter dem Reiter "Status" zu finden.
+
+

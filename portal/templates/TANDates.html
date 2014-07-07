@@ -1,0 +1,36 @@
+<script language="javascript">
+<!--
+function viewTANs()
+{
+	var window1 = window.open("", "tanwin", "width=400,height=460,top=10,left=10");
+	document.TANformular.target = "tanwin";
+	return true;
+}
+//-->
+</script>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+	<!-- BEGIN not_empty -->
+	<form name="TANformular" method="post" onsubmit="return viewTANs()" action="func_pagelink(container_block, view_tans, working_path: {working_path})">
+		<table>
+			<tr>
+				<th></th>
+				<th>Date</th>
+			</tr>
+			<!-- BEGIN tan_dates -->
+			<tr>
+				<td><input type="checkbox" name="date[]" value="{tan_date}" /></td>
+				<td>{tan_date:datetime}</td>
+			</tr>
+			<!-- END tan_dates -->
+		</table>
+		<input class="Button" type="submit" name="do_show" value="View" />
+	</form>
+	<!-- END not_empty -->
+	<!-- BEGIN empty -->
+	<p>
+		No TANs available!
+	</p>
+	<!-- END empty -->
+</div>

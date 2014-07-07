@@ -1,0 +1,39 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="func_pagelink(info_block, save, working_path: {working_path}, revert: true)">
+		<table>
+			<tr<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>
+				<td>func_T(forms.title)</td>
+				<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.description)</td>
+				<td><textarea name="description" rows="10" cols="40">{description:h}</textarea></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.last_modified)</td>
+				<td>{t_modified:datetime}</td>
+			</tr>
+			<tr>
+				<td>func_T(forms.created)</td>
+				<td>{t_created:datetime}</td>
+			</tr>
+			<tr>
+				<td>Author</td>
+				<td>{author:h}</td>
+			</tr>
+			<tr>
+				<td>Media ID</td>
+				<td>{media_connect_id}</td>
+			</tr>
+			<tr>
+				<td>Access</td>
+				<td>{access}</td>
+			</tr>
+		</table>
+		<!-- BEGIN form_submit_button -->
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+		<!-- END form_submit_button -->
+	</form>
+</div>

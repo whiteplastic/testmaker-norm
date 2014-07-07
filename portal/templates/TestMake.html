@@ -1,0 +1,69 @@
+<!-- BEGIN plugin_test -->
+<script type="text/javascript" language="JavaScript">
+function getMimeTypes()
+{
+	var mimeTypes = new Array(navigator.mimeTypes.length);
+	for (var i = 0; i < navigator.mimeTypes.length; i++) {
+		mimeTypes[i] = navigator.mimeTypes[i].type;
+	}
+	document.forms["start_test_form"].elements["mime_types"].value = mimeTypes;
+	document.forms["start_test_form"].submit();
+}
+</script>
+<!-- END plugin_test -->
+<p>{description}</p>
+
+<!-- BEGIN is_subbed -->
+<p>This test has been divided into several components. If you select "start the test" here or choose to continue an unfinished test run, you will be asked in the next step to choose which component you would like to start.</p>
+<p><a class="Button" href="func_pagelink(test_listing, subtest_view, test_id: {test_id}, test_run: -1)">Start the test</a></p>
+<!-- END is_subbed -->
+<!-- BEGIN regular_test -->
+<form name="start_test_form" method="post" action="func_pagelink(test_make, start_test, id: {test_id}, source: portal, test_path: {test_path})">
+	<input type="hidden" name="mime_types" value="" />
+	<a class="Button" href="javascript:getMimeTypes()">Start the test</a>
+</form>
+<!-- END regular_test -->
+
+<!-- BEGIN certificate -->
+<p id="Certificate" style="margin: 1em 0; padding: 5px; border: 1px solid #333378;background-color:#8888FF; width:70%;">
+	You can print a <a href="func_pagelink(pdf_generator, formular_certificate, test_run_id: {cert_test_run_id}, block_id: {cert_block_id})"><b>certificate</b></a> for this test.
+</p>
+<!-- END certificate -->
+
+<br />
+<h3>Past test runs</h3>
+<!-- BEGIN participate_allowed -->
+<p>You can view the feedback of past test runs or continue unfinished test runs.</p>
+<!-- END participate_allowed -->
+<!-- BEGIN participate_forbidden -->
+<p>You can view the feedback of past test runs, but it is no longer possible to continue unfinished test runs.</p>
+<!-- END participate_forbidden -->
+<!-- BEGIN no_runs -->
+<p>&nbsp;</p><p>You have not yet run this test.</p>
+<!-- END no_runs -->
+<!-- BEGIN has_runs -->
+<table class="Vertical">
+	<tr>
+<!-- BEGIN admin_info_header -->
+		<th>test run ID</th>
+<!-- END admin_info_header -->	
+		<th>Start time</th>
+		<th>Progress</th>
+		<th>Actions</th>
+	</tr>
+<!-- BEGIN run -->
+	<tr>
+<!-- BEGIN admin_info -->
+		<td>{test_run_id}</td>
+<!-- END admin_info -->	
+		<td>{date}</td>
+		<td>func_progressbar({progress})</td>
+		<td style="white-space:nowrap"><!-- BEGIN continue_subbed_link --><a class="Button list" href="func_pagelink(test_listing, subtest_view, test_run: {test_run_id}, test_id: {test_id})">Continue test run</a><!-- END continue_subbed_link --><!-- BEGIN continue_link --><a class="Button list" href="func_pagelink(test_make, continue_test, test_run: {test_run_id})">Continue test run</a><!-- END continue_link -->
+		<!-- BEGIN details_link --><a class="Button list" href="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, final: 1)">View feedback</a>
+		<!-- END details_link --></td>
+	</tr>
+<!-- END run -->
+</table>
+<!-- END has_runs -->
+
+<p><a href="func_pagelink(test_listing)" class="arrow">back to overview</a></p>

@@ -1,0 +1,75 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+	<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="func_pagelink(this, confirm_copy_move, working_path: {working_path})">
+		<!-- BEGIN no_one_copy -->
+			<p>
+				You can't copy this block anywhere!
+			</p>
+		<!-- END no_one_copy -->
+		<!-- BEGIN may_copy -->
+		<!-- BEGIN only_one_copy -->
+			<input type="hidden" name="target" value="{target_path_copy}" />
+			<p>
+				You can copy this test to '{title_copy:h}':
+			</p>
+		<!-- END only_one_copy -->
+		<!-- BEGIN more_copy -->
+		<p>
+			Please choose the destination to copy the test to:
+		</p>
+		<p>
+			<select name="target" size="1">
+				<!-- BEGIN targets_copy -->
+				<option value="{target_path_copy}">{title_copy:h}</option>
+				<!-- END targets_copy -->
+			</select>
+		</p>
+		<!-- END more_copy -->
+		<!-- BEGIN any_possible_copy -->
+			<p>
+				<input type="submit" class="Button" name="copy" value="func_T(buttons.copy)" />
+			</p>
+		<!-- END any_possible_copy -->
+	<!-- END may_copy -->
+	</form>
+	<form method="post" action="func_pagelink(this, confirm_copy_move, working_path: {working_path})">
+		<!-- BEGIN no_one_link_move -->
+			<p>
+				You can't link/move this block anywhere!
+			</p>
+		<!-- END no_one_link_move -->
+		<!-- BEGIN only_one_link_move -->
+			<input type="hidden" name="target" value="{target_path_link_move}" />
+			<p>
+				You can link/move this test to '{title_link_move:h}':
+			</p>
+		<!-- END only_one_link_move -->
+		<!-- BEGIN more_link_move -->
+		<p>
+			Please choose the destination to link/move the test to:
+		</p>
+		<p>
+			<select name="target" size="1">
+				<!-- BEGIN targets_link_move -->
+				<option value="{target_path_link_move}" {disabled_link_move}>{title_link_move:h}</option>
+				<!-- END targets_link_move -->
+			</select>
+		</p>
+		<!-- END more_link_move -->
+		<!-- BEGIN any_possible_link_move -->
+			<p>
+				<!-- BEGIN may_link -->
+				<input type="submit" class="Button" name="link" value="func_T(buttons.link)" />
+				<!-- END may_link -->
+				<!-- BEGIN may_move -->
+				<input type="submit" class="Button" name="move" value="func_T(buttons.move)" />
+				<!-- END may_move -->
+			</p>
+		<!-- END any_possible_link_move -->
+	</form>
+	<!-- BEGIN blocking_condition -->
+	<p>There is at least one item condition that refers to an item outside of this block. One of these conditions belongs to item <b>{condition_owner_item_title:h}</b> ({condition_owner_item_id:h}) in item block <b>{condition_owner_block_title:h}</b> ({condition_owner_block_id:h}).</p>
+	<!-- END blocking_condition -->
+</div>

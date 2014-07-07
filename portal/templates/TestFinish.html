@@ -1,0 +1,28 @@
+<p>
+	The test is over; thank you for participating. You may now <a href="func_pagelink(test_listing)">return to the test overview</a>
+	or
+<!-- BEGIN logged_in -->
+	<a href="javascript:$('logoutform').submit()">log out</a>.
+<!-- END logged_in -->
+<!-- BEGIN guest -->
+	close this window.
+<!-- END guest -->
+<!-- BEGIN send_feedback_email -->
+	<form method="post" action="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, layout: print, final: 1)" target="_blank">
+	<br>
+	<input name="feedback_overview" type="submit" class="Button" value="func_T(pages.testmake.feedback_overview)" />
+	<input name="feedback_email" type="submit" class="Button" value="func_T(pages.testmake.send_feedback_email)" />
+	</br>
+</form>
+<!-- END send_feedback_email -->
+<!-- BEGIN print_feedback -->
+	<form method="post" action="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, layout: print, final: 1)" target="_blank">
+	<br>
+	<input name="feedback_overview" type="submit" class="Button" value="func_T(pages.testmake.feedback_overview)" />
+	</br>
+</form>
+<!-- END print_feedback -->
+</p>
+
+<p>
+	This test was implemented using the free software <a href="func_pagelink(about)">testMaker</a>. Find out more about testMaker <a href="func_pagelink(about)">here</a>.</p>

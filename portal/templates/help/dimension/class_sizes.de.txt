@@ -1,0 +1,26 @@
+Mit Hilfe der Angaben zu Klassengrößen, die Sie hier machen, kann testMaker Testteilnehmern in Feedbacks eine Prozentrangnorm
+zu ihren Ergebnissen in einer Dimension anzeigen.
+
+Haben Sie bereits im Vorfeld der Testveröffentlichung über einer Population Rohwerte zu einer Dimension erfasst, so können Sie
+diese hier eingeben. Dabei ordnen Sie jeder erreichbaren Punktzahl der Dimension die Anzahl Mitglieder der Population zu, die
+diesen Punktwert erreicht haben. Haben Sie beispielsweise Rohdaten von 100 Probanden, von denen 34 in der vorliegenden Dimension
+keinen Punkt, 26 einen Punkt und 40 zwei Punkte erreicht haben, können Sie dies wie folgt eingeben:
+
+<pre>
+0: 34
+1: 26
+2: 40
+</pre>
+
+Aus diesen Daten kann nun für einen Testteilnehmer, der zwei Punkte erreicht, im Feedback Aussagen wie die folgenden erzeugt
+werden:
+
+* 60% der Testteilnehmer haben schlechter abgeschnitten als Sie.
+* 100% der Testteilnehmer haben nicht besser abgeschnitten als Sie.
+* 40% der Testteilnehmer haben die gleiche Bewertung erhalten.
+* 40% der Testteilnehmer sind mindestens so gut wie Sie bewertet worden.
+* 0% der Testteilnehmer haben ein besseres Ergebnis erzielt.
+
+Wie Sie solche Angaben in Ihrem Feedback einbinden können, erfahren Sie auf der Dokumentationsseite zu [Feedbackseiten][fb].
+
+[fb]: func_helplink(feedback_page, edit)

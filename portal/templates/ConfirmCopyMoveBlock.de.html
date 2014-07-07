@@ -1,0 +1,12 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+	<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="func_pagelink(this, execute_{action}, working_path: {working_path}, target: {target})">
+		<p>Wollen Sie den Test wirklich in '{target_title:h}' <!-- BEGIN copy -->kopieren<!-- END copy --><!-- BEGIN link -->linken<!-- END link --><!-- BEGIN move -->verschieben<!-- END move -->?</p>
+		<p>
+			<input class="Button" type="submit" name="do_copy_move" value="func_T(buttons.{action})" />
+			<input class="Button" type="submit" name="cancel_copy_move" value="func_T(buttons.cancel)" />
+		</p>
+	</form>
+</div>

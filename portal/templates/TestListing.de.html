@@ -1,0 +1,47 @@
+<!-- BEGIN sub_info -->
+<p>
+	<a href="func_pagelink(test_listing)" class="arrow">Zurück zur Testübersicht</a></p>
+<p>
+	Der Test <strong>{parent_title:h}</strong> besteht aus mehreren Untertests, die Sie separat durchführen können:</p>
+<!-- END sub_info -->
+<!-- BEGIN test_listing -->
+<dl class="Testlist">
+<div style="max-width:1800px; margin-left: auto; margin-right: auto;">
+	<!-- BEGIN test -->
+	<div  onClick="location.href='{testlink:h}'" class="testlistOuterDiv">
+		<div style="background-image: url({testlogo});" class="testlistInnerDiv">
+		<!-- BEGIN test_status -->
+			<div style="float:right;position:relative; bottom:-100px;right:15px;">func_progressbar({progress})</div>
+		<!-- END test_status -->
+		</div>
+		<div class="testlistInnerDiv2">
+			<div style="float:left; font-weight:bold;">
+			<!-- BEGIN Link -->
+			  <a href="{testlink:h}"><img style="margin-right:5px;" alt="" src="portal/images/menu_test.png" />{testtitle:h}</a> {publication} {subs}<!-- BEGIN password_required --> <span style="font-weight:normal">(passwortgeschützt)</span><!-- END password_required -->
+			<!-- END Link -->
+			<!-- BEGIN NoLink -->
+			  <img alt="" src="portal/images/menu_test.png" />{testtitle:h} {publication} {subs}
+			<!-- END NoLink -->
+			</div>
+			
+			<!-- BEGIN test_description -->
+			<div style="clear:both; padding-top:5px; padding-bottom:0px; margin-top:5px;"><span class="testoverview">{testdescription}</span></div>
+			<!-- END test_description -->
+			<!-- BEGIN test_no_description -->
+			<div style="clear:both; padding:0px;"></div>
+			<!-- END test_no_description -->
+		</div>
+	</div>	
+	<!-- END test -->
+</div>	
+</dl>
+<!-- END test_listing -->
+<!-- BEGIN feedback_info -->
+<h2>Feedback</h2>
+
+<p>
+	Da Sie alle Subtests bereits durchgeführt haben, können Sie sich hier das
+	<a href="func_pagelink(test_listing, show_feedback, test_id: {parent_id}, test_run: {test_run})">Gesamtfeedback aller Subtests</a>
+	anzeigen lassen.</p>
+<!-- END feedback_info -->
+

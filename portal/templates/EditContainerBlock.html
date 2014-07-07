@@ -1,0 +1,72 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="func_pagelink(container_block, save, working_path: {working_path}, revert: true)">
+		<table>
+			<tr<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>
+				<td>func_T(forms.title)</td>
+				<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.description)</td>
+				<td>{description}</td>
+			</tr>
+			<tr>
+				<td>Last modified</td>
+				<td>{t_modified:datetime}</td>
+			</tr>
+			<tr>
+				<td>Created</td>
+				<td>{t_created:datetime}</td>
+			</tr>
+			<tr>
+				<td>Author</td>
+				<td>{author:h}</td>
+			</tr>
+			<tr>
+				<td>Access</td>
+				<td>{access}</td>
+			</tr>
+			<tr>
+				<td>Random order of underlying blocks</td>
+				<td><input type="checkbox" name="random_order" value="1" {random_order_checked} /></td>
+			</tr>
+			<!-- BEGIN subtest_inactive -->
+			<tr>
+				<td>Deactivate subtest</td>
+				<td><input type="checkbox" name="subtest_inactive" value="1"{subtest_inactive_checked}/></td> 
+			</tr>
+			<!-- END subtest_inactive -->
+			<!-- BEGIN language_block -->
+			<tr>
+				<td>Language</td>
+				<td><select name="language">
+				<!-- BEGIN languages -->
+					<option value="{valueLang}"{select}>{longLang}</option>
+				<!-- END languages -->
+				</select></td>
+			</tr>
+			<!-- END language_block -->
+			<!-- BEGIN test_level_settings -->
+			<tr>
+				<td>Offer skipping</td>
+				<td><input type="checkbox" name="enable_skip" value="1"{enable_skip_checked}/></td>
+			</tr>
+			<!-- END test_level_settings -->
+			<!-- BEGIN show_subtests_block -->
+			<tr>
+				<td>Show sub-tests in portal</td>
+				<td><input type="checkbox" name="show_subtests" value="1"{show_subtests_checked}/></td>
+			</tr>
+			<!-- END show_subtests_block -->
+		</table>
+		<!-- BEGIN form_submit_button -->
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+		<!-- END form_submit_button -->
+	</form>
+
+	<hr />
+	<!-- BEGIN direct_access_block -->
+	<div>Address for direct access:<br /><a class="arrow" href="{direct_access_url:h}">{direct_access_url:h}</a></div>
+	<!-- END direct_access_block -->
+</div>

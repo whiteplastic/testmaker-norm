@@ -1,0 +1,38 @@
+<!-- INCLUDE EditNodeHeader.html -->
+<!-- BEGIN cert_test -->
+<form name="validate_certificate_barcode" method="post" action="func_pagelink(feedback_block, check_certificate_barcode, check: true, return_page: checkCert)">
+		<table>
+			<tr>
+				<th>Bescheinigung eines Teilnehmers &uuml;berpr&uuml;fen (Barcode)</th>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Checksumme (20-stellig)</td>
+				<td><input name="checksum" type="text" /></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" class="Button" name="do_check" value="Pr&uuml;fen" /></td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						<!-- BEGIN resultBarCodePos -->
+						<font style="color: green;font-weight:bold">Bescheinigung ist gültig </font>
+						<p><font style="font-weight:bold">Name: {name}</font></p>
+						<p><font style="font-weight:bold">Geburtsdatum: {date}</font></p>
+						<p><font style="font-weight:bold">{testTitle}</font></p>
+						<!-- END resultBarCodePos -->
+						<!-- BEGIN resultBarCodeNeg -->
+						<font style="color:{message_color:h};font-weight:bold">{result_message_barcode:h}</font>
+						<!-- END resultBarCodeNeg -->
+					</p>
+				</td>
+			</tr>
+		</table>
+</form>
+<!-- END cert_test -->

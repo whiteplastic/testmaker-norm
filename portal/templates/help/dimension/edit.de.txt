@@ -1,0 +1,53 @@
+###Orientierung
+Sie befinden sich in einer bereits angelegten Dimension des testMakers. Durch das Festlegen von Dimensionen werden Gruppen von Items gemeinsam ausgewertet. Das ist notwendig, um später bestimmte Anzeigebedingungen auf den Feedbackseiten festlegen sowie im Feedback Punkt- und Prozentwerte anzeigen zu können.
+Auf der linken Seite finden Sie das Navigationsmenü. Dieses besteht aus 3 Bereichen:
+ 
+* Auswahlliste der Administrationsbereiche
+* Navigation zur Testerstellung
+* Aktionsbuttons
+
+Allgemeine Informationen zu den Administrationsbereichen und zur Navigation der Testerstellung erhalten Sie in der [Hilfefunktion der Startseite](func_helplink(admin_start, start)).
+Die Funktionen der Aktionsbuttons werden auf der [Hilfeseite des Feedbackblocks](func_helplink(feedback_block, edit)) weiter ausgeführt.
+
+Im rechten Bereich des Bildschirms werden die Einstellmöglichkeiten der aktiven Dimension angezeigt. Auf dieser Ebene finden Sie die Karteireiter:
+
+* Allgemein
+* Einstellungen
+* Dimension löschen
+
+###Karteireiter einer Dimension
+####Allgemein
+Hier können Sie der angelegten Dimension einen Namen und eine Beschreibung geben. Unter "Titel" können Sie die Dimension (um)benennen. Geben Sie dazu den gewünschten Titel in das Textfeld ein. Bei der Beschreibung gehen Sie ebenso vor. (Beispiel: Titel: Extraversion; Beschreibung: gesprächig, bestimmt, etc.).
+
+Als nächstes müssen Sie die Items markieren, die bei dieser Dimension berücksichtigt werden sollen, also die Items, die einer Skala angehören. Es werden nur die Items angezeigt, die sich in dem zuvor auf Feedbackblock-Ebene von Ihnen ausgewählten Quell-Itemblock befinden.
+
+Um zu bestimmen, wie die Items für das Feedback ausgewertet werden sollen, stehen Ihnen drei Optionen zur Verfügung, von denen Sie hier eine auswählen müssen. Sie können entweder für einzelne Antworten je einen Punkt vergeben, eine auf- oder absteigende Punkteskala über die Antworten definieren oder für jede Antwort die Punktzahl explizit eingeben. Ihre Wahl hier entscheidet über den Aufbau der nächsten Seite, die sich öffnet, sobald Sie den Aktionsbutton "Nächster Schritt" anklicken.
+
+#####Einzelnen Antworten je einen Punkt geben
+Hier ausgewählte Antworten werden in Feedbacks mit einem Punkt bewertet. Diese Option ist beispielsweise dann sinnvoll, wenn Sie Multiple-Choice-Items verwenden, bei denen eine oder mehrere Antworten richtig sind.
+
+#####Auf- oder absteigende Punkteskala
+Hier können Sie den Antwortmöglichkeiten auf- oder absteigende Punkteskalen zuordnen (z.B. für Ratingskalen). Wenn Sie beispielsweise eine fünfstufige Antwortskala von "trifft überhaupt nicht zu" bis "trifft voll zu" verwenden, können Sie hier den Antwortalternativen Werte von ein bis fünf zuordnen.
+
+#####Explizite Eingabe von Punktzahlen
+Hier können Sie jeder Antwortmöglichkeit eine beliebige Punktzahl zuweisen. Dies ist für Items sinnvoll, bei denen für die einzelnen Antworten verschieden viele Punkte vergeben werden sollen oder für die Gewichtung von Items. Ein Beispiel wäre hier ein Leistungstest, in dem es auch bei Multiple-Choice-Items möglich sein soll Teilpunkte zu bekommen, oder aber unterschiedlich schwierige Items unterschiedlich gewertet werden sollen.
+
+####Einstellungen
+Hier können Sie einen Vergleichswert für die aktuelle Dimension angeben, welcher beim Einsatz einer Feedbackgrafik angezeigt wird, und die Größen der Klassengruppen für die erreichbaren Punktzahlen festlegen.
+
+#####Vergleichswert (Grafik)
+Hier können Sie einen ganzzahligen Vergleichswert für diese Dimension angeben. Dieser wird beim Einsatz einer Feedbackgrafik angezeigt.
+
+#####Vergleichswerte (Text)
+Hier können Sie die Größen der Klassengruppen für die erreichbaren Punktzahlen festlegen. Diese Angaben werden verwendet, um die Prozentrangnorm für eine Testdurchführung zu berechnen.
+
+####Dimension löschen
+Unter diesem Reiter wird die Dimension unwiderruflich gelöscht.
+
+### Besonderheit Freitextantworten
+Möchten Sie Freitextantworten auswerten lassen, so kann dieses auch automatisch erfolgen. Dies ist aber natürlich auf Zahlen oder Wörter beschränkt, nicht auf Prosatext mit
+Textinterpretation.
+
+Wenn Sie eine Freitextanwort automatisch auswerten möchten, müssen Sie die korrekten Antworten als Itemantworten angeben - auch wenn diese 
+natürlich den Testteilnehmern nicht dargeboten werden. Im Feedbackmodul müssen Sie danach eine entsprechende Dimension anlegen und den gewünschten Freitextantworten 
+die gewünschte Punktzahl zuordnen. Dabei können auch mehrere richtige Antworten berücksichtigt werden.

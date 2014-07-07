@@ -1,0 +1,7 @@
+Hallo {name},
+
+klicken Sie bitte auf den folgenden Link um die neue E-Mail-Adresse für Ihren testMaker-Account zu bestätigen:
+
+<{link}>
+
+Das testMaker-Team

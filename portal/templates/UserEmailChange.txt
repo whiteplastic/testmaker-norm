@@ -1,0 +1,7 @@
+Hello {name},
+
+please click on this link to confirm the new email address for your testMaker account:
+
+<{link}>
+
+The testMaker team

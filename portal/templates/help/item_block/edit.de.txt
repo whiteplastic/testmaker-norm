@@ -1,0 +1,57 @@
+###Orientierung
+Sie befinden sich auf dem Karteireiter "Allgemein" in einem bereits angelegten Itemblock des testMakers.
+
+Auf der linken Seite finden Sie das Navigationsmenü. Dieses besteht aus 3 Bereichen:
+ 
+* Auswahlliste der Administrationsbereiche
+* Navigation zur Testerstellung
+* Aktionsbuttons
+
+Allgemeine Informationen zu den Administrationsbereichen und zur Navigation der Testerstellung erhalten Sie in der [Hilfefunktion der Startseite](func_helplink(admin_start, start)).
+
+Im rechten Bereich des Bildschirms werden die Einstellmöglichkeiten des aktiven Itemblocks angezeigt. Auf dieser Ebene finden Sie:
+
+* Allgemein
+* Standard-Einstellungen
+* Standard-Antworten
+* Standard-Template
+* Struktur
+* Kopieren / Verschieben
+* Rechte
+* Itemblock löschen
+
+
+###Aktionsbuttons
+####Neues Item anlegen
+Hier können Sie ein weiteres Item hinzufügen. Ein neues Item wird angelegt und Sie werden automatisch auf die Itemebene weitergeleitet, wo Sie das neue Item bearbeiten können. 
+
+###Karteireiter des Itemblocks
+####Allgemein
+Unter "Titel" und "Beschreibung" können Sie den Itemblock umbenennen und optional eine Beschreibung einfügen. Geben Sie dazu den gewünschten Titel in das Textfeld ein und klicken Sie auf "Speichern". Bei der Beschreibung gehen Sie ebenso vor.
+
+Darunter finden Sie Daten bzgl. des Zeitpunkts der Erstellung und der letzten Änderung dieses Itemblocks, sowie bzgl. des Autors, der Medien-ID und des Veröffentlichungsstatus des Itemblocks (Test-Zugriff). Die Medien-ID identifiziert die hochgeladenen Medien (Grafiken, Flash-Dateien) pro Itemblock. Alle Medien, die Sie hochladen, erhalten eine itemblockspezifische Kennzahl, die hier angegeben ist. Wenn Sie einen Test kopieren, werden auch die Medien mitkopiert und erhalten eine neue Medien-ID. Der Status, also der Test-Zugriff, lässt sich unter dem Reiter "Rechte" verändern. Der Block wird als "veröffentlicht" markiert, sobald eine Gruppe, die keine Editorrechte besitzt, auf den Test zugreifen kann. Weitere Erläuterungen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(container_block, edit_perms)) im Abschnitt "Spezialgruppen".
+
+Indem Sie das Häkchen bei IRT-skalierte Items setzen, können Sie angeben, ob Sie Items verwenden, die nach der Item Response Theory (IRT) kalibriert wurden.
+
+Sie haben die Möglichkeit, eine adaptive Teststrategie auszuwählen, die sich an der maximalen Itemzahl oder dem Unterschreiten des Standardmessfehlers orientieren kann. Wenn Sie beispielsweise hinter "Maximale Itemzahl" eine 20 eintragen, wird die Testung automatisch nach 20 bearbeiteten Items abgebrochen.
+
+####Standard-Einstellungen
+Hier können Sie Einstellungen treffen, die für alle Items des Itemblocks gelten, siehe [Hilfefunktion "Standard-Einstellungen"](func_helplink(item_block, edit_defaults)).
+
+####Standard-Antworten
+Hier können Sie Standard-Antworten für alle Items des Itemblocks anlegen, siehe [Hilfefunktion "Standard-Antworten"](func_helplink(item_block, default_answers)).
+
+####Standard-Template
+Auf dieser Seite können Sie ein Template für ein Item oder für alle Items eines Blockes festlegen.
+
+####Struktur
+Hier können Sie die Reihenfolge der Darbietung der einzelnen Elemente festlegen. Diese Funktion ist nur auf Testebene möglich.
+
+####Kopieren / Verschieben
+Hier haben Sie die Möglichkeit, den kompletten Itemblock zu kopieren, verschieben oder zu verlinken. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Kopieren/Verschieben"](func_helplink(any, copy_move)).
+
+####Rechte
+Diese Funktion bietet Ihnen die Möglichkeit, den zuvor angelegten Benutzergruppen Rechte zuzuteilen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(feedback_block, edit_perms)).
+
+####Itemblock löschen
+Auf diesem Reiter können Sie den gesamten Itemblock löschen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Itemblock löschen"](func_helplink(any, confirm_delete)).

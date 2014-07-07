@@ -1,0 +1,10 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+<!-- INCLUDE DeletePublishedHeader.html -->
+	<p>Do you really want to delete this feedback page?</p>
+	<form method="post" action="func_pagelink(feedback_page, delete, working_path: {working_path}, item_id: {item_id})">
+		<input class="Button" type="submit" name="do_delete" value="Delete" />
+		<input class="Button" type="submit" name="cancel_delete" value="Cancel" />
+	</form>
+</div>

@@ -1,0 +1,23 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE DeletePublishedHeader.html -->
+
+<!-- BEGIN active_item_conditions -->
+<div class="Warning"><p>Es sind Anzeigebedingungen für andere Items vorhanden, die sich auf das vorliegende Item beziehen und mit dem Löschvorgang ihre Gültigkeit verlieren!</p>
+	<p>Betroffene Items (Item-ID, Titel):
+		<ul>
+		<!-- BEGIN item_list -->
+			<li>#{cond_item_id} ("{cond_item_title}")</li>
+		<!-- END item_list -->
+	</ul></p>
+</div>
+<!-- END active_item_conditions -->
+
+	<p>Soll das Item wirklich inkl. aller Antworten gelöscht werden?</p>
+	<form method="post" action="func_pagelink(item, delete, working_path: {working_path}, item_id: {item_id})">
+		<input class="Button" type="submit" name="do_delete" value="Löschen" />
+		<input class="Button" type="submit" name="cancel_delete" value="Abbrechen" />
+	</form>
+</div>

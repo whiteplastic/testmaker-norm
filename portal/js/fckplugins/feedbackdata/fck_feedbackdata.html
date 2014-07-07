@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!--
+ * testMaker feedback plugin for FCKeditor
+ *
+ * File Name: fckplugin.js
+ * 	Plugin to insert "Placeholders" in the editor.
+ *
+ * File Authors:
+ * 		Jan Krueger <jk@jan-krueger.net>
+-->
+<html>
+	<head>
+		<title>Feedback Data Editor</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta content="noindex, nofollow" name="robots">
+		<script language="javascript">
+
+var oEditor = window.parent.InnerDialogLoaded();
+var FCKLang = oEditor.FCKLang;
+var FCKFbdata = oEditor.FCKFbdata;
+
+window.onload = function()
+{
+	// First of all, translate the dialog box texts
+	oEditor.FCKLanguageManager.TranslatePage(document);
+
+	LoadSelected();
+
+	// Show the "Ok" button.
+	window.parent.SetOkButton(true);
+}
+
+var eSelected = oEditor.FCKSelection.GetSelectedElement();
+
+function LoadSelected()
+{
+	if ( !eSelected )
+		return ;
+
+	if (FCKFbdata.IsFb(eSelected))
+		document.getElementById('txtName').value = eSelected.title;
+	else
+		eSelected == null;
+}
+
+function Ok()
+{
+	var sValue = document.getElementById('txtName').value;
+
+	if (eSelected && eSelected.innerHTML == sValue)
+		return true;
+
+	FCKFbdata.Add({
+		caption: sValue
+	});
+
+	window.parent.close();
+}
+
+		</script>
+	</head>
+	<body scroll="no" style="overflow: hidden">
+		<table height="100%" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<tr>
+				<td>
+					<table cellSpacing="0" cellPadding="0" align="center" border="0">
+						<tr>
+							<td>
+								<span fckLang="FeedbackDataDlgName">Field Title</span><br>
+								<input id="txtName" type="text">
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

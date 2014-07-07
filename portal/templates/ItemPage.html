@@ -1,0 +1,270 @@
+<script type="text/javascript" src="portal/js/external/prototype.js"></script>
+<script type="text/javascript" src="portal/js/drop.js"></script>
+<script type="text/javascript">
+<!--
+	var submitted = false;
+	var maxTime = {max_time};
+	var isItemPage = true;
+	var isBlockTime = {is_block_time};
+	var minTime = {min_time};
+	myEvent = 2;
+
+	var waitTimeout;
+	var abortTimer;
+
+	function resetSubmitted()
+	{
+		submitted = false;
+	}
+
+	
+	function getTimeWait()
+	{
+		return limitMin((minTime - getTimePassed()), 0);
+	}
+
+	function getTimeLeft()
+	{
+		return limitMin(maxTime - (getTimePassed() - minTime), 0);
+	}
+
+	function limitMax(value, max)
+	{
+		return Math.min(value, max);
+	}
+
+	function limitMin(value, min)
+	{
+		return Math.max(value, min);
+	}
+
+	function formatTimeLeft(total)
+	{
+		var rounded = 0;
+
+		switch(true) 
+		{
+			case (total > 120): rounded = Math.floor(total / 15) * 15 + 15; break;
+			case (total > 60) : rounded = Math.floor(total / 10) * 10 + 10; break;
+			case (total > 31) : rounded = Math.floor(total / 5) * 5 + 5; break;
+			case (total <= 31) : rounded = Math.floor(total); break;
+			
+		}
+		
+		var timeleft = new Date(rounded*1000);
+		if(timeleft.getMinutes() > 0)
+			return timeleft.getMinutes() + " func_T(generic.minutes) " + timeleft.getSeconds();
+		else
+			return timeleft.getSeconds();
+
+	}
+
+/////
+///// Irgenwo stimmt Zeitberechnung nicht. verfolge von init, starttime, gettimes, cookie was hakt wo?!
+/////
+	
+	function init()
+	{
+		window.setTimeout("setDropSize()", 1);
+		$("item").style.display = "block";
+		$("progress").style.display = "none";
+		storeStartTime();
+		
+		if(minTime + maxTime > 0)
+		{ maxTime = maxTime * 1000; minTime = minTime * 1000;
+			if (maxTime > 0)
+			{
+				maxTime = maxTime++;
+				var timeLeft = getTimeLeft();
+				abortTimer = window.setTimeout("abortItem()", timeLeft);
+			}			
+			timetTimeout = window.setTimeout("timeItem()", 200);
+		}
+		if(minTime > 0){
+			minTime++
+			disableAnswerButtons();
+		}
+		else
+			showAnswerButtons();
+		//window.setTimeout("showAnswerButtons()", (getTimeWait()*1000));
+
+	}
+
+	function setTimerValue(value)
+	{value = value / 1000;
+		if (!$('countdown')) return;
+
+		if(value < 0) {
+			$("countdown_value").innerHTML = Math.floor(-value);
+			$('min_countdown').style.display = 'inline';
+			$('max_countdown').style.display = 'none';
+			$('max_block_countdown').style.display = 'none';
+			$('countdown').style.display = 'block';
+			$('countdown').style.color = '#222222';
+		} else if (maxTime == 0) {
+			$('countdown').style.display = 'none';
+		} else {
+			$("countdown_value").innerHTML = formatTimeLeft(value);
+			if (value <= 10) {
+				$('countdown').style.color = '#800000';
+			}
+			$('min_countdown').style.display = 'none';
+			if (isBlockTime)
+			{
+				$('max_block_countdown').style.display = 'inline';
+				$('max_countdown').style.display = 'none';
+			}
+			else
+			{
+				$('max_countdown').style.display = 'inline';
+				$('max_block_countdown').style.display = 'none';
+			}
+			$('countdown').style.display = 'block';
+		}
+	}
+
+	function timeItem()
+	{
+		if(getTimeWait() > 0) {
+			setTimerValue(-getTimeWait());
+		} else {
+			setTimerValue(getTimeLeft());
+			showAnswerButtons();
+		}
+		waitTimeout = window.setTimeout("timeItem()", 200);
+	}
+
+	function showAnswerButtons()
+	{
+		AnswerButtons = document.getElementsByClassName("AnswerButton");
+		//This function takes the last element in the array because of Firefox handle answerButtons as Pointer and IE as instance
+		for(i = AnswerButtons.length-1 ; i >= 0; i--) {
+			AnswerButtons[i].disabled = false;
+			AnswerButtons[i].className = "Button";
+		}
+	}
+
+	function disableAnswerButtons()
+	{
+		AnswerButtons = document.getElementsByClassName("AnswerButton");
+		for(i = 0; i < AnswerButtons.length; i++) {
+			AnswerButtons[i].disabled = true;
+		}
+	}
+
+	function abortItem()
+	{
+		var form = document.forms['itemForm'];
+		form.elements['timeout'].value = 1;
+		if (this.map)
+			this.map.serialize();
+		// We need to manually call handleSubmit() because form.submit() seems to ignore the onsubmit attribute
+		if (handleSubmit(form)) {
+			form.submit();
+		}
+	}
+
+	function handleSubmit(form,code)
+	{
+		if (code==13) { 
+			myEvent = 0; code = 0;
+			return false;
+		}
+		if (! submitted) {
+			submitted = true;
+<!-- BEGIN submit_preview -->
+			alert("func_T(pages.testmake.item_preview_submitted)");
+			return false;
+<!-- END submit_preview -->
+<!-- BEGIN submit_live -->
+			window.setTimeout('resetSubmitted()', 5000);
+			form.elements['duration'].value = getTimeNow()-getTimeStart();
+			delStartTime();
+			return true;
+<!-- END submit_live -->
+		}
+		else {
+			return false;
+		}
+	}
+
+	function intro() {
+		var intro = $('Introduction');
+		var testFooter = $('TestFooter');
+		if (intro.style.display == 'block') {
+			intro.style.display = 'none';
+			testFooter.style.display = 'block';
+		}
+		else {
+			intro.style.display = 'block';
+			testFooter.style.display = 'block';
+		}
+	}
+//-->
+</script>
+<div id="progress">
+func_T(generic.loading)
+</div>
+<div id="item" style="display:none;padding:1px;margin:-1px">
+<form name="itemForm" method="post" action="func_pagelink(test_make, process_answer, id: {id})" onkeydown="myEvent = event.keyCode"  
+onsubmit="return handleSubmit(this, myEvent)" onkeyup="myEvent = 0;">
+<div>
+<input type="hidden" name="session_id" value="{session_id}" />
+<input type="hidden" name="item_id" value="{item_id}" />
+<input type="hidden" name="block_id" value="{block_id}" />
+<input type="hidden" name="timeout" value="0" />
+<input type="hidden" name="duration" value="-1" />
+</div>
+<!--  BEGIN up_view_hidden_intro -->
+<p><button type="button" onclick="intro(); return false" style="margin-bottom: 5px;">{intro_label}</button></p>
+<div class="introduction" id="Introduction" style="display: none; margin-top: -10px; margin-bottom: 10px; background-color: #ccc;">
+<div class="Question" style="width:100%">
+<div class="Inner">
+	{introduction}
+</div>
+</div>
+</div>
+<!-- END up_view_hidden_intro -->
+<!-- BEGIN up_view_intro -->
+<div style="position: relative">
+<div class="introduction">
+<div class="Question" style="width:100%">
+<div class="Inner">
+	{introduction}
+</div>
+</div>
+</div>
+<br />
+</div>
+<!-- END up_view_intro -->
+<!-- BEGIN item_block -->
+{item}
+<!-- END item_block -->
+<!-- BEGIN down_view_intro -->
+<br />
+<div style="position: relative">
+<div class="introduction">
+<div class="Question" style="width:100%">
+<div class="Inner">
+	{introduction}
+</div>
+</div>
+</div>
+<br />
+</div>
+<!-- END down_view_intro -->
+<!--  BEGIN down_view_hidden_intro -->
+<p><button type="button" onclick="intro(); return false" style="margin-bottom: 5px;">{intro_label}</button></p>
+<div class="introduction" id="Introduction" style="display: none; margin-top: -10px; margin-bottom: 10px; background-color: #ccc;">
+<div class="Question" style="width:100%">
+<div class="Inner">
+	{introduction}
+</div>
+</div>
+</div>
+<!-- END down_view_hidden_intro -->
+<!-- BEGIN time_bar -->
+<div id="countdown" style="display:none;"><span id="max_countdown">func_T(generic.countdown.max)</span> <span id="max_block_countdown">func_T(generic.block_countdown.max)</span> <span id="countdown_value">&nbsp;</span> func_T(generic.seconds)<span id="min_countdown">func_T(generic.countdown.min)</span></div>
+<!-- END time_bar -->
+</form>
+</div>

@@ -1,0 +1,11 @@
+<div id="Content">
+<div class="Question">
+	<h2>Fragen überspringen?</h2>
+	<p>Die folgenden Fragen (<strong>{block_title:h}</strong>) haben Sie bereits im Rahmen des Tests "<strong>{other_block_title:h}</strong>" beantwortet. Wenn Sie möchten, können Sie diese Fragen jetzt überspringen, wobei Ihre vorherigen Antworten dann automatisch übernommen werden. Alternativ können Sie die Fragen noch einmal beantworten.</p>
+</div>
+<form method="post" action="func_pagelink(test_make, skip_block, id: {id})">
+<input type="hidden" name="block_id" value="{block_id}" />
+<input class="Button" type="submit" value="Überspringen" />
+<input class="Button" type="submit" name="cancel" value="Erneut beantworten" />
+</form>
+</div>

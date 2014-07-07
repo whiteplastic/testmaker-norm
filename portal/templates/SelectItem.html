@@ -1,0 +1,25 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="{link}" name="item">
+		<table class="TemplateChoose">
+			<!-- BEGIN item_row -->
+			<tr>
+				<!-- BEGIN item_cell -->
+				<td style="text-align:center">
+					<button type="submit" name="item_type[{item_name:h}]" value="1">
+						<img src="upload/items/{item_image:h}" alt="{item_name:h}" title="{item_name:h}" />
+						<br>{item_name:h}
+					</button>
+				</td>
+				<!-- END item_cell -->
+
+				<!-- BEGIN empty_item_cell -->
+				<td></td>
+				<!-- END empty_item_cell -->
+			</tr>
+			<!-- END item_row -->
+		</table>
+	</form>
+</div>

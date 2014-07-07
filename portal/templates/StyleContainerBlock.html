@@ -1,0 +1,189 @@
+<!-- INCLUDE TabBar.html -->
+<script type="text/javascript" src="portal/js/style_chooser.js">
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var bgColor = '{oabgcolor:h}';
+var fontFamily = '{fonttype:j}';
+var fontSize = '{fontsize:j}';
+var fontStyle = '';
+var fontWeight = '';
+var fontColor = '{fontcolor:h}';
+//]]!>
+window.onload=toggleStyleSettings;
+</script>
+<div class="Card Chooser">
+<!-- INCLUDE EditNodeHeader.html -->
+	<form name="styleForm" method="post" action="func_pagelink(container_block, style, working_path: {working_path})" enctype="multipart/form-data">
+	<!-- BEGIN use_parent_style -->
+	<fieldset>
+		<legend>Allgemein</legend>
+		<table>
+			<tr>
+				<td>Use style-settings of parent test</td>
+				<td><input type="checkbox" name="use_parent_style" value="1" onclick="toggleStyleSettings()" {useParentStyleChecked} /></td>
+			</tr>
+		</table>
+	</fieldset>
+	<!-- END use_parent_style -->
+	<fieldset name="styleSettings"><legend>Logo</legend>
+		<!-- BEGIN logo_block -->
+		func_medium('{media}')<br />
+		<!-- END logo_block -->
+		<table>
+			<tr><td colspan="2"><b>Only upload filetypes
+			<!-- BEGIN medialist -->
+			{mediatype}
+			<!-- END medialist -->
+			</b> </td></tr>
+			<tr><td>Insert logo</td><td><input type="file" name="logo" accept="image/*" /><input type="submit" name="submit[upload]" value="Upload" class="Button" /></td></tr>
+			<tr><td>Logo show:</td><td>
+				<input id="logoShow1" type="radio" name="logoShow" value="2" {show2} /> <label for="logoshow2">Test and Test overview</label>
+				<input id="logoShow2" type="radio" name="logoShow" value="1" {show1} /> <label for="logoshow1">Test</label>
+				<input id="logoShow3" type="radio" name="logoShow" value="0" {show0} /> <label for="logoShow0">Test overview</label>
+			</td></tr>
+			<tr><td>Logo align:</td><td>
+				<input id="logoAlignLeft" type="radio" name="logoAlign" value="left" {alignleft} /> <label for="logoAlignLeft">Left</label>
+				<input id="logoAlignCenter" type="radio" name="logoAlign" value="center" {aligncenter} /> <label for="logoAlignCenter">Center</label>
+				<input id="logoAlignRight" type="radio" name="logoAlign" value="right" {alignright} /> <label for="logoAlignRight">Right</label>
+			</td></tr>
+			<tr><td>Delete logo</td><td><input type="checkbox" name="deleteLogo" value="del" /></td></tr>
+		</table>
+	</fieldset>
+	<fieldset name="styleSettings"><legend>Overall page</legend>
+	<input type="hidden" name="save" value="1" />
+	<table>
+		<tr>
+			<td><label>Breite im Browser:</label></td>
+			<td colspan="2">
+				<input id="form_style_page_width_full" type="radio" name="pageWidth" value="0" {pageWidthFullOnChecked} />
+				<label for="form_style_page_width_full">Voll</label>
+				<input id="form_style_page_width_fixed" type="radio" name="pageWidth" value="1" {pageWidthFullOffChecked} />
+				<label for="form_style_page_width_fixed">800px</label>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Background color:</label></td>
+			<td><input type="text" name="oabgcolorInput" class="Text" value="{oabgcolor:h}" /></td>
+			<td><button type="button" onclick="openBox('oabgcolor')">Choose color</button>
+				<div id="oabgcolor"><!-- include ColorChooser.html --></div>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Font type:</label></td>
+			<td><select name="fonttypeInput" value="{fonttype:h}" onclick="updatePreview('type', this.value)">
+					<option selected="selected" value="">none</option>
+					<optgroup label="sans-serif">
+						<option value="Verdana,sans-serif">Verdana</option>
+						<option value="Tahoma,sans-serif">Tahoma</option>
+						<option value="Arial,sans-serif">Arial</option>
+						<option value="'Trebuchet MS',sans-serif">Trebuchet MS</option>
+						<option value="'Microsoft Sans Serif',sans-serif">Microsoft Sans Serif</option>
+						<option value="Imapct,sans-serif">Impact</option>
+						<option value="'Comic Sans MS',sans-serif">Comic Sans MS</option>
+					</optgroup>
+					<optgroup label="serif">
+						<option value="Georgia,serif">Georgia</option>
+						<option value="'Times New Roman',serif">Times New Roman</option>
+					</optgroup>
+					<optgroup label="monospace">
+						<option value="'Courier New',monospace">Courier New</option>
+						<option value="'Lucida Console',monospace">Lucida Console</option>
+					</optgroup>
+				</select></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><label>Font size:</label></td>
+			<td colspan="2">
+				<select name="fontsizeInput" value="{fontsize:h}" onclick="updatePreview('size', this.value)">
+					<option selected="selected" value="">none</option>
+					<option value="x-small">x-small</option>
+					<option value="small">small</option>
+					<option value="medium">medium</option>
+					<option value="large">large</option>
+					<option value="x-large">x-large</option>
+				</select></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td colspan="2"><label>Italic:</label><input type="checkbox" name="fontstyleInput" value="italic" onclick="updatePreview('style', this.checked)"{fontstyle} />
+				<label>Bold:</label><input type="checkbox" name="fontweightInput" value="bold" onclick="updatePreview('weight', this.checked)"{fontweight} /></td>
+		</tr>
+		<tr>
+			<td><label>Font color:</label></td>
+			<td><input type="text" name="fontcolorInput" class="Text" value="{fontcolor:h}" /></td>
+			<td><button type="button" onclick="openBox('fontcolor')">Choose color</button>
+				<div id="fontcolor"><!-- include ColorChooser.html --></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Preview: </td>
+			<td colspan="3"><fieldset id="preview_fieldset" style="text-align:center"><span id="preview">testMaker</span></fieldset></td>
+		</tr>
+		<tr>
+			<td colspan="4">&nbsp;</td>
+		</tr>
+		<tr>
+			<td><label>Progress bar:</label></td>
+			<td colspan="2"><input id="form_style_page_progressBar_on" type="radio" name="progressBar" value="1" {progressBarOnChecked} /> <label for="form_style_page_progressBar_on">On</label>
+			<input id="form_style_page_progressBar_off" type="radio" name="progressBar" value="0" {progressBarOffChecked} /> <label for="form_style_page_progressBar_off">Off</label></td>
+		</tr>
+		<tr>
+			<td><label>Pause button:</label></td>
+			<td colspan="2">
+				<input id="form_style_page_pauseButton_on" type="radio" name="pauseButton" value="1" {pauseButtonOnChecked} />
+				<label for="form_style_page_pauseButton_on">On</label>
+				<br />
+
+				<input id="form_style_page_pauseButton_tf" type="radio" name="pauseButton" value="2" {pauseButtonTFChecked} />
+				<label for="form_style_page_pauseButton_tf">Only on Text- and Feedbackpages</label>
+				<br />
+
+				<input id="form_style_page_pauseButton_off" type="radio" name="pauseButton" value="0" {pauseButtonOffChecked} />
+				<label for="form_style_page_pauseButton_off">Off</label>
+			</td>
+		</tr>
+	</table>
+	</fieldset>
+	<fieldset name="styleSettings"><legend>Itemstem area</legend>
+	<table>
+		<tr>
+			<td><label>Background color:</label></td>
+			<td><input type="text" name="qabgcolorInput" class="Text" value="{qabgcolor:h}" /></td>
+			<td><button type="button" onclick="openBox('qabgcolor')">Choose color</button>
+				<div id="qabgcolor"><!-- include ColorChooser.html --></div>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Border around itemstem</label></td>
+			<td><input type="checkbox" name="itemBorders[0]" value="0" {borderQuestionChecked} /></td>
+		</tr>
+	</table>
+	</fieldset>
+	<fieldset name="styleSettings"><legend>Answer area</legend>
+	<table>
+		<tr>
+			<td><label>Background color:</label></td>
+			<td><input type="text" name="aabgcolorInput" class="Text" value="{aabgcolor:h}" /></td>
+			<td><button type="button" onclick="openBox('aabgcolor')">Choose color</button>
+				<div id="aabgcolor"><!-- include ColorChooser.html --></div>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Border around answer block</label></td>
+			<td><input type="checkbox" name="itemBorders[1]" value="1" {borderAnswerBlockChecked} /></td>
+		</tr>
+		<tr>
+			<td><label>Border around single answers</label></td>
+			<td><input type="checkbox" name="itemBorders[2]" value="2" {borderAnswersChecked} /></td>
+		</tr>
+	</table>
+	</fieldset>
+	<input type="submit" name="submit[save]" value="func_T(buttons.save)" class="Button" />
+	</form>
+</div>
+<script language="javascript" type="text/javascript">fillFontStyle();</script>

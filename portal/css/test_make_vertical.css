@@ -1,0 +1,8 @@
+div.Question {
+	float:left;
+	width:50%;
+}
+div.Answers {
+	float:right;
+	width:49%; /* Should be 50%, but we have to counteract a rounding bug in IE */
+}

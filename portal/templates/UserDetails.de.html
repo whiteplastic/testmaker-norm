@@ -1,0 +1,131 @@
+<!-- BEGIN user_block -->
+<fieldset><legend>Benutzer Informationen</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Username:</label></th>
+		<td style="padding-right:5px;">{username:h}</td>
+	</tr>
+	<tr>
+		<th><label>E-Mail:</label></th>
+		<td>{email:h}</td>
+	</tr>
+	<tr>
+		<th><label>vollständiger Name:</label></th>
+		<td>{fullname:h}</td>
+	</tr>
+	<tr>
+		<th><label>Sprache:</label></th>
+		<td>{language:h}</td>
+	</tr>
+	<tr>
+		<th><label>Gruppenzugehörigkeit:</label></th>
+		<td>{group:h}</td>
+	</tr>
+	<!-- BEGIN bday_block -->
+	<tr>
+		<th><label>Geburtsdatum:</label></th>
+		<td>{bday:h}</td>
+	</tr>
+	<!-- END bday_block -->
+	<tr>
+		<th><label>Datenschutzerklärung:</label></th>
+		<td>{privacy}</td>
+	</tr>	
+</table>
+</fieldset>
+<!-- END user_block -->
+<!-- BEGIN passwd_block -->
+<form method="post" action="{target_passwd}">
+<fieldset><legend>Neues Passwort setzen</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Altes Passwort:</label></th><td><input type="password" name="oldPassword" class="Text" /></td>
+	</tr>
+	<tr>
+		<th><label>Passwort:</label></th><td><input type="password" name="password" class="Text" /></td>
+	</tr>
+	<tr>
+		<th><label>Passwort bestätigen:</label></th><td><input type="password" name="confirmPassword" class="Text" /></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Speichern" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END passwd_block -->
+<!-- BEGIN email_block -->
+<form method="post" action="{target_email}">
+<fieldset><legend>Neue E-Mail-Adresse</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>E-Mail:</label></th><td><input type="text" name="email" class="Text" size="30"/></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Speichern" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END email_block -->
+<!-- BEGIN language_block -->
+<form method="post" action="{target_language}">
+<fieldset><legend>Systemsprache ändern</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Sprache:</label></th>
+		<td>
+		<select name="language">
+			<!-- BEGIN languages -->
+			<option value="{valueLang}"{select}>{longLang}</option>
+			<!-- END languages -->
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Speichern" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END language_block -->
+<!-- BEGIN fullname_block -->
+<!-- <form method="post" action="{target_fullname}">
+<fieldset><legend>Vollständigen Namen ändern</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Name:</label></th><td><input type="text" name="fullname" class="Text" /></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Speichern" /></td>
+	</tr>
+</table>
+</fieldset>
+</form> -->
+<!-- END fullname_block -->
+<!-- BEGIN delete_block -->
+<form method="post" action="{target_delete}">
+<fieldset><legend>Account löschen</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Account löschen</label></th>
+		<td>Ja ich bin mir sicher, ich will meinen Account unwiderruflich löschen: <input type="checkbox" name="sure" value="1"></td>
+	</tr>
+	<tr>
+		<th><label>Passwort:</label></th><td><input type="password" name="password" class="Text" /></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" name="delete" value="Löschen" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END delete_block -->
+<!-- BEGIN email_change_success -->
+<p>Ihre E-Mail-Adresse wurde geändert.</p>
+<!-- END email_change_success -->

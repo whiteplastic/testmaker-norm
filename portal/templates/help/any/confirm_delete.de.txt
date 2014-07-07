@@ -1,0 +1,13 @@
+Über diese Seite können Sie einen Test/Block oder ein Item unwiderruflich vom System entfernen. Wenn Sie einen Test oder einen Block löschen, werden automatisch auch alle untergeordneten Elemente gelöscht.
+
+Wurde ein Test bereits veröffentlicht und bearbeitet, werden Itemblöcke nur deaktiviert (durchgestrichen), aber nicht gelöscht. Damit wird sichergestellt, dass auch die Antworten zu Items im Datenexport berücksichtigt werden, die bereits gelöscht wurden. Itemblöcke können nur gelöscht werden, wenn der Test noch nicht veröffentlicht wurde und noch kein Teilnehmer den Test bearbeitet hat.
+
+
+
+
+### Kopierte Blöcke
+Bei kopierten Blöcken wird nur die ausgewählte Version gelöscht, die Kopien verbleiben mit allen Elementen im System.
+
+### Verlinkte Blöcke
+Wenn ein Link auf einen Block besteht,so wird die Verbindung zu verlinkten Tests gelöst und der Block innerhalb des ausgewählten Tests gelöscht.
+

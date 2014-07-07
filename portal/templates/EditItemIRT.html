@@ -1,0 +1,23 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+<!-- INCLUDE EditPublishedHeader.html -->
+	<form method="post" action="func_pagelink(item, save_irt, working_path: {working_path}, item_id: {item_id}, revert: true)" name="item">
+		<input type="hidden" name="counter" value="0" />
+		<table>
+			<tr<!-- BEGIN correction_difficulty --> class="correction"<!-- END correction_difficulty -->>
+				<td>func_T(forms.item.difficulty)</td>
+				<td><input type="text" name="difficulty" class="Text" value="{difficulty}" /></td>
+			</tr>
+			<tr<!-- BEGIN correction_discrimination --> class="correction"<!-- END correction_discrimination -->>
+				<td>func_T(forms.item.discrimination)</td>
+				<td><input type="text" name="discrimination" class="Text" value="{discrimination}" /></td>
+			</tr>
+			<tr<!-- BEGIN correction_guessing --> class="correction"<!-- END correction_guessing -->>
+				<td>func_T(forms.item.guessing)</td>
+				<td><input type="text" name="guessing" class="Text" value="{guessing}" /></td>
+			</tr>
+		</table>
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+	</form>
+</div>

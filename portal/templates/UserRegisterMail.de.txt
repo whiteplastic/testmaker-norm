@@ -1,0 +1,11 @@
+Willkommen beim testMaker, {name}!
+
+Sie oder jemand anderes hat Ihre E-Mail-Adresse ({email_address}) verwendet, um einen Account für die Teilnahme am testMaker anzumelden. Der Benutzername lautet {user_name}.
+
+Zum Aktivieren des Accounts einfach folgenden Link anklicken:
+
+<{link}>
+
+Bitte aktivieren Sie diesen Account innerhalb von sieben Tagen. Wenn Sie dies nicht tun, etwa weil Sie selbst diesen Account gar nicht angelegt haben, wird er nach der Frist automatisch gelöscht.
+
+Das testMaker-Team

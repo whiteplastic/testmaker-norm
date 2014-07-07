@@ -1,0 +1,29 @@
+Der Reiter „Stil“ gibt Ihnen die Möglichkeit, dem Test ein individuelles Layout zu geben. Auf dieser Seite können Sie die Farb- und Schrifteinstellungen sowie ein Logo für Ihren Test festlegen. Diese Einstellungen werden auf jeder Testseite genutzt. Vergessen Sie nicht, nach Ihren Eingaben den „Speichern“-Button zu drücken, damit die Änderungen übernommen werden.
+
+### Logo
+Mit __Logo einfügen__ können Sie ein Logo für Ihren Test hochladen, das dann später auf allen Seiten des Tests an der gleichen Stelle erscheint. Um ein Logo einzufügen, drücken Sie den Button „durchsuchen“. Jetzt können Sie eine Bilddatei auf Ihrem Computer auswählen, die in den Formaten jpg, jpeg, png oder gif vorliegt. Durch Anklicken von „Speichern“ wird die Datei hochgeladen. Die Positionierung am oberen Rand können Sie über __Logo Ausrichtung__ selbst bestimmen, standardmäßig wird das Logo links ausgerichtet. Wenn Sie das Feld <b>Logo löschen</b> markieren, wird das Logo beim Speichern der Einstellungen gelöscht.
+
+### Gesamte Seite
+Hier können Sie die Hintergrundfarbe und die Schriftart definieren und die Testfortschrittsleite aktivieren bzw. deaktivieren. Die Fortschrittleiste ermöglicht den Testpersonen, ihr Voranschreiten während der Testung zu verfolgen. Sie befindet sich auf jeder Seite unterhalb des Items und gibt an, wie viel Prozent des Tests bereits bearbeitet wurden.
+
+#### Hintergrundfarbe
+Farbe für den gesamten Hintergrund, geben Sie wahlweise einen Farbwert ein oder suchen Sie eine Farbe aus dem Farbmenü (<b>Farbe wählen</b>) aus. Standardmäßig wird die normale testMaker-Hintergrundfarbe, also weiß, verwendet.
+
+#### Schriftart
+Hier können Sie festlegen, welche Schrift in Ihrem Test genutzt wird, ob die Schrift fett und/oder kursiv dargestellt werden soll und welche Farbe die Schriftart haben soll. Wenn Sie die Schriftart über das <b>Schriftart wählen</b> Menü definieren, werden für die Schriftart zusätzlich die Schriftgruppen sans, sans-serif, monospace gesetzt.
+
+#### Fortschrittsleiste
+Wenn Sie diese Einstellung <b>an</b>schalten, wird im unteren Bereich Ihres Test eine Fortschrittsleiste aktiviert, welche anzeigt, wieviel Prozent der Items schon beantwortet sind.
+
+### Bereich Itemstamm
+Hier können Sie eine eigene Farbe für den Hintergrund des Itemstamms festlegen.
+
+### Bereich Antworten
+Hier können Sie eine eigene Farbe für den Hintergrund der Antworten festlegen.
+
+### Farbangaben
+Erlaubt sind alle in HTML erlaubten Farbangaben, d.h.
+
+* RGB Wert; Beispiel: rgb(233,123,123)
+* Hexadezimal; Beispiel: #343a45
+* Farbname; Beispiel: black

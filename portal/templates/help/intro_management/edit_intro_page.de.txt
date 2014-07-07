@@ -1,0 +1,7 @@
+###Begrüßungstext
+Hier können Sie einen Begrüßungstext für Gastbenutzer und Testteilnehmer eingeben, die auf der Startseite angezeigt wird. Dieser Text ist jede Person sichtbar, die den testMaker aufruft, auch wenn sie nicht angemeldet ist.
+
+Mit der Funktion Begrüßungstext abschalten/löschen können Sie bestimmen, ob Sie eine vorhandene Begrüßung löschen oder die Begrüßungsfunktion abschalten möchten.
+
+Um mögliche Änderungen zu speichern, klicken Sie auf "Speichern".
+

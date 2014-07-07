@@ -1,0 +1,17 @@
+<p>
+	Ein kürzlich installiertes testMaker-Update erfordert ein Update der Datenbankstruktur.</p>
+
+
+<p>
+	<a class="arrow" href="func_pagelink(installer, auto)">Update durchführen</a>.</p>
+
+<p>
+	<em>Tipp:</em> wenn Sie Ihren Browser den obigen Link in einem neuen Fenster oder Tab öffnen lassen, können Sie diese Seite danach
+	einfach neuladen, um an der Stelle fortzufahren, die Sie gerade bearbeitet haben.</p>
+
+<h3>Sprache wechseln</h3>
+<ul>
+<!-- BEGIN lang_select -->
+	<li func_iif({lang_active}, 'class="active"', '')><a href="func_pagelink(installer, welcome, language: {lang_code}, pending: {pending})">{lang}</a></li>
+<!-- END lang_select -->
+</ul>

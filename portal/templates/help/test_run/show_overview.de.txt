@@ -1,0 +1,107 @@
+### Einführung
+
+"Testdaten exportieren" ermöglicht Ihnen das Speichern von Testläufen zur Auswertung in anderen Programmen.
+Im ersten Schritt wählen Sie aus, welche Testläufe betrachtet werden sollen, im zweiten Schritt legen Sie die Eigenschaften fest, die für Sie von Interesse sind.
+Außerdem können Sie hierüber auch Testläufe löschen und nachsehen, welche Antworten gegeben wurden.
+
+
+### Filter
+
+Mit den Filtern legen Sie fest, welche Testläufe betrachtet werden sollen.
+
+Die Filter arbeiten unabhängig voneinander.
+Angenommen, es existieren zwei Tests im System, Alpha und Beta.
+Alpha wurde bisher nur über die Vorschau gestartet, Beta nur über das Portal.
+Dann werden unter <i>Zugriffsart</i> immer "preview" __und__ "portal" angeboten, selbst wenn unter <i>Test</i> bereits einer der beiden Tests ausgewählt wurde.
+
+#### Test
+
+Wenn Sie die Daten zu einem bestimmten Test exportieren wollen, wählen Sie diesen aus der Liste aus.
+Gezeigt werden alle Tests, zu denen Testläufe vorliegen. Die Zahl in Klammern bezeichnet die Anzahl zugeordneter Testläufe.
+
+
+#### <a name="access_type">Zugriffsart</a>
+
+Tests können auf vier verschiedene Weisen gestartet werden:
+
+* Per Direkt-Link
+* Über die Testübersicht
+* Als Vorschau über den gleichnamigen Reiter des Tests
+* Mittels einer Transaktionsnummer TAN
+
+Gezeigt werden alle Zugriffsarten, zu denen es Testläufe gibt.
+
+#### Vollständigkeit
+
+Da in der Praxis meist nur die Testläufe interessant sind, in denen alle Fragen beantwortet wurden, ist es bereits hier möglich, nur diese Testläufe auszuwählen.
+Es ist auch möglich, alle unvollständigen Testläufe anzeigen zu lassen, um diese z.B. gezielt löschen zu können.
+
+Hier die Bedeutung der Wahlmöglichkeiten:
+
+* __Egal__: Es erfolgt keine Einschränkung anhand der Antworten.
+* __Alle Items beantwortet__: Nur komplett bearbeitete Testläufe werden angezeigt.
+* __Alle nötigen Items beantwortet__: Alle Items, bei denen das Häkchen "Antwort nötig" aktiviert ist, wurden beantwortet.
+* __Nicht alle nötigen Items beantwortet__: Items, bei denen das Häkchen "Antwort nötig" aktiviert ist, wurden ausgelassen.
+
+
+### Ergebnisse
+
+Hier werden die gefundenen Testläufe aufgelistet, falls nötig auf mehreren Seiten.
+Die Einträge geben zum Teil __zusätzliche Informationen__ wieder, wenn man den Mauscursor über ihnen stehen lässt.
+
+Hier die Bedeutung der Felder:
+
+* Testlauf #__123__: Die interne ID des Testlaufs
+* __Test:__ Der Titel des ausgeführten Tests
+* __UserID:__ Interne ID des Benutzers, der den Test gestartet hat (bei dem Zugriff über eine TAN, ist diese immer 0)
+* __Startzeit:__ Datum und Uhrzeit des Test-Starts
+* __Zugriffsart:__ Siehe <a href="#access_type">Zugriffsart</a>
+* __Item-Fortschritt:__ Anteil der Items, die betrachtet wurden
+* __Beantwortung aller Items:__ Anteil der Items, die betrachtet und beantwortet wurden
+* __Beantwortung aller nötigen Items:__ Anteil der Items, die betrachtet und beantwortet wurden und bei denen "Antwort nötig" angeklickt wurde
+
+Per Klick auf "Details anzeigen" können Sie die gegebenen Antworten und die Bearbeitungszeiten pro Item einsehen. "Testlauf Löschen" löscht den
+jeweiligen Testlauf unwiederruflich.
+
+
+### Exportieren
+
+Klicken Sie die Felder an, die für Sie relevant sind. Gerade die Titel- und Textvariablen (z.B. ItemTitel, ItemText)
+können für das Labeling in SPSS (siehe unten) sehr hilfreich sein. 
+
+Die Variablen stellen die Spalten der Export-Datei dar. 
+
+Ein Klick auf "Ergebnisse exportieren" erzeugt dann eine txt-Datei im CSV-Format, die Sie in andere Programme
+(z.B. Statistikprogramme wie SPSS oder Tabellenkalkulationsprogramme wie Excel) importieren können.
+
+#### Hinweise zum Importieren in SPSS
+
+Für einen Import in SPSS stellt Ihnen die Statistiksoftware den so genannten Assistenten für Textimport
+(unter "Datei", "Textdaten lesen") zur Verfügung. Folgende Punkte weichen von den Standardeinstellungen in SPSS ab,
+und müssen von Ihnen gesondert ausgewählt werden:
+
+* Schritt 2: "Enthält die erste Zeile der Datei die Variablennamen?": "Ja" anklicken
+* Schritt 3: "Welches Zeichen trennt die Variablen?": hier ausschließlich "Anderes" anklicken und "/" (Schrägstrich) eingeben; alle anderen Trennzeichen (z.B. Komma, Semikolon) deaktivieren
+* Schritt 4: "Was ist das Texterkennungszeichen?": "Hochkommata" anklicken.
+* Schritt 5: Leider erkennt SPSS die Datumsvariablen nicht automatisch. Daher müssen die entsprechenden Variablen ausgewählt und das Datenformat auf Datum/Uhrzeit umgestellt werden, und dann noch das genaue Format bestimmt werden. Für Startzeit und Endzeit ist die "tt-mmm-jj hh:mm:ss",
+für StartzeitDatum und EndzeitDatum ist dies "tt.mm.jjjj", und für StartzeitUhrzeit und EndzeitUhrzeit ist dies "hh:mm:ss"
+
+Zwei besondere Formen von fehlenden Werten werden bei den Korrektheitsvariablen als 98 und 99 kodiert (siehe Erläuterung auf der Seite). Dies ermöglicht es, bei der Auswertung in SPSS diese Werte als "Fehlende Werte" einzutragen, damit keine inhaltliche Interpretation der Werte vorgenommen wird, oder aber diese fehlende Werte als falsch umzukodieren.
+
+
+Wenn man die Titel- und Textvariablen (z.B. ItemTitel, ItemText) exportiert hat, können diese für das Benennen der Variablen in SPSS verwendet werden. So eignen sich z.B. die ItemTitel für als Name für die Variablen, während der Itemtext als evtl. als Variablenlabel verwendet werden kann. Um diese Variablen zu diesem Zweck zu nutzen, kopiert man im SPSS-Datensatz in der Datenansicht eine Zeile dieser Variablen heraus, fügt diese z.B. in Excel ein und transponiert sie dort (über "Inhalte einfügen"). Die transponierten Titel kann man dann erneut kopieren und in die Variablenansicht von SPSS einfügen.
+
+
+Optional kann auch eine SPSS-Syntaxdatei herunter geladen werden. Das Ausführen der Datei automatisiert den Vorgang Schritt 2 bis Schritt 5. Dazu muss sich die SPSS-Syntaxdatei im gleichen Verzeichnis wie die Datendatei befinden. 
+Sollte dies nicht funktionieren muss eventuell die zweite Zeile der Syntaxdatei "/FILE = pfad zur txt Datei" angepasst werden.
+
+* Schritt 1: SPSS-Syntaxdatei öffnen
+* Schritt 2: Alles markieren
+* Schritt 3: Aktuellen Befehl ausführen
+
+Die ItemVariablen werden automatisch mit Labels versehen, die sich aus Variablenname und der Frage für das Item zusammensetzen. Dies kann je nach Größe des Tests einige Minuten dauern.
+
+
+### Testläufe löschen
+
+Ein Klick auf "Gefundene Testläufe löschen" löscht alle durch die Filter bestimmten Testläufe unwiderruflich.

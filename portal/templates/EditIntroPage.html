@@ -1,0 +1,35 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.intro_page.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<p>func_T(pages.intro_page.desc)</p>
+
+<script type="text/javascript">
+	function toggleVisibility(element)
+	{
+		$table = document.getElementById(element);
+		if($table.style.display == "none") $table.style.display="block";
+		else $table.style.display="none";
+	}
+</script>
+
+
+<div>
+<form method="post" action="func_pagelink(intro_management, save_intro_page)">
+
+<input type="checkbox" name="enabled" value="enabled" onclick="toggleVisibility('intro_editor')" {checked} /><label>func_T(pages.intro_page.enable)</label>
+
+<div id="intro_editor" style="display:{display:h}">
+	<table>
+		<tr>
+			<td>func_T(forms.content)</td>
+		</tr>
+		<tr>
+			<td>{content}</td>
+		</tr>
+	</table>
+</div>
+<p>	
+<input type="submit" class="Button" value="func_T(buttons.save)" />
+</form>
+</div>
+</div>

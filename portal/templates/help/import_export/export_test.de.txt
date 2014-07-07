@@ -1,0 +1,2 @@
+Auf dieser Seite erhalten Sie eine Übersicht über Ihren Test. Dabei werden sowohl die Textblöcke, als auch die Item- und Feedbackblöcke angezeigt. 
+Über die Windows-Zwischenablage können Sie zudem eine komplette Dokumentation z.B. in Microsoft Word kopieren.

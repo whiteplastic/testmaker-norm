@@ -1,0 +1,23 @@
+<form method="post" action="func_pagelink(tan_login, register_tan, tan: {tan})">
+<!-- BEGIN has_pages -->
+	<p>
+		Nach dem Test bekommen Sie ein Feedback. Falls Sie eine E-Mail mit
+		dem Link zu diesem erhalten wollen, müssen Sie hier Ihre E-Mail-Adresse
+		angeben.
+	</p>
+<!-- END has_pages -->	
+<!-- BEGIN no_pages -->
+	<p>
+		Falls Sie eine E-Mail mit dem Link zur Befragung erhalten wollen, müssen Sie hier Ihre E-Mail-Adresse
+		angeben.
+	</p>
+<!-- END no_pages -->	
+	
+	<p>Ihre E-Mail-Adresse: <input class="Text" type="text" name="mail" /></p>
+
+<!-- BEGIN pp_check -->	
+	<p><input type="checkbox" name="accepted" value="accepted"/><label>Mit Angabe meiner E-Mail-Adresse akzeptiere ich die <a href="index.php?page=tan_login" onclick="window.open('index.php?page=show_privacy_policy&amp;action=show_privacy_popup&amp;info=none&amp;version={ppversion:h}', 'page_help_'+((new Date()).getTime()), 'width=600,height=540,left='+Math.round((screen.width-600)/2)+',top='+Math.round((screen.height-540)/2)+',scrollbars=yes,status=yes,toolbar=yes,resizable=yes'); return false">aktuellen Datenschutzrichtlinien</a> des testMaker.</label></p>
+<!-- END pp_check -->	
+	
+	<p><input class="Button" type="submit" name="do_proceed" value="Fortsetzen" /></p>
+</form>

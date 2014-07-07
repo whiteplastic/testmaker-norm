@@ -1,0 +1,14 @@
+<!-- BEGIN confirm -->
+A certificate exists already for this testrun! If you create a new certificate, the old certificate will lose the validity.
+<form name="generate_manual_certificate" method="post" action="func_pagelink(pdf_generator, generate_entry, working_path: {working_path},
+				block_id: {block_id})">
+				<input name="firstname" type="hidden" value="{firstname}"/>
+				<input name="lastname" type="hidden" value="{lastname}"/>
+				<input name="birthday" type="hidden" value="{birthday}"/>
+				<input name="testRunId" type="hidden" value="{testRunId}"/>
+			<P>
+				<input class="Button" type="submit" name="cancel" value="Back" />
+				<input class="Button" type="submit" name="create" value="Create" />
+			</P>
+</form>
+<!-- END confirm -->

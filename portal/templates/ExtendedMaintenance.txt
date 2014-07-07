@@ -1,0 +1,19 @@
+<?php 
+
+$m_key = {m_key};
+
+
+if((isset($_GET["maintenance_key"]) && $_GET["maintenance_key"] == $m_key) || (isset($_COOKIE['mcook']) && $_COOKIE['mcook'] == $m_key)){	
+
+	if(!isset($_COOKIE['mcook']) || $_COOKIE['mcook'] != $m_key) setcookie("mcook", "$m_key", 0);	
+	
+	include("index_".$m_key.".php");	
+}
+else {
+	$m_text = "<html><head><title>testMaker is temporarily not available</title><meta http-equiv='content-type' content='text/html; charset=ISO-8859-15' /><link rel='stylesheet' type='text/css' href='portal/css/main.css' /></head><body><p>&nbsp;</p><table border=0 width=800 align=center><tr><td>";
+	$m_text = $m_text."{content}";
+	$m_text = $m_text."</td></tr></table></body></html>";
+	echo $m_text;
+}
+
+?>

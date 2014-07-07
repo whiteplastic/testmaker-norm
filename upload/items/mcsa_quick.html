@@ -1,0 +1,28 @@
+<!-- Multiple choice with multiple answers -->
+<!-- Here is where the question is displayed -->
+<div class="Question"><div class="Inner">
+{question}
+</div></div>
+<!-- Here is where the answer(s) is(are) displayed; mcsa_quick shows a button
+for every answer possibility -->
+<div class="Answers">
+<input type="hidden" name="answer[{item_id}]" id="answer{item_id}" value="" />
+<!-- <div style="position:absolute;left:-100px;top:-100px"><button type="submit" onclick="return false">-</button></div> -->
+<table class="Border" cellspacing="3">
+	<!-- BEGIN answer_block -->
+	<tr>
+		<!-- BEGIN answer -->
+		<td class="Border" style="width:{width}%;text-align:center;padding:5px">
+			<button class="AnswerButton" type="submit" name="{item_id}" value="{aid}" onclick="document.getElementById('answer{item_id}').value='{aid}';return true" style="margin-bottom:5px;font-size:22px;padding:0 5px;color:#ADD8E6">X
+			</button><br />
+			{answer}
+		</td>
+		<!-- END answer -->
+	</tr>
+	<!-- END answer_block -->
+</table>
+</div>
+<div class="break"></div>
+<!-- BEGIN send_bar -->
+<div class="SendBar"></div>
+<!-- END send_bar -->

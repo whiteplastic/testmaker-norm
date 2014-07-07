@@ -1,0 +1,5 @@
+Hallo {name},
+
+du findest deine Bescheinigung als Anlage an dieser Mail.
+
+Das testMaker-Team

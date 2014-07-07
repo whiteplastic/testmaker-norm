@@ -1,0 +1,48 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+	<p>
+		Here you can edit permissions of test author groups for this object. In order to publish tests for normal user groups, please see the tab "publication" of the corresponding test.</p>
+
+	<form method="post" action="func_pagelink({target_page}, save_perms, working_path: {working_path})">
+		<table>
+			<!-- BEGIN group_perms -->
+			<tr>
+				<td>Group: {group_name:h}</td>
+				<td>
+					<ul>
+						<li><input type="checkbox" id="form_{gid}_perms_run"     name="perms[{gid}][run]"     value="1"{perms_run_checked}     /> <label for="form_{gid}_perms_run"    >Run (without tan) or preview block</label></li>
+						<li><input type="checkbox" id="form_{gid}_perms_portal"  name="perms[{gid}][portal]"  value="1"{perms_portal_checked}  /> <label for="form_{gid}_perms_portal" >Run test via test overview page (and have it listed there)</label></li>
+						<li><input type="checkbox" id="form_{gid}_perms_review"  name="perms[{gid}][review]"  value="1"{perms_review_checked}  /> <label for="form_{gid}_perms_review" >Review previous results via test overview page</label></li>
+					<!-- BEGIN publish_perm -->
+						<li><input type="checkbox" id="form_{gid}_perms_publish" name="perms[{gid}][publish]" value="1"{perms_publish_checked} /> <label for="form_{gid}_perms_publish">Publish test</label></li>
+					<!-- END publish_perm -->
+						<li><input type="checkbox" id="form_{gid}_perms_view"    name="perms[{gid}][view]"    value="1"{perms_view_checked}    /> <label for="form_{gid}_perms_view"   >View block</label></li>
+						<li><input type="checkbox" id="form_{gid}_perms_create"  name="perms[{gid}][create]"  value="1"{perms_create_checked}  /> 
+              <label for="form_{gid}_perms_create" >Create subordinate elements</label>
+            </li>
+						<li><input type="checkbox" id="form_{gid}_perms_edit"    name="perms[{gid}][edit]"    value="1"{perms_edit_checked}    /> <label for="form_{gid}_perms_edit"   >Edit block</label></li>
+						<li><input type="checkbox" id="form_{gid}_perms_delete"  name="perms[{gid}][delete]"  value="1"{perms_delete_checked}  /> <label for="form_{gid}_perms_delete" >Delete block</label></li>
+						<li><input type="checkbox" id="form_{gid}_perms_copy"    name="perms[{gid}][copy]"    value="1"{perms_copy_checked}    /> <label for="form_{gid}_perms_copy"   >Copy block</label></li>
+						<li><input type="checkbox" id="form_{gid}_perms_link"    name="perms[{gid}][link]"    value="1"{perms_link_checked}    /> <label for="form_{gid}_perms_link"   >Link block</label></li>
+					</ul>
+				</td>
+			</tr>
+			<!-- END group_perms -->
+
+			<!-- BEGIN perms_recursive -->
+			<tr>
+				<td>Options</td>
+				<td>
+					<input type="checkbox" id="form_perms_recurs" name="perms_recursive" value="1"{perms_recursive} /> 
+          <label for="form_perms_recurs">Apply these permissions to all subordinate 
+          blocks, too</label>
+				</td>
+			</tr>
+			<!-- END perms_recursive -->
+		</table>
+		<div class="SendBar">
+			<input type="submit" class="Button" name="do_save" value="func_T(buttons.save)" />
+		</div>
+	</form>
+</div>

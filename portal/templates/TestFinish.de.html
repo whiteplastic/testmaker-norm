@@ -1,0 +1,29 @@
+<p>
+	Der Test ist beendet; vielen Dank für Ihre Teilnahme. Sie können nun <a href="func_pagelink(test_listing)">zur Testübersicht zurückkehren</a>
+	oder
+<!-- BEGIN logged_in -->
+	sich <a href="javascript:$('logoutform').submit()">abmelden</a>.
+<!-- END logged_in -->
+<!-- BEGIN guest -->
+	das Fenster schließen.
+<!-- END guest -->
+<!-- BEGIN send_feedback_email -->
+	<form method="post" action="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, layout: print, final: 1)" target="_blank">
+	<br>
+	<input name="feedback_overview" type="submit" class="Button" value="func_T(pages.testmake.feedback_overview)" />
+	<input name="feedback_email" type="submit" class="Button" value="func_T(pages.testmake.send_feedback_email)" />
+
+	</br>
+</form>
+<!-- END send_feedback_email -->
+<!-- BEGIN print_feedback -->
+	<form method="post" action="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, layout: print, final: 1)"  target="_blank">
+	<br>
+	<input name="feedback_overview" type="submit" class="Button" value="func_T(pages.testmake.feedback_overview)" />
+	</br>
+</form>
+<!-- END print_feedback -->
+</p>
+
+<p>
+	Dieser Test wurde mit der freien Software <a href="func_pagelink(about)">testMaker</a> umgesetzt. Mehr über testMaker erfahren Sie <a href="func_pagelink(about)">hier</a>.</p>

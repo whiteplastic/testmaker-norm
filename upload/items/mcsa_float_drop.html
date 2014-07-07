@@ -1,0 +1,22 @@
+<!-- Multiple choice with multiple answers -->
+<!-- Here is where the question is displayed - {question} is (can be) the first part of the
+question; {questionAfter} stands for the rest of the question after the select box -->
+<div class="Question {is_forced}">
+<div class="Inner">{question}
+<!-- A select box is displayed for the answers; mcsa_float_drop shows a drop-down
+field for the answer possiblities. It is embedded in the question. -->
+
+	<select id="answer{item_id}" class="{is_forced}" name="answer[{item_id}]">
+		<option value="{aid}"></option>
+		<!-- BEGIN answer -->
+		<option value="{aid}" style="text-align:left;"{aold}>{answer}</option>
+		<!-- END answer -->
+	</select>
+
+{questionAfter}</div>
+</div>
+<!-- BEGIN send_bar -->
+<div class="SendBar">
+	<input type="submit" class="AnswerButton" value="func_T(generic.submit)" />
+</div>
+<!-- END send_bar -->

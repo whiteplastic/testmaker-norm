@@ -1,0 +1,83 @@
+body {
+	padding:1em;
+	text-align: center;
+}
+/* [id] stops Internet Explorer from interpreting */
+#Body[id] {
+	padding-top: 1em;
+}
+div.Inner {
+	padding:0.4em;
+}
+div.Answers table {
+	width:100%;
+}
+.Media {
+	text-align:center;
+}
+#Top {
+	margin-bottom: 0.5em;
+}
+div.SendBar {
+	clear:both;
+	margin:50px 0 0 0;
+}
+#countdown {
+	margin-top:1em;
+	width:100%;
+	text-align:center;
+	font-size:80%;
+}
+#countdown_value {
+	font-size:150%;
+	font-weight:bold;
+}
+
+
+div.PausePage {
+	border:1px solid #CCCCCC;
+	width: 60%;
+	margin: auto;
+	text-align: center;
+	padding: 10px;
+}
+
+#screenlock {
+  display:none;
+  position: absolute; /* for IE5-6 */
+  z-index: 1001;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #666;
+  filter:alpha(opacity=80); /* IE5.5+ */
+  -moz-opacity:0.8; /* Gecko browsers including Netscape 6+ and Firefox */
+  -khtml-opacity: 0.8; /* Safari 1.1-1.3 */
+  opacity: 0.8; /* Netscape 7.2+, Firefox, Safari 2+, Opera 9 */
+  text-align:center;
+}
+
+* html #screenlock {
+  left: auto;
+  top: auto;
+  width: 200%;
+  height: 200%;
+}
+
+#pausebox {
+  display:none;
+  position: absolute;
+  background-color: #FFF;
+  z-index: 1005; 
+  text-align:center;
+  vertical-align:middle;
+  width:70%;
+  height:20em;
+  left:15%;
+  top:10%;
+  border-style:double;
+  border-width:10px;
+  border-color:#3170C3;
+}
+

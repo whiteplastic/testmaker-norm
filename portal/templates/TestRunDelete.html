@@ -1,0 +1,6 @@
+<p>Do you really want to delete test run #{test_run_id}?</p>
+<form method="post" action="func_pagelink(test_run, delete_run, run_id: {test_run_id})">
+	<input type="hidden" name="delete_unless_cancelled" value="true" />
+	<input class="Button" type="submit" value="Delete" />
+	<input class="Button" type="submit" name="cancel_delete" value="Cancel" />
+</form>

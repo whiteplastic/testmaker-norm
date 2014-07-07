@@ -1,0 +1,22 @@
+###Protokolleinsicht
+Hier können Sie Protokolleinträge zu diversen administrativen und testbezogenen Änderungen einsehen. Z.B. kann nachvollzogen werden, wann ein Test von wem  veröffentlicht wurde.
+
+Um die Protokolleinträge aller Benutzer und alle Aktionen einzusehen, lassen Sie das Feld *Benutzername* leer und geben Sie bei dem Feld *Aktionstyp* *Alle* ein.
+
+In der Tabelle können Sie nun Zeit und Datum sowie die vollzogene Aktion und deren Verursacher einsehen. Unter der Spalte *Zielobjekt* finden Sie die Objekte, auf die sich die Aktion bezogen hat.
+
+Durch Klick auf das jeweilige Zielobjekt sind im einzelfall eventuell weitere Informationen abrufbar (z.B. Inhalt der Datenschutzerklärung, Link zum entsprechenden User etc..)
+
+Wollen Sie das Protokoll einzelner Benutzer oder bestimmte Aktionen einsehen, wenden Sie den Filter an, indem Sie bei *Benutzername* und/oder *Aktionstyp* den gewünschten Namen eingeben bzw. die gewünschte Kategorie eingeben und anschließend auf das Feld *Filter anwenden* klicken.
+
+
+####Folgende Aktionen werden protokolliert
+
+* Benutzerkonto angelegt / bearbeitet / gelöscht
+* Benutzerkonto aktiviert / deaktiviert
+* Benutzergruppe angelegt / bearbeitet / gelöscht
+* Rechte geändert
+* Veröffentlichung eines Tests geändert
+* Datensätze exportiert
+* Datenschutzerklärung geändert
+* Wartungsmodus aktiviert / deaktiviert

@@ -1,0 +1,10 @@
+Auf dieser Seite können Sie einen Test/Block mitsamt seinen untergeordneten Elementen in einen anderen Test oder Block kopieren. Die maximale Verschachtelung kann dabei nicht mehr als vier Elemente überschreiten.
+
+#### Kopieren
+Hiermit legen Sie eine Kopie Ihres Tests/Blocks und seiner Unterelemente an, die getrennt vom ursprünglichen Block editiert werden kann.
+
+#### Link
+Hiermit legen Sie einen Link in einen anderen Test/Block auf diesen Test/Block an. Der Link arbeitet mit denselben Daten wie der ursprüngliche Block, so dass Änderungen sich gleichzeitig auf den Link und den ursprünglichen Block auswirken.
+
+#### Move
+Hiermit verschieben Sie einen Test/Block mit seinen Unterelementen in einen anderen Test/Block.

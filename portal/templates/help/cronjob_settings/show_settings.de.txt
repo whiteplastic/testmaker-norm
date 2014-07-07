@@ -1,0 +1,20 @@
+### Überblick
+
+
+Wenn eine große Anzahl von E-Mails versendet werden soll, ist dies meistens mit Einschränkungen seitens des Hosting-Anbieters verbunden (beispielsweise limitierte Anzahl von E-Mails pro Minute/Stunde)
+Um dies zu umgehen, werden Aufträge (Jobs) erstellt, die durch ein Skript unter Einhaltung dieser Limits sequentiell abgearbeitet werden können.
+
+<b>Aufträge werden erst abgearbeitet (und damit E-Mails tatsächlich versandt), wenn das Cronjob-Script gestartet wurde.</b>
+
+
+### Funktion 
+
+Die Aufträge werden in der Datenbank gespeichert, somit wird auch bei wiederholter Ausführung des Cronjob-Scripts sichergestellt, dass die Beschränkungen eingehalten werden.
+
+Bei Manueller Ausführung wird das Skript in einem neuen Browserfenster aufsgeführt. 
+Die Abarbeitung läuft dabei nur so lange, wie dieses entsprechende Fenster geöffnet bleibt.
+
+Der Status zu einzelnen Aufträgen kann dem Reiter "Status" entnommen werden.
+
+
+Im Skript unter <i>/portal/cron/cronjob.php</i> können die Limitierungen zum Versand und die Zeit zum automatischen Löschen eingestellt werden.

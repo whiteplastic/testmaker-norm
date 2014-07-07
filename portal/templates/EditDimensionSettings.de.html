@@ -1,0 +1,77 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+
+<form method="post" action="func_pagelink(dimension, settings, working_path: {working_path}, item_id: {id})">
+	<h3>Dimension bearbeiten: <em>{title:h}</em></h3>
+	
+	<fieldset>
+    	<legend>Vergleichswert (Grafik)</legend>
+    	<input type="hidden" name="submit_reference_value" value="1" />
+    	<table>
+    		<tr>
+    			<td colspan="3">
+    				<p>Hier können Sie einen ganzzahligen Vergleichswert für diese Dimension angeben. Dieser wird beim Einsatz einer Feedbackgrafik angezeigt.<br />&nbsp;</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td><label for="reference_value">Vergleichswert*</label>:</td>
+    			<td><input id="reference_value" name="reference_value" value="{reference_value:h}" type="text" size="2" maxlength="10" /></td>
+    			<td>
+    				<select name="reference_value_type">
+    					<option value="points" {reference_value_type_points}>Punkte (Min=<span title="aktuelles Minimum">{curMin:h} </span> Max=<span title="aktuelles Maximum">{curMax:h}</span>)</option>
+    					<option value="percent" {reference_value_type_percent}>Prozent</option>
+    				</select>
+    			</td>
+			</tr>
+    		<tr>
+    			<td colspan="3">
+    				<p>* Wenn der Vergleichswert auf 0 gesetzt ist, wird kein Vergleichswert angezeigt.</p>
+    			</td>
+    		</tr>
+			<tr>
+    			<td colspan="3">
+    				<p>Standardabweichung des Vergleichswerts.<br />&nbsp;</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td><label for="std_dev">Standardabweichung</label>:</td>
+    			<td><input id="std_dev" name="std_dev" value="{std_dev:h}" type="number" step="0.01" size="5" maxlength="10" /></td>
+    			<td>
+    			</td>
+			</tr>
+
+		</table>
+    </fieldset>
+	
+	<fieldset>
+		<legend>Vergleichswerte (Text)</legend>
+	    <input type="hidden" name="submit_class_sizes" value="1" />
+        <table>
+            <tr>
+                <td colspan="2">
+                <p>
+                    Im Folgenden können Sie die Größen der Klassengruppen für die erreichbaren Punktzahlen festlegen.
+                    Diese Angaben werden verwendet, um die Prozentrangnorm für eine Testdurchführung zu berechnen.</p>
+                <p>
+                    Geben Sie im Folgenden pro Zeile eine mögliche Punktzahl und die Anzahl der Personen in der dazugehörigen Klassengruppe jeweils im folgenden Format
+                    an: <em>Punktzahl: Anzahl der Personen</em></p>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="class_sizes">Größen der Klassengruppen</label></td>
+                <td>
+                    <textarea id="class_sizes" name="class_sizes" rows="8" cols="20">{class_sizes:h}</textarea>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+    
+	<!-- BEGIN submit_button -->
+	<input type="submit" class="Button" value="Speichern" />
+	<!-- END submit_button -->
+	<!-- BEGIN no_submit_button -->
+	<input type="button" disabled="disabled" value="func_T(buttons.edit_disallowed)" class="Button" />
+	<!-- END no_submit_button -->
+</form>
+</div>

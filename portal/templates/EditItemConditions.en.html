@@ -1,0 +1,60 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE EditNodeHeader.html -->
+<form method="post" action="func_pagelink(item, save_conditions, working_path: {working_path}, item_id: {item_id})" id="ItemConditions">
+<p>Display if <select size="1" name="conditions_all">
+	<option value="1" {conditions_all_1_selected}>all</option>
+	<option value="0" {conditions_all_0_selected}>one or more</option>
+</select> of the following conditions are fullfilled:</p>
+<table class="ItemConditionsContainer">
+	<tr>
+		<th>In item block</th>
+		<th>at item</th>
+		<th>the answer</th>
+		<th>was selected?</th>
+	</tr>
+	<tr class="ItemCondition">
+		<td><input class="ItemConditionId" type="hidden" name="conditions[][id]" value="" /><select size="1" name="conditions[][item_block_id]" class="ItemConditionItemBlocks">
+			<option value="" class="Header">Please select:</option>
+		</select></td>
+		<td><select size="1" name="conditions[][item_id]" class="ItemConditionItems">
+			<option value="" class="Header">Please select:</option>
+		</select></td>
+		<td><select size="1"  name="conditions[][answer_id]" class="ItemConditionAnswers">
+			<option value="" class="Header">Please select:</option>
+		</select></td>
+		<td style="white-space: nowrap;">
+			<input class="ItemConditionChosenOn" type="radio" name="conditions[][chosen]" value="yes" /> <span style="cursor:default" onclick="var r = document.getElementsByClassName('ItemConditionChosenOn', this.parentNode)[0]; if (! r.disabled) { r.click(); }; return true">Yes</span>
+			<input class="ItemConditionChosenOff" type="radio" name="conditions[][chosen]" value="no" /> <span style="cursor:default" onclick="var r = document.getElementsByClassName('ItemConditionChosenOff', this.parentNode)[0]; if (! r.disabled) { r.click() }; return true">No</span>
+		</td>
+		<td style="white-space: nowrap;">
+			<input class="Button ItemConditionAdd" type="button" value="+" />
+			<input class="Button ItemConditionRemove" type="button" value="-" />
+		</td>
+		<td class="ItemConditionStatusIndicator" style="vertical-align: middle"><img class="Complete" src="portal/images/right.png" alt="Vollständig" title="Complete" /><img class="Incomplete" src="portal/images/wrong.png" alt="Unvollständig" title="Incomplete"/></td>
+	</tr>
+</table>
+<p class="Last"><input class="Button" type="submit" value="func_T(buttons.save)" /></p>
+
+</form>
+</div>
+<script type="text/javascript" language="javascript" src="portal/js/item_conditions.js"></script>
+<script type="text/javascript" language="javascript">
+<!--
+window.onloadNotifier.addObserver(function()
+{
+	var testAccess = new TestAccess({block_id}, {item_id}, '{resource_url:j}');
+	testAccess.setItemBlocks({preload_item_blocks});
+	<!-- BEGIN add_items_js -->
+	testAccess.setItems({preload_item_block_id}, {preload_items});
+	<!-- END add_items_js -->
+	<!-- BEGIN add_answers_js -->
+	testAccess.setAnswers({preload_item_id}, {preload_answers});
+	<!-- END add_answers_js -->
+	var conditions = {conditions};
+
+	new Conditions("ItemConditions", conditions, testAccess);
+});
+//-->
+</script>

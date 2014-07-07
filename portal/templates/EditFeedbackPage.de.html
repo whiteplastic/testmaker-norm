@@ -1,0 +1,89 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+	<table>
+		<tr>
+			<td>Titel</td>
+			<td>
+				<form method="post" action="func_pagelink(feedback_page, save, working_path: {working_path}, item_id: {item_id})">
+				<input type="text" name="title" class="Text" value="{title:h}" />
+				<!-- BEGIN form_submit_button -->
+				<input type="submit" class="Button" id="btnSubmit" value="func_T(buttons.save)" />
+				<!-- END form_submit_button -->
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>Datum letzte &Auml;nderung</td>
+			<td>{t_modified:datetime}</td>
+		</tr>
+		<tr>
+			<td>Datum Erstellung</td>
+			<td>{t_created:datetime}</td>
+		</tr>
+		<tr>
+			<td>Autor</td>
+			<td>{author:h}</td>
+		</tr>
+		<tr>
+			<td colspan="2"><h3>Absätze dieser Feedbackseite:</h3></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<script type="text/javascript"><!--
+					extconds_hooks = {};
+				// --></script>
+				<ul id="paragraphs">{paragraphs}</ul>
+				<div id="para_add_button"><button type="button" onclick="addParagraph('{add_link:h}');this.blur();">Absatz hinzuf&uuml;gen</button></div>
+				<div id="para_add_notice" class="HideAsyncNotice">Operation wird ausgeführt, bitte warten...</div>
+				<div id="conds_proto" style="display: none;">
+					<p class="title">Anzeigebedingung hinzufügen</p>
+					<p>Bitte wählen Sie den Bedingungstyp aus:</p>
+					<ul>
+						<!-- BEGIN proto_conditions -->
+						<li><button type="button" class="Button" onclick="addCondition('{proto_type}')" />Auswählen:</button> <span id="proto_{proto_type}">{proto_condition} <button type="button" onclick="delCondition(this.parentNode);" title="Löschen"><img src="portal/images/icon_delete.png" alt="Löschen" /></button></span></li>
+						<!-- END proto_conditions -->
+					</ul>
+					<p><a class="Button" href="#" onclick="hideConditions();">Abbrechen</a></p>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<p>
+				Sie können im Text von Feedbackseiten folgende Sonderbefehle benutzen ('ID' bezeichnet dabei die interne ID der gewünschten Dimension,
+				die Sie erfahren, indem Sie mit der Maus über den Namen der Dimension links im Menü fahren):</p>
+
+			<ul>
+				<li><code>{finish_time&#58;}</code> fügt Datum und Uhrzeit ein, zu der die Testung beendet wurde.</li>
+				<li><code>{value:mode="sum" ids="ID"}</code> fügt die Punktzahl ein, die der Proband auf dieser Dimension erreicht hat.</li>
+				<li><code>{value&#58;mode="sum" ids="ID&#58;max"}</code> fügt die höchste Punktzahl ein, die durch die Auswahl von jeweils einer Antwortmöglichkeit erreichbar war.</li>
+				<li><code>{value&#58;mode="sum" ids="ID&#58;min"}</code> fügt die geringste Punktzahl ein, die durch die Auswahl von jeweils einer Antwortmöglichkeit erreichbar war.</li>
+				<li><code>{value:mode="ratio" num="ID" denom="ID:max" percent="1"}</code> fügt einen Prozentwert ein, der aus diesen beiden Angaben errechnet wird.</li>
+				<li><code>{value:mode="ratio" num="ID" denom="Maxim:literal" percent="1"}</code> fügt einen Prozentwert ein, dessen zugrundegelegten Maximalwert Sie selbst angeben können.
+					Dies ist insbesondere nützlich, wenn einige Ihrer Items die Angabe mehrerer Antworten zulassen.</li>
+				<li><code>{value_prn:mode="Operator" id="ID"}</code> fügt die Prozentrangnorm für den erreichten Punktwert ein. Der Operator gibt an, welche
+					Klassengruppen berücksichtigt werden sollen; mögliche Angaben sind "lt" <code>&lt;</code> (niedrigere Klassen), "lte" <code>&lt;=</code> (Klasse des
+					Probanden und niedrigere), "eq" <code>=</code> (Klasse des Probanden), "gte" <code>&gt;=</code> (Klasse des Probanden und höhere), "gt" <code>&gt;</code>
+					(höhere Klassen).</li>
+				<li><code>{items:mode="exist" ids="ID"}</code> Anzahl der Items die für diese Dimension existieren.</li><code>
+				<li><code>{items:mode="shown" ids="ID"}</code> Anzahl der Items die dem Probanden aus der Dimension gezeigt wurden.</li><code>
+				<li><code>{items:mode="answered" ids="ID"}</code> Anzahl der Items die der Proband beantwortet hat.</li><code>
+				<li><code>{graph:dimgroup="dimGruppenID"}</code> fügt einen Graphen der angebebenen Dimensionsgruppe ein. Wenn keine Dimensionsgruppe angegeben ist, fließen alle Feedbackdimensionen in den Graphen ein. Wenn für eine Dimension ein Vergleichswert spezifiziert wurde (unter den 'Einstellungen' einer Dimension), wird dieser in den Graphen aufgenommen.</li>
+				<li><code>{feedback_mail:}</code>fügt einen Button zum Versenden von Feedbackseiten per Email ein. Sendet immer das gesamte Feedback des Testlaufs, daher sollte
+						  der Button erst eingefügt werden, wenn alle relevanten Items für das Gesamtfeedback beantwortet wurden (z.B. auf der letzten Feedbackseite).</li>
+			</ul>
+			</td>
+		</tr>
+	</table>
+</div>
+<script src="portal/js/feedback_page.js" type="text/javascript"></script>
+<!-- BEGIN extconds_scripts -->
+<script src="upload/plugins/extconds/{script_dir}/ConditionScript.js" type="text/javascript"></script>
+<!-- END extconds_scripts -->
+<script type="text/javascript">
+	function errorsInConditions() {
+		alert('Bei den eingegebenen Anzeigebedingungen befinden sich Fehler in den hervorgehobenen Feldern; bitte korrigieren Sie diese, bevor Sie Ihre Änderungen speichern.');
+	}
+{dimgroups_js}
+</script>

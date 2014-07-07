@@ -1,0 +1,9 @@
+###Export
+
+Der Export bietet zwei Funktionen. 
+Zum einen kann von einem Test ein Überblick erstellt werden. Hier wird der komplette Test (also Text-, Item- und Feedbackblöcke) im testMaker angezeigt und kann per copy&paste z.B. in ein Word-Dokument kopiert werden. Wählen Sie dazu den den zu dokumentierenden Test aus und klicken auf Überblick.
+
+Zum anderen kann ein Test exportiert werden. Der ausgewählt Test wird als Datei abgespeichert. Grafiken, die z. B. in Items verwendet werden, werden mit exportiert und mit dem Test in ein zip-file abgelegt. Speichern Sie dieses file auf Ihrem Rechner ab. Ist ein Test sehr groß, kann ein zu einer Zeitüberschreitung (timeout) kommen. In diesem Fall empfiehlt es sich, den Test in kleinere Subtests zu unterteilen und einzeln zu exportieren.
+
+###Import
+Mit der Import-Funktion kann ein Test, der aus testMaker exportiert wurde, wieder eingelesen werden. Da es hier unter bestimmten Umständen zu Fehlern kommen kann, sollte auf jeden Fall überpüft werden, ob alle Verknüfungen zwischen Test und Feedback korrekt angelegt wurden. Auch wenn ein Test aus einer anderen testMaker-Version eingelesen wird, kann es zu Probelmen kommen.

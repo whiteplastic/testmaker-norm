@@ -1,0 +1,16 @@
+###Benutzer-Details
+Auf dieser Seite erhalten Sie Informationen zu den von Ihnen angegebenen Daten und haben die Möglichkeit diese zu verändern.
+
+####Benutzer Informationen
+Hier finden Sie die von Ihnen angegebenen Daten zu Benutzernamen, E-Mail-Adresse, vollständiger Name und Sprache. Die Gruppenzugehörigkeit wird von einem Administrator geregelt. Dieser entscheidet auch darüber, welche Rechte der Gruppe, der Sie angehören, zugesprochen werden.
+
+####Benutzerdaten ändern
+In den folgenden Feldern haben Sie nun die Möglichkeit, die Benutzerdaten zu ändern.
+#####Neues Passwort setzen
+Um Ihr Passwort zu ändern, müssen Sie zunächst Ihr altes und dann ein neues Passwort eingeben. Im dritten Feld wiederholen Sie dann das neue Passwort, um sichergehen zu können, dass Ihnen beim Tippen keine Fehler unterlaufen sind. Denken Sie bitte anschließend daran, den Button "Speichern" zu drücken.
+#####Neue E-Mail-Adresse
+Wenn sich Ihre E-Mail-Adresse geändert hat oder Sie lieber eine andere Adresse als Kontaktadresse angeben möchten, können Sie hier die neue E-Mail-Adresse eingeben. Bitte denken Sie auch hier daran die Änderung zu speichern.
+#####Systemsprache ändern
+Hier haben Sie die Möglichkeit zwischen Deutsch und Englisch als Menüsprache zu wählen. Auch die Hilfeseiten erscheinen in der hier ausgewählten Sprache.
+#####Vollständigen Namen ändern
+Wenn sich Ihr Name verändert hat oder Ihnen ein Fehler bei der registrierung unterlaufen ist, können Sie hier Änderungen in Ihrem vollständigen Namen vornehmen. Bitte Denken Sie auch hier daran nach der Eingabe zu speichern.

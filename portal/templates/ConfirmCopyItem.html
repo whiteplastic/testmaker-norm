@@ -1,0 +1,12 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+	<!-- INCLUDE EditNodeHeader.html -->
+	<form method="post" action="func_pagelink(this, copy, working_path: {working_path}, item_id: {item_id})">
+		<p>Do you really want to copy the item to '{target_title:h}'?</p>
+		<p>
+			<input class="Button" type="submit" name="do_copy" value="func_T(buttons.copy)" />
+			<input class="Button" type="submit" name="cancel_copy_move" value="func_T(buttons.cancel)" />
+		</p>
+	</form>
+</div>

@@ -1,0 +1,23 @@
+Auf dieser Seite können Sie Standard-Antworten für die Items eines Blocks festlegen.
+
+### Antwort hinzufügen
+Hierüber fügen Sie eine Antwort zur Liste hinzu.
+
+### Überschreibe alle Itemantworten
+Hierüber können Sie alle Antworten, die bereits für Items dieses Blocks vorgenommen wurden, durch die eingegebenen Standard-Antworten ersetzen.
+
+### Normal-Darstellung
+![Alt Antworten](portal/images/answer_closed.png)
+
+Hier steht nur der Text, den Sie zu einer Antwort angegeben haben, Bilder und Formatierungen werden nur in der Editier-Darstellung angezeigt.
+
+* Mit dem Stiftsymbol öffnen Sie eine Antwortalternative und erhalten Editier-Darstellung
+* Mit dem X-Symbol können Sie eine Antwortalternative löschen
+
+### Editier-Darstellung
+![Alt Antworten](portal/images/answer_opened.png)
+
+Eine Beschreibung für den Editor finden Sie [hier](func_helplink('any','fckeditor')).
+
+* Mit Speichern übernehmen Sie die Änderungen, und die Antwort wird wieder zur Normal-Darstellung verkleinert
+* Mit Abbrechen verwerfen Sie die Änderungen, und die Antwort wird wieder zur Normal-Darstellung verkleinert

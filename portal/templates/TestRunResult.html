@@ -1,0 +1,111 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<form method="post" action="func_pagelink(test_runresult, result)">
+<table class="Vertical">
+	<tr>
+		<th>Test</th>
+		<td>
+			<select name="test_id">
+				<!-- <option value="0"{select_test_first}>All tests</option> -->
+<!-- BEGIN select_test -->
+				<option value="{select_test_id}"{select_test_current}>{select_test_title:h}</option>
+<!-- END select_test -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Groups</th>
+		<td>
+			<select name="group_name">
+				<option value="*"{select_group_first}>All Groups</option>
+<!-- BEGIN select_group -->
+				<option value="{select_group_name}"{select_group_current}>{select_group_title:h}</option>
+<!-- END select_group -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Access type</th>
+		<td>
+			<select name="access_type">
+				<option value="*"{select_access_type_first}>Any</option>
+<!-- BEGIN select_access_type -->
+				<option value="{select_access_type}"{select_access_type_current}>{select_access_type_description}</option>
+<!-- END select_access_type -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Completeness</th>
+		<td>
+			<select name="completed">
+				<option value="any"{select_completed_any}>Any</option>
+				<option value="all"{select_completed_all}>All items answered</option>
+				<option value="all_required"{select_completed_all_required}>All required items answered</option>
+				<option value="not_all_required"{select_completed_not_all_required}>Not all required items answered</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Progress of the testrun</th>
+		<td>
+			<select name="relation">
+				<option value="greater_than"{relation_greater_than}>more than</option>
+				<option value="equal_as"{relation_equal_as}>equal_as</option>
+				<option value="less_than"{relation_less_than}>less than</option>
+			</select>
+			<input name="completed_percent" value="{completed_percent}" size="3" maxlength="3"> Percent
+		</td>
+	</tr>
+	<tr>
+		<th>Date</th>
+		<td>
+		<table border = 0><tr>
+			<td>
+			<select name="date_relation">
+				<option value="greater_than"{relation_date_greater_than}>since</option>
+				<option value="equal_as"{relation_date_equal_as}>at</option>
+				<option value="less_than"{relation_date_less_than}>before</option>
+			</select>
+			</td>
+				<td><input name="test_date" value="{test_date}" size="10" maxlength="10"></td><td> DD.MM.YYYY</td>
+			</tr>	
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<th<!-- BEGIN correction_testrun_id --> class="correction" <!-- END correction_testrun_id -->>Testrun ID #</th>
+		<td>
+			<input name="testrun_id" type="text" value="{input_testrun_id}" />
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input class="Button" type="submit" name="filters_set" value="Apply filter" /></td>
+	</tr>
+</table>
+</form>
+
+<h2>Statistics of the testruns</h2>
+
+<!-- BEGIN no_results -->
+<p>There are <b>no</b> test runs that match your criterions.</p>
+<!-- END no_results -->
+
+<!-- BEGIN has_results -->
+<p>There are <b>{result_count}</b> test runs matching your criterions.</p>
+<!-- END has_results -->
+
+<!-- BEGIN no_filter -->
+<p>Please select a test in filter !</p>
+<!-- END no_filter -->
+
+<!-- BEGIN  histo -->
+		<p><img src="{filename}" width = {graph_width} height = {graph_height}  alt="{alt}"><br /><br /><br /><br /></p>
+<!-- END  histo -->
+
+
+
+
+
+</div>

@@ -1,0 +1,36 @@
+Der Reiter "Veröffentlichung" gibt Ihnen die Möglichkeit, einen Test für die Bearbeitung im Internet freizugeben.
+
+Hinweis: Veröffentlichen Sie einen Test erst, wenn die Entwicklungsarbeiten komplett abgeschlossen sind. Sobald der erste Teilnehmer nach der Veröffentlichung am Test teilgenommen hat, können Sie keine Items, Itemblöcke, Textseiten und Subtests mehr löschen. Sie werden lediglich deaktiviert.
+
+### Zugriffskontrolle
+
+Der Testautor bzw. der Administrator legt über die Checkboxen in der Tabelle fest, ob und in welcher Form Benutzer den Test starten bzw. alte Ergebnisrückmeldungen einsehen können.
+
+Ein Test kann auf drei Weisen veröffentlicht werden: <br>
+1) Zugriff per Direktlink<br>
+2) Zugriff über die Testübersicht<br>
+3) Zugriff per TAN<br>
+
+1) Wird ein Test <b>per Direktlink</b> veröffentlicht, kann jeder den Test starten, der den Link mitgeteilt bekommt (z.B. durch eine Email zugeschickt). Dieses Zugriffsrecht kann für alle Benutzer-Gruppen getrennt vergeben werden.
+
+2) Wird ein Test <b>per Testübersicht</b> veröffentlicht, wird er in der "Testübersicht" angezeigt und kann per Mausklick gestartet werden. Das bietet sich an, wenn ein Test z.B. nur für registrierte Benutzer freigegeben werden soll oder wenn Teilnehmer (als Gäste) eigenständig zum testMaker gelangen und an einem Test teilnehmen möchten, den sie in der Testübersicht finden. Dieses Zugriffsrecht kann für alle Benutzer-Gruppen getrennt vergeben werden.
+
+Zusätzlich kann beim Zugriff per 1) Direktlink und per 2) ein Passwort definiert werden, dass vor dem Teststart abgefragt wird. Geben Sie dazu das gewünschte Passwort in dem entsprechenden Feld der Tabelle ein und setzten Sie die Haken.
+
+Weiterhin besteht die Möglichkeit, den Zugriff der Benutzer auf die Einsicht Ihrer Feedback-Ergebnisse zu beschränken. Diese Option können Sie wählen, wenn an einem Test nicht mehr teilgenommen werden soll, die Teilnehmer aber noch ihre Ergebnisse abrufen können sollen. 
+
+3) Eine Veröffentlichung <b>per TAN</b> bedeutet, dass jeder Teilnehmer eine TAN (Transaktionsnummer) erhält, die genau einmal gültig ist. Mit der TAN kann der Test auf der Startseite von testMaker aufgefrufen werden. Die TAN ermöglicht es dem Teilnehmer die Testbearbeitung zu unterbrechen und zu einem späteren Zeitpunkt fortzusetzen. Die Veröffentlichung per TAN empfiehlt sich, wenn eine geschlossene Testung (z.B. einer Schulklasse) durchgeführt wird und keine Zeit ist, dass sich alle Teilnehmer registrieren und einen Benutzeraccount anlegen. 
+
+Sonderfall:<br>
+Bei bestimmten Konstellationen von Gruppen und Testdarbietung sind nicht alle Veröffentlichungsvarianten möglich. Wird ein Test z.B. auf Subtestebene veröffentlicht, sodass einzelne Subtests in der Testübersicht angezeigt werden, ist keine Veröffentlichung für unregistrierte Benutzer (Gäste) mehr möglich. Die Felder sind entsprechend grau hinterlegt.
+
+### Zeitspanne
+Hier können Sie festlegen, ob die Teilnahme erst ab bzw. nur bis zu einem bestimmten Datum möglich ist. 
+
+### TANs
+
+Hier können Sie die TANs (Transaktionsnummern) erzeugen, die Sie an die Teilnehmer Ihres Tests weitergeben. Es können maximal 50 TANs auf einmal erstellt werden. 
+
+Die Option "Emailadresse abragen" sollten Sie wählen, wenn Sie die Teilnehmer bitten möchten, nach der Eingabe der TAN eine Email-Adresse anzugeben. Die Eingabe ist nicht zwingend erforderlich, um am Test teilzunehmen.
+
+Sobald Sie die ersten TANs für einen Test erstellt haben, wird eine Tabelle mit den TANs angezeigt. Darin wird dokumentiert, welche TAN wann genutzt wurde. Zudem können Sie neue TANs, die sie erstellt haben in einem Fenster anzeigen lassen, um sie z.B. in eine Excel-Tabelle zu kopieren. Denken Sie daran,die TANs nicht nur zu erstellen zu verteilen, sondern auch den Test unter "Zugriffskontrolle" auch tatsächlich für den Zugriff per TAN zu veröffentlichen...

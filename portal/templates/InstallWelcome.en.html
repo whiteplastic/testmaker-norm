@@ -1,0 +1,14 @@
+<p>
+	Welcome to the installation of testMaker</p>
+
+<p>
+	<a class="arrow" href="func_pagelink(installer, auto)">Begin
+	installation or update</a>.</p>
+
+<h3>Switch language</h3>
+<ul>
+<!-- BEGIN lang_select -->
+	<li func_iif({lang_active}, 'class="active"', '')><a href="func_pagelink(installer, welcome, language: {lang_code})">{lang}</a></li>
+<!-- END lang_select -->
+</ul>
+

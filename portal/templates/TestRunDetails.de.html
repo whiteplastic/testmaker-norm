@@ -1,0 +1,84 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<h2>Testlauf #{testrun_id}</h2>
+<table class="Vertical">
+	<tr>
+		<th>Benutzer-ID</th>
+		<td>{user_id}</td>
+	</tr>
+	<tr>
+		<th>Test</th>
+		<td>{test_title:h} (ID: {test_id})</td>
+	</tr>
+	<tr>
+		<th>Testversion</th>
+		<td>{test_version}</td>
+	</tr>
+	<tr>
+		<th>Zugriffstyp</th>
+		<td>{access_type:h}</td>
+	</tr>
+	<tr>
+		<th>Startzeit</th>
+		<td>{start_time} ({start_time_exact})</td>
+	</tr>
+	<tr>
+		<th>Referer</th>
+		<td>{referer:h}</td>
+	</tr>
+	<tr>
+		<th>Host</th>
+		<td>{client_host:h} ({client_ip:h})</td>
+	</tr>
+	<tr>
+		<th>Browser</th>
+		<td>{client_useragent:h}</td>
+	</tr>
+</table>
+
+<br/>
+
+<h2>Verlauf</h2>
+<!-- BEGIN has_answer_sets -->
+
+	<!-- BEGIN given_answer_set -->
+		<!-- BEGIN block_header -->
+		<h3>{block_title:h}</h3>
+		<!-- END block_header -->
+		<h4>{step_number}. {item_title} ({duration_s} s<!-- BEGIN timeout -->, Zeitüberschreitung<!-- END timeout --><!-- BEGIN correct -->, <!-- BEGIN is_correct --><span style="color:#009900">Antwort ist richtig</span><!-- END is_correct --><!-- BEGIN is_not_correct --><span style="color:#990000">Antwort ist falsch</span><!-- END is_not_correct --><!-- END correct -->)</h4>
+		<!--<p>Server: {server_duration}, Client: {client_duration}, Source: {duration_source}</p>//-->
+		<!-- BEGIN has_answers -->
+		<ul>
+			<!-- BEGIN answer -->
+				<!-- BEGIN simple_answer -->
+				<li>{answer:h}
+				<!-- END simple_answer -->
+				<!-- BEGIN simple_trusted_answer -->
+				<li>{answer}
+				<!-- END simple_trusted_answer -->
+				<!-- BEGIN empty_answer -->
+				<li><span style="font-style: italic">ausgelassen</span>
+				<!-- END empty_answer -->
+				<!-- BEGIN mc_answer_yes -->
+				<li style="border: 1px solid #000000;padding:0.2em;margin:0.3em 0">{answer}</li>
+				<!-- END mc_answer_yes -->
+				<!-- BEGIN mc_answer_no -->
+				<li style="border: 1px dotted #999999;padding:0.2em;margin:0.3em 0">{answer}</li>
+				<!-- END mc_answer_no -->
+			<!-- END answer -->
+		</ul>
+		<!-- END has_answers -->
+
+		<!-- BEGIN no_answers -->
+		<p>Es wurde Keine Antwort gegeben.</p>
+		<!-- END no_answers -->
+		<!-- BEGIN answerjump -->
+		<p>Item wurde nicht angezeigt.</p>
+		<!-- END answerjump -->
+	<!-- END given_answer_set -->
+
+<!-- END has_answer_sets -->
+<!-- BEGIN no_answer_sets -->
+	<p>Keine Antworten</p>
+<!-- END no_answer_sets -->
+</div>

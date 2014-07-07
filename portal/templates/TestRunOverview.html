@@ -1,0 +1,298 @@
+<script type="text/javascript" language="javascript">
+<!--
+function openExportWindow()
+{
+	if (saveVarsHack) return "_self";
+	saveVarsHack = 0;
+	
+	var fields = document.getElementsByName('fields[]');
+	var numberFields = fields.length;
+	var counter = 0;
+	for(var i=0;i<numberFields;i++)
+	{
+		if(fields[i].checked == true) counter++;
+	}
+	if(counter != 0)
+	{
+		var title = "export_window";
+		var exportWindow = window.open("", title, "width=900,height=300,top=140,left=100");
+		return title;
+	}
+	else {
+	return "_self";
+	}
+}
+
+function selectAll () {
+  for (var i = 0; i < document.export_options.elements.length; i++) {
+	if(document.export_options.elements[i].name == "fields[]") {
+			document.export_options.elements[i].checked = true;
+	}
+  }
+}
+
+function unselectAll () {
+  for (var i = 0; i < document.export_options.elements.length; i++) {
+	if(document.export_options.elements[i].name == "fields[]") {
+			document.export_options.elements[i].checked = false;
+	}
+  }
+}
+
+saveVarsHack = 0;
+
+function saveVars() {
+	
+	//document.export_options.action = "func_pagelink(test_run, save_export_vars)";
+	$('export_options').removeAttribute('target');
+	document.export_options.action = "index.php?page=test_run&action=save_export_vars";
+	document.export_options.submit();
+	
+}
+
+//-->
+</script>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<h2>Filter</h2>
+<form method="post" action="func_pagelink(test_run)">
+<table class="Vertical">
+	<tr>
+		<th>Test</th>
+		<td>
+			<select name="test_id">
+				<!-- <option value="0"{select_test_first}>All tests</option> -->
+<!-- BEGIN select_test -->
+				<option value="{select_test_id}"{select_test_current}>{select_test_title:h}</option>
+<!-- END select_test -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Groups</th>
+		<td>
+			<select name="group_name[]" size="5" multiple>
+				<option value="*"{select_group_first}>All Groups</option>
+<!-- BEGIN select_group -->
+				<option value="{select_group_name}"{select_group_current}>{select_group_title:h}</option>
+<!-- END select_group -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Access type</th>
+		<td>
+			<select name="access_type">
+				<option value="*"{select_access_type_first}>Any</option>
+<!-- BEGIN select_access_type -->
+				<option value="{select_access_type}"{select_access_type_current}>{select_access_type_description}</option>
+<!-- END select_access_type -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Completeness</th>
+		<td>
+			<select name="completed">
+				<option value="any"{select_completed_any}>Any</option>
+				<option value="all"{select_completed_all}>All items answered</option>
+				<option value="all_required"{select_completed_all_required}>All required items answered</option>
+				<option value="not_all_required"{select_completed_not_all_required}>Not all required items answered</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Progress of the testrun</th>
+		<td>
+			<select name="relation">
+				<option value="greater_than"{relation_greater_than}>more than</option>
+				<option value="equal_as"{relation_equal_as}>equal_as</option>
+				<option value="less_than"{relation_less_than}>less than</option>
+			</select>
+			<input name="completed_percent" value="{completed_percent}" size="3" maxlength="3"> Percent
+		</td>
+	</tr>
+	<tr>
+		<th>Date</th>
+		<td>
+		<table border = 0><tr>
+			<td>
+			<select name="date_relation">
+				<option value="greater_than"{relation_date_greater_than}>since</option>
+				<option value="equal_as"{relation_date_equal_as}>at</option>
+				<option value="less_than"{relation_date_less_than}>before</option>
+				<option value="between"{relation_date_between}>between</option>
+			</select>
+			</td>
+				<td><input name="test_date" value="{test_date}" size="10" maxlength="10"></td><td> DD.MM.YYYY</td>
+				<td><input name="test_date2" value="{test_date2}" size="10" maxlength="10"></td><td> DD.MM.YYYY</td>
+			</tr>	
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<th<!-- BEGIN correction_testrun_id --> class="correction" <!-- END correction_testrun_id -->>Testrun ID #</th>
+		<td>
+			<input name="testrun_id" type="text" value="{input_testrun_id}" />
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input class="Button" type="submit" name="filters_set" value="Apply filter" /></td>
+	</tr>
+</table>
+</form>
+
+<!-- BEGIN no_results -->
+<p>There are <b>no</b> test runs that match your criterions.</p>
+<!-- END no_results -->
+
+<!-- BEGIN has_results -->
+<p>There are <b>{result_count}</b> test runs matching your criterions.</p>
+
+<br />
+<h2>Results</h2>
+
+<!-- BEGIN result_row -->
+<fieldset style="border:1px solid #999999;padding:0.3em;padding-top:0.0em;margin:0;margin-top:0.8em">
+<legend style="border: 1px solid #999999;padding:0 0.4em">Test run <b>#{test_run_id}</b></legend>
+<table class="Layout"><tr><td class="Layout">
+	<table class="Vertical">
+		<tr>
+			<th>Test:</th>
+			<td style="width:13em"><i><span title="ID: {test_id}">{test_title:h}</span></i></td>
+		</tr>
+		<tr>
+			<th>User:</th>
+			<td>{user_id}</td>
+		</tr>
+		<tr>
+			<th>Start time:</th>
+			<td style="white-space:nowrap"><span title="{start_time}">{start_time_exact}</span></td>
+		</tr>
+		<tr>
+			<th style="white-space:nowrap">Access type:</th>
+			<td>{access_type_description}</td>
+		</tr>
+	</table>
+</td><td class="Layout">
+	<table class="Vertical">
+		<tr>
+			<td>func_progressbar({progress_total}, 6em)</td>
+			<td>total progress</td>
+		</tr>
+		<tr>
+			<td>func_progressbar({progress_answered_items}, 6em)</td>
+			<td>of all items answered</td>
+		</tr>
+		<tr>
+			<td>func_progressbar({progress_required_answered_items}, 6em)</td>
+			<td>of all required items answered</td>
+		</tr>
+	</table>
+</td></tr></table>
+</fieldset>
+<div style="text-align:center;border:1px solid #999999;border-top:none;padding:0.2em">
+<span class="ContextLinks">
+			<a href="func_pagelink(test_run, show_details, run_id: {test_run_id})">Show details</a> |
+			<a href="func_pagelink(test_run, delete_run, run_id: {test_run_id})">Delete test run</a>
+			</span></div>
+<!-- END result_row -->
+
+<!-- INCLUDE PageSelector.html -->
+
+<br />
+<h2>Export</h2>
+
+<!-- BEGIN export_choose_test -->
+<p>Please choose a test first.</p>
+<!-- END export_choose_test -->
+<!-- BEGIN export_allowed -->
+<p>Fields to include:</p>
+<form id="export_options" name="export_options" method="post" action="func_pagelink(test_run, export)">
+<ul style="list-style-type:none;padding:0">
+
+<h4>Basics of Testruns</h4>
+<ul style="list-style-type:none;padding:0">
+<!-- BEGIN fieldHeaders -->
+	<li><input type="checkbox" name="fields[]" value="{field_name}" id="field_{field_name}"{field_checked} /> <label for="field_{field_name}" style="font-weight:bold">func_T(pages.testrun.export.field.{field_name}.title)</label> - func_T(pages.testrun.export.field.{field_name}.description)</li>
+<!-- END fieldHeaders  -->
+</ul>
+
+<h4>Items and Answers</h4>
+<ul style="list-style-type:none;padding:0">
+<!-- BEGIN fieldItems -->
+	<li><input type="checkbox" name="fields[]" value="{field_name}" id="field_{field_name}"{field_checked} /> <label for="field_{field_name}" style="font-weight:bold">func_T(pages.testrun.export.field.{field_name}.title)</label> - func_T(pages.testrun.export.field.{field_name}.description)</li>
+<!-- END fieldItems  -->
+</ul>
+
+<h4>Textpages</h4>
+<ul style="list-style-type:none;padding:0">
+<!-- BEGIN fieldTextItems -->
+	<li><input type="checkbox" name="fields[]" value="{field_name}" id="field_{field_name}"{field_checked} /> <label for="field_{field_name}" style="font-weight:bold">func_T(pages.testrun.export.field.{field_name}.title)</label> - func_T(pages.testrun.export.field.{field_name}.description)</li>
+<!-- END fieldTextItems -->
+</ul>
+
+<h4>Feedback</h4>
+<ul style="list-style-type:none;padding:0">
+<!-- BEGIN fieldFeedback -->
+	<li><input type="checkbox" name="fields[]" value="{field_name}" id="field_{field_name}"{field_checked} /> <label for="field_{field_name}" style="font-weight:bold">func_T(pages.testrun.export.field.{field_name}.title)</label> - func_T(pages.testrun.export.field.{field_name}.description)</li>
+<!-- END fieldFeedback  -->
+</ul>
+
+<p>
+  <input class="Button" type="button" value="Select all" onclick="selectAll();" /> 
+  <input class="Button" type="button" value="Deselect all" onclick="unselectAll();" />
+</p>
+
+ <p>
+	<button class="Button" onclick="saveVars();">Save selected variables</button>
+</p>
+
+<BR><BR>
+
+<p>
+<table border = 0><tr>
+	<td>Decimal point:</td>
+	<td><input id="comma_1" type="radio" name="comma" value="1"<!-- BEGIN comma_1_checked -->checked="checked"<!-- END comma_1_checked --> /></td>
+	<td><label for="comma_1">Comma, e.g.: 3,14 (recommendation for SPSS)</label></td>
+	<td><input id="comma_0" type="radio" name="comma" value="0"<!-- BEGIN comma_0_checked -->checked="checked"<!-- END comma_0_checked --> /></td>
+	<td><label for="comma_0">Dot, e.g.: 3.14</label></td>
+</tr></table>
+</p>
+<p>
+<table border = 0><tr>
+	<td><input id="truncate_text" type="checkbox" onchange="this.form.truncate_text_chars.disabled=!this.checked;if (this.checked) { this.form.truncate_text_chars.focus() }" name="truncate_text"<!-- BEGIN truncate_text_checked -->checked="checked"<!-- END truncate_text_checked --> /></td>
+	<td><label for="truncate_text">Truncate text at </label> <input class="Text" type="text" value="{truncate_text_chars}" size="5" name="truncate_text_chars" <!-- BEGIN truncate_text_chars_disabled --> disabled="disabled"<!-- END truncate_text_chars_disabled --> /> </td>
+	<td><label for="truncate_text">characters</label> (recommendation for SPSS: 255)</td>
+</tr></table>	
+</p>
+
+<p>
+<table border = 0><tr>
+	<td><input id="ignore_answerless_items" type="checkbox" name="ignore_answerless_items" value="1" <!-- BEGIN ignore_answerless_items_checked -->checked="checked"<!-- END ignore_answerless_items_checked --> /></td>
+	<td><label for="ignore_answerless_items">Ignore Items that cannot contain any answers (e.g. instructions)</label> </td>
+    </tr></table>	
+</p>
+
+<p>
+	<input class="Button" type="submit" value="Export results" onclick="$('export_options').target=openExportWindow();return true" />
+</p>
+</form>
+<!-- END export_allowed -->
+
+<br />
+<!-- BEGIN delete_testruns -->
+<h2>Delete</h2>
+
+<p>You can delete all <b>{result_count}</b> matching test runs at once.</p>
+<form method="post" action="func_pagelink(test_run, delete_by_criterions)">
+<p><input class="Button" type="submit" name="do_delete" value="Delete matching test runs" onclick="return confirm('Do you really want to delete all test run data? This cannot be undone!')" /></p>
+</form>
+<!-- END delete_testruns -->
+
+<!-- END has_results -->
+
+<!-- BEGIN no_filter -->
+<p>Please select a test in filter !</p>
+<!-- END no_filter -->

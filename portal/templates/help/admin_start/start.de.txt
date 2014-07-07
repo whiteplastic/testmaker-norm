@@ -1,0 +1,66 @@
+Sie befinden Sie auf der Startseite von testMaker, die von Administratoren und Testautoren gesehen werden kann. Diese Hilfeseite bietet Ihnen eine
+grundlegende Einführung in die Oberfläche von testMaker sowie eine Kurzeinführung in die Bearbeitungsfunktionen. Die Oberfläche von testMaker besteht aus zwei wesentlichen Bereichen (Navigationsmenü und Hauptbereich), die hier kurz vorgestellt werden.
+
+
+### Navigationsmenü (linke Seite)
+
+Der Bereich auf der linken Seite beinhaltet das Navigationsmenü, das aus drei Bereichen besteht: 
+
+#### Funktionen
+Links oben gibt es verschiedene *Funktionen*. Je nach Nutzungsrechten sieht ein Nutzer bis zu fünf Funktionen:
+
+*Allgemeine Verwaltung*: Hier liegen administrative Funktionen von testMaker. Der Zugriff ist auf Administratoren beschränkt.
+
+*Benutzer- und Gruppenverwaltung*: Hier werden die Teilnehemer verwaltet. Es können Benutzeraccounts und Gruppen angelegt , aber auch Zugriffsrechte definiert werden. Auch hier haben nur Administratoren zugriff.
+
+*Datenexport und -bericht*: Hier werden können die Daten von Testläufen als txt-Datei z.B. für eine Statistiksoftware wie SPSS ausgelesen werden.
+
+*Import/Export*: Hier können Tests exportiert und importiert werden.
+
+*Testübersicht*: Die Testübersicht zeigt alle Tests an und ermöglicht die Teilnahme. Hier können alle Tests gestartet werden, für die ein Nutzer Zugriff hat.
+
+#### Arbeitsplatz
+
+In der Mitte der linken Seite befindet sich der *Arbeitsplatz*. Hier werden alle Tests in einer Baumstruktur dargestellt, wie man es z.B. aus dem Windows Explorer kennt. In diesem Bereich können durch Sie die Baumstruktur der Testelemente
+navigieren. Die Navigation besteht aus zwei Teilen.
+
+Im oberen Teil sehen Sie den Pfad vom Arbeitsplatz bis zu dem Element, das Sie
+gerade bearbeiten, also eine hierarchische Liste aller Elemente, die dem aktuellen
+übergeordnet sind.
+
+Der untere Teil zeigt alle Elemente an, die im aktuellen Element enthalten sind. Wenn
+Sie z.B. einen Itemblock bearbeiten, sehen Sie hier die Liste der
+darin enthaltenen Items.
+
+#### Aktionsbuttons
+
+Links unten befinden sich die *Aktionsbuttons*, über die man Tests und verschiedene Testelemente, wie Items, Textseiten oder Feedbackseiten angelgen kann. Wenn Sie z.B. gerade einen Test
+bearbeiten, sehen Sie hier Buttons, um Subtests, Itemblöcke, Textblöcke und
+Feedbackblöcke anzulegen.
+
+
+### Hauptbereich (rechte Seite)
+
+Der Hauptbereich auf der rechten Seite zeigt die Bearbeitungsmöglichkeiten an, die Sie
+am aktuellen Element vornehmen können. In vielen Fällen ist der Hauptbereich in mehrere
+Register (Reiter) unterteilt. Das bedeutet, dass für das aktuelle Element mehrere
+Kategorien von Funktionen zur Verfügung stehen. Ein Test hat beispielsweise ein
+Register "Allgemein" zum Bearbeiten allgemeiner Informationen zum Test, "Rechte" zum Ändern von
+Berechtigungen, "Struktur" zum Ändern der Sortierung aller Unterelemente, u.s.w.
+
+
+### Schnelleinstieg
+
+Um einen Test anzulegen, verwenden Sie den Button "Neuen Test anlegen". Sie
+gelangen dann auf die Einstellungsseite für den soeben angelegten Test.
+
+Um den Inhalt eines Tests zu strukturieren, können Sie mehrere Subtests
+anlegen. Genau wie ein Test kann ein Subtest diverse Unterelemente wie Item-
+und Feedbackblöcke beinhalten. Für jede Art von Element gibt es eigene
+Einstellungsseiten.
+
+Bitte beachten Sie, dass Tests nicht öffentlich zugänglich sind, bis Sie die
+entsprechenden Berechtigungen vergeben. Weitere Informationen zu
+Berechtigungen finden Sie auf der [Hilfeseite zu Rechten](func_helplink('',
+edit_perms)).
+

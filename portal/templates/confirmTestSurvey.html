@@ -1,0 +1,65 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+<!-- BEGIN confirm -->
+
+<p>
+Emails will be sent to <b>{mails_count}</b> users as in the following example:</h4>
+<div>
+
+
+<table cellpadding=10>
+	<tr>
+		<td style="width:100px; font-weight:bold; padding-left:0px;">Recipient:</td>
+		<td>{survey_recipient}</td>
+	</tr>
+	<tr>
+		<td style="width:100px; font-weight:bold; padding-left:0px;">Subject:</td>
+		<td>{survey_subject}</td>
+	</tr>
+	<tr>
+		<td style="width:100px; font-weight:bold; padding-left:0px;">Content:</td>
+		<td>{survey_content}</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+
+
+<h2>Selected E-Mails:</h2>
+
+<div style="height:120px; width:100%; overflow-y:scroll;">
+	<!-- BEGIN email_row -->
+	{user_email} {test_run_id},
+	<!-- END email_row -->
+</div>
+
+<p>&nbsp;</p>
+<form method="post" action="func_pagelink(test_survey, send_emails_cron)">
+
+<input name="survey_cancel" type="button" class="Button" value="Back" onClick="javascript:history.go(-1)" />
+<input name="survey_send" type="submit" class="Button" value="Send Emails" />
+</p>	
+</form>
+</div>
+
+<!-- END confirm -->
+
+
+<!-- BEGIN done -->
+Added {count} of {usercount} tasks to be processed by CronJob.<p>
+You can <a href="{link}">view the progress at cronjob status page</a> here.
+<p>&nbsp;</p>
+<!-- END done -->
+
+<!-- BEGIN doing -->
+<body {autolink}>
+Added {count} of {usercount} tasks to be processed by CronJob.<p>
+<p>&nbsp;</p>
+</body>
+<!-- END doing -->
+
+
+
+</div>

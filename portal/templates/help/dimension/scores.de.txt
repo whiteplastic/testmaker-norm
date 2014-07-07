@@ -1,0 +1,9 @@
+#####Korrekte Antworten auswählen
+Hier ausgewählte Antworten werden in Feedbacks mit einem Punkt bewertet. Diese Option ist beispielsweise dann sinnvoll, wenn Sie Multiple-Choice-Items verwenden, bei denen eine oder mehrere Antworten richtig sind.  
+
+#####Skalen definieren
+Hier können Sie den Antwortmöglichkeiten auf- oder absteigende Punkteskalen zuordnen (z.B. für Ratingskalen). Um die Punkteverteilung umzukehren, wählen Sie die Ankreuzfelder an oder ab. Bitte vergessen Sie nicht, anschließend den Aktionsbutton "Punkte speichern" zu betätigen.
+
+#####Punktwertungen festlegen
+Hier können Sie jeder Antwortmöglichkeit eine beliebige Punktzahl zuweisen (z.B. für Items, bei denen für die einzelnen Antworten verschieden viele Punkte vergeben werden sollen).
+ 

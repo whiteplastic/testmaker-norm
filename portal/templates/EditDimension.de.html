@@ -1,0 +1,71 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+
+<h3>Dimension bearbeiten: <em>{title:h}</em> (Schritt 1 von 2)</h3>
+
+<form method="post" action="func_pagelink(dimension, edit, working_path: {working_path}, item_id: {id})">
+	<input type="hidden" name="submit_dim" value="1" />
+	<table>
+		<tr<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>
+			<td>Titel</td>
+			<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+		</tr>
+		<tr>
+			<td>Beschreibung</td>
+			<td><textarea name="description">{description:h}</textarea></td>
+		</tr>
+		
+		<tr>
+			<td>Aktuelle Kennwerte</td>
+			<td><em>Min={curMin}, Max={curMax}, {curRef}</em></td>
+		</tr>
+		
+		
+		
+		<tr>
+			<td colspan="2">Die folgenden Itemzuordnungen werden erst nach dem folgenden Schritt gespeichert.</td>
+		</tr>
+		<tr>
+			<td>Items, die in dieser Dimension ber&uuml;cksichtigt werden</td>
+			<td>
+				<ul class="checklist">
+					<!-- BEGIN items -->
+						<li {item_disabled} ><input id="items_{item_id}" type="checkbox" name="items[{item_id}]" value="1"{item_checked}/>
+							<label for="items_{item_id}">{item_title:h}</label></li>
+					<!-- END items -->
+					<!-- BEGIN no_items -->
+						<li><em>In den zugeordneten Itemblöcken sind keine Items enthalten, die für normale Dimensionen verwendet werden können.</em></li>
+					<!-- END no_items -->
+				</ul>
+			</td>
+		</tr>
+		<!-- BEGIN q_options -->
+		<tr>
+			<td>Punkteoptionen</td>
+			<td>
+				<ul class="checklist">
+					<li>
+						<input id="edit_type_mc" type="radio" name="edit_type" value="mc" {check_mc}/>
+						<label for="edit_type_mc">Ich will f&uuml;r einzelne Antworten je einen Punkt vergeben.</label>
+					</li>
+					<li>
+						<input id="edit_type_scale" type="radio" name="edit_type" value="scale" {check_scale}/>
+						<label for="edit_type_scale">Ich will je Frage eine auf- oder absteigende Punkteskala &uuml;ber die Antworten definieren.</label>
+					</li>
+					<li>
+						<input id="edit_type_custom" type="radio" name="edit_type" value="custom" {check_custom}/>
+						<label for="edit_type_custom">Ich will die Punktzahl f&uuml;r jede Antwort explizit eingeben.</label>
+					</li>
+			</td>
+		</tr>
+		<!-- END q_options -->
+	</table>
+	<!-- BEGIN submit_button -->
+	<input type="submit" class="Button" value="Zum n&auml;chsten Schritt" />
+	<!-- END submit_button -->
+	<!-- BEGIN no_submit_button -->
+	<input type="button" disabled="disabled" value="func_T(buttons.edit_disallowed)" class="Button" />
+	<!-- END no_submit_button -->
+</form>
+</div>

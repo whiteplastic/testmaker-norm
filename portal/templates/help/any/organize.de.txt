@@ -1,0 +1,6 @@
+###Struktur
+Über diese Seite können Sie die Reihenfolge der untergeordneten Elemente verändern.
+
+Die Reihenfolge der Listeneinträge kann per Drag&Drop verändert werden. Anschließend bitte auf "Speichern" drücken, da sonst die Änderungen verloren gehen.
+
+<b>Hinweis</b>: Die Sortierung der Items ist nur im Fall der nicht-adaptiven Vorgabe relevant!

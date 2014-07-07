@@ -1,0 +1,61 @@
+###Orientierung
+Sie befinden sich auf dem Karteireiter "Gruppe hinzufügen" in der Funktion "Benutzer und Gruppen verwalten".
+
+Jeder Benutzer des testMaker gehört zu einer bestimmten "Gruppe", die unterschiedliche Rechte hat. Folgende Gruppen sind im testMaker voreingestellt: 
+
+* Administratoren (Benutzer mit umfassenden Rechten, die alle Tests sehen und bearbeiten können)
+* Autoren (Benutzer, die Tests anlegen und auch bearbeiten können)
+* Normal User (Benutzer, die einen Benutzer-Account angelegen, um an einem veröffentlichten Test teilzunehmen. Normal User können sich immer wieder in den testMaker einloggen und z.B. Tests in der Testübersicht starten oder ihre Ergebnisse alter Testteilnahmen einsehen)
+* Guests  (Benutzer, die als Gäste an einem freigegebenen Test teilnehmen, registrieren sich nicht.)
+
+Weitere Benutzer-Gruppen können auf dieser Seite angelegt werden. Welchen Test eine bestimmte Benutzer-Gruppe sehen und bearbeiten darf, wird vom Autor/Administrator für jeden Test einzelnd auf dem Karteireiter "Veröffentlichung" festgelegt bzw. auf dem Karteireiter "Rechte" auf Testebene festgelegt. Weitere Infomationen zu den Themen finden sich unter [Test veröffentlichen](func_helplink (container_block, publish)) oder [Rechte zuweisen](func_helplink (container_block, edit_perms)). 
+
+#### Gruppenname
+Jeder Gruppenname darf nur einmal vergeben werden.
+
+#### Beschreibung
+Die Beschreibung kann leer bleiben, dient allerdings dazu auch bei vielen Gruppen schnell zu verstehen, welche Benutzern unter dieser Gruppe zusammengefasst sind.
+
+#### Vererbung
+#####Neuen Benutzer automatisch zu dieser Gruppe hinzufügen
+Ist dieses Feld für eine Gruppe markiert, wird ein neu angelegter Benutzer (z.B. eine Person, die sich als Testteilnehmer registriert) automatisch dieser Gruppe hinzugefügt.
+
+##### Unregistrierten Benutzern die Rechte dieser Gruppe geben
+Ist dieses Feld für eine Gruppe markiert, wird ein nicht registrierter Benutzer (z.B. ein Gast) dieser Gruppe zugeordnet und erhält die entsprechenden Rechte.
+
+#### Globale Berechtigungen
+Hier können Sie die globalen Rechte für die Gruppe festlegen. Wichtig zu beachten ist, dass die hier vergebenen Rechte sich auf <b>alle Tests</b> bzw. Elemente des testMakers beziehen. Daher Vorsicht wird man in der Regel nur sehr wenige globale Rechte vergeben und lieber auf Testebene für einzelne Tests bestimmten Gruppen [Rechte zuweisen](func_helplink (container_block, edit_perms)).
+
+##### Kann Bearbeitungsrechte für einzelne Tests erhalten (Spezialgruppe)
+##### Tests (ohne TAN) per Direktlink starten oder Voransicht benutzen
+Sobald ein Mitglied dieser Gruppe den Link zu einem Test kennt, kann es den Test (auch in der Vorschau) starten
+##### Tests per TAN starten
+##### Tests in der Testübersicht sehen und dort starten
+##### Alte Testergebnisse über die Testübersicht abrufen
+Die Benutzer der Gruppe können alle Tests in der Übersicht sehen.
+##### Bearbeitbare Tests veröffentlichen
+Die Benutzer der Gruppe können ihre eigenen Tests selbst veröffentlichen.
+##### Tests ansehen
+Die Benutzer der Gruppe können jeden Test ansehen, aber nicht editieren.
+##### Testdaten exportieren (von Tests, deren Bearbeitung erlaubt ist)
+##### Tests anlegen
+Benutzer dieser Gruppe (z.B. Autoren) können einen Test im Arbeitsplatz anlegen
+##### Tests bearbeiten / Tests löschen / Tests kopieren / Tests verlinken
+Benutzer dieser Gruppe können alle Tests bearbeiten / löschen / kopieren /verlinken, ohne dass der Gruppe die Rechte für einen Test extra vergeben werden müssen.
+##### Benutzer/Gruppen verwalten
+Benutzer dieser Gruppe (z.B. Administratoren) dürfen Benutzer / Gruppen anlegen und editieren
+
+
+####Beispiel 1 
+
+Gruppe für "Befragungsteilnehmer von Lisa" anlegen
+
+Sie möchten eine Benutzer-Gruppe "Befragungsteilnehmer von Lisa" anlegen, der automatisch alle Benutzer zugewiesen werden, die sich im testMaker registrieren. Also wählen Sie unter "Vererbung" den ersten Unterpunkt aus. Die Benutzer dieser Gruppe sollen nicht alle Tests bearbeiten können, sondern nur Lisas Tests. Daher erhält die Gruppe <b>keine </b> globalen Berechtigungen. Damit die Benutzer der Gruppe "Befragungsteilnehmer von Lisa" Lisas Tests aufrufen können, muss der Test für diese Gruppe veröffentlicht werden. Wie das geht, steht unter [Test veröffentlichen](func_helplink (container_block, publish)). 
+
+####Beispiel 2
+
+Gruppe "Master-Studierende von Klaus" anlegen
+
+Sie möchten eine Benutzer-Gruppe "Master-Studierende von Klaus" anlegen, die Autorenrechte hat, d.h. Tests erstellen kann. 
+Bei Vererbung wird nichts ausgewählt, da keine Person automatisch dieser Gruppe zugewiesen werden soll. Vielmehr möchten Sie einen ausgewählten Personenkreis von ca. 5 Leuten die Rechte dieser Gruppe zuweisen. Z. B.
+die Rechte "Tests anlegen" und "Testdaten exportieren". Das Recht "Bearbeitbare Tests veröffentlichen" wird nicht vergeben, da Klaus das lieber selbst übernimmt. Um die Masterstudierenden der Gruppe "Master-Studierende von Klaus" zuzuweisen, wird für sie jeweils ein Benutzer-Account angelegt und die entsprechende Gruppe zugeordnet (Siehe auch unter [Benutzer hinzufügen](func_helplink (user_admin, user_creation))). Haben die Studierenden bereits einen Benuzter-Account, muss der Benutzer über den Karteireiter "Benutzer-Liste" aufgerufen und unter "Ändern" der Gruppe zugewiesen werden (Siehe auch unter [Benutzer-Liste](func_helplink (user_admin, list_user))).

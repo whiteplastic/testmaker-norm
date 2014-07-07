@@ -1,0 +1,20 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+<!-- INCLUDE EditPublishedHeader.html -->
+	<form method="post" action="func_pagelink(item, save_time, working_path: {working_path}, item_id: {item_id}, revert: true)" name="item">
+		<input type="hidden" name="counter" value="0" />
+		<table>
+			<tr<!-- BEGIN correction_min_time --> class="correction"<!-- END correction_min_time -->>
+				<td>func_T(forms.item.min_time)</td>
+				<td><input type="text" name="min_time" class="Text" value="{min_time}" /></td>
+			</tr>
+			<tr<!-- BEGIN correction_max_time --> class="correction"<!-- END correction_max_time -->>
+				<td>func_T(forms.item.max_time) (0 for unlimited)</td>
+				<td><input type="text" name="max_time" class="Text" value="{max_time}" /></td>
+			</tr>
+		</table>
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+	</form>
+</div>
+

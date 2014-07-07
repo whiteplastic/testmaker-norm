@@ -1,0 +1,159 @@
+<!-- INCLUDE TabBar.html -->
+<script type="text/javascript">
+<!--
+	var counter = 0;
+	var maxCounter = -1;
+	var inputValue = new Array(0);
+	var oldIRT = true;
+
+	function saveValue(i, formValue) {
+		if(i > maxCounter) {
+			for(; maxCounter <= i; maxCounter++) {
+				inputValue.push('');
+			}
+		}
+		inputValue[i] = formValue;
+	}
+
+	function changeCount() {
+		var countValue = document.itemBlock.answerCount.value;
+		if(!countValue.match(/^\d+$/)) {
+			alert('Sie haben eine gültige Zahl eingegeben!');
+			document.itemBlock.answerCount.value = document.item.counter;
+		}
+		document.itemBlock.counter.value = document.itemBlock.answerCount.value;
+	}
+
+	function generateFormFields() {
+		var inputCounter = parseInt(document.itemBlock.answerCount.value);
+
+		var formFields = "";
+		if(inputCounter > 0) {
+			formFields += '<thead><tr><th>Nr.<\/th><th colspan="2">Antwort<\/th><\/tr><\/thead>';
+		}
+		for(var i = 0; i < inputCounter; i++) {
+			formFields +=
+				'<tr>' +
+				'<td>' + (i + 1) + '<\/td>';
+			if((i <= maxCounter) && (i < counter)) {
+				formFields += '<td colspan="2"><textarea name="new_default_answers[' + i + ']" rows="3" cols="50" onchange="saveValue(' + i + ', this.value);">' + inputValue[i] + '<\/textarea><\/td>';
+			} else {
+				formFields += '<td colspan="2"><textarea name="new_default_answers[' + i + ']" rows="3" cols="50" onchange="saveValue(' + i + ', this.value);"><\/textarea><\/td>';
+			}
+			formFields += '<\/tr>';
+		}
+		counter = inputCounter;
+		document.getElementById('additionalAnswers').innerHTML = formFields;
+	}
+
+	function updateAdaptiveInput(element) {
+		if(element.checked) {
+			oldIRT = document.itemBlock.irt.checked;
+			document.itemBlock.irt.checked = true;
+			document.itemBlock.irt.disabled = true;
+			document.itemBlock.items_per_page.value = 1;
+			document.itemBlock.items_per_page.disabled = true;
+			document.itemBlock.max_items.disabled = false;
+			document.itemBlock.max_sem.disabled = false;
+		} else {
+			document.itemBlock.irt.checked = oldIRT;
+			document.itemBlock.irt.disabled = false;
+			document.itemBlock.items_per_page.disabled = false;
+			document.itemBlock.max_items.disabled = true;
+			document.itemBlock.max_sem.disabled = true;
+		}
+	}
+
+	function updateItemsPerPage(element) {
+		if (element.value > 1) {
+			document.itemBlock.adaptive.disabled = true;
+		}
+		else {
+			document.itemBlock.adaptive.disabled = false;
+		}
+	}
+
+	//-->
+</script>
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+<!-- INCLUDE EditPublishedHeader.html -->
+	<form method="post" action="func_pagelink(item_block, save, working_path: {working_path}, revert: true)" name="itemBlock">
+		<input type="hidden" name="counter" value="0" />
+		<input type="hidden" name="overwrite" value="" />
+		<table>
+			<tr<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>
+				<td>func_T(forms.title)</td>
+				<td><input type="hidden" name="page" value="item_block" /><input type="text" name="title" class="Text" value="{title:h}" /></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.description)</td>
+				<td><textarea name="description" rows="10" cols="40">{description:h}</textarea></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.last_modified)</td>
+				<td>{t_modified:datetime}</td>
+			</tr>
+			<tr>
+				<td>func_T(forms.created)</td>
+				<td>{t_created:datetime}</td>
+			</tr>
+			<tr>
+				<td>Autor</td>
+				<td>{author:h}</td>
+			</tr>
+			<tr>
+				<td>Medien-ID</td>
+				<td>{media_connect_id}</td>
+			</tr>
+			<tr>
+				<td colspan="2"><br/></td>
+			</tr>
+			<tr>
+				<td>Test-Zugriff</td>
+				<td>{access}</td>
+			</tr>
+			<tr>
+				<td>Zufällige Reihenfolge der Items</td>
+				<td><input type="checkbox" name="random_order" value="1" {random_order_checked} /></td>
+			</tr>
+			<tr>
+				<td<!-- BEGIN correction_ipp --> class="correction"<!-- END correction_ipp -->>Items pro Seite</td>
+				<td><input type="text" name="items_per_page" class="Text" value="{ipp}" {ipp_disabled} onchange="updateItemsPerPage(this);" /></td>
+			</tr>
+			<tr>
+				<td<!-- BEGIN correction_irt --> class="correction"<!-- END correction_irt -->>IRT-skalierte Items verwenden</td>
+				<td><input type="checkbox" name="irt" value="true" {irt} {irt_disabled} /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><br/></td>
+			</tr>
+			<tr>
+				<td><b>Adaptive Teststrategie</b></td>
+				<td><input type="checkbox" name="adaptive" value="true" {adaptive} onclick="updateAdaptiveInput(this);" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">Testabbruch bei...  <i>(0 jeweils für keine Berücksichtigung)</i></td>
+			</tr>
+			<tr>
+				<td<!-- BEGIN correction_max_items --> class="correction"<!-- END correction_max_items -->>
+					<ul style="line-height:100%; margin:0; padding:0 25px;"><li>func_T(forms.item_block.max_items)</li></ul>
+				</td>
+				<td>
+					<input type="text" name="max_items" class="Text" value="{max_items}" {adaptive_enabled} />
+				</td>
+			</tr>
+			<tr>
+				<td<!-- BEGIN correction_max_sem --> class="correction"<!-- END correction_max_sem -->>
+					<ul style="line-height:100%; margin:0; padding:0 25px;"><li>func_T(forms.item_block.max_sem)</li></ul>
+				</td>
+				<td>
+					<input type="text" name="max_sem" class="Text" value="{max_sem}" {adaptive_enabled} />
+				</td>
+			</tr>
+		</table>
+		<!-- BEGIN form_submit_button -->
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+		<!-- END form_submit_button -->
+	</form>
+</div>

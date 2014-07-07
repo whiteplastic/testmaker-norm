@@ -1,0 +1,32 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>testMaker</title>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15">
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<link rel="stylesheet" type="text/css" href="portal/css/main.css" />
+ 	<script type="text/javascript" language="javascript">
+	<!--
+		function bounce() {
+			// This alone would let Firefox and IE swallow the redirect, effectly disabling the bouncing
+			document.location.href = "{target_link:j}";
+		}
+
+		// But this tricks Firefox and IE to add the target URL to the history instead of replacing the current entry
+		if(!navigator.userAgent.match(/\bOpera/)) window.setTimeout('bounce()', 0);
+		else window.setTimeout('bounce()', 200);
+	//-->
+	</script>
+</head>
+<body>
+	<div id="instruction" style="display:{show_message}">
+		<p>Bitte f&uuml;hren Sie den Test zu Ende durch.</p>
+		<p>
+			<a href="{target_link:j}" target="_self">Zur n&auml;chsten Frage</a>
+		</p>
+	</div>
+<noscript><a href="{target_link:h}">{target_link:h}</a></noscript>
+</body>
+</html>

@@ -1,0 +1,56 @@
+###Orientierung
+Sie befinden sich auf dem Karteireiter "Allgemein" in einem bereits angelegten Feedbackblock des testMakers. Ein Feedbackblock enthält alle Informationen, die notwendig sind, um Ihren Testpersonen im direkten Anschluss an die Testung eine Rückmeldung zu ihrem Ergebnis zu geben. Die Hauptbestandteile des Feedbackblocks sind die die "Feedbackseiten" und die "Dimensionen".Die "Feedbackseiten" enthalten die Texte und Grafiken, die dem Teilnehmer nach der Bearbeitung eines Tests angezeigt werden. Über die "Dimensionen" können mehrere Items zu einem Themenbereich (Skala) gruppiert werden, die gemeinsam ausgewertet werden (Z.B. mehrere Items zum schlussfolgernden Denken werden zu einer Dimension "Schlussfolgerndes Denken" zusammengefasst, damit ein Summenwert gebildet werden kann).
+
+Um das Feedback anzulegen, sind drei wesentliche Schritte erforderlich:
+
+1) Im Hauptnavigationsbereich auf dem Karteireiter "Allgemein" müssen zunächst alle Quell-Itemblöcke Ihres Tests ausgewählt werden, die im Feeback berücksichtigt werden sollen. 
+2) Erstellen von "Dimensionen". 
+3) Erstellen von "Feedbackseiten". 
+"Feedbackseiten" und "Dimensionen" werden über die blauen Aktionsbuttons angelegt, die unten links auf dem Bildschirm angezeigt werden.
+
+###Aktionsbuttons
+####Neue Dimension anlegen
+Wenn Sie ein Feedback anlegen möchten, das spezifisch auf das Ergebnis der Testperson zugeschnitten sein soll, definieren Sie hier, welche Items zusammen ausgewertet werden. Eine Dimension entspricht also einer Itemskala. Bei mehreren Konstrukten/Skalen (z.B. Gewissenhaftigkeit, Extraversion) in einem Test müssen mehrere Dimensionen angelegt werden, die dann auch beim Feedback getrennt rückgemeldet werden können.
+
+Wenn Sie neue Dimensionen anlegen möchten, können Sie nach Betätigen des Buttons "Neue Dimension anlegen" die Items zu Dimensionen gruppieren.
+
+####Neue Feedbackseite anlegen
+Damit Ihre Versuchsperson direkt im Anschluss an den Test eine Rückmeldung über ihre Leistung/ihr Profil bekommt, können Sie hier für alle möglichen Punktwerte Textseiten hinterlegen. Sie können Bedingungen festlegen, unter denen der betreffende Textabschnitt angezeigt wird. So erhält jede Person ihr individuelles Feedback. 
+
+
+
+Im rechten Bereich des Bildschirms werden die Einstellmöglichkeiten des Feedbackblocks angezeigt. Auf dieser Ebene finden Sie folgende Karteireiter:
+
+* Allgemein
+* Dimensions-Gruppen
+* Struktur
+* Kopieren / Verschieben
+* Rechte
+* Feedbackblock löschen
+* Bescheinigung
+
+###Karteireiter eines Feedbackblocks
+####Allgemein
+Unter "Titel" und "Beschreibung" können Sie den Feedbackblock umbenennen und eine Umschreibung einfügen. Geben Sie dazu den gewünschten Titel in das Textfeld ein und klicken Sie auf "Speichern". Bei der Beschreibung gehen Sie ebenso vor.
+
+Darunter finden Sie Daten bzgl. des Erstelldatums, des Autors, der Medien-ID und des Veröffentlichungsstatus des Feedbackblocks (Test-Zugriff). Die Medien-ID bezieht sich auf die hochgeladenen Abbildungen pro Itemblock. Alle Abbildungen, die Sie hochladen, erhalten eine itemblockspezifische Kennzahl, die hier angegeben ist. Der Status, also der Test-Zugriff, lässt sich unter dem Reiter "Rechte" verändern. Der Block wird als "veröffentlicht" markiert, sobald eine Gruppe, die keine Editorrechte besitzt, auf den Test zugreifen kann. Weitere Erläuterungen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(container_block, edit_perms)) bei den Autorengruppen.
+Auf diesem Karteireiter müssen Sie die Quell-Itemblöcke auszuwählen, die im Feedback berücksichtigt werden sollen. Bitte vergessen Sie nicht, Ihre Einstellungen zu speichern, bevor Sie fortfahren.
+
+####Dimensions-Gruppen
+Hier können Sie aus mehreren Dimensionen eine Gruppe bilden. Dimensionsgruppen werden benötigt, wenn sich ein Feedback auf mehrere Dimensionen beziehen soll (z.B. wenn Sie rückmelden wollen, in welcher Dimension einer Dimensionsgruppe der höchste Wert erzielt wurde oder wenn Sie eine Ergebnisgrafik anlegen wollen, in der bestimmte Dimensionen angezeigt werden). Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Dimensions-Gruppen"](func_helplink(feedback_block, dim_groups)).
+
+####Struktur
+Hier können Sie die Reihenfolge der Darbietung der einzelnen Feedbackseiten festlegen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Struktur"](func_helplink(feedback_block, organize)).
+
+####Kopieren / Verschieben
+Hier haben Sie die Möglichkeit, den kompletten Feedbackblock zu kopieren, verschieben oder zu verlinken. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Kopieren/Verschieben"](func_helplink(any, copy_move)).
+
+####Rechte
+Diese Funktion bietet Ihnen die Möglichkeit, den zuvor angelegten Benutzergruppen Rechte zuzuteilen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(feedback_block, edit_perms)).
+
+####Feedbackblock löschen
+Auf diesem Reiter können Sie den gesamten Feedbackblock löschen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Feedbackblock löschen"](func_helplink(any, confirm_delete)).
+
+####Bescheinigung
+Auf diesem Reiter können Sie eine Teilnahmebescheinigung anlegen, die die Teilnehmer nach der Teilnahme als pdf abrufen können. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Bescheinigung"](func_helplink(feedback_block, edit_certificate)).
+

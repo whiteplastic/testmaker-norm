@@ -1,0 +1,11 @@
+Dear {name},
+
+extended maintenance mode has been enabled for testMaker on {host}.
+This means that no user can currently use testMaker.
+
+You as administrator can only access the backend by clicking on the following link:
+{link}
+
+Note: Cookies must be enabled in your browser for this to work.
+
+

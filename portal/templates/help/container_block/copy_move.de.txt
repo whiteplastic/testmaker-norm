@@ -1,0 +1,7 @@
+###Kopieren / Verschieben
+Hier haben Sie die Möglichkeit, den Test/Subtest, in dem Sie sich gerade befinden, zu kopieren, zu verlinken (also einen Link zu diesem Test woanders abzulegen) oder zu verschieben.
+
+Da der testMaker auf vier Hierarchieebenen (Arbeitsplatz, Test, Subtest, Itemblock) beschränkt wurde, ist es bei einem Test, der Subtests enthält, nur möglich, diesen in den Arbeitsplatz zu kopieren/verlinken/verschieben. Enthält der Test keine Subtests, so kann er auch als Subtest in einen anderen bestehenden Test kopiert/verlinkt/verschoben werden.
+
+Bitte beachten Sie, dass nur der Test/Subtest an sich kopiert wird. Die Testläufe bleiben davon unberührt. Das heißt, dass Daten, die Sie bereits erhoben haben, nur bei dem Originaltest zu finden sind, nicht jedoch bei der Kopie. Wenn Sie jedoch den Test verschieben, bleiben die Testläufe damit verbunden.
+

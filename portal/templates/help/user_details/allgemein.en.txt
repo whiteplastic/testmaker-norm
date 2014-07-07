@@ -1,0 +1,16 @@
+###User details
+On this page you get information on the personal details you entered during the registration. Furthermore, you have the opportunity to change any details that might be wrong or have changed.
+
+####User Information
+In this box you can find information on the personal details you entered during the registration process. The group membership tells you which usergroup you are part of. This is set by an administrator who also decides about the rights you are given. 
+
+####Changing user detail
+In the following boxes you can change the user details.
+#####Set new password
+In order to change your password, you need to enter your old password before the new one. Then you are asked to repeat the new password so that you can make sure that there are no typos in there. Please remember to save your changes.
+#####Set new email address
+If your email address has changed or you would rather be contacted on a different one, you can enter a new address here. Please remember to save your changes.
+#####Set new system language
+Here you have the facility to choose between English and German as system language. The help pages will also be presented in the chosen language.
+#####Set full name
+If your name has changed, you can make changes concerning your full name here. Please remember to save your changes.

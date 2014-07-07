@@ -1,0 +1,73 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.emails.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<form method="post" action="func_pagelink(email_management, edit_email, email_id: {email_id})" id="ItemConditions">
+
+<p>Sende an
+<select name="groups" {disabled}>
+	<!-- BEGIN groups -->
+	<option value="{group_id:h}" {selected}>{group_name:h}</option>
+	<!-- END groups -->
+</select>
+welche
+<select name="participants" {disabled}>
+	<!-- BEGIN participants -->
+	<option value="{participant_id:h}" {selected}>{participant_name:h}</option>
+	<!-- END participants -->
+</select></p>
+
+<p>Sende, wenn <select size="1" name="conditions_all" {disabled}>
+	<option value="1" {conditions_all_1_selected}>alle</option>
+	<option value="0" {conditions_all_0_selected}>mindestens eine</option>
+</select> der folgenden Bedingungen erfüllt sind:</p>
+<table class="ItemConditionsContainer">
+	<tr>
+		<th>Wurde in Item Block</th>
+		<th>bei Item</th>
+		<th>die Antwort</th>
+		<th>ausgewählt?</th>
+	</tr>
+	<tr class="ItemCondition">
+		<input type="hidden" name="test_id" value="{test_id}" />
+		<td><input class="ItemConditionId" type="hidden" name="conditions[][id]" value="" /><select size="1" name="conditions[][item_block_id]" class="ItemConditionItemBlocks" {disabled}>
+			<option value="" class="Header">Bitte wählen:</option>
+		</select></td>
+		<td><select size="1" name="conditions[][item_id]" class="ItemConditionItems" {disabled}>
+			<option value="" class="Header">Bitte wählen:</option>
+		</select></td>
+		<td><select size="1"  name="conditions[][answer_id]" class="ItemConditionAnswers" {disabled}>
+			<option value="" class="Header">Bitte wählen:</option>
+		</select></td>
+		<td>
+			<input class="ItemConditionChosenOn" type="radio" name="conditions[][chosen]" value="yes" /> <span style="cursor:default" onclick="var r = document.getElementsByClassName('ItemConditionChosenOn', this.parentNode)[0]; if (! r.disabled) { r.click(); }; return true">Ja</span>
+			<input class="ItemConditionChosenOff" type="radio" name="conditions[][chosen]" value="no" /> <span style="cursor:default" onclick="var r = document.getElementsByClassName('ItemConditionChosenOff', this.parentNode)[0]; if (! r.disabled) { r.click() }; return true">Nein</span>
+		</td>
+		<td>
+			<input class="Button ItemConditionAdd" type="button" value="+" {disabled} />
+			<input class="Button ItemConditionRemove" type="button" value="-" {disabled} />
+		</td>
+		<td class="ItemConditionStatusIndicator" style="vertical-align: middle"><img class="Complete" src="portal/images/right.png" alt="Vollständig" title="Complete" /><img class="Incomplete" src="portal/images/wrong.png" alt="Unvollständig" title="Incomplete"/></td>
+	</tr>
+</table>
+<p class="Last"><input class="Button" type="submit" value="func_T(buttons.save)" {disabled} /></p>
+</form>
+</div>
+<script type="text/javascript" language="javascript" src="portal/js/item_conditions.js"></script>
+<script type="text/javascript" language="javascript">
+<!--
+window.onloadNotifier.addObserver(function()
+{
+	var testAccess = new TestAccess({test_id}, {email_id}, '{resource_url:j}');
+	testAccess.setItemBlocks({preload_item_blocks});
+	<!-- BEGIN add_items_js -->
+	testAccess.setItems({preload_item_block_id}, {preload_items});
+	<!-- END add_items_js -->
+	<!-- BEGIN add_answers_js -->
+	testAccess.setAnswers({preload_item_id}, {preload_answers});
+	<!-- END add_answers_js -->
+	var conditions = {conditions};
+
+	new Conditions(document.getElementById("ItemConditions"), conditions, testAccess);
+});
+//-->
+</script>

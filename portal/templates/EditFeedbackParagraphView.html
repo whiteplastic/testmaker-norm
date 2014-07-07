@@ -1,0 +1,26 @@
+<li id="para_{para_id}" class="para">
+	<!-- BEGIN para_has_conds -->
+	<div class="conds">
+	Display conditions:
+	<ul>
+		<!-- BEGIN para_conditions -->
+		<li>{condition}</li>
+		<!-- END para_conditions -->
+	</ul>
+	</div>
+	<!-- END para_has_conds -->
+	<div class="contents">{para_contents}</div>
+	<!-- BEGIN para_may_edit -->
+	<div class="_para_action_buttons">
+		<button type="button" onclick="editParagraph('para_{para_id}', '{edit_link}');" title="Edit"><img src="portal/images/icon_edit.png" alt="Edit" /></button
+		><button type="button" onclick="delParagraph('para_{para_id}');" title="Delete"><img src="portal/images/icon_delete.png" alt="Delete" /></button
+		><div id="para_{para_id}_delete" style="display:none;">
+			Really delete?
+			<input class="Button" type="button" onclick="doDelParagraph('para_{para_id}', '{del_link}' );" value="Yes" />
+			<input class="Button" type="button" onclick="cancelDelParagraph('para_{para_id}');" value="No" />
+		</div><button type="button" onclick="moveParagraph('para_{para_id}', 'up', '{move_link}')" title="Move up"><img src="portal/images/icon_up.png" alt="Move up" /></button
+		><button type="button" onclick="moveParagraph('para_{para_id}', 'down', '{move_link}')" title="Move down"><img src="portal/images/icon_down.png" alt="Move down" /></button>
+	</div>
+	<div id="para_{para_id}_notice" class="HideAsyncNotice">Operation in progress, please wait...</div>
+	<!-- END para_may_edit -->
+</li>

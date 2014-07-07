@@ -1,0 +1,62 @@
+You are on the administrator's/creator's overview page. This help page offers a general
+introduction to the interface, along with a short introduction to using
+testMaker.
+
+
+### Navigation menu (on the left)
+
+The area on the left contains the navigation menu which consists of the
+following three areas:
+
+#### Administrative commands
+
+Apart from creating and editing tests, there are several other functions in
+testMaker which, depending on your privileges, you can make use of. 
+You can *manage user accounts and groups*, and *change your identity* if,
+for example, you would like to see what is displayed to a specific participant. 
+Moreover, you are able to *export test records*, which you might use in a statistic 
+software, or *import and export tests* as a whole. Finally, you can participate in 
+published tests, just like everyone else.
+
+#### Navigation for test editing
+
+This area displays a tree-like structure of the test you may work on. This
+tree navigation is split into two parts.
+
+The upper part shows the path through the tree structure down to the element you
+are currently working on. Therefore it displays a hierarchical list of the elements that
+are superior to the current element.
+
+The lower part shows all elements contained in the element you are currently
+working on. For example, if you are working on an item block, this area will
+list all items of that block.
+
+#### Command buttons
+
+In this area, all possible actions to create sub-elements to the current element. are displayed.
+For example, if you are working on a test, you will see buttons to create a
+new sub-test, an item block, a text block, or a feedback block.
+
+
+### Main area (on the right)
+
+The main area on the right displays the editing possibilities for the element you are working on. In many cases, that area is
+tabbed, which means that you have several sets of possible operations for the
+element. A test, for example, has a tab "General" for viewing and editing general
+information about the test, "Permissions2 for setting permissions, "Structure" for changing the ordering of the
+elements in the test, and so on.
+
+
+### Quick start
+
+To create a test, use the button "create new test". You are then taken to the
+settings page of the new tests. 
+
+To impose a certain level of structure on the elements you create in that test, you may use so-called sub-tests. 
+In tests or sub-tests, you can create several types of elements, such as item
+blocks or feedback blocks. For each of those, separate settings pages exist.
+
+Please note that tests are not available to the general public until you
+assign the relevant permissions. For more information on permissions, see the
+["permissions" help page](func_pagelink('', edit_perms)).
+

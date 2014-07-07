@@ -1,0 +1,43 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.edit_privacy_policy.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<p>func_T(pages.edit_privacy_policy.desc)</p>
+
+<script type="text/javascript">
+	function toggleVisibility(element)
+	{
+		$table = document.getElementById(element);
+		if($table.style.display == "none") $table.style.display="block";
+		else $table.style.display="none";
+	}
+</script>
+
+<div>
+<form method="post" action="func_pagelink(edit_privacy_policy, save_privacy_policy, revert: true)">
+
+<input type="checkbox" name="enabled" value="enabled" onclick="toggleVisibility('pp_editor')" {checked} /><label>Datenschutzrichtlinien einschalten</label>
+
+	<div id="pp_editor" style="display:{display:h}">
+		<table>
+			<tr>
+				<td>func_T(forms.content)</td>
+			</tr>
+			<tr>
+				<td>{content}</td>
+			</tr>
+
+			<tr>
+				<td {exp_error}>Speicherzeit in Monaten <input type="text" name="exp_range" value="{exp_range}" /></td>
+			</tr>
+			<tr>
+				<td {exp_error}><small>Bitte geben Sie die im Text genannte Datenvorhaltedauer als Zahl an.</small></td>
+			</tr>
+		</table>
+	</div>
+	<p>	
+	<input type="submit" class="Button" value="func_T(buttons.save)" />
+</form>
+<p style="font-size:smaller">{cversion}<br>
+Vorherige Versionen können im Änderungs-Protokoll eingesehen werden.</p>
+</div>
+</div>

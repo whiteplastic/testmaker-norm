@@ -1,0 +1,74 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="func_pagelink(item_block, save_defaults, working_path: {working_path}, revert: true)" name="itemBlock">
+		<input type="hidden" name="counter" value="0" />
+		<input type="hidden" name="overwrite" value="" />
+		<fieldset><legend>Itemblock time</legend>
+		<table style="margin-top:20px">
+			<tr>
+				<td<!-- BEGIN correction_max_time --> class="correction"<!-- END correction_max_time -->>
+					<ul style="line-height:100%; margin:0; padding:0 25px;"><li>func_T(forms.item_block.max_time)</li></ul>
+				</td>
+				<td>
+					<input type="text" name="max_time" class="Text" value="{max_time}" {adaptive_disabled} />
+				</td>
+			</tr>
+		</table>
+		</fieldset>
+		<fieldset><legend>Item time</legend>
+		<table>
+			<tr>
+				<th></th>
+				<th></th>
+				<th>Overwrite</th>
+			</tr>
+			<tr>
+				<td<!-- BEGIN correction_default_min_item_time --> class="correction"<!-- END correction_default_min_item_time -->><ul style="line-height:100%; margin:0; padding:0 2em;"><li>func_T(forms.item_block.default_min_item_time)</li></ul></td>
+				<td><input type="text" name="default_min_item_time" class="Text" value="{default_min_item_time}" onchange="window.document.itemBlock.overwrite_min_item_time.checked=true;" /></td>
+				<td><input type="checkbox" name="overwrite_min_item_time" value="true" /></td>
+			</tr>
+			<tr>
+				<td<!-- BEGIN correction_default_max_item_time --> class="correction"<!-- END correction_default_max_item_time -->><ul style="line-height:100%; margin:0; padding:0 2em;"><li>func_T(forms.item_block.default_max_item_time) <i>(0 for unlimited time)</i></li></ul></td>
+				<td><input type="text" name="default_max_item_time" class="Text" value="{default_max_item_time}" onchange="window.document.itemBlock.overwrite_max_item_time.checked=true;" /></td>
+				<td><input type="checkbox" name="overwrite_max_item_time" value="true" /></td>
+			</tr>
+		</table>
+		</fieldset>
+		<fieldset><legend>Answering is required</legend>
+		<table style="width:100%;">
+			<tr>
+				<th></th>
+				<th></th>
+				<th style="width:16%">Overwrite</th>
+			</tr>
+			<tr>
+				<td>Answering is required</td>
+				<td><input type="checkbox" name="default_item_force" value="true"<!-- BEGIN default_item_force_checked --> checked="checked"<!-- END default_item_force_checked --> onchange="window.document.itemBlock.overwrite_item_force.checked=true; "/></td>
+				<td><input type="checkbox" name="overwrite_item_force" value="true" /></td>
+			</tr>
+		</table>
+		</fieldset>
+		<fieldset><legend>Item introduction</legend>
+			<table>
+				<tr>
+					<td>Label</td><td><input type="test" maxlength="255" value="{intro_label}" name="intro_label" /></td>
+				</tr>
+				<tr>
+					<td>Text</td><td>{introduction}</td>
+				</tr>
+				<tr>
+					<td>Hide display</td><td><input type="checkbox" name="hidden_intro" value="1"  {hidden_intro}/></td>
+				</tr>
+				<tr>
+					<td>Position</td><td><label>Above the item<input type="radio" name="intro_pos" value="0" {up} /></label><label>Below the item<input type="radio" name="intro_pos" value="1" {down} /></label></td>
+				</tr>
+				<tr>
+					<td>Show on first page only</td><td><input type="checkbox" name="intro_firstonly" value="1"  {intro_firstonly}/></td>
+				</tr>
+			</table>
+		</fieldset>
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+	</form>
+</div>

@@ -1,0 +1,21 @@
+Dimension
+<select name="conditions[{type}][target_id][]">
+	<option value="" class="Header">Bitte auswählen:</option>
+	<!-- BEGIN dimensions -->
+	<option value="{dim_id}"{dim_selected}>{dim_name:h}</option>
+	<!-- END dimensions -->
+</select>
+gehört zu den
+<select name="conditions[{type}][mode][]">
+	<option value="max"{max_selected}>höchsten</option>
+	<option value="min"{min_selected}>niedrigsten</option>
+</select>
+<input type="hidden" name="conditions[{type}][count][]" value="{count}" />
+<select></select>
+Ergebnissen in Gruppe
+<select name="conditions[{type}][group_id][]">
+	<option value="" class="Header">Bitte auswählen:</option>
+	<!-- BEGIN groups -->
+	<option value="{group_id}"{group_selected}>{group_name:h}</option>
+	<!-- END groups -->
+</select>

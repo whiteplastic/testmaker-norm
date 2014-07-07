@@ -1,0 +1,21 @@
+Auf dieser Seite werden kurz die Funktionen des Editors erklärt, die nicht schon aus Microsoft Office bekannt sind.
+
+### Editor
+![Alt FCKeditor](portal/images/editor.jpg)
+<ol type="a">
+	<li>Zeigt den Quellcode zum aktuellen Text an.</li>
+	<li>Vergrößert das Editor-Fenster. Im Vollbildmodus findet sich an dieser Stelle ein Knopf, um das Bildschirmansicht wieder zu verkleinern. Die im Großbild vorgenommenen Änderungen werden in den normalen Editor übernommen.</li>
+	<li>Löscht die Formatierung für einen markierten Bereich.</li>
+	<li>Hier können Sie einige vordefinierte Formatierungen, z.B. für Überschriften, auswählen.</li>
+	<li>Hierüber können Sie ein Bild in Ihren Text hochladen und einbinden.</li>
+	<li>Hierüber können Sie Flash Dateien in Ihren Text hochladen und einbinden.</li>
+</ol>
+
+### Eigenschaften
+Über dieses Fenster können Sie die Eigenschaften einer Mediendatei einstellen. Über <b>Server durchsuchen</b> kommen Sie zum Media-Verzeichnis auf dem Server.
+
+### Media-Verzeichnis
+Hier erhalten Sie eine Übersicht über alle Mediendateien, die zum aktuellen Itemblock/Resultblock/Infoblock hochgeladen worden sind. Sie können weitere Dateien von Ihrer Festplatte über die <b>Lokale Suche</b> hinzufügen.
+
+### Wichtiger Hinweis
+Wenn Sie Text per "Copy & Paste" aus Microsoft Word in den testMaker kopieren, kann es durch die Word-Formatierung zu Fehler in der Darstellung kommen. Fügen Sie Ihren Text entweder über die Quellcode-Darstellung ein oder speichern Sie Ihre Texte als txt-Datei, bevor Sie sie on den testMaker kopieren.

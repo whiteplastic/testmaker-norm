@@ -1,0 +1,11 @@
+Welcome to testMaker, {name}!
+
+You or somebody else has used your email address ({email_address}) to create a testMaker user account with username {user_name}.
+
+To activate the account, please click on the following link:
+
+<{link}>
+
+Please activate this account within seven days. If you choose not to do so, e.g. because the account was not created by you, it will be deleted after this period.
+
+The testMaker team

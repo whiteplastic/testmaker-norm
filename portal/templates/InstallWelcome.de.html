@@ -1,0 +1,14 @@
+<p>
+	Willkommen bei der Installationsroutine für den testMaker.</p>
+
+
+<p>
+	<a class="arrow" href="func_pagelink(installer, auto)">Installation oder Update
+	starten</a>.</p>
+
+<h3>Sprache wechseln</h3>
+<ul>
+<!-- BEGIN lang_select -->
+	<li func_iif({lang_active}, 'class="active"', '')><a href="func_pagelink(installer, welcome, language: {lang_code})">{lang}</a></li>
+<!-- END lang_select -->
+</ul>

@@ -1,0 +1,33 @@
+###Alte Benutzer Löschen
+
+Hier können alte und inaktive Benutzerkonten ausgemacht und gelöscht werden.
+
+Zuvor werden die betroffenen Benutzer durch eine Email informiert und erhalten für zwei Wochen die Möglichkeit, das Löschen ihres Accounts zu verhindern, indem sie einem Link in der Mail folgen. In dieser Zeit befinden sie sich in der Warteschlage. Geben die Benutzer in dieser Zeit keine Rückmeldung, können die Accounts vom Administrator gelöscht werden. 
+
+
+####Filter
+Zunächst können die betreffenden Benutzer nach Gruppenzugehörigkeit und ihrer letzten Aktivität (Zeitpunkt des letzten Logins) gefiltert werden.
+Diese Benutzer werden nach Klick auf "Filter" in der Liste angezeigt.
+
+####E-Mail senden und Warteschlange
+Durch Klick auf "Email senden" erhalten alle in der Liste aufgeführten Benutzer eine Email mit der Aufforderung, sich binnen zwei Wochen erneut im testMaker einzuloggen, da ansonsten nach Ablauf der Frist das Benutzerkonto unwiderruflich gelöscht wird.
+
+Die E-Mail enthält einen Link, durch den die Löschung auf einen Klick verhindert werden kann.
+
+Benutzer, denen diese Email gesandt worden ist, befinden sich nun für die genannten 14 Tage in der Warteschlange.
+
+####Endgültiges Löschen
+Benutzer, die nicht auf die E-Mail reagieren und sich trotz dieser Erinnerung nicht innerhalb der 14-tägigen Frist eingeloggt oder den Link befolgt haben, werden zum Löschen freigegeben.
+Dies geschieht manuell durch Klick auf "Benutzer löschen".
+
+
+In zukünftigen Versionen von testMaker ist es vorgesehen, das endgültige Löschen automatisiert per CronJob durchzuführen.
+Auch das E-Mail-Versenden kann durch Berücksichtigung der in der Datenschutzerklärung angegebenen Speicherzeit für persönliche Daten automatisiert geschehen.
+(siehe Hilfe zur <a href="func_helplink(edit_privacy_policy, edit_privacy_policy)">Datenschutzerklärung</a>)
+
+
+
+###Inhalt der E-Mail
+Der Inhalt der E-Mail sowie die Frist von 14 Tagen sind im Quellcode festgelegt.
+
+(/portal/pages/user_delete.php und /portal/templates/EmailForDelAccount.html)

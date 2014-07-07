@@ -1,0 +1,132 @@
+<!-- BEGIN user_block -->
+<fieldset><legend>User Information</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Username:</label></th>
+		<td style="padding-right:5px;">{username:h}</td>
+	</tr>
+	<tr>
+		<th><label>Email address:</label></th>
+		<td>{email:h}</td>
+	</tr>
+	<tr>
+		<th><label>Full name:</label></th>
+		<td>{fullname:h}</td>
+	</tr>
+	<tr>
+		<th><label>Language:</label></th>
+		<td>{language:h}</td>
+	</tr>
+	<tr>
+		<th><label>Group memberships:</label></th>
+		<td>{group:h}</td>
+	</tr>
+	<!-- BEGIN bday_block -->
+	<tr>
+		<th><label>Birthday:</label></th>
+		<td>{bday:h}</td>
+	</tr>
+	<!-- END bday_block -->
+	<tr>
+		<th><label>Privacy Policy:</label></th>
+		<td>{privacy}</td>
+	</tr>	
+	</tr>
+</table>
+</fieldset>
+<!-- END user_block -->
+<!-- BEGIN passwd_block -->
+<form method="post" action="{target_passwd}">
+<fieldset><legend>Set new password</legend>
+<table class="Vertical">
+	<tr>
+		<th>Old Password:</th><td><input type="password" name="oldPassword" class="Text" /></td>
+	</tr>
+	<tr>
+		<th><label>Password:</label></th><td><input type="password" name="password" class="Text" /></td>
+	</tr>
+	<tr>
+		<th><label>Confirm password:</label></th><td><input type="password" name="confirmPassword" class="Text" /></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Save" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END passwd_block -->
+<!-- BEGIN email_block -->
+<form method="post" action="{target_email}">
+<fieldset><legend>Set new email address</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Email:</label></th><td><input type="text" name="email" class="Text" size="30"/></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Save" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END email_block -->
+<!-- BEGIN language_block -->
+<form method="post" action="{target_language}">
+<fieldset><legend>Set new system language</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Language:</label></th>
+		<td>
+		<select name="language">
+			<!-- BEGIN languages -->
+			<option value="{valueLang}"{select}>{longLang}</option>
+			<!-- END languages -->
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Save" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END language_block -->
+<!-- BEGIN fullname_block -->
+<!-- <form method="post" action="{target_fullname}">
+<fieldset><legend>Set full name</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Full name:</label></th><td><input type="text" name="fullname" class="Text" /></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" value="Save" /></td>
+	</tr>
+</table>
+</fieldset>
+</form> -->
+<!-- END fullname_block -->
+<!-- BEGIN delete_block -->
+<form method="post" action="{target_delete}">
+<fieldset><legend>Delete Account</legend>
+<table class="Vertical">
+	<tr>
+		<th><label>Delete Account</label></th>
+		<td>Yes I am sure, I know that my Account can not be restored: <input type="checkbox" name="sure" value="1"></td>
+	</tr>
+	<tr>
+		<th><label>Password:</label></th><td><input type="password" name="password" class="Text" /></td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input type="submit" class="Button" name="delete" value="Delete" /></td>
+	</tr>
+</table>
+</fieldset>
+</form>
+<!-- END delete_block -->
+<!-- BEGIN email_change_mail_sent -->
+<p>A mail with a confirmation link has been sent to your new email address.</p>
+<!-- END email_change_mail_sent -->

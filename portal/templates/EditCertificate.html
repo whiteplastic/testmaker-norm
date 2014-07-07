@@ -1,0 +1,161 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+	<br>
+	<script type="text/javascript" src="{php_unserialize}"></script>
+	<script type="text/javascript">
+		function toggleVisibility(element)
+		{
+			$table = document.getElementById(element);
+			if($table.style.display == "none") $table.style.display="block";
+			else $table.style.display="none";
+		}
+	</script>
+	<form enctype="multipart/form-data" name="certificate_form" method="post" action="func_pagelink(feedback_block, save_certificate, working_path: {working_path})">
+		<input type="checkbox" name="enabled" value="enabled" onclick="toggleVisibility('preferences')" {checked} /><label>Enable Certificate</label>
+		<!-- BEGIN preferences -->
+		<div id="preferences" style="display:{display:h}">
+			<table style="margin-left:10px" cellpadding="3">
+				<tr>
+					<td style="line-height:22px">
+						PDF template file: <font style="color:{color_name:h}">{template_name:h}</font>
+					</td>
+					<td colspan="2">
+						<!-- BEGIN delete_template -->
+						<input name="delete_template" type="submit" class="Button" value="Delete" onclick="confirm('Do you really want to delete the template &quot;{template_name:h}&quot;? This cannot be undone!');" />
+						<!-- END delete_template -->
+						<!-- BEGIN upload_form -->
+						<div id="upload">
+							<!--<form method="post" action="func_pagelink(feedback_block, save_template)">-->
+							<input name="template_file" type="file" size="23"/>
+							<!--</form>-->
+						</div>
+						<!-- END upload_form -->
+					</td>
+				</tr>
+				<tr>
+					<td style="line-height:22px">
+						Disable Barcode:
+					</td>
+					<td colspan="2">
+					<!-- BEGIN barcode_item -->
+						<input type="checkbox" name="cert_disable_barcode" value="1" {selected_barcode_item}>
+					<!-- END barcode_item -->
+					</td>
+				</tr>
+			</table>
+		</div>
+		<p><input type="submit" class="Button" name="do_save" value="Save" /></p>
+		<!-- END preferences -->
+	</form>
+	<form name="validate_certificate_barcode" method="post" action="func_pagelink(feedback_block, check_certificate_barcode, working_path: {working_path}, check: true)">
+		<table>
+			<tr>
+				<th>Check validity of participant's certificate (Barcode)</th>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td>Checksumme (20-digit)</td>
+				<td><input name="checksum" type="text" /></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" class="Button" name="do_check" value="Check" /></td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						<!-- BEGIN resultBarCodePos -->
+						<font style="color: #000000;font-weight:bold">Certificate is valid for</font>
+						<p><font style="color: green;font-weight:bold">Name: {name}</font></p>
+						<p><font style="color: green;font-weight:bold">Date of birth: {date}</font></p>
+						<!-- END resultBarCodePos -->
+						<!-- BEGIN resultBarCodeNeg -->
+						<font style="color:{message_color:h};font-weight:bold">{result_message_barcode:h}</font>
+						<!-- END resultBarCodeNeg -->
+					</p>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<form name="validate_certificate" method="post" action="func_pagelink(feedback_block, check_certificate, working_path: {working_path}, check: true)">
+		<table>
+			<tr>
+				<th>Check validity of participant's certificate</th>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td>First name</td>
+				<td><input name="firstname" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Last name</td>
+				<td><input name="lastname" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Birthday of participant (dd.mm.yyyy)</td>
+				<td><input name="birthday" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Checksum (32-digit)</td>
+				<td><input name="checksum" type="text" /></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2" valign="top"><input type="submit" class="Button" name="do_check" value="Check" /></td>
+			</tr>
+			<tr>
+				<td>
+					<p>
+						<!-- BEGIN result -->
+						<font style="color:{message_color:h};font-weight:bold">{result_message:h}</font>
+						<!-- END result -->
+					</p>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<!-- BEGIN certificate_manuell -->
+	<form name="generate_manual_certificate" method="post" action="func_pagelink(pdf_generator, create_mw_certificate, working_path: {working_path},
+				block_id: {block_id}, confirm: 0, manual: 1)">
+		<table>
+			<tr>
+				<th colspan=2 align='left'>Create certificate for user</th>
+			</tr>
+			<tr>
+				<td colspan=2 width = 600>Please check that the test run for the certificate has been completed by the user.</td>
+			</tr>
+			<tr>
+				<td>First name</td>
+				<td><input name="firstname" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Last name</td>
+				<td><input name="lastname" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Birthday of participant (dd.mm.yyyy)</td>
+				<td><input name="birthday" type="text" /></td>
+			</tr>
+			<tr>
+				<td>Test-Run ID</td>
+				<td><input name="testRunId" type="text" /></td>
+			</tr>
+			<tr>
+				<td></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" class="Button" name="do_generate" value="Create certificate" /></td>
+			</tr>
+		</table>
+	</form>
+	<!-- END certificate_manuell -->
+</div>

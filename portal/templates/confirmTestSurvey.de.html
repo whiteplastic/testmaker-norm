@@ -1,0 +1,63 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+<!-- BEGIN confirm -->
+
+<p>
+Es werden an <b>{mails_count}</b> Benutzer E-Mails gemäß dem folgendem Beispiel gesendet:</h4>
+<div>
+
+
+<table cellpadding=10>
+	<tr>
+		<td style="width:100px; font-weight:bold; padding-left:0px;">Empfänger:</td>
+		<td>{survey_recipient}</td>
+	</tr>
+	<tr>
+		<td style="width:100px; font-weight:bold; padding-left:0px;">Betreff:</td>
+		<td>{survey_subject}</td>
+	</tr>
+	<tr>
+		<td style="width:100px; font-weight:bold; padding-left:0px;">Inhalt:</td>
+		<td>{survey_content}</td>
+	</tr>
+	<tr>
+		<td></td>
+	</tr>
+</table>
+
+
+<h2>Ausgewählte E-Mail-Adressen:</h2>
+
+<div style="height:120px; width:100%; overflow-y:scroll;">
+	<!-- BEGIN email_row -->
+	{user_email} {test_run_id},
+	<!-- END email_row -->
+</div>
+
+<p>&nbsp;</p>
+<form method="post" action="func_pagelink(test_survey, send_emails_cron)">
+
+<input name="survey_cancel" type="button" class="Button" value="Zurück" onClick="javascript:history.go(-1)" />
+<input name="survey_send" type="submit" class="Button" value="E-Mails versenden" />
+</p>	
+</form>
+</div>
+
+<!-- END confirm -->
+
+<!-- BEGIN done -->
+{count} von {usercount} Tasks zur Bearbeitung in CronJob Tabelle eingetragen.<p>
+Sie können hier den <a href="{link}">Fortschritt auf der Cronjob Status Übersicht</a> einsehen.
+<p>&nbsp;</p>
+<!-- END done -->
+
+<!-- BEGIN doing -->
+<body {autolink}>
+{count} von {usercount} Tasks zur Bearbeitung in CronJob Tabelle eingetragen.<p>
+<p>&nbsp;</p>
+</body>
+<!-- END doing -->
+
+
+</div>

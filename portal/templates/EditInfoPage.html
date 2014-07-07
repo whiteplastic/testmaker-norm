@@ -1,0 +1,27 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+	<form method="post" action="func_pagelink(info_page, save, working_path: {working_path}, item_id: {item_id})">
+		<table>
+			<tr<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>
+				<td>func_T(forms.title)</td>
+				<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+			</tr>
+			<tr<!-- BEGIN correction_content --> class="correction"<!-- END correction_content -->>
+				<td>func_T(forms.content)</td>
+				<td>{content}</td>
+			</tr>
+			<tr>
+				<td>func_T(forms.last_modified)</td>
+				<td>{t_modified:datetime}</td>
+			</tr>
+			<tr>
+				<td>func_T(forms.created)</td>
+				<td>{t_created:datetime}</td>
+			</tr>
+		</table>
+		<!-- BEGIN form_submit_button -->
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+		<!-- END form_submit_button -->
+	</form>
+</div>

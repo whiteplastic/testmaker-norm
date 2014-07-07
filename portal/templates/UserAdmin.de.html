@@ -1,0 +1,44 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.user_admin.list_users.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- BEGIN search_user -->
+<form method="post" action="func_pagelink(user_admin)">
+<div>
+	<select size="1" name="searchfield">
+	    <option value="username" {username_selected}>Benutzername</option>
+		<option value="uid" {uid_selected}>Benutzer-ID</option>
+        <option value="fullname" {fullname_selected}>Vollständiger Name</option>
+        <option value="email" {email_selected}>E-Mail</option>
+	</select>
+<input type="text" class="Text" name="usersearch" id="form_list_username" value="{usersearch:h}" />
+
+<label for="form_list_groupname">Gruppe:</label>
+<select size="1" name="groupsearch" id="form_list_groupname">
+<!-- BEGIN group_list -->
+	<option value="{groupid:h}">{groupname:h}</option>
+<!-- END group_list -->
+</select>
+<input type="submit" class="Button" value="Suchen" />
+</div>
+</form>
+
+<table class="Both">
+	<tr>
+		<th>Benutzer-ID</th><th>Benutzername:</th><th>Gruppen:</th><th>Voll. Name:</th><th>Erstelldatum:</th><th colspan="2">Optionen:</th><th>(De-)aktivieren:</th>
+	</tr>
+<!-- BEGIN user_list -->
+	<tr class="{key:h}">
+        <td>{userid:h}</td>
+		<td>{username:h}</td>
+		<td>{group:h}</td>
+		<td>{fullname:h}</td>
+		<td>{createdate:h}</td>
+		<td><form method="post" action="func_pagelink(user_admin, edit_user, id: {userid}, usersearch: {usersearch})"><div><input type="submit" class="Button" name="do_edit" value="Ändern" /></div></form></td>
+		<td><form method="post" action="func_pagelink(user_admin, delete_user, id: {userid}, usersearch: {usersearch})"><div><input type="submit" class="Button" name="do_delete" value="Löschen" onclick="return confirm('Wollen Sie den Benutzer &quot;{username:h}&quot; wirklich unwiderruflich löschen?');" /></div></form></td>
+		<td><form method="post" action="func_pagelink(user_admin, {option}, id: {userid}, usersearch: {usersearch})"><div><button type="submit" name="handle" value="{option}">{activate:h}</button></div></form></td>
+	</tr>
+<!-- END user_list -->
+</table>
+<!-- END search_user -->
+<!-- INCLUDE PageSelector.html -->
+</div>

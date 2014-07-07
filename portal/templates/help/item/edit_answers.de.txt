@@ -1,0 +1,22 @@
+Auf dieser Seite können Sie Antworten für ein Item festlegen.
+
+### Antwort hinzufügen
+Hierüber fügen Sie eine Antwort zur Liste hinzu. Wenn Sie eine Freitextanwort automatisch auswerten möchten, müssen Sie die korrekten Antworten hier angeben - auch wenn diese 
+natürlich den Testteilnehmern nicht dargeboten werden. Im Feedbackmodul müssen Sie danach eine entsprechende Dimension anlegen und den gewünschten Freitextantworten 
+die gewünschte Punktzahl zuordnen. Dabei können auch mehrere richtige Antworten berücksichtigt werden.
+ 
+### Normal-Darstellung
+![Alt Antworten](portal/images/answer_closed.png)
+
+Hier steht nur der Text, den Sie zu einer Antwort angegeben haben, Bilder und Formatierungen werden nur in der Editier-Darstellung angezeigt.
+
+* Mit dem Stiftsymbol öffnen Sie eine Antwortalternative und erhalten Editier-Darstellung
+* Mit dem X-Symbol können Sie eine Antwortalternative löschen
+
+### Editier-Darstellung
+![Alt Antworten](portal/images/answer_opened.png)
+
+Eine Beschreibung für den Editor finden Sie [hier](func_helplink('any','fckeditor')).
+
+* Mit Speichern übernehmen Sie die Änderungen, und die Antwort wird wieder zur Normal-Darstellung verkleinert
+* Mit Abbrechen verwerfen Sie die Änderungen, und die Antwort wird wieder zur Normal-Darstellung verkleinert

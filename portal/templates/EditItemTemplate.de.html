@@ -1,0 +1,49 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.edit_template.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<p>func_T(pages.manage_templates.edit_template_desc)</p>
+	
+	<form method="post" action="func_pagelink(template_management, save_template, id: {templateid})">
+	<table style="width:450px;height:70px">
+		<tr>
+			<td style="width:70px" colspan="2">Name:</td>
+			<td>{templatename:h}</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="width:70px" colspan="2">Vorschau&nbsp;Bild:</td>
+			<td>
+				<div>
+					<img src="{imagelink:h}" alt="Vorschau Bild" title="Vorschau Bild" style="width:150px;height:150px;border:solid;border-width:1px;border-color:#CCCCCC" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" colspan="2"><p>Beschreibung</p></td>
+		</tr>
+		<tr>
+			<td style="width:70px" colspan="2">Deutsch:</td>
+			<td><input name="templateDescriptionGerman" type="text" size="59" value="{description_de}" /></td>
+		</tr>
+		<tr>
+			<td style="width:70px" colspan="2">Englisch:</td>
+			<td><input name="templateDescriptionEnglish" type="text" size="59" value="{description_en}" /></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="width:10px;text-align:right">
+				<form method="post" action="func_pagelink(template_management, manage_templates)">
+                    <input name="submit" class="Button" type="submit" value="func_T(buttons.back)" />
+                </form>
+			</td>
+			<td>
+				<input name="submit" class="Button" type="submit" value="func_T(buttons.save)" /></form>
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</div>

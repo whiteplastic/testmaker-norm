@@ -1,0 +1,44 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.view_template.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<p>func_T(pages.manage_templates.view_template_desc)</p>
+	
+	<table style="width:450px;height:70px">
+		<tr>
+			<td style="width:70px">Name:</td>
+			<td>{templatename:h}</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td style="width:70px">Preview&nbsp;image:</td>
+			<td>
+				<div>
+					<img src="{imagelink:h}" alt="Preview image" title="Preview image" style="width:150px;height:150px;border:solid;border-width:1px;border-color:#CCCCCC" />
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><p>Description</p></td>
+		</tr>
+		<tr>
+			<td style="width:70px">German:</td>
+			<td>{description_de:h}</td>
+		</tr>
+		<tr>
+			<td style="width:70px">English:</td>
+			<td>{description_en:h}</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<table>
+		<td>
+			<form method="post" action="func_pagelink(template_management, manage_templates)">
+					<input name="back" class="Button" type="submit" name="do_back" value="func_T(buttons.back)" />
+				</form>
+		</td>
+	</table>
+</div>

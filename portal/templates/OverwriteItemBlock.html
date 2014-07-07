@@ -1,0 +1,19 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+<!-- INCLUDE EditPublishedHeader.html -->
+	<p>Do you really want to overwrite all item settings with the default ones of this block?</p>
+	<form method="post" action="func_pagelink(item_block, overwrite, working_path: {working_path})">
+		<!-- BEGIN overwrite_min_item_time -->
+			<input type="hidden" name="overwrite_min_item_time" value="true" />
+		<!-- END overwrite_min_item_time -->
+		<!-- BEGIN overwrite_max_item_time -->
+			<input type="hidden" name="overwrite_max_item_time" value="true" />
+		<!-- END overwrite_max_item_time -->
+		<!-- BEGIN overwrite_item_force -->
+			<input type="hidden" name="overwrite_item_force" value="true" />
+		<!-- END overwrite_item_force -->
+		<input class="Button" type="submit" name="do_overwrite" value="Overwrite" />
+		<input class="Button" type="submit" name="cancel_overwrite" value="Cancel" />
+	</form>
+</div>

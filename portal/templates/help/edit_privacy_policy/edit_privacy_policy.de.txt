@@ -1,0 +1,21 @@
+
+###Allgemein
+Grundsätzlich sollte die Datenschutzerklärung Informationen darüber enthalten, was mit den von Nutzern eingegebenen personenbezogenen Daten, die bei der Registrierung im testMaker erhoben werden (Name, Vorname, Geburtsdatum), geschieht, wofür sie verwendet und wann sie gelöscht werden. 
+
+Sobald die Datenschutzerklärung im testMaker aktiviert ist muss jeder registrierte Nutzer der aktuellen Erklärung zustimmen, bevor er an einem Test teilnehmen kann. Gleiches gilt für Teilnehmer, die sich per TAN einloggen und im Zuge dessen eine E-Mail-Adresse angeben. 
+
+
+###Datenvorhaltedauer
+Die Datenvorhaltedauer gibt den Zeitraum in Monaten an, in dem die personenbezogenen Daten, die bei der Registrierung erhoben worden sind, ohne weitere Nutzerinteraktion im testMaker gespeichert bleiben. Nach Ablauf dieser Zeit sollten diese personenbezogenen Daten gelöscht werden.
+
+<div style="margin-left:15px; margin-bottom:15px">
+<b>Hinweis zur automatischen Löschung von personenbezogenen Daten:</b><br>
+In zukünftigen Versionen des testMaker sollen durch eine *autoDelete*-Funktion die personenbezogenen Daten der betroffenen Nutzer automatisch gelöscht werden: In der Benutzerverwaltung können inaktive Nutzer per E-Mail kontaktiert werden und binnen zwei Wochen der Löschung widersprechen. Dafür ist es notwendig, dass die im Text der Datenschutzerklärung erwähnte Speicherzeit für personenbezogene Daten auch numerisch als Zahl eingegeben wird. Alle innerhalb der Testläufe erhobenen Daten bleiben erhalten.
+
+(siehe auch <a href="func_helplink(user_delete, filter_user)">[alte Benutzer löschen]</a>
+</div><p>
+ 
+ 
+###Änderungen 
+Bei jeder durchgeführten Änderung an der Datenschutzerklärung (= Klick auf 'Speichern') wird eine neue Version angelegt und ALLE Nutzer werden bei ihrem nächsten Log-In aufgefordert, die neue Erklärung zu akzeptieren. Ansonsten ist keine Testteilnahme möglich. 
+Änderungen und Inhalte vergangener Datenschutzerklärungen können im Protokoll nachgelesen werden. 

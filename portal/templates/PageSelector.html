@@ -1,0 +1,32 @@
+<div style="font-size:x-small;margin:1em 0;text-align:center;">
+<!-- BEGIN page_selector -->
+	<div style="margin-right: 0.2em; float:left;line-height:180%">func_T(generic.page):</div>
+	<!-- BEGIN direct_page_link -->
+		<!-- BEGIN current_page -->
+			<div style="margin: 0 0.2em; float: left;padding: 0 0.6em;line-height:180%;background-color:#044294;color:#FFFFFF;font-weight:bold;cursor:default;text-align:center">{page}</div>
+		<!-- END current_page -->
+		<!-- BEGIN other_page -->
+			<a style="margin: 0 0.2em; float: left;padding: 0 0.6em;line-height:180%;background-color:#66A0FF;text-align:center" href="{direct_page_link:h}">{page}</a>
+		<!-- END other_page -->
+		<!-- BEGIN ellipsis -->
+			<div style="margin: 0 0.2em; float: left;line-height:180%;background-color:#FFFFFF;color:#999999;text-align:center;cursor:default;">...</div>
+		<!-- END ellipsis -->
+	<!-- END direct_page_link -->
+<!-- END page_selector -->
+</div>
+<div style="float:left;font-size:x-small;text-align:left;padding-left:10px;">
+	<form method="post" action="{goto_page_link:h}">
+		<label for="goto_page_field">func_T(generic.go_to_page):</label>
+		<input type="text" name="page_number" id="goto_page_field" style="width:30px" />
+		<label for="entries_per_page">func_T(labels.pageview.entries_per_page):</label>
+		<select size="1" name="entries_per_page" id="display_entries">
+			<option value="5"{5_entries_per_page}>5</option>
+			<option value="10"{10_entries_per_page}>10</option>
+			<option value="25"{25_entries_per_page}>25</option>
+			<option value="50"{50_entries_per_page}>50</option>
+		</select>
+		<input class="Button" type="submit" value="OK" />
+	</form>
+</div>
+
+<br style="clear:both" />

@@ -1,0 +1,78 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+	<form method="post" action="func_pagelink(feedback_block, save, working_path: {working_path}, revert: true)">
+		<table>
+			<tr>
+				<td<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>func_T(forms.title)</td>
+				<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.description)</td>
+				<td><textarea name="description">{description:h}</textarea></td>
+			</tr>
+			<tr>
+				<td>func_T(forms.last_modified)</td>
+				<td>{t_modified:datetime}</td>
+			</tr>
+			<tr>
+				<td>func_T(forms.created)</td>
+				<td>{t_created:datetime}</td>
+			</tr>
+			<tr>
+				<td>Author</td>
+				<td>{author:h}</td>
+			</tr>
+			<tr>
+				<td>Medien ID</td>
+				<td>{media_connect_id}</td>
+			</tr>
+			<tr>
+				<td>Access</td>
+				<td>{access}</td>
+			</tr>
+			<tr>
+				<td>Select source item blocks:</td>
+				<td>
+				<!-- BEGIN list_area -->
+				<!-- LIST -->
+				<ul>
+					<li>
+						<!-- OPTION --><input type="checkbox" name="source_ids[]" value="<!-- id -->" <!-- checked -->/><!-- OPTION -->&nbsp;
+						<!-- title -->
+					</li>
+					<li style="list-style-type: none; ">
+						<!-- SUBITEMS -->
+						<!-- subitems -->
+						<!-- SUBITEMS -->
+					</li>
+				</ul>
+				<!-- LIST -->
+				<!-- END list_area -->
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<em><div style = "width:450px; padding-bottom: 15px">
+				   (The removal of source item blocks has no effect on the settings of already existing dimensions and therefore also neither on feedback pages.)
+					 </div>
+					</em>
+				</td>
+			</tr>
+			<tr>
+				<td>Show in overall feedback</td>
+				<td><input type="checkbox" name="show_in_summary"{show_in_summary_checked} /></td>
+			</tr>
+		</table>
+		<!-- BEGIN form_submit_button -->
+		<input type="submit" class="Button" value="func_T(buttons.save)" />
+		<!-- END form_submit_button -->
+	</form>
+				
+	<!-- BEGIN reactivate -->
+		<form method="post" action="func_pagelink(feedback_block, enable, working_path: {working_path}, item_id: {item_id}, revert: true)" name="item">
+			<input class="Button" type="submit" name="enable" value="reactivate Feedback-Block" />
+		</form>
+	<!-- END reactivate -->
+	
+</div>

@@ -1,0 +1,65 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditNodeHeader.html -->
+
+<form method="post" action="func_pagelink(dimension, settings, working_path: {working_path}, item_id: {id})">
+	<h3>Edit dimension: <em>{title:h}</em></h3>
+	
+	<fieldset>
+    	<legend>Reference Value (graphic)</legend>
+    	<input type="hidden" name="submit_reference_value" value="1" />
+    	<table>
+    		<tr>
+    			<td colspan="3">
+    				<p>Here you can enter an integral reference value for this dimension. When creating a feedback graph, it will be displayed along with the participants' score.<br />&nbsp;</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td><label for="reference_value">Reference Value*</label>:</td>
+    			<td><input id="reference_value" name="reference_value" value="{reference_value:h}" type="text" size="2" maxlength="10" /></td>
+    			<td>
+    				<select name="reference_value_type">
+    					<option value="points" {reference_value_type_points}>Points (min=<span title="current minimum">{curMin:h} </span> max=<span title="current maximum">{curMax:h}</span>)</option>
+    					<option value="percent" {reference_value_type_percent}>Percent</option>
+    				</select>
+    			</td>
+			</tr>
+    		<tr>
+    			<td colspan="3">
+    				<p>* If the reference value is zero, no reference value will be shown.</p>
+    			</td>
+    		</tr>
+		</table>
+    </fieldset>
+	
+	<fieldset>
+		<legend>Reference Values (text)</legend>
+	    <input type="hidden" name="submit_class_sizes" value="1" />
+        <table>
+            <tr>
+                <td colspan="2">
+                <p>
+                    Here you can define the sizes of the class groups for the attainable scores on this dimension.
+                    The data will be used to calculate a percent range norm value for test runs.</p>
+                <p>
+                    In the following field, enter a possible score and the number of subjects in the associated class group per line in the following format:
+                    <em>score: number of subjects</em></p>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="class_sizes">Sizes of Class Groups</label></td>
+                <td>
+                    <textarea id="class_sizes" name="class_sizes" rows="8" cols="20">{class_sizes:h}</textarea>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+	<!-- BEGIN submit_button -->
+	<input type="submit" class="Button" value="Save" />
+	<!-- END submit_button -->
+	<!-- BEGIN no_submit_button -->
+	<input type="button" disabled="disabled" value="func_T(buttons.edit_disallowed)" class="Button" />
+	<!-- END no_submit_button -->
+</form>
+</div>

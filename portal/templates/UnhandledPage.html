@@ -1,0 +1,22 @@
+<script type="text/javascript">
+<!--
+	storeStartTime();
+//-->
+</script>
+<form method="post" action="func_pagelink(test_make, process_answer, id: {id})" onSubmit="now = new Date(); this.elements['duration'].value = now.getTime()-startTime.getTime(); return true;">
+
+	<input type="hidden" name="session_id" value="{session_id}" />
+	<input type="hidden" name="item_id" value="{item_id}" />
+	<input type="hidden" name="block_id" value="{block_id}" />
+	<input type="hidden" name="duration" value="-1" />
+
+	<p class="Question">func_T(generic.error)</p>
+	<div id="Answers">
+		<p>TestMaker cannot handle <b>{item_type:h}</b> items yet.</p>
+	</div>
+
+	<div style="clear:both;height:1%"></div>
+	<div class="SendBar">
+		<input class="Button" type="submit" value="func_T(generic.continue)" />
+	</div>
+</form>

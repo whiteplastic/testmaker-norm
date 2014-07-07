@@ -1,0 +1,43 @@
+<!-- Multiple choice with multiple answers -->
+<script type="text/javascript" language="javascript">
+<!--
+	function toggleCheckbox(checkbox)
+	{
+		checkbox.checked = !checkbox.checked;
+	}
+//-->
+</script>
+<!-- Here is where the question is displayed -->
+<div class="Question {is_forced}">
+	<div class="Inner">{question}</div>
+</div>
+<!-- The place where the answer(s) is(are) displayed; mcma shows a checkbox
+for every answer possibility -->
+<div class="Answers">
+	<table class="Border" cellspacing="3">
+		<!-- BEGIN answer_block -->
+		<tr>
+			<!-- BEGIN answer -->
+			<td class="Border" style="width:{width}%">
+				<table>
+					<tr>
+						<td style="text-align:left;width:2em;padding:15px">
+							<input type="checkbox" name="answer[{item_id}][]" value="{aid}" id="item_{aid}"{aold} />
+						</td>
+						<td style="text-align:left;">
+							<div style="cursor:default" onclick="toggleCheckbox(document.getElementById('item_{aid}'));this.blur();">{answer}</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<!-- END answer -->
+		</tr>
+		<!-- END answer_block -->
+	</table>
+</div>
+<div class="break"></div>
+<!-- BEGIN send_bar -->
+<div class="SendBar">
+	<input type="submit" class="AnswerButton" value="func_T(generic.submit)" />
+</div>
+<!-- END send_bar -->

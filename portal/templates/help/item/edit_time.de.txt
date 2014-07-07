@@ -1,0 +1,7 @@
+Auf dieser Seite können Sie die Einstellungen für ihren Itemblock vornehmen.
+
+### Minimale Bearbeitungszeit pro Item
+Wenn Sie an dieser Stelle eine Zahl <b>x</b> größer 0 eingeben, kann das Item erst nach Ablauf von <b>x</b> Sekunden abgegeben werden.
+
+### Maximale Bearbeitungszeit pro Item
+Wenn Sie an dieser Stelle eine Zahl <b>x</b> größer 0 eingeben, wird das Item nach Ablauf von <b>x</b> Sekunden automatisch abgegeben und auf das nächste Item weitergeleitet. Im Testdurchlauf erscheint dann bei der Bearbeitungszeit, dass eine Zeitüberschreitung erfolgt ist.

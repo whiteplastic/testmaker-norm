@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<title>testMaker</title>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<link rel="stylesheet" type="text/css" href="portal/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="portal/css/special_common.css" />
+{head}
+	<style type="text/css">
+	body {
+		padding:5px;
+	}
+	img {
+		border:1px solid #ccc;
+	}
+	li.browser {
+		list-style-type:none;
+		width:299px;
+		height:300px;
+		border:1px solid #044294;
+		text-align:center;
+		margin:5px;
+		float:left;
+	}
+	.pointer {
+		cursor:pointer;
+	}
+	.ImageBlock {
+		height:180px;
+		width:100%;
+		overflow:auto;
+	}
+	</style>
+	<script type="text/javascript">
+	function writeSelect(filename)
+	{
+		fileloc = "upload/media/" + filename ;
+		window.top.opener.SetUrl( fileloc ) ;
+		window.top.close() ;
+		window.top.opener.focus() ;
+	}
+	</script>
+	<script type="text/javascript" src="portal/js/external/prototype.js"></script>
+	<script type="text/javascript" src="portal/js/external/scriptaculous.js?load=builder,effects,dragdrop,controls,slider"></script>
+	<script type="text/javascript" src="portal/js/async.js"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="portal/js/main.js"></script>
+<form method="post" action="{url:h}" enctype="multipart/form-data">
+<div>
+<h2>Media-Verzeichnis</h2>
+<h4>Nur Dateien hochladen vom Typ
+			<!-- BEGIN medialist -->
+			{mediatype}
+			<!-- END medialist -->
+</h4>
+	<!-- BEGIN msg_area -->
+	<ul id="msgs" class="messages">
+	<!-- BEGIN msg --><li class="msg_{flag}">{msg}</li><!-- END msg -->
+	</ul>
+	<!-- END msg_area -->
+	<div style="text-align:right;border-bottom:1px solid #044294;">
+		<label for="upload_field">Lokale Suche</label>:<input id="upload_field" type="file" name="media" /> <input type="submit" name="do_upload" value="Upload" /> <input type="button" onclick="window.close()" value="Abbrechen" />
+	</div>
+<!-- BEGIN empty_block -->
+<p>Keine Bilder verfügbar.</p>
+<!-- END empty_block -->
+<!-- BEGIN full_block -->
+<ul id="paragraphs" class="browser">
+	<!-- BEGIN cell_block -->
+	<li id="para_{para_id}" class="para browser">
+		<!-- BEGIN pic_block -->
+		<div class="ImageBlock" onclick="writeSelect({filename})">
+			func_media({filename})
+		</div>
+			{filename}<br />
+			<input type="button" class="Button" onclick="writeSelect('{filename}')" value="&radic;" /><br />
+			<button type="button" onclick="delParagraph('para_{para_id}');" title="Löschen"><img src="portal/images/icon_delete.png" alt="Löschen" /></button>
+		<div id="para_{para_id}_delete" style="display:none;">
+			Wirklich löschen?
+			<input class="Button" type="button" onclick="doDelParagraph('para_{para_id}', '{del_link:h}');Element.remove('msgs');" value="Ja" />
+			<input class="Button" type="button" onclick="cancelDelParagraph('para_{para_id}');" value="Nein"/>
+		</div>
+<div id="para_{para_id}_notice" class="HideAsyncNotice">Operation wird ausgeführt, bitte warten...</div>
+		<!-- END pic_block -->
+	</li>
+	<!-- END cell_block -->
+</ul>
+<!-- END full_block -->
+</div>
+<br style="clear:both" />
+<script src="portal/js/feedback_page.js" type="text/javascript"></script>
+</form>
+</body>
+
+</html>

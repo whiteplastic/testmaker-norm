@@ -1,0 +1,4 @@
+###Vorschau
+Die Vorschau gibt Ihnen die Möglichkeit, Ihre Eingaben und Einstellungen (z.B. Layout von Items und Textseiten) zu überprüfen, ohne den Test veröffentlichen zu müssen. Sie sehen den Test so, wie er späteren Testpersonen dargeboten wird. Die Vorschau hat den weiteren Vorteil, dass die Testdurchläufe später als "preview" deklariert werden, so dass man sie von regulären Testdurchläufen unterscheiden kann.
+
+Für Subtests ist aufgrund von Interdependenzen zu anderen Items keine Vorschau möglich.

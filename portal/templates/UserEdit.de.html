@@ -1,0 +1,69 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.user_admin.{page_action}.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+<form method="post" action="func_pagelink(user_admin, {action}, id: {user_id})">
+<div>
+<table class="Vertical">
+	<tr>
+		<td<!-- BEGIN correction_username --> class="correction"<!-- END correction_username -->><label for="form_create_username">Benutzername:</label></td>
+		<td><input type="text" name="editusername" class="Text" id="form_create_username" value="{username:h}" /> <i>{superuser}</i></td>
+	</tr>
+	<tr>
+		<td<!-- BEGIN correction_password --> class="correction"<!-- END correction_password -->><label for="form_create_userpassword">Passwort:</label></td>
+		<td><input type="password" name="editpassword" class="Text" id="form_create_userpassword" value="{password:h}" /></td>
+	</tr>
+	<tr>
+		<td<!-- BEGIN correction_password_control --> class="correction"<!-- END correction_password_control -->><label for="form_create_userpasscontrol">Passwort bestätigen:</label></td>
+		<td><input type="password" name="passwordControl" class="Text" id="form_create_userpasscontrol" value="{passwordControl:h}" /></td>
+	</tr>
+	<tr>
+		<td<!-- BEGIN correction_fullname --> class="correction"<!-- END correction_fullname -->><label for="form_create_fullname">Vollständiger Name:</label></td>
+		<td><input type="text" name="fullname" class="Text" id="form_create_fullname" value="{fullname:h}" /></td>
+	</tr>
+	<tr>
+		<td<!-- BEGIN correction_email --> class="correction"<!-- END correction_email -->><label for="form_create_email">E-Mail:</label></td>
+		<td><input type="text" name="email" class="Text" id="form_create_email" value="{email:h}" /></td>
+	</tr>
+	<tr>
+		<td><label for="form_create_language">Sprache:</label></td>
+		<td><select size="1" name="language" id="form_create_language">
+			<!-- BEGIN languages -->
+			<option value="{valueLang}"{select}>{longLang}</option>
+			<!-- END languages -->
+		</select></td>
+	</tr>
+	<tr>
+		<td><label for="form_filled">Benutzerdaten für Zertifikat festgelegt:<br>(zum entsperren Haken entfernen)</label></td>
+		<td><input type="checkbox" name="form_filled" value="1" {form_filled}></td>
+	</tr>
+	<tr>
+		<td>Gruppen:</td>
+		<td><ul class="Blind">
+<!-- BEGIN group_list_create -->
+	<li><input type="checkbox" id="form_create_groups_{groupid}" name="groups[{groupid}]" value="1"{selectGroup} />
+	<label for="form_create_groups_{groupid}">{groupname:h}</label></li>
+<!-- END group_list_create -->
+		</ul></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="Submit">
+			<input type="submit" class="Button" value="{button}" />
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td>
+			<p>
+			<div style='font-size:smaller; color:#dc143c; {hideNoAcc}'>Benutzer hat keine Datenschutzrichtlinien akzeptiert</div>
+			<div style='font-size:smaller; color:#008000; {hideLastAcc}'>Benutzer hat die aktuellen Datenschutzrichtlinien akzeptiert (v.{acceptVersion})</div>
+			<div style='font-size:smaller; color:#5f9ea0; {hideOldAcc}'>Benutzer hat ältere Datenschutzrichtlinien akzeptiert (v.{acceptVersion})</div>
+			</p>
+		</td>
+	</tr>
+</table>
+</div>
+</form>
+
+</div>

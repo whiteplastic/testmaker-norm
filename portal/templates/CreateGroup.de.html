@@ -1,0 +1,54 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.group_admin.create_group.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- BEGIN create_group -->
+<form method="post" action="func_pagelink(group_admin, list_group, id: {groupid})">
+<div>
+<input type="hidden" name="handle" value="{handle}" />
+<table class="Both">
+	<tr>
+		<th><label for="form_create_groupname">Gruppenname:</label></th>
+		<td><input type="text" name="groupname" class="Text" id="form_create_groupname" value="{groupname:h}" /></td>
+	</tr>
+	<tr>
+		<th><label for="form_create_description">Beschreibung:</label></th>
+		<td><textarea name="description" id="form_create_description" style="vertical-align:text-top" rows="4" cols="30">{description:h}</textarea></td>
+	</tr>
+	<tr>
+		<th>Vererbung:</th>
+		<td><ul class="Blind">
+			<li><input type="checkbox" name="autoadd" id="form_create_autoadd" value="1"{autoadd_checked} /> <label for="form_create_autoadd">Neue Benutzer automatisch zu dieser Gruppe hinzuf&uuml;gen</label></li>
+			<li><input type="checkbox" name="guests" id="form_create_guests" value="1"{guests_checked} /> <label for="form_create_guests">Unregistrierten Benutzern die Rechte dieser Gruppe geben</label></li>
+		</ul></td>
+	</tr>
+	<tr>
+		<th>Globale Berechtigungen:</th>
+		<td><ul class="Blind">
+			<li><input type="checkbox" id="form_create_perms_special" name="perms[special]" value="1"{perms_special_checked} /> <label for="form_create_perms_special">Kann Bearbeitungsrechte für einzelne Tests erhalten (Spezialgruppe)</label></li>
+			<li><input type="checkbox" id="form_create_perms_run"     name="perms[run]"     value="1"{perms_run_checked}     /> <label for="form_create_perms_run"    >Tests (ohne TAN) per Direktlink starten oder Voransicht benutzen</label></li>
+			<li><input type="checkbox" id="form_create_perms_tanrun"  name="perms[tanrun]"  value="1"{perms_tanrun_checked}  /> <label for="form_create_perms_tanrun" >Tests per TAN starten</label></li>
+			<li><input type="checkbox" id="form_create_perms_portal"  name="perms[portal]"  value="1"{perms_portal_checked}  /> <label for="form_create_perms_portal" >Tests in der Testübersicht sehen und dort starten</label></li>
+			<li><input type="checkbox" id="form_create_perms_review"  name="perms[review]"  value="1"{perms_review_checked}  /> <label for="form_create_perms_review" >Alte Testergebnisse über die Testübersicht abrufen</label></li>
+			<li><input type="checkbox" id="form_create_perms_publish" name="perms[publish]" value="1"{perms_publish_checked} /> <label for="form_create_perms_publish">Bearbeitbare Tests veröffentlichen</label></li>
+			<li><input type="checkbox" id="form_create_perms_view"    name="perms[view]"    value="1"{perms_view_checked}    /> <label for="form_create_perms_view"   >Tests ansehen</label></li>
+			<li><input type="checkbox" id="form_create_perms_export"  name="perms[export]"  value="1"{perms_export_checked}  /> <label for="form_create_perms_export" >Testdaten exportieren (von Tests, deren Bearbeitung erlaubt ist)</label></li>
+			<li><input type="checkbox" id="form_create_perms_create"  name="perms[create]"  value="1"{perms_create_checked}  /> <label for="form_create_perms_create" >Tests anlegen</label></li>
+			<li><input type="checkbox" id="form_create_perms_edit"    name="perms[edit]"    value="1"{perms_edit_checked}    /> <label for="form_create_perms_edit"   >Tests bearbeiten</label></li>
+			<li><input type="checkbox" id="form_create_perms_delete"  name="perms[delete]"  value="1"{perms_delete_checked}  /> <label for="form_create_perms_delete" >Tests löschen</label></li>
+			<li><input type="checkbox" id="form_create_perms_copy"    name="perms[copy]"    value="1"{perms_copy_checked}    /> <label for="form_create_perms_copy"   >Tests kopieren</label></li>
+			<li><input type="checkbox" id="form_create_perms_link"    name="perms[link]"    value="1"{perms_link_checked}    /> <label for="form_create_perms_link"   >Tests verlinken</label></li>
+			<li><input type="checkbox" id="form_create_perms_admin"   name="perms[admin]"   value="1"{perms_admin_checked}   /> <label for="form_create_perms_admin"  >Benutzer/Gruppen verwalten</label></li>
+			<li><input type="checkbox" id="form_create_perms_cert"    name="perms[cert]"    value="1"{perms_cert_checked}    /> <label for="form_create_perms_cert"   >Bescheinigungen überprüfen</label></li>
+		</ul></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td class="Submit">
+			<input type="submit" class="Button" value="{button}" />
+		</td>
+	</tr>
+</table>
+</div>
+</form>
+<!-- END create_group -->
+</div>

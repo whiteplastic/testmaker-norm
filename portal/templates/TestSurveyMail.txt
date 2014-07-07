@@ -1,0 +1,10 @@
+<p>Liebe/r [NAME],</p>
+<p>vielleicht erinnerst du dich noch daran, dass du vor Beginn deines Studiums ein SelfAssessment der RWTH Aachen absolviert hast. Es sollte dir dabei helfen, dir deine F&auml;higkeiten und Interessen nochmal zu vergegenw&auml;rtigen und die Inhalte deines Wunschstudiengangs besser kennenzulernen. So sollte dir die Entscheidung f&uuml;r einen passenden Studiengang erleichtert werden.</p>
+<p>Nachdem im Laufe der letzten Jahre schon viele angehende Studenten ein SelfAssessment der RWTH Aachen absolviert haben, w&uuml;rde uns nun sehr interessieren, welchen Verlauf ihr Studium genommen hat. Denn Erfolg und Zufriedenheit der Studenten in ihrem Fach geben uns einen Hinweis darauf, ob das SelfAssessment auch die schwierige Aufgabe erf&uuml;llt, f&uuml;r die es gedacht ist. Deine R&uuml;ckmeldung und die vieler anderer Studenten k&ouml;nnen uns dabei helfen, das Orientierungsangebot der RWTH weiter zu verbessern.</p>
+<p>Deshalb w&auml;ren wir dir sehr dankbar, wenn du dir wenige Minuten Zeit nimmst und unseren Fragebogen ausf&uuml;llst, den du unter folgendem Link findest: <br />
+<a target="new" href="[TEST]">[TEST]</a></p>
+<p>Nutze einfach deinen Benutzernamen <strong>[USERNAME]</strong> und das dazugeh&ouml;rige Passwort. <br />
+Falls du das Passwort vergessen hast, kannst du es hier erneuern: <br />
+<a target="new" href="[PWLINK]">[PWLINK]</a></p>
+<p>Vielen Dank und herzliche Gr&uuml;&szlig;e<br />
+<i>Dein SelfAssessment-Team</i></p>

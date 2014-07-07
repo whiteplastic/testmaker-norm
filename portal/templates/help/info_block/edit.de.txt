@@ -1,0 +1,39 @@
+###Orientierung
+Sie befinden sich auf dem Karteireiter "Allgemein" in einem bereits angelegten Textblock des testMakers.
+
+Auf der linken Seite finden Sie das Navigationsmenü. Dieses besteht aus 3 Bereichen:
+ 
+* Auswahlliste der Administrationsbereiche
+* Navigation zur Testerstellung
+* Aktionsbuttons
+
+Allgemeine Informationen zu den Administrationsbereichen und zur Navigation der Testerstellung erhalten Sie in der [Hilfefunktion der Startseite](func_helplink(admin_start, start)).
+
+Im rechten Bereich des Bildschirms werden die Einstellmöglichkeiten des aktiven Textblocks angezeigt. Auf dieser Ebene finden Sie:
+
+* Allgemein
+* Rechte
+* Kopieren / Verschieben
+* Infoblock löschen
+
+
+###Aktionsbuttons
+####Neue Textseite
+Hier können Sie eine weitere Textseite hinzufügen. 
+
+###Karteireiter eines Textblocks
+####Allgemein
+Unter "Titel" und "Beschreibung" können Sie den Textblockblock umbenennen und eine Umschreibung einfügen. Geben Sie dazu den gewünschten Titel in das Textfeld ein und klicken Sie auf "Speichern". Bei der Beschreibung gehen Sie ebenso vor.
+
+Darunter finden Sie Daten bzgl. des Datums der letzten Änderung, des Erstelldatums, des Autors, der Medien-ID und des Veröffentlichungsstatus des Textblocks (Zugang). Die Medien-ID bezieht sich auf die hochgeladenen Abbildungen pro Itemblock. Alle Abbildungen, die Sie hochladen, erhalten eine itemblockspezifische Kennzahl, die hier angegeben ist. Der Status, also der Test-Zugriff, lässt sich unter dem Reiter "Rechte" verändern. Der Block wird als "veröffentlicht" markiert, sobald eine Gruppe, die keine Editorrechte besitzt, auf den Test zugreifen kann. Weitere Erläuterungen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(container_block, edit_perms)) im Abschnitt "Spezialgruppen".
+
+Was sind IRT-skalierte Items?
+
+Außerdem haben Sie die Möglichkeit, eine adaptive Teststrategie auszuwählen, die sich an der Bearbeitungszeit, der maximalen Itemzahl oder dem Standardmessfehler orientieren kann. Wenn Sie beispielsweise hinter "Maximale Itemzahl" eine 20 eintragen, wird die Testung automatisch nach 20 bearbeiteten Items abgebrochen.
+
+####Rechte
+Diese Funktion bietet Ihnen die Möglichkeit, den zuvor angelegten Benutzergruppen Rechte zuzuteilen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Rechte"](func_helplink(feedback_block, edit_perms)).
+####Kopieren / Verschieben
+Hier haben Sie die Möglichkeit, den kompletten Textblockblock zu kopieren, verschieben oder zu verlinken. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Kopieren/Verschieben"](func_helplink(any, copy_move)).
+####Textblock löschen
+Auf diesem Reiter können Sie den gesamten Textblock löschen. Weitere Informationen hierzu finden Sie in der [Hilfefunktion "Textblock löschen"](func_helplink(any, confirm_delete)).

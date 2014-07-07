@@ -1,0 +1,56 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+
+<h3>Dimensionsgruppen bearbeiten</h3>
+
+<p>
+	Hier können Sie mehrere Dimensionen zu einer Gruppe zusammenfassen, die Sie dann beispielsweise für die Anzeige der Dimensionen mit den höchsten Ergebniswerten verwenden können.</p>
+
+<!-- BEGIN have_groups -->
+<h4>Bestehende Gruppen bearbeiten</h4>
+
+<table class="BorderedLayout">
+	<tr><th>Gruppenname</th><th>ID</th><th>Aktionen</th></tr>
+<!-- BEGIN group -->
+	<tr>
+		<td>{title:h}</td>
+		<td>{id:h}</td>
+		<td>
+			<form method="post" action="func_pagelink(feedback_block, dim_groups, working_path: {working_path})">
+			<input type="hidden" name="id" value="{id}" />
+			<input type="submit" name="edit" value="Bearbeiten" class="Button" />
+			<input type="submit" name="delete" value="Löschen" class="Button" onclick="return confirm('Soll die Dimensionsgruppe wirklich gelöscht werden?')" />
+			</form>
+		</td>
+	</tr>
+<!-- END group -->
+</table>
+
+<!-- END have_groups -->
+<!-- BEGIN create_group -->
+<h4>Neue Dimensionsgruppe anlegen</h4>
+<!-- END create_group -->
+<!-- BEGIN edit_group -->
+<h4>Dimensionsgruppe bearbeiten</h4>
+<!-- END edit_group -->
+
+<form method="post" action="func_pagelink(feedback_block, dim_groups, working_path: {working_path})">
+<table>
+	<tr>
+		<td<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>func_T(forms.title)</td>
+		<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+	</tr>
+</table>
+<h5>Enthaltene Dimensionen</h5>
+<ul id="droplist">
+<!-- BEGIN dim_list -->
+	<li><input type="checkbox" name="dim[{dim_id}]" id="dim{dim_id}" value="1"{dim_checked} /> <label for="dim{dim_id}">{dim_title}</label></li>
+<!-- END dim_list -->
+</ul>
+<!-- INCLUDE SortableList.html -->
+<br />
+<input type="hidden" name="id" value="{edit_id}" /><input type="submit" class="Button" name="save" value="Speichern" />
+</form>
+
+</div>

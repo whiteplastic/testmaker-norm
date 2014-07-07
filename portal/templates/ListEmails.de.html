@@ -1,0 +1,14 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.emails.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<ul id="paragraphs">
+	<!-- BEGIN Email -->
+		<li class="para">
+			<p {italic}>{subject:h}</p> 
+			<a href="func_pagelink(email_management, edit_email, email_id: {email_id})" class="Button">Bearbeiten</a>
+			<a href="func_pagelink(email_management, delete_email, email_id: {email_id})" class="Button">Löschen</a>
+		</li>
+	<!-- END Email -->
+	</ul>
+	<p><a href="func_pagelink(email_management, edit_email)" class="Button">Email erstellen</a></p>
+</div>

@@ -1,0 +1,36 @@
+<div style="padding-left:15px"><li><h4>func_T(pages.emails.title)</h4></li></div>
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+	<form name="emailForm" method="post" action="func_pagelink(email_admin, get_email_addresses)">
+		<table>
+			<tr>
+				<td colspan=2>
+					Here, you can export the email addresses and User-IDs of registered users who took part in a specific test.<BR> 
+					You may need this data for a follow-up study.
+				</td>
+			</tr>
+			<tr>
+			
+				<td>Test:</td>
+				<td>
+					<table id="recipients" cellpadding="3px">
+						<tr>
+							<td>
+								<select  name= "title" id="tests" {disabled}>
+				
+								<!-- BEGIN tests -->
+									
+
+									<option value="{test_id:h}">{test_title:h}</option>
+								<!-- END tests -->
+								</select>
+							</td>
+						</tr>
+                        <tr><td><input type="submit" class="Button" id="save" name="save" value="Export adresses" /></td><td id="cell_save"></td></tr>
+						<tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>

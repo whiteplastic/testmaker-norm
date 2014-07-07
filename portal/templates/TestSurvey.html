@@ -1,0 +1,173 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<form method="post" action="func_pagelink(test_survey, filter)">
+<table class="Vertical">
+	<tr>
+		<th>Test</th>
+		<td>
+			<select name="test_id">
+				<!-- <option value="0"{select_test_first}>All tests</option> -->
+<!-- BEGIN select_test -->
+				<option value="{select_test_id}"{select_test_current}>{select_test_title:h}</option>
+<!-- END select_test -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Groups</th>
+		<td>
+			<select name="group_name">
+				<option value="*"{select_group_first}>All Groups</option>
+<!-- BEGIN select_group -->
+				<option value="{select_group_name}"{select_group_current}>{select_group_title:h}</option>
+<!-- END select_group -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Access type</th>
+		<td>
+			<select name="access_type">
+				<option value="*"{select_access_type_first}>Any</option>
+<!-- BEGIN select_access_type -->
+				<option value="{select_access_type}"{select_access_type_current}>{select_access_type_description}</option>
+<!-- END select_access_type -->
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Completeness</th>
+		<td>
+			<select name="completed">
+				<option value="any"{select_completed_any}>Any</option>
+				<option value="all"{select_completed_all}>All items answered</option>
+				<option value="all_required"{select_completed_all_required}>All required items answered</option>
+				<option value="not_all_required"{select_completed_not_all_required}>Not all required items answered</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>Progress of the testrun</th>
+		<td>
+			<select name="relation">
+				<option value="greater_than"{relation_greater_than}>more than</option>
+				<option value="equal_as"{relation_equal_as}>equal_as</option>
+				<option value="less_than"{relation_less_than}>less than</option>
+			</select>
+			<input name="completed_percent" value="{completed_percent}" size="3" maxlength="3"> Percent
+		</td>
+	</tr>
+	<tr>
+		<th>Date</th>
+		<td>
+		<table border = 0><tr>
+			<td>
+			<select name="date_relation">
+				<option value="greater_than"{relation_date_greater_than}>since</option>
+				<option value="equal_as"{relation_date_equal_as}>at</option>
+				<option value="less_than"{relation_date_less_than}>before</option>
+				<option value="between"{relation_date_between}>between</option>
+			</select>
+			</td>
+				<td><input name="test_date" value="{test_date}" size="10" maxlength="10"></td><td> DD.MM.YYYY</td>
+				<td><input name="test_date2" value="{test_date2}" size="10" maxlength="10"></td><td> DD.MM.YYYY</td>
+			</tr>	
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<th<!-- BEGIN correction_testrun_id --> class="correction" <!-- END correction_testrun_id -->>Testrun ID #</th>
+		<td>
+			<input name="testrun_id" type="text" value="{input_testrun_id}" />
+		</td>
+	</tr>
+	<tr>
+		<th></th>
+		<td class="Submit"><input class="Button" type="submit" name="filters_set" value="Apply filter" /></td>
+	</tr>
+</table>
+</form>
+
+<h2>Filter results</h2>
+
+<!-- BEGIN no_results -->
+<p>There are <b>no</b> test runs that match your criterions.</p>
+<!-- END no_results -->
+
+<!-- BEGIN no_filter -->
+<p>Please select a test in filter !</p>
+<!-- END no_filter -->
+
+<!-- BEGIN has_results -->
+<p>There are <b>{result_count}</b> test runs from <b>{users_count}</b> users matching your criterions.</p>
+<p>
+Users with multiple test runs will only be contacted once. TAN-users will be discarded.
+<p>
+<br />
+<h2>Enter Survey Text</h2>
+
+
+<form method="post" action="func_pagelink(test_survey, confirm_survey)">
+
+<table class="Vertical">
+	<tr>
+		<th style="width:120px;">Subject</th>
+		<td>
+		<input name="subject" type="text" value="{survey_subject}" style="width:630px"/><p>
+		</td>
+	</tr>
+	<tr>
+		<th>Mail Content</th>
+		<td>
+		{mail_content}<p>
+		</td>
+	</tr>
+	<tr>
+		<td></td><td>
+			<input type="checkbox" name="save_text" value="save_text" id="save_text"/> <small>save mail content as new standard text<p></small>
+		</td>
+	</tr>
+	<tr>
+		<th>Survey Test</th>
+		<td>
+			<select name="survey_test" style="width:300px">
+			<!-- BEGIN select_survey_test -->
+				<option value="{select_survey_test_id}" {survey_selected}>{select_survey_test_title:h}</option>
+			<!-- END select_survey_test -->
+			</select>
+			<p>
+		</td>
+	</tr>
+	<tr>
+		<th>Placeholder</th>
+		<td>
+			<small>
+			<b>&#91;TEST&#93;</b> inserts a link to the above selected test as survey<br>
+			<b>&#91;NAME&#93;</b> inserts full name of user<br>
+			<b>&#91;USERNAME&#93;</b> inserts username<br>
+			<b>&#91;PWLINK&#93;</b> inserts link to the "forgot password"-page<br>
+			</small><p>&nbsp;</p>
+		</td>
+	</tr>
+
+	<tr>
+		<td></td><td>
+			<input type="submit" class="Button" value="Weiter" />
+		</td>
+	</tr>
+
+</table>
+
+
+</form>
+
+
+
+<!-- END has_results -->
+
+
+<p>
+
+
+
+</div>

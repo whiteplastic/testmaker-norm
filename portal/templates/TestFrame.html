@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+	<title>{test_title} :: testMaker</title>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<script type="text/javascript" src="portal/js/cookie.js"></script>
+	<!-- BEGIN autotester -->
+	<script type="text/javaScript" src="portal/js/autotester.js"></script>
+	<!-- END autotester -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="portal/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="portal/css/special_common.css" />
+	<link rel="stylesheet" type="text/css" href="portal/css/test_make.css" />
+	<!-- BEGIN horizontal -->
+	<link rel="stylesheet" type="text/css" href="portal/css/test_make_horizontal.css" />
+	<!-- END horizontal -->
+	<!-- BEGIN vertical -->
+	<link rel="stylesheet" type="text/css" href="portal/css/test_make_vertical.css" />
+	<!-- END vertical -->
+	
+	<!--Stylesheet for organize template-->
+	{head}
+	<!-- BEGIN style_block -->
+	<style type="text/css">
+	{style}
+	</style>
+	<!-- END style_block -->
+	<script type="text/javascript">
+	<!--
+	// Dummy function, overwrite if needed
+	var pausetime = 0;
+	var startTime = 0;
+	var timeTillPause = 0
+
+	
+	function init() {
+	}
+
+
+	function getTimeNow()
+	{
+		var now = new Date();
+		return (now.getTime());
+	}
+
+	function getTimeStart() {
+		return (startTime);
+	}
+
+	function getTimePassed()
+	{
+		return (getTimeNow() - getTimeStart());
+	}
+	
+	function storeStartTime()
+	{
+		cookieId = "{cookieId}";
+		if (cookieId)
+		{
+			cookieTime = getCookie(cookieId);
+			if (cookieTime != '') {
+				startTime = Number(cookieTime);
+			}
+			else {
+				setCookie(cookieId, getTimeNow());
+				startTime = getTimeNow();
+			}
+		}
+		else {;
+			startTime = getTimeNow();
+		}	
+	}
+
+	function delStartTime()
+	{
+		cookieId = "{cookieId:j}";
+		deleteCookie(cookieId);
+	}
+
+	function moveAction()
+	{
+		clearTimeout(pausetime);
+		pausetime=setTimeout('document.pauseForm.pauseButton.click()',600000); 
+
+	}
+	
+	function clickAction()
+	{
+		clearTimeout(pausetime);  
+		pausetime=setTimeout('document.pauseForm.pauseButton.click()',600000); 
+	}
+
+	function loadAction()
+	{
+		init();
+		pausetime=setTimeout('document.pauseForm.pauseButton.click()',600000);
+		doAllandSubmit();
+	}
+
+
+	function doPause()
+	{
+		delStartTime();
+		timeTillPause = getTimePassed();
+
+		if(window.waitTimeout){clearTimeout(waitTimeout);}
+		if(window.abortTimer) {clearTimeout(abortTimer);}
+
+		document.getElementById('screenlock').style.display='block';
+		document.getElementById('pausebox').style.display='block';
+	}
+	
+	function endPause()
+	{
+		startTime = getTimeNow() - timeTillPause; 
+	//	startTime = new Date(Number(startTime)); 
+		cookieId = "{cookieId:j}";
+		setCookie(cookieId, startTime);
+
+		if(window.isItemPage) {timeItem();}
+				
+		document.getElementById('screenlock').style.display='none';
+		document.getElementById('pausebox').style.display='none';
+
+		if (window.maxTime > 0)
+		{
+			var timeLeft = getTimeLeft();
+			abortTimer = window.setTimeout("abortItem()", timeLeft);
+		}
+		
+	}
+	
+//-->
+</script>
+
+</head>
+<body 	onload="loadAction();" 
+	onclick="clickAction();"
+	onmousemove="moveAction();" 
+	id="Body" style="margin-left:50px;">
+	
+<div class="wrapper">
+<script type="text/javascript" src="portal/js/main.js"></script>
+
+<!-- INCLUDE JavaScriptNotice.html -->
+<!-- BEGIN msg_area -->
+<p>
+<ul>
+	<!-- BEGIN msg --><li class="msg_{flag}">{msg}</li><!-- END msg -->
+</ul>
+</p>
+<!-- END msg_area -->
+<!-- BEGIN logo_style -->
+<div id="Top" class="Top"><img src="upload/media/{filename}" alt="Logo" /></div>
+<hr />
+<!-- END logo_style -->
+{body}
+<hr />
+
+<div id="TestFooter" style="clear: both;">
+
+<!-- BEGIN pause_button -->
+<div style="float: left; vertical-align: top;">
+<form name="pauseForm" action="">
+    <input type="button" name="pauseButton" class="Button" value="func_T('buttons.pause')" onclick="doPause();" />
+		<input type=button style="visibility:hidden;" value="old Pause" onClick="window.location='index.php?page=test_pause&test_run_id={test_run_id}&item_id={item_id}';">
+</form>
+</div>
+
+    
+<div id="screenlock"></div>	
+<div id="pausebox">
+<p>
+	<div class="PausePage" style="margin-top:2em; margin-bottom:1em;">
+		<!-- BEGIN pause_logo -->
+		<div><img src="upload/media/{filename}" alt="Logo" /></div>
+		<!-- END pause_logo -->
+		<div class="Answers">
+			<p class="Answers">func_T('pages.pause.msg.notice') <br><b>"{test_title}"</b></p>
+		</div>
+		<p>func_T('generic.progress'):</p>
+		<div style="text-align:center">func_progressbar({progressp}, 8em, 0.6em, 'margin:auto')</div>
+		<br />
+		<form>
+			<input type="button" class="Button" value="func_T('buttons.pause.continue')" onclick="endPause();" />
+			<!-- BEGIN continue_later_button -->
+			<input type="button" class="Button" value="func_T('buttons.pause.later')" onclick="window.location='index.php?page=test_listing&action=test_view&test_id={test_id}&reset_lang=1'" />
+			<!-- END continue_later_button -->
+		</form>
+	</div>	
+</div>    
+<!-- END pause_button -->
+
+<!-- BEGIN progress_bar -->
+func_progressbar({progress}, 8em, 0.6em, 'margin:auto;')
+<!-- BEGIN progress_bar_adaptive -->
+<p><i>Since the number of questions in the current test part is not known in advance, the related answers do not affect the overall progress.</i></p>
+<!-- END progress_bar_adaptive -->
+<!-- END progress_bar -->
+&nbsp;
+</div>
+
+<!-- BEGIN breadcrumb_trail -->
+You are here:
+<!-- BEGIN breadcrumb -->
+> {breadcrumb}
+<!-- END breadcrumb -->
+<!-- END breadcrumb_trail -->
+
+
+
+
+
+<!-- BEGIN abort_link -->
+<p><a class="arrow" href="{abort_link:h}">Abort preview</a></p>
+<!-- END abort_link -->
+
+<!-- BEGIN debug_entry -->
+<div style="border: 1px solid #999999; margin:5px 0; padding:5px">{debug_entry}</div>
+<!-- END debug_entry -->
+</div>
+</body>
+
+</html>

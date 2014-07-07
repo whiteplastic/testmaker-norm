@@ -1,0 +1,257 @@
+#Sitebar {
+	padding:0 0em 1em 0;
+}
+
+#Menu {
+	text-align: center;
+}
+
+#Menu input.Button {
+	width: 21em;
+	margin-bottom:5px;
+}
+#AdminMenu, #Menu, #MenuBlockTreeBlock {
+	margin:5px;
+	padding:5px;
+	text-align:left;
+}
+
+#ClipBoardHead {
+	position:relative;
+	background-color:#fff;
+	text-align:center;
+	border:1px solid #3755cc;
+}
+#ClipBoardBody {
+	/*display:none;*/
+	width:100%;
+	background-color:#fff;
+	border-top:none;
+}
+#ClipBoardHead:hover #ClipBoardBody {
+	display:block;
+}
+#ClipBoardBody ul {
+	text-align:left;
+}
+div.Bold {
+	font-weight:bold;
+}
+
+#MenuBlockTreeBlock {
+	border:1px solid #9cabe6;
+	background-color:#fff;
+	width: 19.5em;
+}
+
+#Content {
+}
+
+#AdminMenu ul {
+	font-size:1em;
+	margin:0;
+	padding-left:15px;
+}
+#AdminMenu a {
+	margin:0;
+	padding:0;
+	text-align:center;
+}
+
+#MenuBlockTreeCurrent {
+	height:22em;
+	overflow:auto;
+}
+.MenuBlockTree {
+	font-size:0.85em;
+}
+.MenuBlockTree a {
+	padding:0;
+	margin:0;
+}
+.MenuBlockTree ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	overflow: hidden;
+}
+.MenuBlockTree ul li a {
+	padding-left:4px;
+}
+.MenuBlockTree ul {
+	margin:0;
+}
+.MenuBlockTree ul li {
+	padding:0;
+}
+.MenuIndentEmpty, .MenuIndentLine {
+	width:16px;
+	height:16px;
+	float:left;
+}
+.MenuIndentLine {
+	background:url(../images/menu_dots_ns.gif) no-repeat;
+}
+
+#Menu {
+	margin-bottom:0;
+	padding-bottom:0;
+}
+
+.Chooser div {
+	background:#fff;
+	position:absolute;
+	display:none;
+	border:1px solid #ccc;
+}
+.Chooser div td button {
+	width:20px;
+	height:20px;
+}
+.Chooser div.visible {
+	display:block;
+}
+
+.TemplateChoose img {
+	cursor:pointer;
+}
+
+/* drag and drop lists */
+#droplist {
+	margin:0;
+	padding:0;
+	padding-left:20px;
+}
+#droplist li {
+	margin:0;
+	width:35em;
+	margin:2px;
+	margin-left:20px;
+	padding:4px;
+	cursor:move;
+	background:#e2e2e2;
+	border: 1px solid #999;
+}
+
+#font {
+	position:relative;
+	border:0;
+}
+
+#font table {
+	margin:2px;
+}
+
+#font td {
+	white-space:nowrap;
+}
+
+#font div {
+	border:1px solid #044294;
+	text-align:right;
+	display:block;
+	position:absolute;
+	background:#eef;
+}
+
+button.close {
+	border:1px solid #044294;
+	border-top:0;
+	border-right:0;
+	background:#eef;
+	color:#044294;
+}
+
+#Preview {
+	padding:5px;
+}
+
+/* Dynamic list editors etc. */
+
+.HideAsyncNotice {
+	display:none;
+}
+.AsyncNotice {
+	color:#009;
+}
+
+#paragraphs, #conds_proto ul {
+	list-style-type:none;
+	margin-left:0;
+	padding-left:0;
+}
+#conds_proto {
+	position: absolute;
+	top: 0;
+	margin: auto;
+	width: 760px;
+	background-color: white;
+	z-index: 100;
+	border: solid 10px #044294;
+	padding: 0.5em 1em;
+}
+#conds_proto p {
+	text-align: center;
+}
+#conds_proto .title {
+	font-size: 150%;
+	font-weight: bold;
+	color: #044294;
+}
+
+#paragraphs li.para {
+	border:solid 1px #044294;
+	margin-left:0;
+	margin-bottom:0.5em;
+	padding:0.5em;
+}
+#paragraphs .disabled {
+	color:gray;
+}
+#paragraphs .disabled {
+	background-color:#eee;
+	text-decoration: line-through;
+}
+.conds { color:gray; }
+#paragraphs button, #conds_proto span button {
+	background-color:white;
+	border:none;
+	color:#044294;
+	text-decoration:underline;
+	padding:0;
+}
+
+/* media handling (only used in result pages so far) */
+.MediaHandling {
+	margin:1em;
+	border:solid 1px #044294;
+	padding:0.5em;
+}
+
+a.foreignDisabled{
+	text-decoration: line-through;
+	color: #000;
+}
+a.foreign {
+	color: #000;
+}
+
+a.disabled {
+	text-decoration: line-through;
+}
+
+a.foreign:link {
+	color: #000;
+}
+
+a.foreign:visited {
+	color: #000;
+}
+
+a.foreign:hover {
+	color: #000;
+}
+
+a.foreign:active  {
+	color: #000;
+}

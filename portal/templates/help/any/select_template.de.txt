@@ -1,0 +1,27 @@
+Auf dieser Seite können Sie ein Template für ein Item oder für alle Items eines Blockes festlegen. Die Block-Templates werden durch die Templates der Items (wenn gesetzt) überschrieben.
+
+### Template
+Wählen Sie ein Template durch Klicken auf das Bild aus.
+
+### Standard-Templates
+#### Mehrere Antwortalternativen sortierbar
+Die Antwortalternativen werden dem Teilnehmer in einer zufälligen Reihenfolge dargeboten. Durch Klicken und Ziehen kann der Teilnehmer die Reihenfolge der Listenpunkte verändern. Bringt er sie in die Reihenfolge, die im Item unter "Struktur" vorgegeben ist, wird das Item als korrekt beantwortet gewertet (vorausgesetzt, dass mindestens eine der Antwortalternativen vom Autor als "korrekt" eingestellt wurde).
+#### Eine Antwortalternative wählbar, direkte Weiterleitung
+Für jede Antwortalternative existiert ein Button, der beim Klicken sofort auf das nächste Item weiterleitet.
+#### Eine Antwortalternative wählbar
+Jede Antwortalternative hat eine Checkbox; man hat die Möglichkeit, seine Entscheidung bis zum Drücken des "Weiter"-Buttons zu ändern. Es kann nur eine Antwortalternative markiert werden.
+#### Mehrere Antwortalternativen wählbar
+Jede Antwortalternative hat eine Checkbox; man hat die Möglichkeit, seine Entscheidung bis zum Drücken des "Weiter"-Buttons zu ändern. Es können mehrere Antwortalternativen markiert werden.
+#### Freier Text in einem Textfeld
+Ein mehrzeiliges Eingabefeld für freie Texteingabe.
+#### Freier Text in einer Textzeile
+Ein einzeiliges Eingabefeld für freie Texteingabe.
+
+### Ausrichtung
+Hier können Sie festlegen, wie ein Item zu seinen Antwortalternativen ausgerichtet werden soll. Bei __"Horizontal"__ wird das Item über den Antwortalternativen dargestellt, bei __"Vertikal"__ wird das Item links und die Antwortalternativen rechts daneben dargestellt.
+
+### Anzahl der Spalten für die Darstellung der Antwortalternativen
+Hier geben Sie durch eine Zahl an, wie viele Antworten in einer Zeile nebeneinander angeordnet werden sollen. Mit einer 1 werden die Antworten untereinander als Liste dargestellt.
+
+### Standardtemplate benutzen
+Dieser Button existiert nur für die Templates von einzelnen Items, hiermit können Sie vorgenommene Template-Einstellungen löschen. Somit wird das voreingestellten Template auf Blockebene verwendet.

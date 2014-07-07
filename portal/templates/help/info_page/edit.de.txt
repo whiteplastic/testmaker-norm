@@ -1,0 +1,12 @@
+Auf dieser Seite werden kurz die Funktionen des Editors erklärt, die nicht schon aus Microsoft Office bekannt sind.
+
+### Editor
+![Alt FCKeditor](portal/images/editor.jpg)
+<ol type="a">
+	<li>Zeigt den Quellcode zum aktuellen Text an.</li>
+	<li>Vergrößert das Editor-Fenster. Im Vollbildmodus findet sich an dieser Stelle ein Knopf, um das Bildschirmansicht wieder zu verkleinern. Die im Großbild vorgenommenen Änderungen werden in den normalen Editor übernommen.</li>
+	<li>Löscht die Formatierung für einen markierten Bereich.</li>
+	<li>Hier können Sie einige vordefinierte Formatierungen, z.B. für Überschriften, auswählen.</li>
+	<li>Hierüber können Sie ein Bild in Ihren Text hochladen und einbinden.</li>
+	<li>Hierüber können Sie Flash Dateien in Ihren Text hochladen und einbinden.</li>
+</ol>

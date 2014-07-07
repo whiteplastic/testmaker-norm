@@ -1,0 +1,56 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditBlockHeader.html -->
+
+<h3>Edit dimension groups</h3>
+
+<p>
+	Here you can set up groups of dimensions that you can later use to display only the most important results of one group or graphs showing only dimensions of one group.</p>
+
+<!-- BEGIN have_groups -->
+<h4>Edit existing groups</h4>
+
+<table class="BorderedLayout">
+	<tr><th>Group name</th><th>ID</th><th>Operations</th></tr>
+<!-- BEGIN group -->
+	<tr>
+		<td>{title:h}</td>
+		<td>{id:h}</td>
+		<td>
+			<form method="post" action="func_pagelink(feedback_block, dim_groups, working_path: {working_path})">
+			<input type="hidden" name="id" value="{id}" />
+			<input type="submit" name="edit" value="Edit" class="Button" />
+			<input type="submit" name="delete" value="Delete" class="Button" onclick="return confirm('Do you really want to delete this dimension group?')" />
+			</form>
+		</td>
+	</tr>
+<!-- END group -->
+</table>
+
+<!-- END have_groups -->
+<!-- BEGIN create_group -->
+<h4>Create new dimension group</h4>
+<!-- END create_group -->
+<!-- BEGIN edit_group -->
+<h4>Edit dimension group</h4>
+<!-- END edit_group -->
+
+<form method="post" action="func_pagelink(feedback_block, dim_groups, working_path: {working_path})">
+<table>
+	<tr>
+		<td<!-- BEGIN correction_title --> class="correction"<!-- END correction_title -->>func_T(forms.title)</td>
+		<td><input type="text" name="title" class="Text" value="{title:h}" /></td>
+	</tr>
+</table>
+<h5>Dimensions in this group</h5>
+<ul id="droplist">
+<!-- BEGIN dim_list -->
+	<li><input type="checkbox" name="dim[{dim_id}]" id="dim{dim_id}" value="1"{dim_checked} /> <label for="dim{dim_id}">{dim_title}</label></li>
+<!-- END dim_list -->
+</ul>
+<!-- INCLUDE SortableList.html -->
+<br />
+<input type="hidden" name="id" value="{edit_id}" /><input type="submit" class="Button" name="save" value="Speichern" />
+</form>
+
+</div>

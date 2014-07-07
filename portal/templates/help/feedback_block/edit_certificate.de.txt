@@ -1,0 +1,33 @@
+
+###Bescheinigung für erfolgreiche Testteilnahme
+
+####Allgemein
+Hier können Sie eine Teilnahmebescheinigung anlegen, die Teilnehmer nach der Teilnahme als pdf abrufen können. 
+Die Bescheinigung enthält Vorname, Name und Geburtsdatum der Teilnehmers, sowie eine daraus generierte einmalige Prüfsumme (Hash-Key).
+
+Die Bescheinigung ist nach einmaligem Anlegen auch später bei erneutem Login durch den Teilnehmer abrufbar.
+
+####Bescheinigung eines Teilnehmers überprüfen
+Bei vorliegender Bescheinigung eines Teilnehmers kann hier nachgeprüft werden, ob der Hash-Key zu den angegebenen Benutzerdaten (Name und Geburtsdatum) passt und die Bescheinigung somit gültig ist.
+
+
+####Voraussetzungen
+Zur Generierung einer Bescheinigung müssen folgende Informationen angegeben werden:
+
+#####Korrekte Benutzerdaten
+Die Daten für die Bescheinigung werden aus dem Benutzeraccount geladen. Sollte der Benutzer noch kein Geburtsdatum angegeben haben kann er dieses im Testlauf nachtragen. Für den Fall das der Testlauf per Direktlink oder TAN gestartet wird, werden die Daten für die Bescheinigung einmalig abgefragt.
+#####pdf-Template
+Hierbei handelt es sich um eine pdf-Datei, die die Vorlage für eine Bescheinigung enthält.
+Für jeden Teilnehmer werden dort später Name, Geburtsdatum sowie Hash-Key eingefügt.
+
+Die Einfüge-Positionen der jeweiligen Daten sind unter im Quellcode festgesetzt und können dort vom testMaker Administrator an das jeweilige Layout der Bescheinigung angepasst werden.
+<br>*(/lib/pdf/PdfCreator.php)*
+
+
+####Manuelles Erstellen
+Sollte aus irgendwelchen Gründen die Erstellung einer Bescheinigung fehlgeschlagen sein (z.B. falsche oder keine Benutzerangaben des Teilnehmers), kann hier für eine ausgewählte Testteilnahme (Angabe der Testrun-ID) eine Bescheinigung manuell erstellt werden.
+
+**Die Verantwortung für die Rechtmäßigkeit trägt hier der erstellende Administrator!
+Es sollte also vorher nachgeprüft werden, ob der entsprechende Test auch wie gefordert beendet worden ist.**
+
+Die manuell erstellte Bescheinigung ersetzt einen eventuell vorher angelegten Hash-Key desselben Testdurchlaufs und macht diese somit ungültig.

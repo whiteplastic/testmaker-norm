@@ -1,0 +1,11 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE EditBlockHeader.html -->
+<!-- INCLUDE DeletePublishedHeader.html -->
+	<p>Soll der Itemblock wirklich komplett gelöscht werden?</p>
+	<form method="post" action="func_pagelink(item_block, delete, working_path: {working_path})">
+		<input class="Button" type="submit" name="do_delete" value="Löschen" />
+		<input class="Button" type="submit" name="cancel_delete" value="Abbrechen" />
+	</form>
+</div>

@@ -1,0 +1,83 @@
+Auf dieser Seite können Sie die Berechtigungen von anderen Testautoren
+auf Ihre Tests und Testelemente festlegen. Sie können entscheiden, wer...
+
+* Ihre Tests veröffentlichen kann,
+* Ihre Tests im Editor sehen kann,
+* in Ihrem Test neue Blöcke und Items anlegen kann,
+* Ihre Tests im Editor bearbeiten kann,
+* Ihre Tests löschen kann,
+* Ihre Tests an eine andere Stelle kopieren, verschieben oder verlinken kann.
+
+Desweiteren können Sie anderen Autoren erlauben, Ihren Test über die
+Testübersicht, einen Direktlink oder eine TAN auszuprobieren, ohne dass Sie
+den Test veröffentlichen müssen.
+
+Natürlich können Sie selbst alle diese Aktionen für die Tests, die Sie selbst
+erstellt haben, ausführen, aber alle anderen Benutzer (Administratoren
+ausgenommen) sehen nicht einmal, dass die Tests überhaupt existieren. Wollen
+Sie nun Ihre Tests mit anderen Leuten teilen oder gemeinsam bearbeiten wollen,
+können Sie die entsprechenden Einstellungen hier vornehmen.
+
+Unter Umständen hat Ihr testMaker-Administrator festgelegt, dass Testautoren
+über die Veröffentlichung ihrer Tests nicht selbst bestimmen können; wenden
+Sie sich in diesem Fall an den Administrator, falls Sie Ihren Test
+veröffentlichen möchten.
+
+
+### Benutzergruppen
+
+Alle Benutzer befinden sich in einer oder mehreren Benutzergruppen.  Wer in
+welcher Gruppe Mitglied ist und welche Standardrechte die Gruppen haben,
+können nur die Administratoren dieser testMaker-Installation einstellen. Die
+Administratoren sind für die Verwaltung dieser testMaker-Installation
+zuständig und können deshalb außerdem automatisch auf sämtliche Tests und
+sonstige Daten, die im testMaker gespeichert sind, zugreifen.
+
+Allgemein bietet sich die Verwendung neuer Gruppen an, wenn Sie Teile eines
+Tests nur für bestimmte Personen zugänglich (oder durchführbar) machen wollen.
+
+Ein Beispiel: ein Team von Testentwicklern möchte gemeinsam an einem
+Assessment-Test arbeiten. Zu diesem Zweck legt ein Administrator eine neue
+Gruppe an (etwa eine Gruppe mit dem Namen "Assessment-Entwickler") und teilt
+die Teammitglieder dieser Gruppe zu. Nun können Sie einen neuen Test anlegen
+und wenn Sie Berechtigungen für die Gruppe "Assessment-Entwickler" einstellen,
+werden diese für alle Teammitglieder gültig.
+
+Da Gruppen nur von Administratoren verwaltet werden können, wenden Sie sich an
+einen Administrator, wenn Sie einer Gruppe von Personen Berechtigungen
+zuteilen wollen, für die es noch keine Benutzergruppe gibt.
+
+#### Warum werden die Gruppen der Testteilnehmer nicht aufgelistet?
+
+Testteilnehmer sollen sinnvollerweise nicht die Möglichkeit haben, Ihren Test
+zu verändern oder etwa Informationen wie die korrekten Antworten einsehen zu
+können. Aus diesem Grund können Sie die Möglichkeiten für Testteilnehmer nur
+über das Register "Veröffentlichung" festlegen.
+
+#### Autorengruppe
+
+Diese Gruppe beinhaltet gemeinhin alle Benutzer, die selbst Tests anlegen
+dürfen. Sie können hier also Autoren beispielsweise die Möglichkeit geben,
+Ihren Test im Editor anzusehen oder Testbausteine in ihren eigenen Tests zu
+verwenden.
+
+Möglicherweise verwendet Ihr testMaker-Administator ein anderes Gruppenkonzept
+und diese Gruppe existiert nicht oder wird nicht verwendet; sprechen Sie in
+diesem Fall mit dem Administrator, um herauszufinden, wie Sie Berechtigungen
+für Ihre Kollegen festlegen können.
+
+
+### Option "Auch auf untergeordnete Blöcke anwenden"
+
+Diese Option ist standardmäßig aktiviert und bewirkt, dass die Berechtigungen,
+die Sie für Tests einstellen, automatisch für alle Unterelemente (Subtests, Itemblöcke
+usw.) übernommen werden -- insbesondere auch für Unterelemente, die Sie erst
+anlegen, nachdem Sie die Berechtigungen festgelegt haben.
+
+Diese Option lässt sich für einzelne Tests ausschalten; normalerweise ist dies
+aber nicht nötig oder empfehlenswert.
+
+Wollen Sie für ein gewisses Unterelement Ihres Tests weniger oder mehr
+Berechtigungen vergeben als für die anderen Elemente, so können Sie die Rechte
+für dieses Element auf seinem eigenen "Rechte"-Register separat einstellen.
+

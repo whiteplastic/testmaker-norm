@@ -1,0 +1,38 @@
+###Orientierung
+Sie befinden sich auf den Seiten der Funktion "Benutzer und Gruppen verwalten". Diese Funktion kann nur von Administratoren bearbeitet werden. 
+
+Jeder Benutzer des testMaker gehört zu einer bestimmten "Gruppe", die unterschiedliche Rechte hat. Folgende Gruppen sind im testMaker voreingestellt: 
+
+* Administratoren (Benutzer mit umfassenden Rechten, die alle Tests sehen und bearbeiten können)
+* Autoren (Benutzer, die Tests anlegen und auch bearbeiten können)
+* Normal User (Benutzer, die einen Benutzer-Account angelegen, um an einem veröffentlichten Test teilzunehmen. Normal User können sich immer wieder in den testMaker einloggen und z.B. Tests in der Testübersicht starten oder ihre Ergebnisse alter Testteilnahmen einsehen)
+* Guests  (Benutzer, die als Gäste an einem freigegebenen Test teilnehmen, registrieren sich nicht.)
+
+Weitere Benutzer-Gruppen können von einem Administrator angelegt werden. Welchen Test eine bestimmte Benutzer-Gruppe sehen und bearbeiten darf, wird vom Autor/Administrator für jeden Test einzelnd auf dem Karteireiter "Veröffentlichung" festgelegt bzw. auf dem Karteireiter "Rechte" auf Testebene festgelegt. Weitere Infomationen zu den Themen finden sich unter [Test veröffentlichen](func_helplink (container_block, publish)) oder [Rechte zuweisen](func_helplink (container_block, edit_perms)). 
+
+
+Die Funktion "Benutzer und Gruppen verwalten" umfasst folgende Karteireiter:
+
+* Benutzer-Liste 
+* [Benutzer hinzufügen](func_helplink(user_admin, user_creation))
+* [Gruppen-Liste](func_helplink(user_admin, list_group))
+* [Gruppe hinzufügen](func_helplink(user_admin, create_group))
+* [Identität wechseln](func_helplink(user_admin, show_switch))
+* [Email-Liste](func_helplink(user_admin, edit_email))
+* [alte Benutzer löschen](func_helplink(user_admin, filter_user))
+
+
+### Karteireiter der Funktion "Benutzer und Gruppen verwalten"
+#### Benutzer-Liste
+Auf dieser Seite erhalten Sie eine Übersicht über alle Benutzer Ihrer testMaker-Installation. Sie können nach Benutzernamen und nach Benutzergruppen filtern, um die Auswahl einzuschränken.
+
+##### Ändern
+Hierüber erhalten Sie ein Formular, über das Sie die Eigenschaften des Benutzers verändern können.
+
+##### Löschen
+Löscht bestimmte Benutzer aus der Datenbank.
+
+*(Die User ID gelöschter Benutzer und die zugehörigen Testläufe bleiben zu Statistik-Zwecken erhalten. Lediglich die persönlichen Informationen wie Name, E-Mail und Geburtsdatum werden gelöscht)*
+
+##### (De-)aktivieren
+Mit dieser Schaltfläche können Sie Benutzer manuell aktivieren bzw. deaktivieren. Im deaktivierten Zustand haben die Personen keinen Zugriff mehr auf das System.

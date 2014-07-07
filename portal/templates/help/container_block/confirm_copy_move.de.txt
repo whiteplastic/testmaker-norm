@@ -1,0 +1,2 @@
+###Kopieren/Link/Verschieben
+Sie haben unter dem Reiter "Kopieren/Verschieben" einen der Aktionsbuttons "Kopieren", "Link" oder "Verschieben" ausgewählt. Wenn Sie jetzt erneut auf "Kopieren", "Link" oder "Verschieben" klicken, wird eine Kopie des Tests, ein Link oder der Test an sich in dem von Ihnen gewählten Verzeichnis angelegt. Wenn Sie hier den Aktionsbutton "Abbrechen" betätigen, gelangen Sie zurück zu der Auswahl "Kopieren/Link/Verschieben". 

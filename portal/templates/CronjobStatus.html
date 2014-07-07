@@ -1,0 +1,55 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+
+
+<!-- BEGIN no_jobs -->
+<p><b>{count_jobs} Jobs found</b><p>
+<!-- END no_jobs -->
+
+
+<!-- BEGIN jobs_found -->
+
+<fieldset style="border:1px solid #999999;padding:0.3em;padding-top:0.0em;margin:0;margin-top:0.8em;margin-left:2em;width:50em;">
+<legend style="border: 1px solid #999999;padding:0 0.4em">Job <b>{job_id}</b></legend>
+
+<div style="font-size:smaller ;text-align:right;" align=right>Delete Job: <a href="func_pagelink(cronjob_status, delete_job, id: {job_id})">X</a></div>
+
+	<table class="Vertical" style="margin-left:5em">
+		<tr>
+			<th>Identifyer:</th>
+			<td>{identifyer}</td>
+		</tr>
+				<tr>
+			<th>Progress:</th>
+			<td>func_progressbar({progress}, 10em)</td>
+		</tr>
+		<tr>
+			<th>Status:</th> 
+			<td>
+				<!-- BEGIN s_pending --><span style="color:#FF9900;font-weight:bold;">processing ...</span><!-- END s_pending -->
+				<!-- BEGIN s_done --><span style="color:#0000CC;font-weight:bold;">Done</span> <i>({endtime})</i><!-- END s_done -->
+				<!-- BEGIN s_queue --><span style="color:#FF0000;font-weight:bold;">queued</span><!-- END s_queue -->
+				<!-- BEGIN s_error --><span style="color:#FF0000;font-weight:bold;"> - ERROR -</span><!-- END s_error -->
+			<p></td>
+		</tr>
+		<tr>
+			<th>Type:</th>
+			<td><i>{type}</i></td>
+		</tr>
+		<tr>
+			<th>Started:</th>
+			<td><i>{start_time}</i></td>
+		</tr>
+		<tr>
+			<th>Tasks done:</th>
+			<td>{tasks_done} of {task_count}</td>
+		</tr>
+		
+	</table>
+
+</fieldset>
+<p>
+<!-- END jobs_found -->
+
+
+</div>

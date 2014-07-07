@@ -1,0 +1,58 @@
+<!-- BEGIN test_normal -->
+<p>Ergebnisse des Testlaufs vom {test_run_date} um {test_run_time} Uhr:</p>
+<!-- BEGIN no_pages_normal -->
+<p><b>Zu diesem Test ist leider keine Auswertung verfügbar.</b></p>
+<!-- END no_pages_normal -->
+<!-- END test_normal -->
+
+<!-- BEGIN test_per_tan -->
+<p>Die eingegebene TAN wurde am {test_run_date} um {test_run_time} Uhr benutzt.</p>
+<!-- BEGIN no_pages_tan -->
+<p><b>Der Test wurde vollständig bearbeitet.</b></p>
+<!-- END no_pages_tan -->
+<!-- END test_per_tan -->
+
+<!-- BEGIN has_pages -->
+<p id="test_feedback_links1">
+<!-- BEGIN anonymous_link1 -->
+<a class="Button" href="func_pagelink(test_listing)">Zurück zur Übersicht</a>
+<!-- END anonymous_link1 -->
+<!-- BEGIN user_link1 -->
+<a class="Button" href="func_pagelink(test_listing, test_view, test_id: {test_id})">Zurück zur Übersicht</a>
+<!-- END user_link1 -->
+<!-- BEGIN print_link1 -->
+<a class="Button" href="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, layout: print, final: 1)" target="_blank">Druckansicht</a>
+<!-- END print_link1 -->
+<!-- BEGIN print_link2 -->
+<a class="Button" href="func_pagelink(test_listing, show_feedback, test_run: {test_run_id}, layout: print, email: 1)" target="_blank">Feedback per Email senden</a>
+<!-- END print_link2 -->
+</p>
+
+<!-- BEGIN page -->
+<div style="margin: 1em 0; border: 1px solid #999;padding:0.5em">
+<!-- BEGIN paragraph -->
+	<p>{paragraph}</p>
+<!-- END paragraph -->
+</div>
+<!-- END page -->
+<!-- BEGIN certificate -->
+<p id="Certificate" style="margin: 1em 0; padding: 5px; border: 1px solid #333378;background-color:#8888FF">
+	<a href="func_pagelink(pdf_generator, formular_certificate, test_run_id: {test_run_id}, block_id: {block_id})">func_T(generic.certificate)</a>
+</p>
+<!-- END certificate -->
+<!-- BEGIN no_certificate -->
+<div style="padding:5px;border-width:1px;border-style:solid;border-color:#333378;background-color:#8888FF">
+	func_T(generic.missing_personal_data)
+</div>
+<!-- END no_certificate -->
+
+<!-- END has_pages -->
+
+<p id="test_feedback_links2">
+<!-- BEGIN anonymous_link2 -->
+<a class="Button" href="func_pagelink(test_listing)">Zurück zur Übersicht</a>
+<!-- END anonymous_link2 -->
+<!-- BEGIN user_link2 -->
+<a class="Button" href="func_pagelink(test_listing, test_view, test_id: {test_id})">Zurück zur Übersicht</a>
+<!-- END user_link2 -->
+</p>

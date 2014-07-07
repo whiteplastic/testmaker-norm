@@ -1,0 +1,7 @@
+###E-Mail-Liste
+Hier können Sie einen Test auswählen, von dessen Benutzern Sie die E-Mail Adressen herunterladen können. 
+Es werden die E-Mail-Adressen ausgegeben mit der sich ein Nutzer registriert hat sowie seine User-ID.
+Diese Funktion ist z. B. Hilfreich, wenn man eine Nachbefragung durchführen möchte und z. B. jedem Teilnehmer (bzw. seinem Datensatz) eine TAN zuweisen möchte.
+,
+Klicken Sie dazu auf „Adressen“ und speichern Sie das txt-Dokument.
+

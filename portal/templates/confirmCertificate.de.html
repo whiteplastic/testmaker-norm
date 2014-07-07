@@ -1,0 +1,14 @@
+<!-- BEGIN confirm -->
+Für diesen Testlauf existiert bereits eine Bescheinigung. Falls Sie eine weitere Bescheinigung erstellen, verliert die alte Bescheinigung ihre Gültigkeit.
+<form name="generate_manual_certificate" method="post" action="func_pagelink(pdf_generator, generate_entry, working_path: {working_path},
+				block_id: {block_id})">
+				<input name="firstname" type="hidden" value="{firstname}"/>
+				<input name="lastname" type="hidden" value="{lastname}"/>
+				<input name="birthday" type="hidden" value="{birthday}"/>
+				<input name="testRunId" type="hidden" value="{testRunId}"/>
+			<P>
+				<input class="Button" type="submit" name="cancel" value="Zurück" />
+				<input class="Button" type="submit" name="create" value="Erstellen" />
+			</P>
+</form>
+<!-- END confirm -->

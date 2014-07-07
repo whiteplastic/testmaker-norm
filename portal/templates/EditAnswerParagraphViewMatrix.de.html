@@ -1,0 +1,27 @@
+<li id="para_{para_id}" class="para">
+	<table>
+		<tr>
+			<td>	
+			<!-- whats this?!?! neigther set nor documented anywhere...					
+				<div><img src="upload/media/{filename}" alt={filename}></div>
+			 -->				
+				<div class="contents<!-- BEGIN para_disabled --> disabled<!-- END para_disabled -->">{para_contents}</div>				
+			</td>
+		</tr>
+	</table>
+	<!-- BEGIN para_may_edit -->
+	<div class="_para_action_buttons">
+		<!-- BEGIN correctness -->
+		<span style="float:right" class="Disabled">  Richtig: <input type="checkbox" name="is_true" value="1" disabled="disabled" {para_checked}/></span>
+		<!-- END correctness -->
+		<button><img src="portal/images/icon_edit_grey.png" alt="Bearbeiten" /></button>
+		<button><img src="portal/images/icon_delete_grey.png" alt="Löschen" /></button>
+		<div id="para_{para_id}_delete" style="display:none;">
+			Wirklich löschen?
+			<input class="Button" type="button" onclick="doDelParagraph('para_{para_id}', '{del_link}' );" value="Ja" />
+			<input class="Button" type="button" onclick="cancelDelParagraph('para_{para_id}');" value="Nein" />
+		</div>
+	</div>
+	<div id="para_{para_id}_notice" class="HideAsyncNotice">Operation wird ausgeführt, bitte warten...</div>
+	<!-- END para_may_edit -->
+</li>

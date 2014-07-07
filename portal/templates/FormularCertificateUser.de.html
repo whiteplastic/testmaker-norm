@@ -1,0 +1,33 @@
+<!-- BEGIN Formular -->
+<div style="text-align: left;">
+	<!-- BEGIN isUser -->
+	<div id="reg" {display3} style="display: {display}">
+		<div id="noregheader" {display3} {display2}>
+			<p><strong>Bescheinigungsdaten prüfen</strong></p>
+			<p>Auf Ihrer Teilnahmebescheinigung werden Ihre Daten (Name und Geburtsdatum)
+			eingefügt, die Sie bei der Registrierung angegeben haben. Bitte prüfen Sie
+			daher nun, ob die unten angegebenen Angaben korrekt sind. Spätere Änderungen
+			sind nicht mehr möglich!</p>
+		</div>
+		<form name="form" method="post" action="func_pagelink(pdf_generator, create_mw_certificate, working_path: {working_path}, block_id: {blockId}, test_run_id: {test_run_id}, from_form: 1)">
+		<input name="tr_return_id" type="hidden" value="{tr_return_id:h}">
+		<input name="emailCheck" type="hidden" value="0">
+		<input id="becomeUserCheck" name="becomeUserCheck" type="hidden" value="{become_checked}">
+		<ul>
+			<div class="certForm1<!-- BEGIN correction_fullname --> correction<!-- END correction_fullname -->">Vollständiger Name<br/>(Vor- und Nachname):</div>
+			<div class="certForm2"><input name="name" type="text" size="32" maxlength="48" value="{name:h}"></div><br/>
+
+			<div class="certForm1<!-- BEGIN correction_birthday --> correction<!-- END correction_birthday -->">Geburtstag:</div>
+			<div class="certForm2"><input name="birthday" type="text" size="32" maxlength="48" value="{birthday:h}"> (TT.MM.JJJJ)</div><br/>
+			
+			<div class="certForm1<!-- BEGIN correction_email --> correction<!-- END correction_email -->">E-Mail:</div>
+			<div class="certForm2"><input name="email" type="text" size="32" maxlength="48" value="{email:h}"></div><br/>
+		</ul>
+		<p><strong>Bitte überprüfen Sie, ob alle Eingaben korrekt sind, eine spätere Änderung von Name oder Geburtsdatum ist nicht möglich.</strong></p>
+		<input class="Button" type="submit">
+		<input class="Button" type="reset">
+		</form>
+	</div>
+	<!-- END isUser -->
+</div>
+<!-- END Formular -->

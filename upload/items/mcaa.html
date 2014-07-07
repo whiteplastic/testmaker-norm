@@ -1,0 +1,31 @@
+<!-- Multiple answers to sort -->
+<script type="text/javascript" src="portal/js/external/scriptaculous.js?load=builder,effects,dragdrop,controls,slider"></script>
+<script type="text/javascript" src="portal/js/external/prototype.js"></script>
+
+<div class="Question {is_forced}"><!--"Bereich" Frage-->
+	<div class="Inner">{question}</div>
+</div>
+<div class="Answers" >
+	<table class="Border" cellspacing="3">
+	<!-- BEGIN answer_block -->
+	<tr><td>
+		<ul id="droplist" style="margin-bottom:10px;">
+		<!-- BEGIN answer -->
+			<li style="width:90%"><input type="hidden" name="answer[{item_id}][]" value="{aid}" id="item_{aid}"{aold} />{answer}</li>
+		<!-- END answer -->
+		</ul>
+	</td></tr>
+	<!-- END answer_block -->
+	</table>
+	</div>
+<script type="text/javascript">
+// <![CDATA[
+Position.includeScrollOffsets = true;
+Sortable.create('droplist');
+// ]]>
+</script>
+<!-- BEGIN send_bar -->
+<div class="SendBar">
+	<input type="submit" class="AnswerButton" value="func_T(generic.submit)" />
+</div>
+<!-- END send_bar -->

@@ -1,0 +1,11 @@
+<!-- INCLUDE TabBar.html -->
+<div class="Card">
+<!-- INCLUDE EditPublishedHeader.html -->
+<!-- INCLUDE EditBlockHeader.html -->
+<!-- INCLUDE DeletePublishedHeader.html -->
+	<p>Do you really want to delete the item block and all of its contents?</p>
+	<form method="post" action="func_pagelink(item_block, delete, working_path: {working_path})">
+		<input class="Button" type="submit" name="do_delete" value="Delete" />
+		<input class="Button" type="submit" name="cancel_delete" value="Cancel" />
+	</form>
+</div>

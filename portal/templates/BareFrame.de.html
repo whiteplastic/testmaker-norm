@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+	<title>testMaker</title>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-15" />
+	<link rel="stylesheet" type="text/css" href="portal/css/main.css" />
+{head}
+</head>
+
+<body>
+<script type="text/javascript" src="portal/js/main.js"></script>
+
+<div id="Header">
+	<img src="{logo}" alt="testMaker" title="testMaker" />
+	<div id="Navigation"></div>
+</div>
+
+<div id="BareContent">
+
+<h2>{page_title:h}</h2>
+<!-- BEGIN msg_area -->
+<p>
+	<ul>
+		<!-- BEGIN msg --><li class="msg_{flag}">{msg}</li><!-- END msg -->
+	</ul>
+</p>
+<!-- END msg_area -->
+{body}
+
+</div>
+
+<div id="Footer"></div>
+</body>
+</html>
